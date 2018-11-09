@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <plugin>
 	<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
-		<provider class="com.analog.crosscore.managedbuilder.core.arm.scanner.GCCBuiltinSpecsDetectorADI" console="false" env-hash="-5116539300003799908" id="com.analog.crosscore.managedbuilder.core.arm.scanner.GCCBuiltinSpecsDetectorADI" keep-relative-paths="false" name="CrossCore ARM Bare Metal Builtin Specs Detector" parameter="${COMMAND} -E -P -v -dD &quot;${INPUTS}&quot;">
+		<provider class="com.analog.crosscore.managedbuilder.core.arm.scanner.GCCBuiltinSpecsDetectorADI" console="false" env-hash="6274263512910985005" id="com.analog.crosscore.managedbuilder.core.arm.scanner.GCCBuiltinSpecsDetectorADI" keep-relative-paths="false" name="CrossCore ARM Bare Metal Builtin Specs Detector" parameter="${COMMAND} -E -P -v -dD &quot;${INPUTS}&quot;">
 			<language-scope id="org.eclipse.cdt.core.c.adi.extension"/>
 			<language-scope id="org.eclipse.cdt.core.c++.adi.extension"/>
 			<language-scope id="com.analog.crosscore.ui.asm.adi.extension"/>
 			<language id="org.eclipse.cdt.core.c.adi.extension">
-				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.0/ARM/arm-none-eabi/arm-none-eabi/include/adi/cortex-a5">
+				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.1/ARM/arm-none-eabi/arm-none-eabi/include/adi/cortex-a5">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.0/ARM/arm-none-eabi/arm-none-eabi/include/adi">
+				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.1/ARM/arm-none-eabi/arm-none-eabi/include/adi">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.0/ARM/arm-none-eabi/lib/gcc/arm-none-eabi/4.8.3/include">
+				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.1/ARM/arm-none-eabi/lib/gcc/arm-none-eabi/4.8.3/include">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.0/ARM/arm-none-eabi/lib/gcc/arm-none-eabi/4.8.3/include-fixed">
+				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.1/ARM/arm-none-eabi/lib/gcc/arm-none-eabi/4.8.3/include-fixed">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.0/ARM/arm-none-eabi/arm-none-eabi/include">
+				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.1/ARM/arm-none-eabi/arm-none-eabi/include">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
 				<entry kind="macro" name="__ACCUM_EPSILON__" value="0x1P-15K">
@@ -1145,28 +1145,28 @@
 				</entry>
 			</language>
 			<language id="org.eclipse.cdt.core.c++.adi.extension">
-				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.0/ARM/arm-none-eabi/arm-none-eabi/include/adi/cortex-a5">
+				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.1/ARM/arm-none-eabi/arm-none-eabi/include/adi/cortex-a5">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.0/ARM/arm-none-eabi/arm-none-eabi/include/adi">
+				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.1/ARM/arm-none-eabi/arm-none-eabi/include/adi">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.0/ARM/arm-none-eabi/arm-none-eabi/include/c++/4.8.3">
+				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.1/ARM/arm-none-eabi/arm-none-eabi/include/c++/4.8.3">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.0/ARM/arm-none-eabi/arm-none-eabi/include/c++/4.8.3/arm-none-eabi/sc589_rev_any">
+				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.1/ARM/arm-none-eabi/arm-none-eabi/include/c++/4.8.3/arm-none-eabi/sc589_rev_any">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.0/ARM/arm-none-eabi/arm-none-eabi/include/c++/4.8.3/backward">
+				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.1/ARM/arm-none-eabi/arm-none-eabi/include/c++/4.8.3/backward">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.0/ARM/arm-none-eabi/lib/gcc/arm-none-eabi/4.8.3/include">
+				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.1/ARM/arm-none-eabi/lib/gcc/arm-none-eabi/4.8.3/include">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.0/ARM/arm-none-eabi/lib/gcc/arm-none-eabi/4.8.3/include-fixed">
+				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.1/ARM/arm-none-eabi/lib/gcc/arm-none-eabi/4.8.3/include-fixed">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.0/ARM/arm-none-eabi/arm-none-eabi/include">
+				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.1/ARM/arm-none-eabi/arm-none-eabi/include">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
 				<entry kind="macro" name="__ACCUM_EPSILON__" value="0x1P-15K">
@@ -2314,19 +2314,19 @@
 				</entry>
 			</language>
 			<language id="com.analog.crosscore.ui.asm.adi.extension">
-				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.0/ARM/arm-none-eabi/arm-none-eabi/include/adi/cortex-a5">
+				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.1/ARM/arm-none-eabi/arm-none-eabi/include/adi/cortex-a5">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.0/ARM/arm-none-eabi/arm-none-eabi/include/adi">
+				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.1/ARM/arm-none-eabi/arm-none-eabi/include/adi">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.0/ARM/arm-none-eabi/lib/gcc/arm-none-eabi/4.8.3/include">
+				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.1/ARM/arm-none-eabi/lib/gcc/arm-none-eabi/4.8.3/include">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.0/ARM/arm-none-eabi/lib/gcc/arm-none-eabi/4.8.3/include-fixed">
+				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.1/ARM/arm-none-eabi/lib/gcc/arm-none-eabi/4.8.3/include-fixed">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.0/ARM/arm-none-eabi/arm-none-eabi/include">
+				<entry kind="includePath" name="C:/Analog Devices/CrossCore Embedded Studio 2.8.1/ARM/arm-none-eabi/arm-none-eabi/include">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
 				<entry kind="macro" name="__ACCUM_EPSILON__" value="0x1P-15K">

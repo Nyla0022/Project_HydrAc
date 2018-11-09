@@ -1233,3 +1233,17 @@ Command-line arguments:  -os win32 -ws win32 -arch x86
 !ENTRY com.analog.crosscore.core 1 0 2018-11-04 11:17:35.698
 !MESSAGE 2018-11-04 11:17:35, 698 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.0/; environment variable CCES_HOME: not set
 
+!SESSION 2018-11-09 02:01:09.350 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-09 02:01:46.011
+!MESSAGE 2018-11-09 02:01:46, 009 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.1.0 w1807161
+
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-09 02:01:46.016
+!MESSAGE 2018-11-09 02:01:46, 016 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/; environment variable CCES_HOME: not set
+
