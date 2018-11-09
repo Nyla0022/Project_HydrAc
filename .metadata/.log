@@ -1,0 +1,1235 @@
+!SESSION 2018-10-31 12:39:58.938 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc
+
+!ENTRY com.analog.crosscore.core 1 0 2018-10-31 12:40:01.061
+!MESSAGE 2018-10-31 12:40:01, 059 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.1.0 w1807161
+
+
+!ENTRY com.analog.crosscore.core 1 0 2018-10-31 12:40:01.066
+!MESSAGE 2018-10-31 12:40:01, 066 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/; environment variable CCES_HOME: not set
+
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-10-31 12:42:02.234
+!MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core0' (2 sources, 35 headers) in 5.05 sec: 710 declarations; 1,183 references; 1 unresolved inclusions; 2 syntax errors; 144 unresolved names (7.1%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-10-31 12:42:06.342
+!MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core1' (7 sources, 68 headers) in 4.09 sec: 6,498 declarations; 10,821 references; 0 unresolved inclusions; 2 syntax errors; 476 unresolved names (2.7%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-10-31 12:42:09.200
+!MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core2' (5 sources, 36 headers) in 2.85 sec: 2,462 declarations; 5,120 references; 0 unresolved inclusions; 2 syntax errors; 14 unresolved names (0.18%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-10-31 12:42:11.105
+!MESSAGE Indexed 'ChanFreq_SC573_SHARC_Core0' (2 sources, 24 headers) in 1.9 sec: 245 declarations; 595 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-10-31 12:42:15.457
+!MESSAGE Indexed 'ChanFreq_SC573_SHARC_Core1' (7 sources, 68 headers) in 3.65 sec: 6,492 declarations; 10,806 references; 0 unresolved inclusions; 2 syntax errors; 476 unresolved names (2.7%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-10-31 12:42:16.412
+!MESSAGE Indexed 'ChanFreq_SC573_SHARC_Core2' (1 sources, 0 headers) in 0.143 sec: 3 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+!SESSION 2018-10-31 17:11:31.258 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2018-10-31 17:11:34.672
+!MESSAGE 2018-10-31 17:11:34, 670 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.1.0 w1807161
+
+
+!ENTRY com.analog.crosscore.core 1 0 2018-10-31 17:11:34.678
+!MESSAGE 2018-10-31 17:11:34, 678 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/; environment variable CCES_HOME: not set
+
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-10-31 17:18:42.187
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-10-31 17:18:42.208
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY com.analog.crosscore.debug 4 10004 2018-10-31 17:18:47.039
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 5012 2018-10-31 17:18:47.053
+!MESSAGE Error in launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.createSession(LaunchDelegate.java:1229)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.launch(LaunchDelegate.java:733)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 com.analog.crosscore.debug 4 10004 2018-10-31 17:18:47.055
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 10004 2018-10-31 17:21:48.439
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 5012 2018-10-31 17:21:48.449
+!MESSAGE Error in launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.createSession(LaunchDelegate.java:1229)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.launch(LaunchDelegate.java:733)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 com.analog.crosscore.debug 4 10004 2018-10-31 17:21:48.450
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 10004 2018-10-31 17:33:38.158
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 5012 2018-10-31 17:33:38.165
+!MESSAGE Error in launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.createSession(LaunchDelegate.java:1229)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.launch(LaunchDelegate.java:733)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 com.analog.crosscore.debug 4 10004 2018-10-31 17:33:38.166
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY org.eclipse.core.jobs 2 2 2018-10-31 17:34:46.600
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.analog.crosscore.debug.service.CommandControl$CommandSendJob
+
+!ENTRY org.eclipse.core.jobs 2 2 2018-10-31 17:34:46.615
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.analog.crosscore.debug.service.CommandControl$CommandSendJob
+
+!ENTRY org.eclipse.core.jobs 2 2 2018-10-31 17:34:46.628
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.analog.crosscore.debug.service.CommandControl$CommandSendJob
+!SESSION 2018-10-31 17:34:48.297 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2018-10-31 17:34:51.812
+!MESSAGE 2018-10-31 17:34:51, 809 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.1.0 w1807161
+
+
+!ENTRY com.analog.crosscore.core 1 0 2018-10-31 17:34:51.818
+!MESSAGE 2018-10-31 17:34:51, 817 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/; environment variable CCES_HOME: not set
+
+!SESSION 2018-10-31 17:36:07.469 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2018-10-31 17:41:46.722
+!MESSAGE 2018-10-31 17:41:46, 720 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.1.0 w1807161
+
+
+!ENTRY com.analog.crosscore.core 1 0 2018-10-31 17:41:46.727
+!MESSAGE 2018-10-31 17:41:46, 727 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/; environment variable CCES_HOME: not set
+
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-10-31 17:44:15.142
+!MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core0' (2 sources, 35 headers) in 4.68 sec: 710 declarations; 1,183 references; 1 unresolved inclusions; 2 syntax errors; 144 unresolved names (7.1%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-10-31 17:44:19.080
+!MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core1' (7 sources, 68 headers) in 3.93 sec: 6,498 declarations; 10,821 references; 0 unresolved inclusions; 2 syntax errors; 476 unresolved names (2.7%)
+
+!ENTRY com.analog.crosscore.system 4 0 2018-10-31 17:47:28.627
+!MESSAGE 2018-10-31 17:47:28, 627 [Thread: main] ERROR - Error while opening the selected example.
+
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/ChanFreq_SC584_SHARC_Core2' already exists.
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:314)
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:301)
+	at org.eclipse.core.internal.resources.Project.assertCreateRequirements(Project.java:52)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:263)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:247)
+	at com.analog.crosscore.system.utility.ExampleCopyDelegate.execute(ExampleCopyDelegate.java:326)
+	at com.analog.crosscore.ui.examplebrowser.ExampleProject.open(ExampleProject.java:52)
+	at com.analog.crosscore.ui.examplebrowser.ExampleBrowserFormPage.openSelected(ExampleBrowserFormPage.java:579)
+	at com.analog.crosscore.ui.examplebrowser.ExampleBrowserFormPage.doubleClick(ExampleBrowserFormPage.java:570)
+	at com.analog.crosscore.ui.examplebrowser.ResultsTree.notifyDoubleClick(ResultsTree.java:203)
+	at com.analog.crosscore.ui.examplebrowser.ResultsTree.access$14(ResultsTree.java:201)
+	at com.analog.crosscore.ui.examplebrowser.ResultsTree$3.doubleClick(ResultsTree.java:687)
+	at org.eclipse.jface.viewers.StructuredViewer$1.run(StructuredViewer.java:831)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil.lambda$0(JFaceUtil.java:44)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:173)
+	at org.eclipse.jface.viewers.StructuredViewer.fireDoubleClick(StructuredViewer.java:828)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.handleDoubleSelect(AbstractTreeViewer.java:1459)
+	at org.eclipse.jface.viewers.StructuredViewer$4.widgetDefaultSelected(StructuredViewer.java:1258)
+	at org.eclipse.jface.util.OpenStrategy.fireDefaultSelectionEvent(OpenStrategy.java:249)
+	at org.eclipse.jface.util.OpenStrategy.access$0(OpenStrategy.java:247)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:306)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:86)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4428)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4238)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3817)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1150)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1039)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:680)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:594)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:151)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+!SUBENTRY 1 org.eclipse.core.resources 4 374 2018-10-31 17:47:28.627
+!MESSAGE Resource '/ChanFreq_SC584_SHARC_Core2' already exists.
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-10-31 17:47:29.587
+!MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core2' (1 sources, 0 headers) in 0.178 sec: 3 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-10-31 17:47:51.661
+!MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core0' (2 sources, 35 headers) in 4.21 sec: 710 declarations; 1,183 references; 1 unresolved inclusions; 2 syntax errors; 144 unresolved names (7.1%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-10-31 17:47:55.807
+!MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core1' (7 sources, 68 headers) in 4.14 sec: 6,498 declarations; 10,821 references; 0 unresolved inclusions; 2 syntax errors; 476 unresolved names (2.7%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-10-31 17:47:56.553
+!MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core2' (1 sources, 0 headers) in 0.162 sec: 3 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-10-31 17:48:47.147
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-10-31 17:48:47.167
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY com.analog.crosscore.debug 4 10004 2018-10-31 17:49:10.039
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 5012 2018-10-31 17:49:10.061
+!MESSAGE Error in launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.createSession(LaunchDelegate.java:1229)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.launch(LaunchDelegate.java:733)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 com.analog.crosscore.debug 4 10004 2018-10-31 17:49:10.061
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 10004 2018-10-31 18:02:00.838
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 5012 2018-10-31 18:02:00.846
+!MESSAGE Error in launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.createSession(LaunchDelegate.java:1229)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.launch(LaunchDelegate.java:733)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 com.analog.crosscore.debug 4 10004 2018-10-31 18:02:00.846
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY org.eclipse.core.jobs 2 2 2018-10-31 18:08:07.026
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.analog.crosscore.debug.service.CommandControl$CommandSendJob
+
+!ENTRY org.eclipse.core.jobs 2 2 2018-10-31 18:08:07.153
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.analog.crosscore.debug.service.CommandControl$CommandSendJob
+!SESSION 2018-10-31 18:08:09.326 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2018-10-31 18:08:14.437
+!MESSAGE 2018-10-31 18:08:14, 435 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.1.0 w1807161
+
+
+!ENTRY com.analog.crosscore.core 1 0 2018-10-31 18:08:14.442
+!MESSAGE 2018-10-31 18:08:14, 442 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/; environment variable CCES_HOME: not set
+
+
+!ENTRY com.analog.crosscore.debug 4 10004 2018-10-31 18:08:32.823
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 5012 2018-10-31 18:08:32.838
+!MESSAGE Error in launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.createSession(LaunchDelegate.java:1229)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.launch(LaunchDelegate.java:733)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 com.analog.crosscore.debug 4 10004 2018-10-31 18:08:32.840
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-10-31 18:15:40.760
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-10-31 18:15:40.773
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY com.analog.crosscore.debug 4 10004 2018-10-31 18:15:41.015
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 5012 2018-10-31 18:15:41.022
+!MESSAGE Error in launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.createSession(LaunchDelegate.java:1229)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.launch(LaunchDelegate.java:733)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 com.analog.crosscore.debug 4 10004 2018-10-31 18:15:41.023
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 10004 2018-10-31 18:16:43.872
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 5012 2018-10-31 18:16:43.886
+!MESSAGE Error in launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.createSession(LaunchDelegate.java:1229)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.launch(LaunchDelegate.java:733)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 com.analog.crosscore.debug 4 10004 2018-10-31 18:16:43.886
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 10004 2018-10-31 18:19:58.486
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 5012 2018-10-31 18:19:58.491
+!MESSAGE Error in launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.createSession(LaunchDelegate.java:1229)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.launch(LaunchDelegate.java:733)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 com.analog.crosscore.debug 4 10004 2018-10-31 18:19:58.492
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY org.eclipse.core.resources 4 372 2018-10-31 18:21:06.883
+!MESSAGE Project 'ChanFreq_SC584_SHARC_Core0' is not open.
+
+!ENTRY org.eclipse.core.resources 4 372 2018-10-31 18:21:08.329
+!MESSAGE Project 'ChanFreq_SC584_SHARC_Core1' is not open.
+
+!ENTRY org.eclipse.core.resources 4 372 2018-10-31 18:21:09.486
+!MESSAGE Project 'ChanFreq_SC584_SHARC_Core2' is not open.
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-10-31 18:21:12.469
+!MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core0' (2 sources, 35 headers) in 4.28 sec: 710 declarations; 1,183 references; 1 unresolved inclusions; 2 syntax errors; 144 unresolved names (7.1%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-10-31 18:21:16.842
+!MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core1' (7 sources, 68 headers) in 4.36 sec: 6,498 declarations; 10,821 references; 0 unresolved inclusions; 2 syntax errors; 476 unresolved names (2.7%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-10-31 18:21:17.822
+!MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core2' (1 sources, 0 headers) in 0.168 sec: 3 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY com.analog.crosscore.debug 4 10004 2018-10-31 18:22:08.222
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 5012 2018-10-31 18:22:08.233
+!MESSAGE Error in launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.createSession(LaunchDelegate.java:1229)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.launch(LaunchDelegate.java:733)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 com.analog.crosscore.debug 4 10004 2018-10-31 18:22:08.233
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 10004 2018-10-31 18:24:53.663
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 5012 2018-10-31 18:24:53.672
+!MESSAGE Error in launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.createSession(LaunchDelegate.java:1229)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.launch(LaunchDelegate.java:733)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 com.analog.crosscore.debug 4 10004 2018-10-31 18:24:53.672
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 10004 2018-10-31 18:41:43.295
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x80048020
+Error Description: Selected emulator not detected
+
+!ENTRY com.analog.crosscore.debug 4 5012 2018-10-31 18:41:43.305
+!MESSAGE Error in launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: [TpsdkServer] Failed to connect to processor.
+
+Error: 0x80048020
+Error Description: Selected emulator not detected
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.createSession(LaunchDelegate.java:1229)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.launch(LaunchDelegate.java:733)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 com.analog.crosscore.debug 4 10004 2018-10-31 18:41:43.305
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x80048020
+Error Description: Selected emulator not detected
+
+!ENTRY com.analog.crosscore.debug 4 10004 2018-10-31 18:42:16.028
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 5012 2018-10-31 18:42:16.039
+!MESSAGE Error in launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.createSession(LaunchDelegate.java:1229)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.launch(LaunchDelegate.java:733)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 com.analog.crosscore.debug 4 10004 2018-10-31 18:42:16.039
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+!SESSION 2018-11-01 19:59:36.262 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-11-01 19:59:52.582
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-01 19:59:53.470
+!MESSAGE 2018-11-01 19:59:53, 469 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.1.0 w1807161
+
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-01 19:59:53.472
+!MESSAGE 2018-11-01 19:59:53, 472 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/; environment variable CCES_HOME: not set
+
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-11-01 20:01:42.624
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.ui 4 0 2018-11-01 20:01:42.640
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.ClassCastException: org.eclipse.launchbar.ui.internal.target.NewLaunchTargetWizard cannot be cast to org.eclipse.ui.IWorkbenchWizard
+	at org.eclipse.ui.internal.dialogs.WorkbenchWizardElement.createWizard(WorkbenchWizardElement.java:261)
+	at org.eclipse.ui.internal.actions.NewWizardShortcutAction.run(NewWizardShortcutAction.java:85)
+	at org.eclipse.ui.internal.quickaccess.WizardElement.execute(WizardElement.java:42)
+	at org.eclipse.ui.internal.quickaccess.SearchField$2.handleElementSelected(SearchField.java:198)
+	at org.eclipse.ui.internal.quickaccess.QuickAccessContents.handleSelection(QuickAccessContents.java:597)
+	at org.eclipse.ui.internal.quickaccess.QuickAccessContents.access$0(QuickAccessContents.java:587)
+	at org.eclipse.ui.internal.quickaccess.QuickAccessContents$4.mouseUp(QuickAccessContents.java:786)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:221)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:86)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4428)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4238)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3817)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1150)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1039)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:680)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:594)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:151)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-11-01 20:01:42.645
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.ui 4 0 2018-11-01 20:01:44.759
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.ClassCastException: org.eclipse.launchbar.ui.internal.target.NewLaunchTargetWizard cannot be cast to org.eclipse.ui.IWorkbenchWizard
+	at org.eclipse.ui.internal.dialogs.WorkbenchWizardElement.createWizard(WorkbenchWizardElement.java:261)
+	at org.eclipse.ui.internal.actions.NewWizardShortcutAction.run(NewWizardShortcutAction.java:85)
+	at org.eclipse.ui.internal.quickaccess.WizardElement.execute(WizardElement.java:42)
+	at org.eclipse.ui.internal.quickaccess.SearchField$2.handleElementSelected(SearchField.java:198)
+	at org.eclipse.ui.internal.quickaccess.QuickAccessContents.handleSelection(QuickAccessContents.java:597)
+	at org.eclipse.ui.internal.quickaccess.QuickAccessContents.access$0(QuickAccessContents.java:587)
+	at org.eclipse.ui.internal.quickaccess.QuickAccessContents$4.mouseUp(QuickAccessContents.java:786)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:221)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:86)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4428)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4238)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3817)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1150)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1039)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:680)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:594)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:151)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+
+!ENTRY org.eclipse.ui 4 0 2018-11-01 20:01:45.784
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.ClassCastException: org.eclipse.launchbar.ui.internal.target.NewLaunchTargetWizard cannot be cast to org.eclipse.ui.IWorkbenchWizard
+	at org.eclipse.ui.internal.dialogs.WorkbenchWizardElement.createWizard(WorkbenchWizardElement.java:261)
+	at org.eclipse.ui.internal.actions.NewWizardShortcutAction.run(NewWizardShortcutAction.java:85)
+	at org.eclipse.ui.internal.quickaccess.WizardElement.execute(WizardElement.java:42)
+	at org.eclipse.ui.internal.quickaccess.SearchField$2.handleElementSelected(SearchField.java:198)
+	at org.eclipse.ui.internal.quickaccess.QuickAccessContents.handleSelection(QuickAccessContents.java:597)
+	at org.eclipse.ui.internal.quickaccess.QuickAccessContents.access$0(QuickAccessContents.java:587)
+	at org.eclipse.ui.internal.quickaccess.QuickAccessContents$4.mouseUp(QuickAccessContents.java:786)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:221)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:86)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4428)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4238)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3817)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1150)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1039)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:680)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:594)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:151)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+
+!ENTRY com.analog.crosscore.debug 4 10004 2018-11-01 20:08:08.207
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 5012 2018-11-01 20:08:08.220
+!MESSAGE Error in launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.createSession(LaunchDelegate.java:1229)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.launch(LaunchDelegate.java:733)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 com.analog.crosscore.debug 4 10004 2018-11-01 20:08:08.221
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY org.eclipse.core.jobs 2 2 2018-11-01 21:33:23.828
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.analog.crosscore.debug.service.CommandControl$CommandSendJob
+!SESSION 2018-11-02 15:27:47.716 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-02 15:28:00.858
+!MESSAGE 2018-11-02 15:28:00, 853 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.1.0 w1807161
+
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-02 15:28:00.876
+!MESSAGE 2018-11-02 15:28:00, 872 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/; environment variable CCES_HOME: not set
+
+
+!ENTRY org.eclipse.ui.browser 2 0 2018-11-02 15:35:51.106
+!MESSAGE Internal browser is not available: Invalid thread access
+!SESSION 2018-11-04 10:26:45.282 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2018-11-04 10:27:35.197
+!MESSAGE Unable to acquire PluginConverter service during generation for: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2\ADSP-SC5xx_EZ-KIT\eclipse\features\com.analog.crosscore.help.bsp.sc5xx.feature_2.0.2.201712120653.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2018-11-04 10:27:35.254
+!MESSAGE Unable to acquire PluginConverter service during generation for: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2\ADSP-SC5xx_EZ-KIT\eclipse\features\com.analog.crosscore.help.bsp.sc5xx.feature_2.0.2.201712120653.jar.
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-04 10:28:36.846
+!MESSAGE 2018-11-04 10:28:36, 845 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.0.0 w1804121
+
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-04 10:28:36.852
+!MESSAGE 2018-11-04 10:28:36, 852 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.0/; environment variable CCES_HOME: not set
+
+!SESSION 2018-11-04 10:52:49.426 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-04 10:52:57.129
+!MESSAGE 2018-11-04 10:52:57, 128 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.0.0 w1804121
+
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-04 10:52:57.137
+!MESSAGE 2018-11-04 10:52:57, 136 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.0/; environment variable CCES_HOME: not set
+
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:29.783
+!MESSAGE Error reading help keyword index file /"com.analog.crosscore.help.multicore.mcapi.mn/index.xml, URL = jar:file:/C:/Analog Devices/CrossCore Embedded Studio 2.8.0/Eclipse/plugins/com.analog.crosscore.help.multicore.mcapi.mn_2.0.0.201412161753.jar!/index.xml" at line 1. The processing instruction target matching "[xX][mM][lL]" is not allowed.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 8; The processing instruction target matching "[xX][mM][lL]" is not allowed.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:257)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at org.eclipse.help.internal.dynamic.DocumentReader.read(DocumentReader.java:56)
+	at org.eclipse.help.internal.dynamic.DocumentReader.read(DocumentReader.java:44)
+	at org.eclipse.help.internal.index.IndexFileParser.parse(IndexFileParser.java:35)
+	at org.eclipse.help.internal.index.IndexFileProvider.getIndexContributions(IndexFileProvider.java:43)
+	at org.eclipse.help.internal.index.IndexManager.readIndexContributions(IndexManager.java:88)
+	at org.eclipse.help.internal.index.IndexManager.getIndex(IndexManager.java:55)
+	at org.eclipse.help.internal.webapp.servlet.IndexFragmentServlet$Serializer.<init>(IndexFragmentServlet.java:144)
+	at org.eclipse.help.internal.webapp.servlet.IndexFragmentServlet.processRequest(IndexFragmentServlet.java:119)
+	at org.eclipse.help.internal.webapp.servlet.IndexFragmentServlet.doGet(IndexFragmentServlet.java:74)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.equinox.http.registry.internal.ServletManager$ServletWrapper.service(ServletManager.java:180)
+	at org.eclipse.equinox.http.servlet.internal.HttpServiceRuntimeImpl$LegacyServlet.service(HttpServiceRuntimeImpl.java:1223)
+	at org.eclipse.equinox.http.servlet.internal.registration.EndpointRegistration.service(EndpointRegistration.java:148)
+	at org.eclipse.equinox.http.servlet.internal.servlet.ResponseStateHandler.processRequest(ResponseStateHandler.java:62)
+	at org.eclipse.equinox.http.servlet.internal.context.DispatchTargets.doDispatch(DispatchTargets.java:131)
+	at org.eclipse.equinox.http.servlet.internal.servlet.ProxyServlet.service(ProxyServlet.java:74)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.equinox.http.jetty.internal.HttpServerManager$InternalHttpServiceServlet.service(HttpServerManager.java:284)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:841)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1253)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:168)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:166)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1155)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.eclipse.jetty.server.Server.handle(Server.java:564)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:317)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:110)
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)
+	at org.eclipse.jetty.util.thread.Invocable.invokePreferred(Invocable.java:128)
+	at org.eclipse.jetty.util.thread.Invocable$InvocableExecutor.invoke(Invocable.java:222)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:294)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:199)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:672)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:590)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:29.817
+!MESSAGE Error reading help keyword index file /"com.analog.crosscore.help.ssdd.mn/index.xml" (skipping file)
+!STACK 0
+java.io.FileNotFoundException
+	at org.eclipse.help.internal.index.IndexFileParser.parse(IndexFileParser.java:42)
+	at org.eclipse.help.internal.index.IndexFileProvider.getIndexContributions(IndexFileProvider.java:43)
+	at org.eclipse.help.internal.index.IndexManager.readIndexContributions(IndexManager.java:88)
+	at org.eclipse.help.internal.index.IndexManager.getIndex(IndexManager.java:55)
+	at org.eclipse.help.internal.webapp.servlet.IndexFragmentServlet$Serializer.<init>(IndexFragmentServlet.java:144)
+	at org.eclipse.help.internal.webapp.servlet.IndexFragmentServlet.processRequest(IndexFragmentServlet.java:119)
+	at org.eclipse.help.internal.webapp.servlet.IndexFragmentServlet.doGet(IndexFragmentServlet.java:74)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.equinox.http.registry.internal.ServletManager$ServletWrapper.service(ServletManager.java:180)
+	at org.eclipse.equinox.http.servlet.internal.HttpServiceRuntimeImpl$LegacyServlet.service(HttpServiceRuntimeImpl.java:1223)
+	at org.eclipse.equinox.http.servlet.internal.registration.EndpointRegistration.service(EndpointRegistration.java:148)
+	at org.eclipse.equinox.http.servlet.internal.servlet.ResponseStateHandler.processRequest(ResponseStateHandler.java:62)
+	at org.eclipse.equinox.http.servlet.internal.context.DispatchTargets.doDispatch(DispatchTargets.java:131)
+	at org.eclipse.equinox.http.servlet.internal.servlet.ProxyServlet.service(ProxyServlet.java:74)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.equinox.http.jetty.internal.HttpServerManager$InternalHttpServiceServlet.service(HttpServerManager.java:284)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:841)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1253)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:168)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:166)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1155)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.eclipse.jetty.server.Server.handle(Server.java:564)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:317)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:110)
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)
+	at org.eclipse.jetty.util.thread.Invocable.invokePreferred(Invocable.java:128)
+	at org.eclipse.jetty.util.thread.Invocable$InvocableExecutor.invoke(Invocable.java:222)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:294)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:199)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:672)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:590)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.251
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.25.html#1680708" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.259
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/includes_r_isr_sharc_Group_I_ConditionalComputeAndMoveOrModify_dita.14.080.html#1718728" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.263
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/includes_r_isr_sharc_Group_I_ConditionalComputeAndMoveOrModify_dita.14.087.html#1722856" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.269
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/includes_r_isr_sharc_Group_II_ConditionalProgramFlowControl_dita.15.24.html#1692981" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.274
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/includes_r_isr_sharc_Group_II_ConditionalProgramFlowControl_dita.15.42.html#1702237" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.279
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/includes_r_isr_sharc_Group_II_ConditionalProgramFlowControl_dita.15.51.html#1705882" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.284
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/SHARC+_regf_astatx.html#1749041" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.289
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/SHARC+_regf_astaty.html#1749063" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.295
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.04.html#1679954" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.300
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.07.html" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.306
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.08.html" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.312
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/includes_r_isr_sharc_Group_I_ConditionalComputeAndMoveOrModify_dita.14.087.html#1722856" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.317
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/includes_r_isr_sharc_Group_I_ConditionalComputeAndMoveOrModify_dita.14.080.html#1718728" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.324
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/includes_r_isr_sharc_Group_II_ConditionalProgramFlowControl_dita.15.24.html#1692981" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.330
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/includes_r_isr_sharc_Group_II_ConditionalProgramFlowControl_dita.15.42.html#1702237" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.335
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/includes_r_isr_sharc_Group_II_ConditionalProgramFlowControl_dita.15.51.html#1705882" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.341
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/includes_r_isr_sharc_Group_I_ConditionalComputeAndMoveOrModify_dita.14.140.html#1743319" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.347
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/includes_r_isr_sharc_Group_I_ConditionalComputeAndMoveOrModify_dita.14.149.html#1745829" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.352
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.25.html#1680708" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.357
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.10.html" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.362
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.11.html" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.367
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.07.html" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.373
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.15.html" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.379
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.16.html" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.385
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.32.html#1680926" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.390
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.17.html#1680352" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.396
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.21.html#1680450" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.401
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.22.html#1680498" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.406
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.03.html#1679925" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.411
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.70.html#1682114" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.416
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.23.html#1680552" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.422
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.24.html#1680608" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.426
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.26.html#1680730" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.430
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.28.html#1680778" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.435
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.29.html#1680810" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.441
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.30.html#1680842" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.448
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.31.html#1680878" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.454
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.32.html#1680926" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.459
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.03.html#1679925" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.464
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.37.html#1681034" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.469
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.03.html#1679925" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.475
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.39.html#1681082" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.480
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.40.html#1681108" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.485
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.49.html#1681383" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.490
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.41.html#1681150" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.495
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.42.html#1681186" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.500
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.43.html#1681218" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.505
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.23.html#1680552" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.510
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.45.html#1681279" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.515
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.46.html#1681321" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.521
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.48.html#1681357" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.526
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.53.html#1681514" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.534
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.41.html#1681150" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.540
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.49.html#1681383" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.545
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.50.html#1681430" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.552
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.53.html#1681514" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.559
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.62.html#1681886" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.564
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.54.html#1681540" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.569
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.52.html#1681472" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.575
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.46.html#1681321" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.579
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.55.html#1681566" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.584
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.55.html#1681566" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.590
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.56.html#1681637" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.594
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.57.html#1681663" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.599
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.58.html#1681711" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.604
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/includes_r_isr_sharc_Group_I_ConditionalComputeAndMoveOrModify_dita.14.023.html#1693250" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.608
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/includes_r_isr_sharc_Group_I_ConditionalComputeAndMoveOrModify_dita.14.028.html#1694596" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.612
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/includes_r_isr_sharc_Group_I_ConditionalComputeAndMoveOrModify_dita.14.033.html#1695893" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.618
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.59.html#1681731" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.623
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.60.html#1681788" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.628
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.58.html#1681711" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.633
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.62.html#1681886" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.639
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.70.html#1682114" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.645
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/includes_r_isr_sharc_Group_I_ConditionalComputeAndMoveOrModify_dita.14.140.html#1743319" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.650
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/includes_r_isr_sharc_Group_I_ConditionalComputeAndMoveOrModify_dita.14.149.html#1745829" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.657
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.59.html#1681731" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.662
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.25.html#1680708" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.667
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.63.html#1681905" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.672
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.67.html#1681988" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.677
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.69.html#1682046" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.682
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.68.html#1682014" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.688
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.25.html#1680708" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.694
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/SHARC+_regf_astatx.html#1749041" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.699
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/SHARC+_regf_astaty.html#1749063" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.704
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.70.html#1682114" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.709
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.71.html#1682134" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.713
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.07.html" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.718
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.32.html#1680926" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.723
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.70.html#1682114" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.728
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.79.html#1682334" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.734
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.72.html#1682192" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.742
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.05.html" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.748
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.44.html#1681244" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.755
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.76.html#1682266" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.761
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.60.html#1681788" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.766
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.71.html#1682134" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.772
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.78.html#1682308" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.777
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.79.html#1682334" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.783
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.80.html#1682380" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.help 4 0 2018-11-04 10:56:30.788
+!MESSAGE Unable to look up label for help keyword index topic "/com.analog.crosscore.help.sharcplus.core.prm/html/r_glossary_Glossary_dita.38.81.html#1682406" with missing "label" attribute (topic does not exist in table of contents; using href as label)
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-11-04 11:09:28.523
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-11-04 11:09:28.533
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY com.analog.crosscore.debug 4 10004 2018-11-04 11:09:35.143
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+
+!ENTRY com.analog.crosscore.debug 4 5012 2018-11-04 11:09:35.164
+!MESSAGE Error in launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.createSession(LaunchDelegate.java:1229)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.launch(LaunchDelegate.java:733)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 com.analog.crosscore.debug 4 10004 2018-11-04 11:09:35.165
+!MESSAGE [TpsdkServer] Failed to connect to processor.
+
+Error: 0x8004804b
+Error Description: Failed passing JTAG loop test
+!SESSION 2018-11-04 11:17:27.564 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-11-04 11:17:35.198
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-04 11:17:35.690
+!MESSAGE 2018-11-04 11:17:35, 689 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.0.0 w1804121
+
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-04 11:17:35.698
+!MESSAGE 2018-11-04 11:17:35, 698 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.0/; environment variable CCES_HOME: not set
+

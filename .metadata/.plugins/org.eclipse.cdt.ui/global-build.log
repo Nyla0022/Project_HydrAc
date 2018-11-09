@@ -1,0 +1,502 @@
+12:43:24 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+'Building file: ../system/startup_ldf/app_IVT.s'
+'Invoking: CrossCore SHARC Assembler'
+easm21k -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -si-revision any -g -DCORE1 -D_DEBUG @includes-f6cb3f6e1a51fd86e453ea91d7536ff1.txt -absolute-path-dependencies -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_IVT.d" -o "system/startup_ldf/app_IVT.doj" "../system/startup_ldf/app_IVT.s"
+'Finished building: ../system/startup_ldf/app_IVT.s'
+' '
+'Building file: ../system/startup_ldf/app_heaptab.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-c1f281025691995752de4fc7a640f29e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/startup_ldf/app_heaptab.d" -o "system/startup_ldf/app_heaptab.doj" "../system/startup_ldf/app_heaptab.c"
+'Finished building: ../system/startup_ldf/app_heaptab.c'
+' '
+'Building file: ../system/startup_ldf/app_startup.s'
+'Invoking: CrossCore SHARC Assembler'
+easm21k -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -si-revision any -g -DCORE1 -D_DEBUG @includes-f6cb3f6e1a51fd86e453ea91d7536ff1.txt -absolute-path-dependencies -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_startup.d" -o "system/startup_ldf/app_startup.doj" "../system/startup_ldf/app_startup.s"
+'Finished building: ../system/startup_ldf/app_startup.s'
+' '
+'Building file: ../system/sru/sru_config.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-c1f281025691995752de4fc7a640f29e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/sru/sru_config.d" -o "system/sru/sru_config.doj" "../system/sru/sru_config.c"
+'Finished building: ../system/sru/sru_config.c'
+' '
+'Building file: C:/Analog Devices/ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2/ADSP-SC5xx_EZ-KIT/src/drivers/adc/adau1977/adi_adau1977.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-c1f281025691995752de4fc7a640f29e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.d" -o "system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.doj" "C:/Analog Devices/ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2/ADSP-SC5xx_EZ-KIT/src/drivers/adc/adau1977/adi_adau1977.c"
+'Finished building: C:/Analog Devices/ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2/ADSP-SC5xx_EZ-KIT/src/drivers/adc/adau1977/adi_adau1977.c'
+' '
+'Building file: ../system/adi_initialize.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-c1f281025691995752de4fc7a640f29e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/adi_initialize.d" -o "system/adi_initialize.doj" "../system/adi_initialize.c"
+'Finished building: ../system/adi_initialize.c'
+' '
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/Channel Frequency (SC584 SHARC)/SC584/SoftConfig_SC584.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-c1f281025691995752de4fc7a640f29e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/SoftConfig_SC584.d" -o "src/SoftConfig_SC584.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/Channel Frequency (SC584 SHARC)/SC584/SoftConfig_SC584.c"
+'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/Channel Frequency (SC584 SHARC)/SC584/SoftConfig_SC584.c'
+' '
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/Channel Frequency (SC584 SHARC)/calc_freq.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-c1f281025691995752de4fc7a640f29e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/calc_freq.d" -o "src/calc_freq.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/Channel Frequency (SC584 SHARC)/calc_freq.c"
+'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/Channel Frequency (SC584 SHARC)/calc_freq.c'
+' '
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/Channel Frequency (SC584 SHARC)/chan_freq.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-c1f281025691995752de4fc7a640f29e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/chan_freq.d" -o "src/chan_freq.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/Channel Frequency (SC584 SHARC)/chan_freq.c"
+'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/Channel Frequency (SC584 SHARC)/chan_freq.c'
+' '
+'Building target: ChanFreq_SC584_SHARC_Core1.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision any -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core1/system/startup_ldf/app.ldf -no-mem -map ChanFreq_SC584_SHARC_Core1.map.xml -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o ChanFreq_SC584_SHARC_Core1.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: ChanFreq_SC584_SHARC_Core1.dxe'
+' '
+12:43:43 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+'Building file: ../system/adi_initialize.c'
+'Invoking: CrossCore ARM Bare Metal C Compiler'
+arm-none-eabi-gcc -g -gdwarf-2 -ffunction-sections -fdata-sections -DCORE0 -D_DEBUG @includes-3456151b277e10f662c1123350fcde6a.txt -Wall -c -mproc=ADSP-SC584 -msi-revision=any -MMD -MP -MF"system/adi_initialize.d" -o  "system/adi_initialize.o" "../system/adi_initialize.c"
+'Finished building: ../system/adi_initialize.c'
+' '
+'Building file: ../src/chan_freq_Core0.c'
+'Invoking: CrossCore ARM Bare Metal C Compiler'
+arm-none-eabi-gcc -g -gdwarf-2 -ffunction-sections -fdata-sections -DCORE0 -D_DEBUG @includes-3456151b277e10f662c1123350fcde6a.txt -Wall -c -mproc=ADSP-SC584 -msi-revision=any -MMD -MP -MF"src/chan_freq_Core0.d" -o  "src/chan_freq_Core0.o" "../src/chan_freq_Core0.c"
+'Finished building: ../src/chan_freq_Core0.c'
+' '
+'Building target: ChanFreq_SC584_SHARC_Core0'
+'Invoking: CrossCore ARM Bare Metal C Linker'
+arm-none-eabi-gcc -mproc=ADSP-SC584 -msi-revision=any -Wl,--gc-sections -mdebug-libs -o  "ChanFreq_SC584_SHARC_Core0" @input-file.txt -lm
+'Finished building target: ChanFreq_SC584_SHARC_Core0'
+' '
+12:43:46 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+'Building file: ../system/startup_ldf/app_IVT.s'
+'Invoking: CrossCore SHARC Assembler'
+easm21k -file-attr ProjectName="ChanFreq_SC584_SHARC_Core2" -proc ADSP-SC584 -si-revision any -g -DCORE2 -D_DEBUG -absolute-path-dependencies -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_IVT.d" -o "system/startup_ldf/app_IVT.doj" "../system/startup_ldf/app_IVT.s"
+'Finished building: ../system/startup_ldf/app_IVT.s'
+' '
+'Building file: ../system/startup_ldf/app_heaptab.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core2" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE2 -D_DEBUG -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/startup_ldf/app_heaptab.d" -o "system/startup_ldf/app_heaptab.doj" "../system/startup_ldf/app_heaptab.c"
+'Finished building: ../system/startup_ldf/app_heaptab.c'
+' '
+'Building file: ../system/startup_ldf/app_startup.s'
+'Invoking: CrossCore SHARC Assembler'
+easm21k -file-attr ProjectName="ChanFreq_SC584_SHARC_Core2" -proc ADSP-SC584 -si-revision any -g -DCORE2 -D_DEBUG -absolute-path-dependencies -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_startup.d" -o "system/startup_ldf/app_startup.doj" "../system/startup_ldf/app_startup.s"
+'Finished building: ../system/startup_ldf/app_startup.s'
+' '
+'Building file: ../system/sru/sru_config.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core2" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE2 -D_DEBUG -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/sru/sru_config.d" -o "system/sru/sru_config.doj" "../system/sru/sru_config.c"
+'Finished building: ../system/sru/sru_config.c'
+' '
+'Building file: ../system/pinmux/GeneratedSources/pinmux_config.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core2" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE2 -D_DEBUG -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/pinmux/GeneratedSources/pinmux_config.d" -o "system/pinmux/GeneratedSources/pinmux_config.doj" "../system/pinmux/GeneratedSources/pinmux_config.c"
+'Finished building: ../system/pinmux/GeneratedSources/pinmux_config.c'
+' '
+'Building file: ../system/adi_initialize.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core2" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE2 -D_DEBUG -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/adi_initialize.d" -o "system/adi_initialize.doj" "../system/adi_initialize.c"
+'Finished building: ../system/adi_initialize.c'
+' '
+'Building file: ../src/empty_main.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core2" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE2 -D_DEBUG -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/empty_main.d" -o "src/empty_main.doj" "../src/empty_main.c"
+'Finished building: ../src/empty_main.c'
+' '
+'Building target: ChanFreq_SC584_SHARC_Core2.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision any -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core2/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core2/Debug/system/startup_ldf -flags-link -MDCORE2,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o ChanFreq_SC584_SHARC_Core2.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: ChanFreq_SC584_SHARC_Core2.dxe'
+' '
+17:18:43 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+make: Nothing to be done for `all'.
+17:18:44 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+'Building target: ChanFreq_SC584_SHARC_Core0'
+'Invoking: CrossCore ARM Bare Metal C Linker'
+arm-none-eabi-gcc -mproc=ADSP-SC584 -msi-revision=any -Wl,--gc-sections -mdebug-libs -o  "ChanFreq_SC584_SHARC_Core0" @input-file.txt -lm
+'Finished building target: ChanFreq_SC584_SHARC_Core0'
+' '
+17:18:45 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+17:21:44 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+make: Nothing to be done for `all'.
+17:21:45 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+17:21:46 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+17:33:35 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+make: Nothing to be done for `all'.
+17:33:35 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+17:33:37 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+17:48:48 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+'Building file: ../system/startup_ldf/app_IVT.s'
+'Invoking: CrossCore SHARC Assembler'
+easm21k -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -si-revision any -g -DCORE1 -D_DEBUG @includes-173fa1b0f0d442b1f80214509b0b6049.txt -absolute-path-dependencies -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_IVT.d" -o "system/startup_ldf/app_IVT.doj" "../system/startup_ldf/app_IVT.s"
+'Finished building: ../system/startup_ldf/app_IVT.s'
+' '
+'Building file: ../system/startup_ldf/app_heaptab.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/startup_ldf/app_heaptab.d" -o "system/startup_ldf/app_heaptab.doj" "../system/startup_ldf/app_heaptab.c"
+'Finished building: ../system/startup_ldf/app_heaptab.c'
+' '
+'Building file: ../system/startup_ldf/app_startup.s'
+'Invoking: CrossCore SHARC Assembler'
+easm21k -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -si-revision any -g -DCORE1 -D_DEBUG @includes-173fa1b0f0d442b1f80214509b0b6049.txt -absolute-path-dependencies -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_startup.d" -o "system/startup_ldf/app_startup.doj" "../system/startup_ldf/app_startup.s"
+'Finished building: ../system/startup_ldf/app_startup.s'
+' '
+'Building file: ../system/sru/sru_config.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/sru/sru_config.d" -o "system/sru/sru_config.doj" "../system/sru/sru_config.c"
+'Finished building: ../system/sru/sru_config.c'
+' '
+'Building file: C:/Analog Devices/ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2/ADSP-SC5xx_EZ-KIT/src/drivers/adc/adau1977/adi_adau1977.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.d" -o "system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.doj" "C:/Analog Devices/ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2/ADSP-SC5xx_EZ-KIT/src/drivers/adc/adau1977/adi_adau1977.c"
+'Finished building: C:/Analog Devices/ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2/ADSP-SC5xx_EZ-KIT/src/drivers/adc/adau1977/adi_adau1977.c'
+' '
+'Building file: ../system/adi_initialize.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/adi_initialize.d" -o "system/adi_initialize.doj" "../system/adi_initialize.c"
+'Finished building: ../system/adi_initialize.c'
+' '
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/SC584/SoftConfig_SC584.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/SoftConfig_SC584.d" -o "src/SoftConfig_SC584.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/SC584/SoftConfig_SC584.c"
+'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/SC584/SoftConfig_SC584.c'
+' '
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/calc_freq.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/calc_freq.d" -o "src/calc_freq.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/calc_freq.c"
+'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/calc_freq.c'
+' '
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/chan_freq.d" -o "src/chan_freq.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c"
+'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
+' '
+'Building target: ChanFreq_SC584_SHARC_Core1.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision any -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core1/system/startup_ldf/app.ldf -no-mem -map ChanFreq_SC584_SHARC_Core1.map.xml -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o ChanFreq_SC584_SHARC_Core1.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: ChanFreq_SC584_SHARC_Core1.dxe'
+' '
+17:49:05 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+'Building file: ../system/adi_initialize.c'
+'Invoking: CrossCore ARM Bare Metal C Compiler'
+arm-none-eabi-gcc -g -gdwarf-2 -ffunction-sections -fdata-sections -DCORE0 -D_DEBUG @includes-ef5c7d26c9c6f1394edc5de9683a7391.txt -Wall -c -mproc=ADSP-SC584 -msi-revision=any -MMD -MP -MF"system/adi_initialize.d" -o  "system/adi_initialize.o" "../system/adi_initialize.c"
+'Finished building: ../system/adi_initialize.c'
+' '
+'Building file: ../src/chan_freq_Core0.c'
+'Invoking: CrossCore ARM Bare Metal C Compiler'
+arm-none-eabi-gcc -g -gdwarf-2 -ffunction-sections -fdata-sections -DCORE0 -D_DEBUG @includes-ef5c7d26c9c6f1394edc5de9683a7391.txt -Wall -c -mproc=ADSP-SC584 -msi-revision=any -MMD -MP -MF"src/chan_freq_Core0.d" -o  "src/chan_freq_Core0.o" "../src/chan_freq_Core0.c"
+'Finished building: ../src/chan_freq_Core0.c'
+' '
+'Building target: ChanFreq_SC584_SHARC_Core0'
+'Invoking: CrossCore ARM Bare Metal C Linker'
+arm-none-eabi-gcc -mproc=ADSP-SC584 -msi-revision=any -Wl,--gc-sections -mdebug-libs -o  "ChanFreq_SC584_SHARC_Core0" @input-file.txt -lm
+'Finished building target: ChanFreq_SC584_SHARC_Core0'
+' '
+17:49:07 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+'Building file: ../src/empty_main.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core2" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE2 -D_DEBUG -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/empty_main.d" -o "src/empty_main.doj" "../src/empty_main.c"
+'Finished building: ../src/empty_main.c'
+' '
+'Building target: ChanFreq_SC584_SHARC_Core2.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision any -no-mem -flags-link -MDCORE2,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o ChanFreq_SC584_SHARC_Core2.dxe @input-file.txt   -flags-link -od,.\.
+'Finished building target: ChanFreq_SC584_SHARC_Core2.dxe'
+' '
+18:01:18 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+make: Nothing to be done for `all'.
+18:01:19 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+18:01:19 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+18:01:58 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+make: Nothing to be done for `all'.
+18:01:59 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+18:01:59 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+18:08:30 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+make: Nothing to be done for `all'.
+18:08:30 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+'Building target: ChanFreq_SC584_SHARC_Core0'
+'Invoking: CrossCore ARM Bare Metal C Linker'
+arm-none-eabi-gcc -mproc=ADSP-SC584 -msi-revision=any -Wl,--gc-sections -mdebug-libs -o  "ChanFreq_SC584_SHARC_Core0" @input-file.txt -lm
+'Finished building target: ChanFreq_SC584_SHARC_Core0'
+' '
+18:08:31 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+18:21:47 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+'Building file: ../system/startup_ldf/app_IVT.s'
+'Invoking: CrossCore SHARC Assembler'
+easm21k -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -si-revision any -g -DCORE1 -D_DEBUG @includes-173fa1b0f0d442b1f80214509b0b6049.txt -absolute-path-dependencies -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_IVT.d" -o "system/startup_ldf/app_IVT.doj" "../system/startup_ldf/app_IVT.s"
+'Finished building: ../system/startup_ldf/app_IVT.s'
+' '
+'Building file: ../system/startup_ldf/app_heaptab.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/startup_ldf/app_heaptab.d" -o "system/startup_ldf/app_heaptab.doj" "../system/startup_ldf/app_heaptab.c"
+'Finished building: ../system/startup_ldf/app_heaptab.c'
+' '
+'Building file: ../system/startup_ldf/app_startup.s'
+'Invoking: CrossCore SHARC Assembler'
+easm21k -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -si-revision any -g -DCORE1 -D_DEBUG @includes-173fa1b0f0d442b1f80214509b0b6049.txt -absolute-path-dependencies -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_startup.d" -o "system/startup_ldf/app_startup.doj" "../system/startup_ldf/app_startup.s"
+'Finished building: ../system/startup_ldf/app_startup.s'
+' '
+'Building file: ../system/sru/sru_config.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/sru/sru_config.d" -o "system/sru/sru_config.doj" "../system/sru/sru_config.c"
+'Finished building: ../system/sru/sru_config.c'
+' '
+'Building file: C:/Analog Devices/ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2/ADSP-SC5xx_EZ-KIT/src/drivers/adc/adau1977/adi_adau1977.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.d" -o "system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.doj" "C:/Analog Devices/ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2/ADSP-SC5xx_EZ-KIT/src/drivers/adc/adau1977/adi_adau1977.c"
+'Finished building: C:/Analog Devices/ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2/ADSP-SC5xx_EZ-KIT/src/drivers/adc/adau1977/adi_adau1977.c'
+' '
+'Building file: ../system/adi_initialize.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/adi_initialize.d" -o "system/adi_initialize.doj" "../system/adi_initialize.c"
+'Finished building: ../system/adi_initialize.c'
+' '
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/SC584/SoftConfig_SC584.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/SoftConfig_SC584.d" -o "src/SoftConfig_SC584.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/SC584/SoftConfig_SC584.c"
+'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/SC584/SoftConfig_SC584.c'
+' '
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/calc_freq.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/calc_freq.d" -o "src/calc_freq.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/calc_freq.c"
+'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/calc_freq.c'
+' '
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/chan_freq.d" -o "src/chan_freq.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c"
+'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
+' '
+'Building target: ChanFreq_SC584_SHARC_Core1.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision any -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core1/system/startup_ldf/app.ldf -no-mem -map ChanFreq_SC584_SHARC_Core1.map.xml -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o ChanFreq_SC584_SHARC_Core1.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: ChanFreq_SC584_SHARC_Core1.dxe'
+' '
+18:22:03 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+'Building file: ../system/adi_initialize.c'
+'Invoking: CrossCore ARM Bare Metal C Compiler'
+arm-none-eabi-gcc -g -gdwarf-2 -ffunction-sections -fdata-sections -DCORE0 -D_DEBUG @includes-ef5c7d26c9c6f1394edc5de9683a7391.txt -Wall -c -mproc=ADSP-SC584 -msi-revision=any -MMD -MP -MF"system/adi_initialize.d" -o  "system/adi_initialize.o" "../system/adi_initialize.c"
+'Finished building: ../system/adi_initialize.c'
+' '
+'Building file: ../src/chan_freq_Core0.c'
+'Invoking: CrossCore ARM Bare Metal C Compiler'
+arm-none-eabi-gcc -g -gdwarf-2 -ffunction-sections -fdata-sections -DCORE0 -D_DEBUG @includes-ef5c7d26c9c6f1394edc5de9683a7391.txt -Wall -c -mproc=ADSP-SC584 -msi-revision=any -MMD -MP -MF"src/chan_freq_Core0.d" -o  "src/chan_freq_Core0.o" "../src/chan_freq_Core0.c"
+'Finished building: ../src/chan_freq_Core0.c'
+' '
+'Building target: ChanFreq_SC584_SHARC_Core0'
+'Invoking: CrossCore ARM Bare Metal C Linker'
+arm-none-eabi-gcc -mproc=ADSP-SC584 -msi-revision=any -Wl,--gc-sections -mdebug-libs -o  "ChanFreq_SC584_SHARC_Core0" @input-file.txt -lm
+'Finished building target: ChanFreq_SC584_SHARC_Core0'
+' '
+18:22:05 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+'Building file: ../src/empty_main.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core2" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE2 -D_DEBUG -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/empty_main.d" -o "src/empty_main.doj" "../src/empty_main.c"
+'Finished building: ../src/empty_main.c'
+' '
+'Building target: ChanFreq_SC584_SHARC_Core2.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision any -no-mem -flags-link -MDCORE2,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o ChanFreq_SC584_SHARC_Core2.dxe @input-file.txt   -flags-link -od,.\.
+'Finished building target: ChanFreq_SC584_SHARC_Core2.dxe'
+' '
+18:24:51 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+make: Nothing to be done for `all'.
+18:24:51 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+18:24:52 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+18:37:15 **** Clean-only build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make clean 
+clean  "./system/adi_initialize.o"  "./src/chan_freq_Core0.o" "./system/adi_initialize.d"  "./src/chan_freq_Core0.d" ChanFreq_SC584_SHARC_Core0
+' '
+18:37:16 **** Clean-only build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make clean 
+clean  linker_log.xml  "./system/startup_ldf/app_IVT.doj"  "./system/startup_ldf/app_heaptab.doj"  "./system/startup_ldf/app_startup.doj"  "./system/sru/sru_config.doj"  "./system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.doj"  "./system/adi_initialize.doj"  "./src/SoftConfig_SC584.doj"  "./src/calc_freq.doj"  "./src/chan_freq.doj" "./system/startup_ldf/app_IVT.d"  "./system/startup_ldf/app_startup.d" "./system/startup_ldf/app_heaptab.d"  "./system/sru/sru_config.d"  "./system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.d"  "./system/adi_initialize.d"  "./src/SoftConfig_SC584.d"  "./src/calc_freq.d"  "./src/chan_freq.d" ChanFreq_SC584_SHARC_Core1.dxe
+' '
+18:37:17 **** Clean-only build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make clean 
+clean  linker_log.xml  "./src/empty_main.doj" "./src/empty_main.d" ChanFreq_SC584_SHARC_Core2.dxe
+' '
+18:37:19 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+'Building file: ../system/startup_ldf/app_IVT.s'
+'Invoking: CrossCore SHARC Assembler'
+easm21k -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -si-revision any -g -DCORE1 -D_DEBUG @includes-173fa1b0f0d442b1f80214509b0b6049.txt -absolute-path-dependencies -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_IVT.d" -o "system/startup_ldf/app_IVT.doj" "../system/startup_ldf/app_IVT.s"
+'Finished building: ../system/startup_ldf/app_IVT.s'
+' '
+'Building file: ../system/startup_ldf/app_heaptab.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/startup_ldf/app_heaptab.d" -o "system/startup_ldf/app_heaptab.doj" "../system/startup_ldf/app_heaptab.c"
+'Finished building: ../system/startup_ldf/app_heaptab.c'
+' '
+'Building file: ../system/startup_ldf/app_startup.s'
+'Invoking: CrossCore SHARC Assembler'
+easm21k -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -si-revision any -g -DCORE1 -D_DEBUG @includes-173fa1b0f0d442b1f80214509b0b6049.txt -absolute-path-dependencies -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_startup.d" -o "system/startup_ldf/app_startup.doj" "../system/startup_ldf/app_startup.s"
+'Finished building: ../system/startup_ldf/app_startup.s'
+' '
+'Building file: ../system/sru/sru_config.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/sru/sru_config.d" -o "system/sru/sru_config.doj" "../system/sru/sru_config.c"
+'Finished building: ../system/sru/sru_config.c'
+' '
+'Building file: C:/Analog Devices/ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2/ADSP-SC5xx_EZ-KIT/src/drivers/adc/adau1977/adi_adau1977.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.d" -o "system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.doj" "C:/Analog Devices/ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2/ADSP-SC5xx_EZ-KIT/src/drivers/adc/adau1977/adi_adau1977.c"
+'Finished building: C:/Analog Devices/ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2/ADSP-SC5xx_EZ-KIT/src/drivers/adc/adau1977/adi_adau1977.c'
+' '
+'Building file: ../system/adi_initialize.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/adi_initialize.d" -o "system/adi_initialize.doj" "../system/adi_initialize.c"
+'Finished building: ../system/adi_initialize.c'
+' '
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/SC584/SoftConfig_SC584.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/SoftConfig_SC584.d" -o "src/SoftConfig_SC584.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/SC584/SoftConfig_SC584.c"
+'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/SC584/SoftConfig_SC584.c'
+' '
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/calc_freq.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/calc_freq.d" -o "src/calc_freq.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/calc_freq.c"
+'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/calc_freq.c'
+' '
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/chan_freq.d" -o "src/chan_freq.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c"
+'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
+' '
+'Building target: ChanFreq_SC584_SHARC_Core1.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision any -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core1/system/startup_ldf/app.ldf -no-mem -map ChanFreq_SC584_SHARC_Core1.map.xml -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o ChanFreq_SC584_SHARC_Core1.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: ChanFreq_SC584_SHARC_Core1.dxe'
+' '
+18:37:36 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+'Building file: ../system/adi_initialize.c'
+'Invoking: CrossCore ARM Bare Metal C Compiler'
+arm-none-eabi-gcc -g -gdwarf-2 -ffunction-sections -fdata-sections -DCORE0 -D_DEBUG @includes-ef5c7d26c9c6f1394edc5de9683a7391.txt -Wall -c -mproc=ADSP-SC584 -msi-revision=any -MMD -MP -MF"system/adi_initialize.d" -o  "system/adi_initialize.o" "../system/adi_initialize.c"
+'Finished building: ../system/adi_initialize.c'
+' '
+'Building file: ../src/chan_freq_Core0.c'
+'Invoking: CrossCore ARM Bare Metal C Compiler'
+arm-none-eabi-gcc -g -gdwarf-2 -ffunction-sections -fdata-sections -DCORE0 -D_DEBUG @includes-ef5c7d26c9c6f1394edc5de9683a7391.txt -Wall -c -mproc=ADSP-SC584 -msi-revision=any -MMD -MP -MF"src/chan_freq_Core0.d" -o  "src/chan_freq_Core0.o" "../src/chan_freq_Core0.c"
+'Finished building: ../src/chan_freq_Core0.c'
+' '
+'Building target: ChanFreq_SC584_SHARC_Core0'
+'Invoking: CrossCore ARM Bare Metal C Linker'
+arm-none-eabi-gcc -mproc=ADSP-SC584 -msi-revision=any -Wl,--gc-sections -mdebug-libs -o  "ChanFreq_SC584_SHARC_Core0" @input-file.txt -lm
+'Finished building target: ChanFreq_SC584_SHARC_Core0'
+' '
+18:37:37 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+'Building file: ../src/empty_main.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core2" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE2 -D_DEBUG -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/empty_main.d" -o "src/empty_main.doj" "../src/empty_main.c"
+'Finished building: ../src/empty_main.c'
+' '
+'Building target: ChanFreq_SC584_SHARC_Core2.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision any -no-mem -flags-link -MDCORE2,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o ChanFreq_SC584_SHARC_Core2.dxe @input-file.txt   -flags-link -od,.\.
+'Finished building target: ChanFreq_SC584_SHARC_Core2.dxe'
+' '
+18:38:23 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+18:39:08 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+18:40:14 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+18:40:40 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+18:41:40 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+make: Nothing to be done for `all'.
+18:41:41 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+18:41:42 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+18:42:13 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+make: Nothing to be done for `all'.
+18:42:14 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+18:42:15 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+20:08:03 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+make: Nothing to be done for `all'.
+20:08:05 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+'Building target: ChanFreq_SC584_SHARC_Core0'
+'Invoking: CrossCore ARM Bare Metal C Linker'
+arm-none-eabi-gcc -mproc=ADSP-SC584 -msi-revision=any -Wl,--gc-sections -mdebug-libs -o  "ChanFreq_SC584_SHARC_Core0" @input-file.txt -lm
+'Finished building target: ChanFreq_SC584_SHARC_Core0'
+' '
+20:08:07 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+20:14:17 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+make: Nothing to be done for `all'.
+20:14:18 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+20:14:19 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+11:09:29 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+make: Nothing to be done for `all'.
+11:09:31 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+'Building target: ChanFreq_SC584_SHARC_Core0'
+'Invoking: CrossCore ARM Bare Metal C Linker'
+arm-none-eabi-gcc -mproc=ADSP-SC584 -msi-revision=any -Wl,--gc-sections -mdebug-libs -o  "ChanFreq_SC584_SHARC_Core0" @input-file.txt -lm
+'Finished building target: ChanFreq_SC584_SHARC_Core0'
+' '
+11:09:33 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.

@@ -1,0 +1,2 @@
+"src/chan_freq_Core0.o"
+"system/adi_initialize.o"

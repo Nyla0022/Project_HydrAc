@@ -1,0 +1,1 @@
+C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core2/Debug/src/empty_main.doj: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core2/src/empty_main.c
