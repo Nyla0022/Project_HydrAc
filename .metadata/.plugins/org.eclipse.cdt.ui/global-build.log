@@ -939,3 +939,12 @@ make: Nothing to be done for `all'.
 01:00:37 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
 make all 
 make: Nothing to be done for `all'.
+01:12:47 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+make: Nothing to be done for `all'.
+01:12:48 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+01:12:49 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
