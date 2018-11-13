@@ -17,9 +17,9 @@ uint32_t detectFreq(int32_t inSignal[]);
 #include <math.h>
 #include <stdint.h>
 
-#define FFTSIZE    128u
+#define FFTSIZE    256u
 #define THRESHOLD  40.0f
-#define SAMPFREQ   48000u
+#define SAMPFREQ   192000u
 
 uint32_t detectFreq(int32_t inSignal[])
 {

@@ -50,7 +50,7 @@ to the terms of the associated Analog Devices License Agreement.
 #define NUM_CHANNELS				(4u)
 #define BYTES_PER_SAMPLE 			(4u)
 #define NUM_SAMPLES 				(128u)
-
+#define ADC_CONV_F 					330e-9 //ADC Conversion Factor
 /* Macro to set buffer size */
 #define AUDIO_BUFFER_SIZE 	        (NUM_SAMPLES * NUM_CHANNELS)
 

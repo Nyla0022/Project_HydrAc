@@ -256,14 +256,9 @@ int main()
 	}
 
 
-	printf("\n    Chan 1       Chan 2       Chan 3      Chan 4\n");
-	for (i=0u; i<NUM_SAMPLES; i++)
-	{
-		printf("%10d (%f), %10d, %10d, %10d\n ", (int)Chan1Data[i], (double)((int)Chan1Data[i]* 339e-9),(int)Chan2Data[i],
-		       (int)Chan3Data[i], (int)Chan4Data[i]);
-
-
-
+	printf("\nChan 1         Chan 1(Volts)\n");
+	for (i=0u; i<NUM_SAMPLES; i++){
+		printf("%10d\t%f\n ", (int)Chan1Data[i], (double)((int)Chan1Data[i]* ADC_CONV_F));
 	}
 
 	printf("\n");
@@ -271,15 +266,6 @@ int main()
 	/* calculate the detected freq (SHARC only) */
 	freq = detectFreq(&Chan1Data[0]);
 	printf("Chan1 freq: %d\n", (int)freq);
-
-	freq = detectFreq(&Chan2Data[0]);
-	printf("Chan2 freq: %d\n", (int)freq);
-
-	freq = detectFreq(&Chan3Data[0]);
-	printf("Chan3 freq: %d\n", (int)freq);
-
-	freq = detectFreq(&Chan4Data[0]);
-	printf("Chan4 freq: %d\n", (int)freq);
 
 	printf("\n");
 
@@ -440,7 +426,7 @@ uint32_t Adau1977Init(void)
 		return FAILURE;
 	}
 
-	result = adi_adau1977_SetSampleRate(phAdau1977, ADI_ADAU1977_SAMPLE_RATE_48000HZ);
+	result = adi_adau1977_SetSampleRate(phAdau1977, ADI_ADAU1977_SAMPLE_RATE_192000HZ);
 	if (result != ADI_ADAU1977_SUCCESS)
 	{
 		DBG_MSG("ADAU1977: adi_adau1977_SetSampleRate failed\n");
