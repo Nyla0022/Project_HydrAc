@@ -256,9 +256,9 @@ int main()
 	}
 
 
-	printf("\nChan 1         Chan 1(Volts)\n");
+	printf("\nChan 1(Volts)\tChan 2(Volts)\n");
 	for (i=0u; i<NUM_SAMPLES; i++){
-		printf("%10d\t%f\n ", (int)Chan1Data[i], (double)((int)Chan1Data[i]* ADC_CONV_F));
+		printf("%f\t%f\n ",(double)((int)Chan1Data[i]* ADC_CONV_F), (double)((int)Chan2Data[i]* ADC_CONV_F));
 	}
 
 	printf("\n");
@@ -448,7 +448,7 @@ uint32_t Adau1977Init(void)
 	}
 
 	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL1, false); //was true
-	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL2, true); //was true
+	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL2, false); //was true
 	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL3, true); //was true
 	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL4, true); //was true
 
@@ -475,7 +475,7 @@ uint32_t Adau1977Init(void)
 		    true);
 
 	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL1, 122u); //122
-	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL2, 0xa0u);
+	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL2, 122u);
 	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL3, 0xa0u);
 	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL4, 0xa0u); //144u
 

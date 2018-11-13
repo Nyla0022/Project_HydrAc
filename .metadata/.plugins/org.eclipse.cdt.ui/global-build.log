@@ -842,3 +842,100 @@ make: Nothing to be done for `all'.
 23:51:19 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
 make all 
 make: Nothing to be done for `all'.
+00:19:48 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/chan_freq.d" -o "src/chan_freq.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c"
+'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
+' '
+'Building target: ChanFreq_SC584_SHARC_Core1.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision any -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core1/system/startup_ldf/app.ldf -no-mem -map ChanFreq_SC584_SHARC_Core1.map.xml -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o ChanFreq_SC584_SHARC_Core1.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: ChanFreq_SC584_SHARC_Core1.dxe'
+' '
+00:19:53 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+00:19:54 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+00:28:27 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/chan_freq.d" -o "src/chan_freq.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c"
+"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 261: cc0008:  error: missing closing quote
+  		printf("%10d\t%f%10d\t%f\n ", (int)Chan1Data[i], (double)((int)Chan1Data[i]* ADC_CONV_F), (int)Chan2Data[i], (double)((int)Chan2'Data[i]* ADC_CONV_F));
+  		                                                                                                                                ^
+
+"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 261: cc0020:  error: identifier "Chan2" is undefined
+  		printf("%10d\t%f%10d\t%f\n ", (int)Chan1Data[i], (double)((int)Chan1Data[i]* ADC_CONV_F), (int)Chan2Data[i], (double)((int)Chan2'Data[i]* ADC_CONV_F));
+  		                                                                                                                           ^
+
+"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 261: cc0018:  error: expected a ")"
+  		printf("%10d\t%f%10d\t%f\n ", (int)Chan1Data[i], (double)((int)Chan1Data[i]* ADC_CONV_F), (int)Chan2Data[i], (double)((int)Chan2'Data[i]* ADC_CONV_F));
+  		                                                                                                                                ^
+
+"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 262: cc0018:  error: expected a ")"
+  	}
+  	^
+
+"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 262: cc0065:  error: expected a ";"
+  	}
+  	^
+
+5 errors detected in the compilation of "C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c".
+cc3089: fatal error: Compilation failed (code:2)
+make: *** [src/chan_freq.doj] Error 1
+00:28:28 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+00:28:29 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+00:29:31 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/chan_freq.d" -o "src/chan_freq.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c"
+'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
+' '
+'Building target: ChanFreq_SC584_SHARC_Core1.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision any -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core1/system/startup_ldf/app.ldf -no-mem -map ChanFreq_SC584_SHARC_Core1.map.xml -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o ChanFreq_SC584_SHARC_Core1.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: ChanFreq_SC584_SHARC_Core1.dxe'
+' '
+00:29:35 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+00:29:36 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+00:57:57 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+make: Nothing to be done for `all'.
+00:57:58 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+00:57:59 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+01:00:31 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/chan_freq.d" -o "src/chan_freq.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c"
+'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
+' '
+'Building target: ChanFreq_SC584_SHARC_Core1.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision any -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core1/system/startup_ldf/app.ldf -no-mem -map ChanFreq_SC584_SHARC_Core1.map.xml -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o ChanFreq_SC584_SHARC_Core1.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: ChanFreq_SC584_SHARC_Core1.dxe'
+' '
+01:00:36 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+01:00:37 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
