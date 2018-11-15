@@ -2172,3 +2172,17 @@ java.lang.NullPointerException
 
 !ENTRY org.eclipse.cdt.core 1 0 2018-11-15 14:32:30.120
 !MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core2' (1 sources, 0 headers) in 0.184 sec: 3 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+!SESSION 2018-11-15 15:22:29.549 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-15 15:22:33.831
+!MESSAGE 2018-11-15 15:22:33, 829 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.1.0 w1807161
+
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-15 15:22:33.839
+!MESSAGE 2018-11-15 15:22:33, 839 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/; environment variable CCES_HOME: not set
+

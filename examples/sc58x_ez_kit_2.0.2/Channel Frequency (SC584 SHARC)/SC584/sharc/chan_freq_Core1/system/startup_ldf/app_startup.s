@@ -1,5 +1,5 @@
 /*
-** ADSP-SC584 startup code generated on Oct 31, 2018 at 18:21:12.
+** ADSP-SC584 startup code generated on Nov 15, 2018 at 15:52:46.
 */
 /*
 ** Copyright (C) 2000-2017 Analog Devices Inc., All Rights Reserved.
@@ -180,6 +180,15 @@ start:
       */
 .end_of_user_code_after_setup:
 /*$VDSG<insert-code-after-setup>                                */
+
+      /*
+      ** Set a noncacheable range for the SDRAM memory that is allocated to
+      ** the ARM core.
+      */
+      .EXTERN __lib_set_noncacheable_arm_cache_range.;
+      CJUMP __lib_set_noncacheable_arm_cache_range. (DB);
+         DM(I7, M7) = R2;
+         DM(I7, M7) = PC;
 
       /*
       ** Enable the ILOPI interrupt to support illegal opcode detection.
