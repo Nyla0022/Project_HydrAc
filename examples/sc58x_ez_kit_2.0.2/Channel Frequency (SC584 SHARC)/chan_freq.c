@@ -267,6 +267,10 @@ int main()
 	freq = detectFreq(&Chan1Data[0]);
 	printf("Chan1 freq: %d\n", (int)freq);
 
+	freq = detectFreq(&Chan2Data[0]);
+	printf("Chan1 freq: %d\n", (int)freq);
+
+
 	printf("\n");
 
 	if (bError == false)
