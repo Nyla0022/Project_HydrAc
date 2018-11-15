@@ -433,7 +433,7 @@ uint32_t Adau1977Init(void)
 		return FAILURE;
 	}
 
-	result = adi_adau1977_SetWordWidth(phAdau1977, ADI_ADAU1977_WORD_WIDTH_24);
+	result = adi_adau1977_SetWordWidth(phAdau1977, ADI_ADAU1977_WORD_WIDTH_16);
 	if (result != ADI_ADAU1977_SUCCESS)
 	{
 		DBG_MSG("ADAU1977: adi_adau1977_SetWordWidth failed\n");
