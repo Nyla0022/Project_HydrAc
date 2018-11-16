@@ -81,7 +81,7 @@ static volatile uint32_t AdcCount = 0u;
 volatile bool bError = false;
 
 ADI_CACHE_ALIGN static int32_t AdcBuf1[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int32_t)];
-//ADI_CACHE_ALIGN static int32_t AdcBuf2[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int32_t)];
+ADI_CACHE_ALIGN static int32_t AdcBuf2[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int32_t)];
 
 #define MAXDATA  (AUDIO_BUFFER_SIZE*4u)
 
@@ -217,13 +217,13 @@ int main()
 		bError = true;
 		DBG_MSG("submit buffer failed\n");
 	}
-/*
-	 Submit ADC buffer2
+
+	 //Submit ADC buffer2
 	if(adi_adau1977_SubmitBuffer(phAdau1977, &AdcBuf2[0u], AUDIO_BUFFER_SIZE*BYTES_PER_SAMPLE) != ADI_ADAU1977_SUCCESS)
 	{
 		bError = true;
 		DBG_MSG("submit buffer failed\n");
-	}*/
+	}
 
 	/* Enable ADC data flow */
 	if(adi_adau1977_Enable(phAdau1977, true) != ADI_ADAU1977_SUCCESS)
@@ -258,7 +258,7 @@ int main()
 	}
 
 
-	printf("\nChan 1[v]\tChan 2[v]\tChan 1[v]\tChan 2[v]\n");
+	printf("\nChan 1[v]\tChan 2[v]\tChan 3[v]\tChan 4[v]\n");
 	for (i=0u; i<NUM_SAMPLES; i++){
 		printf("%f\t%f\t%f\t%f\n ",(double)((int)Chan1Data[i]* ADC_CONV_F_16), (double)((int)Chan2Data[i]* ADC_CONV_F_16),(double)((int)Chan3Data[i]* ADC_CONV_F_16), (double)((int)Chan4Data[i]* ADC_CONV_F_16));
 	}
@@ -451,8 +451,8 @@ uint32_t Adau1977Init(void)
 
 	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL1, false); //was true
 	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL2, false); //was true
-	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL3, true); //was true
-	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL4, true); //was true
+	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL3, false); //was true
+	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL4, false); //was true
 
 	/* setup mic */
 #if defined(ENABLE_MIC_BIAS)
@@ -551,32 +551,35 @@ void AdcCallback(void *pCBParam, uint32_t nEvent, void *pArg)
 		}
 
 		/* copy single channel data to buffer */
-		for (n=0u; n<NUM_SAMPLES; n++)
+		for (n=0u; n<(NUM_SAMPLES); n++)
 		{
 			Chan1Data[nSample] = *pData++;  /* primary slot1 */
-			Chan1Data[nSample] = *pData++;  /* primary slot1 */
+			Chan2Data[nSample] = *pData++;  /* primary slot1 */
 			//Chan3Data[nSample] = *pData++;  /* secondary slot1 */
-			Chan2Data[nSample] = *pData++;  /* primary slot2 */
-			Chan2Data[nSample] = *pData++;  /* primary slot2 */
 			//Chan4Data[nSample] = *pData++;  /* secondary slot2 */
+
 			nSample++;
+
+			if (nSample == MAXDATA)
+			{
+				nSample = 0u;
+				//printf("reset samples count");
+			}
+
+		}
+/*
+		for (n=0u; n<(NUM_SAMPLES/2); n++)
+		{
+			Chan2Data[nSample++] = *pData++;   primary slot2
+			Chan2Data[nSample] = *pData++;   primary slot2
 
 			if (nSample == MAXDATA)
 			{
 				nSample = 0u;
 			}
 
-			/*if (adi_adau1977_GetChanClipStatus(phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL1, &clip) != ADI_ADAU1977_SUCCESS)
-							{
-								bError = true;
-								DBG_MSG("ADC clipping status reading failed\n");
-							}
 
-			if(clip)
-				printf("\t CHANNEL CLIPPED \n");*/
-
-
-		}
+		}*/
 		break;
 	default:
 		bError = true;
