@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
 <?xml-stylesheet type="text/xsl" href="file:///C:/Analog Devices/CrossCore Embedded Studio 2.8.1/System/linker_log.xsl"?>
-<DOCUMENT gen_time='Thu Nov 15 21:53:26 2018
+<DOCUMENT gen_time='Thu Nov 15 22:17:38 2018
 '>
-<MSG id='0465D538' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFE1A0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio0']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[cache_set_range_ba.doj](seg_int_data)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0465C038' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFDFE0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio1']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[default_heap_ba.doj](seg_dmda)
@@ -24,13 +24,13 @@
     libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0465C658' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFD2C0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio1_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
     libc.dlb[sincosine_data_XI.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0465D0D8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFE280' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio2']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\SoftConfig_SC584.doj(seg_dmda)
@@ -64,14 +64,14 @@
     libdrv.dlb[adi_sport.doj](seg_dmda)
     libdrv.dlb[adi_twi.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0465C738' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFD3A0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio2_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[errno.doj](seg_dmda)
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
     libc.dlb[sincosine_data_XI.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0465C818' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFE360' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio3']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\SoftConfig_SC584.doj(seg_dmda)
@@ -135,7 +135,7 @@
     libdrv.dlb[adi_sport.doj](seg_dmda)
     libdrv.dlb[adi_twi.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0465D1B8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFDE20' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio3_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[errno.doj](seg_dmda)
@@ -144,12 +144,12 @@
     libc.dlb[sincosine_data_XI.doj](seg_dmda)
     libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0465C8F8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFD1E0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio0']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[cache_set_range_ba.doj](seg_int_data)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0465D458' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFD720' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio1']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[default_heap_ba.doj](seg_dmda)
@@ -166,13 +166,13 @@
     libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0465DED8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFE440' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio1_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
     libc.dlb[sincosine_data_XI.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0465DC38' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFE520' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio2']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\SoftConfig_SC584.doj(seg_dmda)
@@ -206,14 +206,14 @@
     libdrv.dlb[adi_sport.doj](seg_dmda)
     libdrv.dlb[adi_twi.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0465DDF8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFCF40' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio2_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[errno.doj](seg_dmda)
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
     libc.dlb[sincosine_data_XI.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0465DD18' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFD480' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio3']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\SoftConfig_SC584.doj(seg_dmda)
@@ -277,7 +277,7 @@
     libdrv.dlb[adi_sport.doj](seg_dmda)
     libdrv.dlb[adi_twi.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0455B910' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFDF00' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio3_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[errno.doj](seg_dmda)
@@ -286,23 +286,23 @@
     libc.dlb[sincosine_data_XI.doj](seg_dmda)
     libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552E6F8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFE0C0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block2_pm_data_prio2']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\calc_freq.doj(seg_pmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552E1B8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFE600' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block2_pm_data_prio3']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\calc_freq.doj(seg_pmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552D498' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFE7C0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio0']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[cache_set_range_ba.doj](seg_int_code)
     libc.dlb[flush_data_buffer_ba.doj](seg_int_code)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552DFF8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFE6E0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio1']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[adi_fatal_error.doj](seg_pmco)
@@ -317,7 +317,7 @@
     libdsp.dlb[fft_magnitude_simd.doj](seg_pmco)
     libdsp.dlb[rfftn_simd.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552E378' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFDB80' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio2']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     app_startup.doj(seg_pmco)
@@ -345,7 +345,7 @@
     libdsp.dlb[fft_magnitude_simd.doj](seg_pmco)
     libdsp.dlb[rfftn_simd.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552E0D8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFD020' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio3']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     app_startup.doj(seg_pmco)
@@ -377,7 +377,7 @@
     libdsp.dlb[fft_magnitude_simd.doj](seg_pmco)
     libdsp.dlb[rfftn_simd.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552DF18' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFD9C0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_nw_code']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[cache_set_range_ba.doj](seg_int_code)
@@ -411,7 +411,7 @@
     libdsp.dlb[fft_magnitude_simd.doj](seg_pmco)
     libdsp.dlb[rfftn_simd.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552D658' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFCCA0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block2_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\SoftConfig_SC584.doj(seg_dmda)
@@ -476,7 +476,7 @@
     libdrv.dlb[adi_sport.doj](seg_dmda)
     libdrv.dlb[adi_twi.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552E7D8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFCD80' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block2_data_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[errno.doj](seg_dmda)
@@ -485,17 +485,17 @@
     libc.dlb[sincosine_data_XI.doj](seg_dmda)
     libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552D578' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFCE60' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_pm_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\calc_freq.doj(seg_pmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552DB98' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFD560' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_pm_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\calc_freq.doj(seg_pmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552D3B8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFD640' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\SoftConfig_SC584.doj(seg_dmda)
@@ -560,7 +560,7 @@
     libdrv.dlb[adi_sport.doj](seg_dmda)
     libdrv.dlb[adi_twi.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552DD58' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFD800' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_data_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[errno.doj](seg_dmda)
@@ -569,12 +569,12 @@
     libc.dlb[sincosine_data_XI.doj](seg_dmda)
     libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552E298' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFD8E0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_pm_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\calc_freq.doj(seg_pmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552EB58' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFE8A0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_nw_code']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     app_startup.doj(seg_pmco)
@@ -606,7 +606,7 @@
     libdsp.dlb[fft_magnitude_simd.doj](seg_pmco)
     libdsp.dlb[rfftn_simd.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552DC78' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFE980' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\SoftConfig_SC584.doj(seg_dmda)
@@ -670,7 +670,7 @@
     libdrv.dlb[adi_sport.doj](seg_dmda)
     libdrv.dlb[adi_twi.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552EA78' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFEB40' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_data_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[errno.doj](seg_dmda)
@@ -679,12 +679,12 @@
     libc.dlb[sincosine_data_XI.doj](seg_dmda)
     libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552D738' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03DFEA60' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_pm_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\calc_freq.doj(seg_pmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552DE38' mid='li3050' type='Informational' suppressed=''>
+<MSG id='04B962D8' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_nw_code']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     app_startup.doj(seg_pmco)
@@ -716,20 +716,20 @@
     libdsp.dlb[fft_magnitude_simd.doj](seg_pmco)
     libdsp.dlb[rfftn_simd.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552E458' mid='li3050' type='Informational' suppressed=''>
+<MSG id='04B961F8' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_cpp_eh_gdt_nw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     app_startup.doj(.gdt)
     app_startup.doj(.gdt)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552D038' mid='li3050' type='Informational' suppressed=''>
+<MSG id='04B96658' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_cpp_ctors_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     app_startup.doj(seg_ctdml)
     app_startup.doj(seg_ctdml)
     libc.dlb[set_c.doj](seg_ctdml)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552D818' mid='li3050' type='Informational' suppressed=''>
+<MSG id='04B978B8' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\SoftConfig_SC584.doj(seg_dmda)
@@ -793,7 +793,7 @@
     libdrv.dlb[adi_sport.doj](seg_dmda)
     libdrv.dlb[adi_twi.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552D118' mid='li3050' type='Informational' suppressed=''>
+<MSG id='04B971B8' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_data_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[errno.doj](seg_dmda)
@@ -802,12 +802,12 @@
     libc.dlb[sincosine_data_XI.doj](seg_dmda)
     libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552E618' mid='li3050' type='Informational' suppressed=''>
+<MSG id='04B963B8' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_pm_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\calc_freq.doj(seg_pmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552D1F8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='04B97538' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_data2']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\SoftConfig_SC584.doj(seg_dmda)
@@ -871,7 +871,7 @@
     libdrv.dlb[adi_sport.doj](seg_dmda)
     libdrv.dlb[adi_twi.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552E538' mid='li3050' type='Informational' suppressed=''>
+<MSG id='04B96C78' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_data2_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[errno.doj](seg_dmda)
@@ -880,7 +880,7 @@
     libc.dlb[sincosine_data_XI.doj](seg_dmda)
     libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='0552D8F8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='04B96498' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_pm_data2']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\calc_freq.doj(seg_pmda)]]></EXTENDED_INFO>

@@ -2,13 +2,13 @@
 <?xml-stylesheet type="text/xsl" href="file:///C:/Analog Devices/CrossCore Embedded Studio 2.8.1/System/linker_map_ss1.xsl"?>
 <!DOCTYPE DOCUMENT SYSTEM "file:///C:/Analog Devices/CrossCore Embedded Studio 2.8.1/System/linker_map.dtd">
 <DOCUMENT>
-<LINKPROJECT guid='0012b3d082184694e' id='01661960' name='SC584_CORE_1' orig_file_name='ChanFreq_SC584_SHARC_Core1.dxe' architecture='ADSP-SC584' >
+<LINKPROJECT guid='0015334dc66e65145' id='005B93F0' name='SC584_CORE_1' orig_file_name='ChanFreq_SC584_SHARC_Core1.dxe' architecture='ADSP-SC584' >
 <FILE_NAME><![CDATA[ChanFreq_SC584_SHARC_Core1.dxe]]></FILE_NAME>
-<MEMORY id='03899070' name='mem_iv_code' start_address='0x90000' end_address='0x900a7' type='PM' qualifier='RAM' externalqualifier='' width='0x30' words_used='0x80' words_unused='0x28' >
+<MEMORY id='02E424E0' name='mem_iv_code' start_address='0x90000' end_address='0x900a7' type='PM' qualifier='RAM' externalqualifier='' width='0x30' words_used='0x80' words_unused='0x28' >
 <OUTPUT_SECTIONS>
-<OUTPUT_SECTION name='dxe_iv_code' id='054DB6A8' memory_id='03899070' type='SHT_PROGBITS' start_address='0x90000' word_size='0x80' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_iv_code' id='04ADF3A0' memory_id='02E424E0' type='SHT_PROGBITS' start_address='0x90000' word_size='0x80' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='01705B58' name='iv_code' start_address='0x90000' size='0x80' element_at='0x0' >
+<INPUT_SECTION id='005A9E70' name='iv_code' start_address='0x90000' size='0x80' element_at='0x0' >
 <INPUT_FILE><![CDATA[system\startup_ldf\app_IVT.doj]]></INPUT_FILE>
 <SYMBOL name='___int_EMUI' address='0x90000' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[__int_EMUI]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='___interrupt_table' address='0x90000' size='0x80' binding='LOCAL'><DEMANGLED_NAME><![CDATA[__interrupt_table]]></DEMANGLED_NAME></SYMBOL>
@@ -40,99 +40,99 @@
 </OUTPUT_SECTION>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03898F20' name='mem_block0_bw' start_address='0x2403f0' end_address='0x26ffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x2fc10' words_unused='0x0' >
+<MEMORY id='02E425C0' name='mem_block0_bw' start_address='0x2403f0' end_address='0x26ffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x2fc10' words_unused='0x0' >
 <OUTPUT_SECTIONS>
-<OUTPUT_SECTION name='dxe_block0_stack_and_heap_reserve' id='054DB4F8' memory_id='03898F20' type='SHT_NOBITS' start_address='0x2403f0' word_size='0x0' word_size_unmapped='0x0' word_size_reserved='0x1000' >
+<OUTPUT_SECTION name='dxe_block0_stack_and_heap_reserve' id='04ADF748' memory_id='02E425C0' type='SHT_NOBITS' start_address='0x2403f0' word_size='0x0' word_size_unmapped='0x0' word_size_reserved='0x1000' >
 <INPUT_SECTIONS>
 </INPUT_SECTIONS>
 </OUTPUT_SECTION>
-<OUTPUT_SECTION name='dxe_block0_data_prio0_bw' id='054DBC00' memory_id='03898F20' type='SHT_PROGBITS' start_address='0x2403f0' word_size='0x68' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_block0_data_prio0_bw' id='04ADF550' memory_id='02E425C0' type='SHT_PROGBITS' start_address='0x2403f0' word_size='0x68' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='054773F8' name='seg_int_data' start_address='0x2403f0' size='0x68' element_at='0x0' >
+<INPUT_SECTION id='04A6B678' name='seg_int_data' start_address='0x2403f0' size='0x68' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[cache_set_range_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='range_regs.' address='0x2403f0' size='0x60' binding='LOCAL'><DEMANGLED_NAME><![CDATA[range_regs]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='rr_may_be_noncacheable.0.' address='0x240450' size='0x8' binding='LOCAL'><DEMANGLED_NAME><![CDATA[rr_may_be_noncacheable.0]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
 </INPUT_SECTIONS>
 </OUTPUT_SECTION>
-<OUTPUT_SECTION name='dxe_block0_data_prio1' id='054DD3A0' memory_id='03898F20' type='SHT_PROGBITS' start_address='0x90117' word_size='0xc' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_block0_data_prio1' id='04AE14D0' memory_id='02E425C0' type='SHT_PROGBITS' start_address='0x90117' word_size='0xc' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='048E6DB0' name='seg_dmda' start_address='0x90117' size='0x2' element_at='0x0' >
+<INPUT_SECTION id='03EB49D8' name='seg_dmda' start_address='0x90117' size='0x2' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[int_dispatcher_215XX_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='__DispatcherSaveI7' address='0x90117' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[_DispatcherSaveI7]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='__DispatcherSaveB7' address='0x90118' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[_DispatcherSaveB7]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05474AB8' name='seg_dmda' start_address='0x90119' size='0xa' element_at='0x0' >
+<INPUT_SECTION id='04A68F38' name='seg_dmda' start_address='0x90119' size='0xa' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[sincosine_data_XI.doj]]]></INPUT_FILE>
 <SYMBOL name='__sinecosine_data' address='0x90119' size='0xa' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[_sinecosine_data]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
 </INPUT_SECTIONS>
 </OUTPUT_SECTION>
-<OUTPUT_SECTION name='dxe_block0_data_prio1_bw' id='054DD478' memory_id='03898F20' type='SHT_PROGBITS' start_address='0x24048c' word_size='0xf40' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_block0_data_prio1_bw' id='04AE0E10' memory_id='02E425C0' type='SHT_PROGBITS' start_address='0x24048c' word_size='0xf40' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='05477B78' name='seg_dmda' start_address='0x24048c' size='0x4' element_at='0x0' >
+<INPUT_SECTION id='04A6BAB8' name='seg_dmda' start_address='0x24048c' size='0x4' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[default_heap_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='__default_heap.' address='0x24048c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__default_heap]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E7130' name='seg_dmda' start_address='0x240490' size='0x200' element_at='0x0' >
+<INPUT_SECTION id='03EB5218' name='seg_dmda' start_address='0x240490' size='0x200' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[dispatched_handler_data_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='__sys_int_mapping_table.' address='0x240490' size='0x200' binding='WEAK'><DEMANGLED_NAME><![CDATA[__sys_int_mapping_table]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E6DF0' name='seg_dmda' start_address='0x240690' size='0x8a8' element_at='0x0' >
+<INPUT_SECTION id='03EB4D58' name='seg_dmda' start_address='0x240690' size='0x8a8' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[dispatched_handler_table_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='adi_dispatched_int_vector_table_size.' address='0x240690' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[adi_dispatched_int_vector_table_size]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='_dispatcher_table.' address='0x240698' size='0x8a0' binding='WEAK'><DEMANGLED_NAME><![CDATA[_dispatcher_table]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05475D78' name='seg_dmda' start_address='0x240f38' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A69978' name='seg_dmda' start_address='0x240f38' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[flush_data_buffer_ba.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='05475CB8' name='seg_dmda' start_address='0x240f38' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A6A078' name='seg_dmda' start_address='0x240f38' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[free_ba.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='054775B8' name='seg_dmda' start_address='0x240f38' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A6B178' name='seg_dmda' start_address='0x240f38' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[heap_find_block_ba.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='054746B8' name='seg_dmda' start_address='0x240f38' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A68578' name='seg_dmda' start_address='0x240f38' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[heap_malloc_ba.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='054741B8' name='seg_dmda' start_address='0x240f38' size='0x4' element_at='0x0' >
+<INPUT_SECTION id='04A685F8' name='seg_dmda' start_address='0x240f38' size='0x4' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[heap_num_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='__installed_heap_num.' address='0x240f38' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__installed_heap_num]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05475FB8' name='seg_dmda' start_address='0x240f40' size='0x28' element_at='0x0' >
+<INPUT_SECTION id='04A69A38' name='seg_dmda' start_address='0x240f40' size='0x28' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[heaps_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='__max_heap_num.' address='0x240f40' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__max_heap_num]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='__heaps.' address='0x240f48' size='0x20' binding='WEAK'><DEMANGLED_NAME><![CDATA[__heaps]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05476838' name='seg_dmda' start_address='0x240f68' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A6A2B8' name='seg_dmda' start_address='0x240f68' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[malloc_ba.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E9B70' name='seg_dmda' start_address='0x240f68' size='0x8' element_at='0x0' >
+<INPUT_SECTION id='03EB7F58' name='seg_dmda' start_address='0x240f68' size='0x8' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[rtl_disable_interrupts_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='adi_rtl_nested_int_disable_count.' address='0x240f68' size='0x4' binding='WEAK'><DEMANGLED_NAME><![CDATA[adi_rtl_nested_int_disable_count]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='adi_rtl_interrupt_state.' address='0x240f6c' size='0x4' binding='WEAK'><DEMANGLED_NAME><![CDATA[adi_rtl_interrupt_state]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E9FF0' name='seg_dmda' start_address='0x240f70' size='0x45c' element_at='0x0' >
+<INPUT_SECTION id='03EB7A18' name='seg_dmda' start_address='0x240f70' size='0x45c' element_at='0x0' >
 <INPUT_FILE><![CDATA[libosal_noos.dlb[adi_osal_arch_int_table.doj]]]></INPUT_FILE>
 <SYMBOL name='_adi_osal_gHandlerTableSize.' address='0x240f70' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[_adi_osal_gHandlerTableSize]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='_adi_osal_gHandlerTable.' address='0x240f78' size='0x454' binding='WEAK'><DEMANGLED_NAME><![CDATA[_adi_osal_gHandlerTable]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E5BF0' name='seg_dmda' start_address='0x2413cc' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='03EB3A18' name='seg_dmda' start_address='0x2413cc' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libosal_noos.dlb[adi_osal_noos_arch_c.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
 </INPUT_SECTIONS>
 </OUTPUT_SECTION>
-<OUTPUT_SECTION name='dxe_block0_data_prio2' id='054DE6C0' memory_id='03898F20' type='SHT_PROGBITS' start_address='0x904f3' word_size='0x1' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_block0_data_prio2' id='04AE1AB8' memory_id='02E425C0' type='SHT_PROGBITS' start_address='0x904f3' word_size='0x1' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='054784F8' name='seg_dmda' start_address='0x904f3' size='0x1' element_at='0x0' >
+<INPUT_SECTION id='04A6C3F8' name='seg_dmda' start_address='0x904f3' size='0x1' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[errno.doj]]]></INPUT_FILE>
 <SYMBOL name='_errno' address='0x904f3' size='0x1' binding='WEAK'><DEMANGLED_NAME><![CDATA[errno]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
 </INPUT_SECTIONS>
 </OUTPUT_SECTION>
-<OUTPUT_SECTION name='dxe_block0_data_prio2_bw' id='054DE5E8' memory_id='03898F20' type='SHT_PROGBITS' start_address='0x2413d0' word_size='0x759d' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_block0_data_prio2_bw' id='04AE1830' memory_id='02E425C0' type='SHT_PROGBITS' start_address='0x2413d0' word_size='0x759d' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='0170C4D8' name='seg_dmda' start_address='0x2413d0' size='0x21d' element_at='0x0' >
+<INPUT_SECTION id='005A8830' name='seg_dmda' start_address='0x2413d0' size='0x21d' element_at='0x0' >
 <INPUT_FILE><![CDATA[src\SoftConfig_SC584.doj]]></INPUT_FILE>
 <SYMBOL name='.epcbss' address='0x2413d0' size='0x122' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='hDevice.' address='0x2413d0' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[hDevice]]></DEMANGLED_NAME></SYMBOL>
@@ -151,7 +151,7 @@
 <SYMBOL name='.saditwi.5' address='0x2415c0' size='0x15' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.saditwi.6' address='0x2415d8' size='0x15' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='0170CF18' name='seg_dmda' start_address='0x241600' size='0x5ef0' element_at='0x0' >
+<INPUT_SECTION id='005A8BB0' name='seg_dmda' start_address='0x241600' size='0x5ef0' element_at='0x0' >
 <INPUT_FILE><![CDATA[src\chan_freq.doj]]></INPUT_FILE>
 <SYMBOL name='.epcbss' address='0x241600' size='0x5b40' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='TwiMemory.' address='0x241600' size='0x3e8' binding='LOCAL'><DEMANGLED_NAME><![CDATA[TwiMemory]]></DEMANGLED_NAME></SYMBOL>
@@ -202,7 +202,7 @@
 <SYMBOL name='.sAlldon.27' address='0x2474d0' size='0xa' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.sExampl.28' address='0x2474e0' size='0x10' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='017054D8' name='seg_dmda' start_address='0x2474f0' size='0x168' element_at='0x0' >
+<INPUT_SECTION id='005A95F0' name='seg_dmda' start_address='0x2474f0' size='0x168' element_at='0x0' >
 <INPUT_FILE><![CDATA[system\SC5xx_EZ-Kit\drivers\adc\adau1977\adi_adau1977.doj]]></INPUT_FILE>
 <SYMBOL name='.epcbss' address='0x2474f0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='TwiBuffer.' address='0x2474f0' size='0x20' binding='LOCAL'><DEMANGLED_NAME><![CDATA[TwiBuffer]]></DEMANGLED_NAME></SYMBOL>
@@ -233,12 +233,12 @@
 <SYMBOL name='.SWITCH.10' address='0x247648' size='0x10' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.SWITCH.10.end' address='0x247658' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='01705A98' name='seg_dmda' start_address='0x247658' size='0x18' element_at='0x0' >
+<INPUT_SECTION id='005A9CB0' name='seg_dmda' start_address='0x247658' size='0x18' element_at='0x0' >
 <INPUT_FILE><![CDATA[system\startup_ldf\app_heaptab.doj]]></INPUT_FILE>
 <SYMBOL name='heap_table.' address='0x247658' size='0x18' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[heap_table]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.heap_table..end' address='0x247670' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E7730' name='seg_dmda' start_address='0x2415f0' size='0x10' element_at='0x0' >
+<INPUT_SECTION id='03EB5518' name='seg_dmda' start_address='0x2415f0' size='0x10' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[adi_fatal_data_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='_adi_fatal_error_data' address='0x2415f0' size='0x10' binding='LOCAL'><DEMANGLED_NAME><![CDATA[adi_fatal_error_data]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='_adi_fatal_error_general_code' address='0x2415f0' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[adi_fatal_error_general_code]]></DEMANGLED_NAME></SYMBOL>
@@ -255,37 +255,37 @@
 <SYMBOL name='.adi_fatal_error_pc.end' address='0x241600' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='_adi_fatal_error_data.end' address='0x241600' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[adi_fatal_error_data.end]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05474878' name='seg_dmda' start_address='0x247670' size='0x4' element_at='0x0' >
+<INPUT_SECTION id='04A68478' name='seg_dmda' start_address='0x247670' size='0x4' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[dispatched_handler_reg_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='adi_rtl_peak_dispatched_handlers.' address='0x247670' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[adi_rtl_peak_dispatched_handlers]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054747F8' name='seg_dmda' start_address='0x247674' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A68638' name='seg_dmda' start_address='0x247674' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[heap_install_ba.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='05475C38' name='seg_dmda' start_address='0x247674' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A69CF8' name='seg_dmda' start_address='0x247674' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[heap_lookup_ba.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E6F70' name='seg_dmda' start_address='0x247674' size='0x4' element_at='0x0' >
+<INPUT_SECTION id='03EB4F98' name='seg_dmda' start_address='0x247674' size='0x4' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[heap_setup_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='heaps_have_been_reset.0.' address='0x247674' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[heaps_have_been_reset.0]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E77F0' name='seg_dmda' start_address='0x247678' size='0x4' element_at='0x0' >
+<INPUT_SECTION id='03EB5598' name='seg_dmda' start_address='0x247678' size='0x4' element_at='0x0' >
 <INPUT_FILE><![CDATA[libosal_noos.dlb[adi_osal_arch_c.doj]]]></INPUT_FILE>
 <SYMBOL name='osal_snHeapIndex.' address='0x247678' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[osal_snHeapIndex]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048EABB0' name='seg_dmda' start_address='0x24767c' size='0x8' element_at='0x0' >
+<INPUT_SECTION id='03EB0DD8' name='seg_dmda' start_address='0x24767c' size='0x8' element_at='0x0' >
 <INPUT_FILE><![CDATA[libosal_noos.dlb[adi_osal_noos_init.doj]]]></INPUT_FILE>
 <SYMBOL name='_adi_osal_gnSchedulerLockCnt.' address='0x24767c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[_adi_osal_gnSchedulerLockCnt]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='snOsalInitializationState.0.' address='0x247680' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[snOsalInitializationState.0]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E8D70' name='seg_dmda' start_address='0x247688' size='0x488' element_at='0x0' >
+<INPUT_SECTION id='03EB6B18' name='seg_dmda' start_address='0x247688' size='0x488' element_at='0x0' >
 <INPUT_FILE><![CDATA[libssl.dlb[adi_dma.doj]]]></INPUT_FILE>
 <SYMBOL name='ChannelInfo.' address='0x247688' size='0x2d0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[ChannelInfo]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='StreamInfo.' address='0x247958' size='0x20' binding='LOCAL'><DEMANGLED_NAME><![CDATA[StreamInfo]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.sASSERT.0' address='0x247978' size='0xca' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.sASSERT.1' address='0x247a48' size='0xc8' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048EBB30' name='seg_dmda' start_address='0x247b10' size='0x373' element_at='0x0' >
+<INPUT_SECTION id='03EB1A98' name='seg_dmda' start_address='0x247b10' size='0x373' element_at='0x0' >
 <INPUT_FILE><![CDATA[libssl.dlb[adi_gpio.doj]]]></INPUT_FILE>
 <SYMBOL name='PortInfo.' address='0x247b10' size='0x150' binding='LOCAL'><DEMANGLED_NAME><![CDATA[PortInfo]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='PinIntInfo.' address='0x247c60' size='0x138' binding='LOCAL'><DEMANGLED_NAME><![CDATA[PinIntInfo]]></DEMANGLED_NAME></SYMBOL>
@@ -294,16 +294,16 @@
 <SYMBOL name='.SWITCH.0.end' address='0x247db4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.sASSERT.1' address='0x247db8' size='0xcb' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E59B0' name='seg_dmda' start_address='0x247e84' size='0xc' element_at='0x0' >
+<INPUT_SECTION id='03EB3A98' name='seg_dmda' start_address='0x247e84' size='0xc' element_at='0x0' >
 <INPUT_FILE><![CDATA[libssl.dlb[adi_sec.doj]]]></INPUT_FILE>
 <SYMBOL name='gSECData.' address='0x247e84' size='0xc' binding='LOCAL'><DEMANGLED_NAME><![CDATA[gSECData]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E4330' name='seg_dmda' start_address='0x247e90' size='0xd6' element_at='0x0' >
+<INPUT_SECTION id='03EB2798' name='seg_dmda' start_address='0x247e90' size='0xd6' element_at='0x0' >
 <INPUT_FILE><![CDATA[libssl.dlb[adi_spu.doj]]]></INPUT_FILE>
 <SYMBOL name='gSpuDevices.' address='0x247e90' size='0x14' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[gSpuDevices]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.sASSERT.0' address='0x247ea8' size='0xbe' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E4FB0' name='seg_dmda' start_address='0x247f68' size='0x36c' element_at='0x0' >
+<INPUT_SECTION id='03EB2998' name='seg_dmda' start_address='0x247f68' size='0x36c' element_at='0x0' >
 <INPUT_FILE><![CDATA[libdrv.dlb[adi_sport.doj]]]></INPUT_FILE>
 <SYMBOL name='sport_device_info.' address='0x247f68' size='0x180' binding='LOCAL'><DEMANGLED_NAME><![CDATA[sport_device_info]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='gSportDMAFuncTable.' address='0x2480e8' size='0x10' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[gSportDMAFuncTable]]></DEMANGLED_NAME></SYMBOL>
@@ -315,7 +315,7 @@
 <SYMBOL name='.SWITCH.2' address='0x2482c4' size='0x10' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.SWITCH.2.end' address='0x2482d4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048EAFB0' name='seg_dmda' start_address='0x2482d8' size='0x695' element_at='0x0' >
+<INPUT_SECTION id='03EB09D8' name='seg_dmda' start_address='0x2482d8' size='0x695' element_at='0x0' >
 <INPUT_FILE><![CDATA[libdrv.dlb[adi_twi.doj]]]></INPUT_FILE>
 <SYMBOL name='adi_twi_Device.' address='0x2482d8' size='0x24' binding='LOCAL'><DEMANGLED_NAME><![CDATA[adi_twi_Device]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.sASSERT.0' address='0x248300' size='0xa5' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -331,68 +331,68 @@
 </INPUT_SECTION>
 </INPUT_SECTIONS>
 </OUTPUT_SECTION>
-<OUTPUT_SECTION name='dxe_block0_data_prio3' id='054DFD40' memory_id='03898F20' type='SHT_PROGBITS' start_address='0x9225c' word_size='0x1' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_block0_data_prio3' id='04AE3690' memory_id='02E425C0' type='SHT_PROGBITS' start_address='0x9225c' word_size='0x1' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='05476078' name='seg_dmda' start_address='0x9225c' size='0x1' element_at='0x0' >
+<INPUT_SECTION id='04A69E78' name='seg_dmda' start_address='0x9225c' size='0x1' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[exit_value.doj]]]></INPUT_FILE>
 <SYMBOL name='__exit_value' address='0x9225c' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[_exit_value]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E8DB0' name='seg_dmda' start_address='0x9225d' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='03EB6D18' name='seg_dmda' start_address='0x9225d' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[xexit.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
 </INPUT_SECTIONS>
 </OUTPUT_SECTION>
-<OUTPUT_SECTION name='dxe_block0_data_prio3_bw' id='054DFBD8' memory_id='03898F20' type='SHT_PROGBITS' start_address='0x248978' word_size='0x45c' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_block0_data_prio3_bw' id='04AE36D8' memory_id='02E425C0' type='SHT_PROGBITS' start_address='0x248978' word_size='0x45c' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='048E7870' name='seg_dmda' start_address='0x248974' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='03EB5A18' name='seg_dmda' start_address='0x248974' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[dbg_assert2_ba.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E4AF0' name='seg_dmda' start_address='0x248974' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='03EB2C58' name='seg_dmda' start_address='0x248974' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[exit_ba.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='05477EF8' name='seg_dmda' start_address='0x248974' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A6BEB8' name='seg_dmda' start_address='0x248974' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[signal_ba.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E8E70' name='seg_dmda' start_address='0x248978' size='0x14' element_at='0x0' >
+<INPUT_SECTION id='03EB6E58' name='seg_dmda' start_address='0x248978' size='0x14' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[xatexit_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='__sys_atexit_funcs.' address='0x248978' size='0x14' binding='WEAK'><DEMANGLED_NAME><![CDATA[__sys_atexit_funcs]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054786B8' name='seg_dmda' start_address='0x248990' size='0x18' element_at='0x0' >
+<INPUT_SECTION id='04A6C538' name='seg_dmda' start_address='0x248990' size='0x18' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[xsignal_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='_Sighdr.' address='0x248990' size='0x18' binding='WEAK'><DEMANGLED_NAME><![CDATA[_Sighdr]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054777B8' name='seg_dmda' start_address='0x2489a8' size='0xc8' element_at='0x0' >
+<INPUT_SECTION id='04A6B578' name='seg_dmda' start_address='0x2489a8' size='0xc8' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[devIOtab_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='DeviceIOtable.' address='0x2489a8' size='0xc8' binding='WEAK'><DEMANGLED_NAME><![CDATA[DeviceIOtable]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054768F8' name='seg_dmda' start_address='0x248a70' size='0x4' element_at='0x0' >
+<INPUT_SECTION id='04A6ADF8' name='seg_dmda' start_address='0x248a70' size='0x4' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[dev_init_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='__devtabs_initialized.' address='0x248a70' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__devtabs_initialized]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05475A38' name='seg_dmda' start_address='0x248a74' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A69EF8' name='seg_dmda' start_address='0x248a74' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[dev_write_c08_any.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='05477738' name='seg_dmda' start_address='0x248a78' size='0x28' element_at='0x0' >
+<INPUT_SECTION id='04A6B7B8' name='seg_dmda' start_address='0x248a78' size='0x28' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[devtab_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='DevDrvTable.' address='0x248a78' size='0x28' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[DevDrvTable]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.DevDrvTable..end' address='0x248aa0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E8B30' name='seg_dmda' start_address='0x248aa0' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='03EB6A58' name='seg_dmda' start_address='0x248aa0' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[fflush_c08_any.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='05478578' name='seg_dmda' start_address='0x248aa0' size='0x48' element_at='0x0' >
+<INPUT_SECTION id='04A6C878' name='seg_dmda' start_address='0x248aa0' size='0x48' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[primiolibtab_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='primio_deventry_extension.' address='0x248aa0' size='0xc' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[primio_deventry_extension]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='primio_deventry.' address='0x248aac' size='0x3c' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[primio_deventry]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.primio_deventry..end' address='0x248ae8' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E4070' name='seg_dmda' start_address='0x248ae8' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='03EB27D8' name='seg_dmda' start_address='0x248ae8' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[printf_c08_d32.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='048EBE70' name='seg_dmda' start_address='0x248ae8' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='03EB1958' name='seg_dmda' start_address='0x248ae8' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[puts_c08_any.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E86F0' name='seg_dmda' start_address='0x248ae8' size='0xf0' element_at='0x0' >
+<INPUT_SECTION id='03EB6498' name='seg_dmda' start_address='0x248ae8' size='0xf0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xfiles_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='_Stdin.' address='0x248ae8' size='0x34' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[_Stdin]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='_Stdout.' address='0x248b1c' size='0x34' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[_Stdout]]></DEMANGLED_NAME></SYMBOL>
@@ -400,48 +400,48 @@
 <SYMBOL name='_Files.' address='0x248b88' size='0x50' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[_Files]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='._Files..end' address='0x248bd8' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054766B8' name='seg_dmda' start_address='0x248bd8' size='0x29' element_at='0x0' >
+<INPUT_SECTION id='04A6A0B8' name='seg_dmda' start_address='0x248bd8' size='0x29' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xhexdigits_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='__hex_digits_lower.' address='0x248bd8' size='0x11' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__hex_digits_lower]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='__hex_digits_upper.' address='0x248bf0' size='0x11' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__hex_digits_upper]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05476A78' name='seg_dmda' start_address='0x248c04' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A6A938' name='seg_dmda' start_address='0x248c04' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xlong_to_string_c08_any.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='05477038' name='seg_dmda' start_address='0x248c04' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A6B078' name='seg_dmda' start_address='0x248c04' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xlonglong_to_string_c08_any.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='05474B38' name='seg_dmda' start_address='0x248c04' size='0xb' element_at='0x0' >
+<INPUT_SECTION id='04A68AF8' name='seg_dmda' start_address='0x248c04' size='0xb' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xparse_format_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.s.0' address='0x248c04' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.sdiouxX.1' address='0x248c08' size='0x7' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054797B8' name='seg_dmda' start_address='0x248c10' size='0x1c' element_at='0x0' >
+<INPUT_SECTION id='04A6D278' name='seg_dmda' start_address='0x248c10' size='0x1c' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprim_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='PrimIOCB.' address='0x248c10' size='0x1c' binding='WEAK'><DEMANGLED_NAME><![CDATA[PrimIOCB]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05478938' name='seg_dmda' start_address='0x248c2c' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A6CAB8' name='seg_dmda' start_address='0x248c2c' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprim_close_c08_any.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='05478638' name='seg_dmda' start_address='0x248c2c' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A6C7B8' name='seg_dmda' start_address='0x248c2c' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprim_open_c08_any.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='05478C38' name='seg_dmda' start_address='0x248c2c' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A6CEF8' name='seg_dmda' start_address='0x248c2c' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprim_read_c08_any.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='05478DB8' name='seg_dmda' start_address='0x248c2c' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A6C8F8' name='seg_dmda' start_address='0x248c2c' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprim_remove_c08_any.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='05478A38' name='seg_dmda' start_address='0x248c2c' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A6CA38' name='seg_dmda' start_address='0x248c2c' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprim_rename_c08_any.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='054788F8' name='seg_dmda' start_address='0x248c2c' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A6CD78' name='seg_dmda' start_address='0x248c2c' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprim_seek_c08_any.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='05478FF8' name='seg_dmda' start_address='0x248c2c' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A6D038' name='seg_dmda' start_address='0x248c2c' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprim_write2_c08_any.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='054749B8' name='seg_dmda' start_address='0x248c2c' size='0x14' element_at='0x0' >
+<INPUT_SECTION id='04A68CB8' name='seg_dmda' start_address='0x248c2c' size='0x14' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprint_a_float_c08_d32.doj]]]></INPUT_FILE>
 <SYMBOL name='.s.0' address='0x248c2c' size='0x2' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.s.1' address='0x248c30' size='0x2' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -449,7 +449,7 @@
 <SYMBOL name='.sNaN.33' address='0x248c38' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.sInf.34' address='0x248c3c' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054756F8' name='seg_dmda' start_address='0x248c40' size='0x15' element_at='0x0' >
+<INPUT_SECTION id='04A696F8' name='seg_dmda' start_address='0x248c40' size='0x15' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprint_fixed_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.s.0' address='0x248c40' size='0x2' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.s.1' address='0x248c44' size='0x2' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -458,7 +458,7 @@
 <SYMBOL name='.s0X.4' address='0x248c50' size='0x3' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.s.5' address='0x248c54' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05474EF8' name='seg_dmda' start_address='0x248c58' size='0x56' element_at='0x0' >
+<INPUT_SECTION id='04A68FB8' name='seg_dmda' start_address='0x248c58' size='0x56' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprint_float_c08_d32.doj]]]></INPUT_FILE>
 <SYMBOL name='_pvLookupTable.' address='0x248c58' size='0x18' binding='LOCAL'><DEMANGLED_NAME><![CDATA[_pvLookupTable]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='_pwr10.' address='0x248c70' size='0x28' binding='LOCAL'><DEMANGLED_NAME><![CDATA[_pwr10]]></DEMANGLED_NAME></SYMBOL>
@@ -469,7 +469,7 @@
 <SYMBOL name='.sInf.38' address='0x248ca8' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.s0.39' address='0x248cac' size='0x2' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E8C30' name='seg_dmda' start_address='0x248cb0' size='0x124' element_at='0x0' >
+<INPUT_SECTION id='03EB69D8' name='seg_dmda' start_address='0x248cb0' size='0x124' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprnt_c08_d32.doj]]]></INPUT_FILE>
 <SYMBOL name='.static0' address='0x248cb0' size='0x38' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.static0.end' address='0x248ce8' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -480,21 +480,21 @@
 </INPUT_SECTION>
 </INPUT_SECTIONS>
 </OUTPUT_SECTION>
-<OUTPUT_SECTION name='dxe_block0_stack_and_heap_expand' id='05582C68' memory_id='03898F20' type='SHT_NOBITS' start_address='0x248dd8' word_size='0x0' word_size_unmapped='0x0' word_size_reserved='0x26228' >
+<OUTPUT_SECTION name='dxe_block0_stack_and_heap_expand' id='04B69E08' memory_id='02E425C0' type='SHT_NOBITS' start_address='0x248dd8' word_size='0x0' word_size_unmapped='0x0' word_size_reserved='0x26228' >
 <INPUT_SECTIONS>
 </INPUT_SECTIONS>
 </OUTPUT_SECTION>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03898EE0' name='mem_block1_bw' start_address='0x2c0000' end_address='0x2ebfff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x2c000' >
+<MEMORY id='02E424A0' name='mem_block1_bw' start_address='0x2c0000' end_address='0x2ebfff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x2c000' >
 <OUTPUT_SECTIONS>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03898FE0' name='mem_block2_bw' start_address='0x300000' end_address='0x31bfff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x400' words_unused='0x1bc00' >
+<MEMORY id='02E42510' name='mem_block2_bw' start_address='0x300000' end_address='0x31bfff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x400' words_unused='0x1bc00' >
 <OUTPUT_SECTIONS>
-<OUTPUT_SECTION name='dxe_block2_pm_data_prio2_bw' id='054E8B00' memory_id='03898FE0' type='SHT_PROGBITS' start_address='0x300000' word_size='0x400' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_block2_pm_data_prio2_bw' id='04AECF90' memory_id='02E42510' type='SHT_PROGBITS' start_address='0x300000' word_size='0x400' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='0170CB18' name='seg_pmda' start_address='0x300000' size='0x400' element_at='0x0' >
+<INPUT_SECTION id='005A90B0' name='seg_pmda' start_address='0x300000' size='0x400' element_at='0x0' >
 <INPUT_FILE><![CDATA[src\calc_freq.doj]]></INPUT_FILE>
 <SYMBOL name='twiddle_table.30.' address='0x300000' size='0x400' binding='LOCAL'><DEMANGLED_NAME><![CDATA[twiddle_table.30]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
@@ -502,11 +502,11 @@
 </OUTPUT_SECTION>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03898F00' name='mem_block3_bw' start_address='0x380000' end_address='0x39bfff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x1b210' words_unused='0xdf0' >
+<MEMORY id='02E425D0' name='mem_block3_bw' start_address='0x380000' end_address='0x39bfff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x1b210' words_unused='0xdf0' >
 <OUTPUT_SECTIONS>
-<OUTPUT_SECTION name='dxe_block3_sw_code_prio0' id='054EA210' memory_id='03898F00' type='SHT_PROGBITS' start_address='0x1c0000' word_size='0x209' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_block3_sw_code_prio0' id='04ACC980' memory_id='02E425D0' type='SHT_PROGBITS' start_address='0x1c0000' word_size='0x209' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='05477878' name='seg_int_code' start_address='0x1c0000' size='0x1f4' element_at='0x0' >
+<INPUT_SECTION id='04A6B2B8' name='seg_int_code' start_address='0x1c0000' size='0x1f4' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[cache_set_range_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNadi_in_noncacheable_range.' address='0x1c0000' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNadi_in_noncacheable_range]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='adi_in_noncacheable_range.' address='0x1c0000' size='0x62' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[adi_in_noncacheable_range]]></DEMANGLED_NAME></SYMBOL>
@@ -538,7 +538,7 @@
 <SYMBOL name='.LN.adi_cache_set_range..end' address='0x1c01f4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.adi_cache_set_range..end' address='0x1c01f4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05475C78' name='seg_int_code' start_address='0x1c01f4' size='0x15' element_at='0x0' >
+<INPUT_SECTION id='04A69C38' name='seg_int_code' start_address='0x1c01f4' size='0x15' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[flush_data_buffer_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNwrite_cfg_reg.' address='0x1c01f4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNwrite_cfg_reg]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='write_cfg_reg.' address='0x1c01f4' size='0x15' binding='LOCAL'><DEMANGLED_NAME><![CDATA[write_cfg_reg]]></DEMANGLED_NAME></SYMBOL>
@@ -547,18 +547,18 @@
 </INPUT_SECTION>
 </INPUT_SECTIONS>
 </OUTPUT_SECTION>
-<OUTPUT_SECTION name='dxe_block3_nw_code_prio0' id='054E9E20' memory_id='03898F00' type='SHT_PROGBITS' start_address='0xe00ae' word_size='0x1' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_block3_nw_code_prio0' id='04ACCFB0' memory_id='02E425D0' type='SHT_PROGBITS' start_address='0xe00ae' word_size='0x1' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='048E72B0' name='seg_init' start_address='0xe00ae' size='0x1' element_at='0x0' >
+<INPUT_SECTION id='03EB5158' name='seg_init' start_address='0xe00ae' size='0x1' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[inits.doj]]]></INPUT_FILE>
 <SYMBOL name='___inits' address='0xe00ae' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__inits]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.___inits.end' address='0xe00af' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
 </INPUT_SECTIONS>
 </OUTPUT_SECTION>
-<OUTPUT_SECTION name='dxe_block3_sw_code_prio1' id='054EA498' memory_id='03898F00' type='SHT_PROGBITS' start_address='0x1c020e' word_size='0xe9f' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_block3_sw_code_prio1' id='04ACD700' memory_id='02E425D0' type='SHT_PROGBITS' start_address='0x1c020e' word_size='0xe9f' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='048E8070' name='seg_swco' start_address='0x1c020e' size='0x4e' element_at='0x0' >
+<INPUT_SECTION id='03EB6318' name='seg_swco' start_address='0x1c020e' size='0x4e' element_at='0x0' >
 <INPUT_FILE><![CDATA[libcc.dlb[lib_fdiv.doj]]]></INPUT_FILE>
 <SYMBOL name='___lib_fdiv' address='0x1c020e' size='0x4e' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__lib_fdiv]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='__lib_fdiv.' address='0x1c020e' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__lib_fdiv]]></DEMANGLED_NAME></SYMBOL>
@@ -567,7 +567,7 @@
 <SYMBOL name='.___lib_fdiv.end' address='0x1c025c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.__lib_fdiv..end' address='0x1c025c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05475CF8' name='seg_swco' start_address='0x1c025c' size='0x47' element_at='0x0' >
+<INPUT_SECTION id='04A69938' name='seg_swco' start_address='0x1c025c' size='0x47' element_at='0x0' >
 <INPUT_FILE><![CDATA[libcc.dlb[translate_internal_to_system_addr_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNadi_rtl_internal_to_system_addr.' address='0x1c025c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNadi_rtl_internal_to_system_addr]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c025c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -578,12 +578,12 @@
 <SYMBOL name='.adi_rtl_internal_to_system_addr..end' address='0x1c02a3' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c02a3' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048EAF70' name='seg_pmco' start_address='0x1c02a4' size='0x15' element_at='0x0' >
+<INPUT_SECTION id='03EB1058' name='seg_pmco' start_address='0x1c02a4' size='0x15' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[adi_fatal_error.doj]]]></INPUT_FILE>
 <SYMBOL name='_adi_fatal_error' address='0x1c02a4' size='0x15' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[adi_fatal_error]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='._adi_fatal_error.end' address='0x1c02b9' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054771F8' name='seg_swco' start_address='0x1c02ba' size='0x6' element_at='0x0' >
+<INPUT_SECTION id='04A6B378' name='seg_swco' start_address='0x1c02ba' size='0x6' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[cache_set_range_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN__adi_wa_cces16305.' address='0x1c02ba' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN__adi_wa_cces16305]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c02ba' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -592,12 +592,12 @@
 <SYMBOL name='.__adi_wa_cces16305..end' address='0x1c02c0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c02c0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E7AF0' name='seg_pmco' start_address='0x1c02c0' size='0x2' element_at='0x0' >
+<INPUT_SECTION id='03EB5998' name='seg_pmco' start_address='0x1c02c0' size='0x2' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[fatal_error_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='__fatal_error' address='0x1c02c0' size='0x2' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[_fatal_error]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.__fatal_error.end' address='0x1c02c2' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05475978' name='seg_swco' start_address='0x1c02c2' size='0x195' element_at='0x0' >
+<INPUT_SECTION id='04A69CB8' name='seg_swco' start_address='0x1c02c2' size='0x195' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[flush_data_buffer_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='wb_pm.' address='0x1c02c2' size='0xe' binding='LOCAL'><DEMANGLED_NAME><![CDATA[wb_pm]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.LNwb_pm.' address='0x1c02c2' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNwb_pm]]></DEMANGLED_NAME></SYMBOL>
@@ -647,7 +647,7 @@
 <SYMBOL name='.flush_data_buffer..end' address='0x1c0457' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.LN.flush_data_buffer..end' address='0x1c0457' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054760B8' name='seg_swco' start_address='0x1c0458' size='0x5b' element_at='0x0' >
+<INPUT_SECTION id='04A6A478' name='seg_swco' start_address='0x1c0458' size='0x5b' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[free_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNfree.' address='0x1c0458' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNfree]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c0458' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -659,7 +659,7 @@
 <SYMBOL name='.epctext.end' address='0x1c04b3' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.free..end' address='0x1c04b3' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05477138' name='seg_swco' start_address='0x1c04b4' size='0x96' element_at='0x0' >
+<INPUT_SECTION id='04A6B438' name='seg_swco' start_address='0x1c04b4' size='0x96' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[heap_find_block_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN__find_block_to_free.' address='0x1c04b4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN__find_block_to_free]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c04b4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -675,7 +675,7 @@
 <SYMBOL name='.__find_block_to_free..end' address='0x1c054a' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c054a' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054743F8' name='seg_swco' start_address='0x1c054a' size='0x6e' element_at='0x0' >
+<INPUT_SECTION id='04A68338' name='seg_swco' start_address='0x1c054a' size='0x6e' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[heap_malloc_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_heap_malloc.' address='0x1c054a' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_heap_malloc]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c054a' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -690,7 +690,7 @@
 <SYMBOL name='._heap_malloc..end' address='0x1c05b8' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c05b8' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E6EB0' name='seg_pmco' start_address='0x1c05b8' size='0xf2' element_at='0x0' >
+<INPUT_SECTION id='03EB4D18' name='seg_pmco' start_address='0x1c05b8' size='0xf2' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[int_dispatcher_215XX_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='__dispatcher' address='0x1c05b8' size='0x5d' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[_dispatcher]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.__dispatcher.end' address='0x1c0615' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -701,17 +701,17 @@
 <SYMBOL name='.__dispatcher_SEC_rtn.end' address='0x1c06aa' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.__dispatcher_rtn.end' address='0x1c06aa' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054767B8' name='seg_pmco' start_address='0x1c06aa' size='0x12' element_at='0x0' >
+<INPUT_SECTION id='04A6A578' name='seg_pmco' start_address='0x1c06aa' size='0x12' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[isinff.doj]]]></INPUT_FILE>
 <SYMBOL name='_isinff' address='0x1c06aa' size='0x12' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[isinff]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='._isinff.end' address='0x1c06bc' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054763F8' name='seg_swco' start_address='0x1c06bc' size='0x15' element_at='0x0' >
+<INPUT_SECTION id='04A6A3B8' name='seg_swco' start_address='0x1c06bc' size='0x15' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[isnanf.doj]]]></INPUT_FILE>
 <SYMBOL name='_isnanf' address='0x1c06bc' size='0x15' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[isnanf]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='._isnanf.end' address='0x1c06d1' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E7230' name='seg_swco' start_address='0x1c06d2' size='0x6' element_at='0x0' >
+<INPUT_SECTION id='03EB4918' name='seg_swco' start_address='0x1c06d2' size='0x6' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[lib_set_cache_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN__lib_set_cache.' address='0x1c06d2' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN__lib_set_cache]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c06d2' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -720,7 +720,7 @@
 <SYMBOL name='.__lib_set_cache..end' address='0x1c06d8' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c06d8' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048EBAB0' name='seg_pmco' start_address='0x1c06d8' size='0x7d' element_at='0x0' >
+<INPUT_SECTION id='03EB1998' name='seg_pmco' start_address='0x1c06d8' size='0x7d' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[log10f_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='log10f.' address='0x1c06d8' size='0x7d' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[log10f]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='logf.' address='0x1c06de' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[logf]]></DEMANGLED_NAME></SYMBOL>
@@ -728,7 +728,7 @@
 <SYMBOL name='.log10f..end' address='0x1c0755' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.logf..end' address='0x1c0755' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054761B8' name='seg_swco' start_address='0x1c0756' size='0x12' element_at='0x0' >
+<INPUT_SECTION id='04A6A378' name='seg_swco' start_address='0x1c0756' size='0x12' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[malloc_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNmalloc.' address='0x1c0756' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNmalloc]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c0756' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -738,7 +738,7 @@
 <SYMBOL name='.epctext.end' address='0x1c0768' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.malloc..end' address='0x1c0768' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E50F0' name='seg_pmco' start_address='0x1c0768' size='0x16' element_at='0x0' >
+<INPUT_SECTION id='03EB3258' name='seg_pmco' start_address='0x1c0768' size='0x16' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[memset_char8_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='__memsetD.' address='0x1c0768' size='0x16' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__memsetD]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='memset.' address='0x1c0768' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[memset]]></DEMANGLED_NAME></SYMBOL>
@@ -748,7 +748,7 @@
 <SYMBOL name='.__memsetD..end' address='0x1c077e' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.memset..end' address='0x1c077e' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E9F70' name='seg_swco' start_address='0x1c077e' size='0x3d' element_at='0x0' >
+<INPUT_SECTION id='03EB7918' name='seg_swco' start_address='0x1c077e' size='0x3d' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[rtl_disable_interrupts_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNadi_rtl_disable_interrupts.' address='0x1c077e' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNadi_rtl_disable_interrupts]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c077e' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -764,7 +764,7 @@
 <SYMBOL name='.adi_rtl_reenable_interrupts..end' address='0x1c07bb' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c07bb' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048EA9F0' name='seg_pmco' start_address='0x1c07bc' size='0x1a1' element_at='0x0' >
+<INPUT_SECTION id='03EB0CD8' name='seg_pmco' start_address='0x1c07bc' size='0x1a1' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[set_c.doj]]]></INPUT_FILE>
 <SYMBOL name='___lib_setup_c' address='0x1c07bc' size='0x88' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__lib_setup_c]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='regs_setup' address='0x1c080c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -802,7 +802,7 @@
 <SYMBOL name='init_bw_done' address='0x1c095c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.___lib_setup_memory.end' address='0x1c095d' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E8830' name='seg_pmco' start_address='0x1c095e' size='0xcb' element_at='0x0' >
+<INPUT_SECTION id='03EB6658' name='seg_pmco' start_address='0x1c095e' size='0xcb' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[sinf_XI.doj]]]></INPUT_FILE>
 <SYMBOL name='_cosf' address='0x1c095e' size='0x64' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[cosf]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='cos_compute_sign' address='0x1c09b5' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -813,11 +813,11 @@
 <SYMBOL name='sin_zero_return' address='0x1c0a25' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='._sinf.end' address='0x1c0a29' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E9AB0' name='seg_swco' start_address='0x1c0a2a' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='03EB7E58' name='seg_swco' start_address='0x1c0a2a' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libosal_noos.dlb[adi_osal_arch_int_table.doj]]]></INPUT_FILE>
 <SYMBOL name='.epctext' address='0x1c0a2a' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E5EF0' name='seg_swco' start_address='0x1c0a2a' size='0x3f1' element_at='0x0' >
+<INPUT_SECTION id='03EB3FD8' name='seg_swco' start_address='0x1c0a2a' size='0x3f1' element_at='0x0' >
 <INPUT_FILE><![CDATA[libosal_noos.dlb[adi_osal_noos_arch_c.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_adi_osal_stdWrapper.' address='0x1c0a2a' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_adi_osal_stdWrapper]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c0a2a' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -852,7 +852,7 @@
 <SYMBOL name='.adi_osal_ExitCriticalRegion..end' address='0x1c0e1b' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c0e1b' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E83F0' name='seg_pmco' start_address='0x1c0e1c' size='0x155' element_at='0x0' >
+<INPUT_SECTION id='03EB6198' name='seg_pmco' start_address='0x1c0e1c' size='0x155' element_at='0x0' >
 <INPUT_FILE><![CDATA[libdsp.dlb[cfftn_simd.doj]]]></INPUT_FILE>
 <SYMBOL name='_cfft_simd' address='0x1c0e1c' size='0x155' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[cfft_simd]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='cfft_first_stage' address='0x1c0e98' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -864,14 +864,14 @@
 <SYMBOL name='cfft_done' address='0x1c0f4d' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='._cfft_simd.end' address='0x1c0f71' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048EBF30' name='seg_pmco' start_address='0x1c0f72' size='0x8e' element_at='0x0' >
+<INPUT_SECTION id='03EB2018' name='seg_pmco' start_address='0x1c0f72' size='0x8e' element_at='0x0' >
 <INPUT_FILE><![CDATA[libdsp.dlb[fft_magnitude_simd.doj]]]></INPUT_FILE>
 <SYMBOL name='_fft_magnitude_simd' address='0x1c0f72' size='0x8e' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[fft_magnitude_simd]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.fftmag_loop_end' address='0x1c0fe3' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.fftmag_done' address='0x1c0ff3' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='._fft_magnitude_simd.end' address='0x1c1000' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048EBE30' name='seg_pmco' start_address='0x1c1000' size='0xad' element_at='0x0' >
+<INPUT_SECTION id='03EB1B18' name='seg_pmco' start_address='0x1c1000' size='0xad' element_at='0x0' >
 <INPUT_FILE><![CDATA[libdsp.dlb[rfftn_simd.doj]]]></INPUT_FILE>
 <SYMBOL name='_rfft_simd' address='0x1c1000' size='0xad' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[rfft_simd]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='___ADI_AGL_CRT_SW_BRANCHRETURN_38751' address='0x1c103e' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[__ADI_AGL_CRT_SW_BRANCHRETURN_38751]]></DEMANGLED_NAME></SYMBOL>
@@ -881,9 +881,9 @@
 </INPUT_SECTION>
 </INPUT_SECTIONS>
 </OUTPUT_SECTION>
-<OUTPUT_SECTION name='dxe_block3_sw_code_prio2' id='054EAFD8' memory_id='03898F00' type='SHT_PROGBITS' start_address='0x1c10ae' word_size='0xadf2' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_block3_sw_code_prio2' id='04ACE318' memory_id='02E425D0' type='SHT_PROGBITS' start_address='0x1c10ae' word_size='0xadf2' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='0170C3D8' name='seg_pmco' start_address='0x1c10ae' size='0xcc' element_at='0x0' >
+<INPUT_SECTION id='005A8430' name='seg_pmco' start_address='0x1c10ae' size='0xcc' element_at='0x0' >
 <INPUT_FILE><![CDATA[app_startup.doj]]></INPUT_FILE>
 <SYMBOL name='start' address='0x1c10ae' size='0xcc' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.pop_loop_stack' address='0x1c10cb' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -914,7 +914,7 @@
 <SYMBOL name='.osal_Init_failed.end' address='0x1c117a' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.start.end' address='0x1c117a' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='0170C198' name='seg_swco' start_address='0x1c117a' size='0x14a' element_at='0x0' >
+<INPUT_SECTION id='005A88B0' name='seg_swco' start_address='0x1c117a' size='0x14a' element_at='0x0' >
 <INPUT_FILE><![CDATA[src\SoftConfig_SC584.doj]]></INPUT_FILE>
 <SYMBOL name='ConfigSoftSwitches.' address='0x1c117a' size='0x14a' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[ConfigSoftSwitches]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c117a' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -1007,7 +1007,7 @@
 <SYMBOL name='.LN.ConfigSoftSwitches..end' address='0x1c12c4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c12c4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='0170CC58' name='seg_swco' start_address='0x1c12c4' size='0x105' element_at='0x0' >
+<INPUT_SECTION id='005A8E30' name='seg_swco' start_address='0x1c12c4' size='0x105' element_at='0x0' >
 <INPUT_FILE><![CDATA[src\calc_freq.doj]]></INPUT_FILE>
 <SYMBOL name='detectFreq.' address='0x1c12c4' size='0x105' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[detectFreq]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.LNdetectFreq.' address='0x1c12c4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNdetectFreq]]></DEMANGLED_NAME></SYMBOL>
@@ -1048,7 +1048,7 @@
 <SYMBOL name='.detectFreq..end' address='0x1c13c9' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c13c9' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='01705798' name='seg_swco' start_address='0x1c13ca' size='0x71a' element_at='0x0' >
+<INPUT_SECTION id='005A9130' name='seg_swco' start_address='0x1c13ca' size='0x71a' element_at='0x0' >
 <INPUT_FILE><![CDATA[src\chan_freq.doj]]></INPUT_FILE>
 <SYMBOL name='GpioInit.' address='0x1c13ca' size='0x9f' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[GpioInit]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.LNGpioInit.' address='0x1c13ca' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNGpioInit]]></DEMANGLED_NAME></SYMBOL>
@@ -1426,7 +1426,7 @@
 <SYMBOL name='.LN.AdcCallback..end' address='0x1c1ae4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c1ae4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='017057D8' name='seg_swco' start_address='0x1c1ae4' size='0x1c2d' element_at='0x0' >
+<INPUT_SECTION id='005A95B0' name='seg_swco' start_address='0x1c1ae4' size='0x1c2d' element_at='0x0' >
 <INPUT_FILE><![CDATA[system\SC5xx_EZ-Kit\drivers\adc\adau1977\adi_adau1977.doj]]></INPUT_FILE>
 <SYMBOL name='ValidateDevNumber.' address='0x1c1ae4' size='0x31' binding='LOCAL'><DEMANGLED_NAME><![CDATA[ValidateDevNumber]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.LNValidateDevNumber.' address='0x1c1ae4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNValidateDevNumber]]></DEMANGLED_NAME></SYMBOL>
@@ -3295,7 +3295,7 @@
 <SYMBOL name='.epctext.end' address='0x1c3711' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.adi_adau1977_WriteRegister..end' address='0x1c3711' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='017059D8' name='seg_swco' start_address='0x1c3712' size='0x26' element_at='0x0' >
+<INPUT_SECTION id='005A9670' name='seg_swco' start_address='0x1c3712' size='0x26' element_at='0x0' >
 <INPUT_FILE><![CDATA[system\adi_initialize.doj]]></INPUT_FILE>
 <SYMBOL name='.LNadi_initComponents.' address='0x1c3712' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNadi_initComponents]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c3712' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -3316,7 +3316,7 @@
 <SYMBOL name='.adi_initComponents..end' address='0x1c3738' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c3738' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='01705E58' name='seg_swco' start_address='0x1c3738' size='0x40' element_at='0x0' >
+<INPUT_SECTION id='005A9FF0' name='seg_swco' start_address='0x1c3738' size='0x40' element_at='0x0' >
 <INPUT_FILE><![CDATA[system\sru\sru_config.doj]]></INPUT_FILE>
 <SYMBOL name='.LN0' address='0x1c3738' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.LNadi_SRU_Init.' address='0x1c3738' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNadi_SRU_Init]]></DEMANGLED_NAME></SYMBOL>
@@ -3336,11 +3336,11 @@
 <SYMBOL name='.adi_SRU_Init..end' address='0x1c3778' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c3778' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='01705C58' name='seg_swco' start_address='0x1c3778' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='005AA030' name='seg_swco' start_address='0x1c3778' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[system\startup_ldf\app_heaptab.doj]]></INPUT_FILE>
 <SYMBOL name='.epctext' address='0x1c3778' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05477CF8' name='seg_pmco' start_address='0x1c3778' size='0x39' element_at='0x0' >
+<INPUT_SECTION id='04A6BBF8' name='seg_pmco' start_address='0x1c3778' size='0x39' element_at='0x0' >
 <INPUT_FILE><![CDATA[libcc.dlb[divrem_s32.doj]]]></INPUT_FILE>
 <SYMBOL name='___divrem_s32' address='0x1c3778' size='0x39' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__divrem_s32]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='___divsi3' address='0x1c3778' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__divsi3]]></DEMANGLED_NAME></SYMBOL>
@@ -3361,13 +3361,13 @@
 <SYMBOL name='._div..end' address='0x1c37b1' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='._ldiv..end' address='0x1c37b1' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05477A38' name='seg_pmco' start_address='0x1c37b2' size='0x33' element_at='0x0' >
+<INPUT_SECTION id='04A6BA38' name='seg_pmco' start_address='0x1c37b2' size='0x33' element_at='0x0' >
 <INPUT_FILE><![CDATA[libcc.dlb[divrem_s64_char8_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='__divrem_s64.' address='0x1c37b2' size='0x33' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__divrem_s64]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='___ADI_AGL_CRT_SW_BRANCHRETURN_952' address='0x1c37cd' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[__ADI_AGL_CRT_SW_BRANCHRETURN_952]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.__divrem_s64..end' address='0x1c37e5' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E7B70' name='seg_pmco' start_address='0x1c37e6' size='0x4a' element_at='0x0' >
+<INPUT_SECTION id='03EB5E58' name='seg_pmco' start_address='0x1c37e6' size='0x4a' element_at='0x0' >
 <INPUT_FILE><![CDATA[libcc.dlb[divrem_u32.doj]]]></INPUT_FILE>
 <SYMBOL name='___divrem_u32' address='0x1c37e6' size='0x4a' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__divrem_u32]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='___udiv' address='0x1c37e6' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__udiv]]></DEMANGLED_NAME></SYMBOL>
@@ -3380,7 +3380,7 @@
 <SYMBOL name='.___uldiv.end' address='0x1c3830' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.__divrem_u32..end' address='0x1c3830' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05478838' name='seg_pmco' start_address='0x1c3830' size='0xb8' element_at='0x0' >
+<INPUT_SECTION id='04A6C1F8' name='seg_pmco' start_address='0x1c3830' size='0xb8' element_at='0x0' >
 <INPUT_FILE><![CDATA[libcc.dlb[divrem_u64_char8_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='__divrem_u64.' address='0x1c3830' size='0xb8' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__divrem_u64]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.div_64_31' address='0x1c3841' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -3393,12 +3393,12 @@
 <SYMBOL name='___ADI_AGL_CRT_SW_BRANCHRETURN_1130' address='0x1c38df' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[__ADI_AGL_CRT_SW_BRANCHRETURN_1130]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.__divrem_u64..end' address='0x1c38e8' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05477978' name='seg_pmco' start_address='0x1c38e8' size='0x11' element_at='0x0' >
+<INPUT_SECTION id='04A6BF78' name='seg_pmco' start_address='0x1c38e8' size='0x11' element_at='0x0' >
 <INPUT_FILE><![CDATA[libcc.dlb[float_divide.doj]]]></INPUT_FILE>
 <SYMBOL name='___float_divide' address='0x1c38e8' size='0x11' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__float_divide]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.___float_divide.end' address='0x1c38f9' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05477078' name='seg_pmco' start_address='0x1c38fa' size='0x65' element_at='0x0' >
+<INPUT_SECTION id='04A6AF78' name='seg_pmco' start_address='0x1c38fa' size='0x65' element_at='0x0' >
 <INPUT_FILE><![CDATA[libcc.dlb[flt_sprt.doj]]]></INPUT_FILE>
 <SYMBOL name='___trunc_ftoi' address='0x1c38fa' size='0x1b' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__trunc_ftoi]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='__trunc_ftoi.' address='0x1c38fa' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__trunc_ftoi]]></DEMANGLED_NAME></SYMBOL>
@@ -3423,20 +3423,20 @@
 <SYMBOL name='.___ultof.end' address='0x1c395f' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.___utof.end' address='0x1c395f' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05477E38' name='seg_pmco' start_address='0x1c3960' size='0x3' element_at='0x0' >
+<INPUT_SECTION id='04A6BF38' name='seg_pmco' start_address='0x1c3960' size='0x3' element_at='0x0' >
 <INPUT_FILE><![CDATA[libcc.dlb[lib_ldtof.doj]]]></INPUT_FILE>
 <SYMBOL name='___lib_dtof' address='0x1c3960' size='0x3' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__lib_dtof]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='___lib_ldtof' address='0x1c3960' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__lib_ldtof]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.___lib_dtof.end' address='0x1c3963' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.___lib_ldtof.end' address='0x1c3963' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054754B8' name='seg_pmco' start_address='0x1c3964' size='0x18' element_at='0x0' >
+<INPUT_SECTION id='04A69338' name='seg_pmco' start_address='0x1c3964' size='0x18' element_at='0x0' >
 <INPUT_FILE><![CDATA[libcc.dlb[strlen_char8_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='strlen.' address='0x1c3964' size='0x18' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[strlen]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.find_pm_end' address='0x1c396c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.strlen..end' address='0x1c397c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05474978' name='seg_swco' start_address='0x1c397c' size='0xe' element_at='0x0' >
+<INPUT_SECTION id='04A689F8' name='seg_swco' start_address='0x1c397c' size='0xe' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[abort_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNabort.' address='0x1c397c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNabort]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c397c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -3446,7 +3446,7 @@
 <SYMBOL name='.abort..end' address='0x1c398a' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c398a' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048EAB30' name='seg_pmco' start_address='0x1c398a' size='0xfe' element_at='0x0' >
+<INPUT_SECTION id='03EB0C58' name='seg_pmco' start_address='0x1c398a' size='0xfe' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[dispatched_handler_activate_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='adi_rtl_activate_dispatched_handler.' address='0x1c398a' size='0x35' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[adi_rtl_activate_dispatched_handler]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.restore_state' address='0x1c39b5' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -3459,7 +3459,7 @@
 <SYMBOL name='.__set_imask1' address='0x1c39ed' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.__set_imask.end' address='0x1c3a88' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054740B8' name='seg_pmco' start_address='0x1c3a88' size='0xd4' element_at='0x0' >
+<INPUT_SECTION id='04A684F8' name='seg_pmco' start_address='0x1c3a88' size='0xd4' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[dispatched_handler_deactivate_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='adi_rtl_deactivate_dispatched_handler.' address='0x1c3a88' size='0x34' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[adi_rtl_deactivate_dispatched_handler]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.restore_state' address='0x1c3ab2' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -3470,7 +3470,7 @@
 <SYMBOL name='.__clear_imask1' address='0x1c3ac1' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.__clear_imask.end' address='0x1c3b5c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054744F8' name='seg_swco' start_address='0x1c3b5c' size='0x91' element_at='0x0' >
+<INPUT_SECTION id='04A68138' name='seg_swco' start_address='0x1c3b5c' size='0x91' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[dispatched_handler_reg_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNadi_rtl_register_dispatched_handler.' address='0x1c3b5c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNadi_rtl_register_dispatched_handler]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c3b5c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -3487,12 +3487,12 @@
 <SYMBOL name='.adi_rtl_register_dispatched_handler..end' address='0x1c3bed' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c3bed' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054740F8' name='seg_pmco' start_address='0x1c3bee' size='0x7' element_at='0x0' >
+<INPUT_SECTION id='04A68538' name='seg_pmco' start_address='0x1c3bee' size='0x7' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[dispatched_handler_unregister_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='adi_rtl_unregister_dispatched_handler.' address='0x1c3bee' size='0x7' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[adi_rtl_unregister_dispatched_handler]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.adi_rtl_unregister_dispatched_handler..end' address='0x1c3bf5' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05478178' name='seg_swco' start_address='0x1c3bf6' size='0x9' element_at='0x0' >
+<INPUT_SECTION id='04A6C438' name='seg_swco' start_address='0x1c3bf6' size='0x9' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[errno.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN__Geterrno' address='0x1c3bf6' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c3bf6' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -3501,7 +3501,7 @@
 <SYMBOL name='.__Geterrno.end' address='0x1c3bff' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c3bff' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05474378' name='seg_swco' start_address='0x1c3c00' size='0xf' element_at='0x0' >
+<INPUT_SECTION id='04A680F8' name='seg_swco' start_address='0x1c3c00' size='0xf' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[heap_free_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_heap_free.' address='0x1c3c00' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_heap_free]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c3c00' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -3511,7 +3511,7 @@
 <SYMBOL name='._heap_free..end' address='0x1c3c0f' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c3c0f' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054746F8' name='seg_swco' start_address='0x1c3c10' size='0x73' element_at='0x0' >
+<INPUT_SECTION id='04A683B8' name='seg_swco' start_address='0x1c3c10' size='0x73' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[heap_install_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_heap_install.' address='0x1c3c10' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_heap_install]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c3c10' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -3524,7 +3524,7 @@
 <SYMBOL name='._heap_install..end' address='0x1c3c83' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c3c83' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05475F78' name='seg_swco' start_address='0x1c3c84' size='0x2d' element_at='0x0' >
+<INPUT_SECTION id='04A69C78' name='seg_swco' start_address='0x1c3c84' size='0x2d' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[heap_lookup_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_heap_lookup.' address='0x1c3c84' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_heap_lookup]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c3c84' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -3536,7 +3536,7 @@
 <SYMBOL name='._heap_lookup..end' address='0x1c3cb1' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c3cb1' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E7030' name='seg_swco' start_address='0x1c3cb2' size='0x45' element_at='0x0' >
+<INPUT_SECTION id='03EB48D8' name='seg_swco' start_address='0x1c3cb2' size='0x45' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[heap_setup_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN__setup_heaps.' address='0x1c3cb2' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN__setup_heaps]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c3cb2' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -3550,7 +3550,7 @@
 <SYMBOL name='.__setup_heaps..end' address='0x1c3cf7' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c3cf7' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048EA970' name='seg_swco' start_address='0x1c3cf8' size='0x6' element_at='0x0' >
+<INPUT_SECTION id='03EB0A98' name='seg_swco' start_address='0x1c3cf8' size='0x6' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[lib_set_noncacheable_arm_cache_range_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN__lib_set_noncacheable_arm_cache_range.' address='0x1c3cf8' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN__lib_set_noncacheable_arm_cache_range]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c3cf8' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -3559,7 +3559,7 @@
 <SYMBOL name='.__lib_set_noncacheable_arm_cache_range..end' address='0x1c3cfe' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c3cfe' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05476678' name='seg_swco' start_address='0x1c3cfe' size='0x33' element_at='0x0' >
+<INPUT_SECTION id='04A6A6F8' name='seg_swco' start_address='0x1c3cfe' size='0x33' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[strchr_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNstrchr.' address='0x1c3cfe' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNstrchr]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c3cfe' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -3572,7 +3572,7 @@
 <SYMBOL name='.epctext.end' address='0x1c3d31' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.strchr..end' address='0x1c3d31' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E7630' name='seg_swco' start_address='0x1c3d32' size='0x199' element_at='0x0' >
+<INPUT_SECTION id='03EB5258' name='seg_swco' start_address='0x1c3d32' size='0x199' element_at='0x0' >
 <INPUT_FILE><![CDATA[libosal_noos.dlb[adi_osal_arch_c.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_adi_osal_InitInterrupts.' address='0x1c3d32' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_adi_osal_InitInterrupts]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.LN0' address='0x1c3d32' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -3713,7 +3713,7 @@
 <SYMBOL name='.epctext.end' address='0x1c3ecb' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='._adi_osal_IsCurrentLevelISR..end' address='0x1c3ecb' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048EAF30' name='seg_swco' start_address='0x1c3ecc' size='0x40' element_at='0x0' >
+<INPUT_SECTION id='03EB0F18' name='seg_swco' start_address='0x1c3ecc' size='0x40' element_at='0x0' >
 <INPUT_FILE><![CDATA[libosal_noos.dlb[adi_osal_noos_init.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNadi_osal_Init.' address='0x1c3ecc' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNadi_osal_Init]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c3ecc' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -3737,7 +3737,7 @@
 <SYMBOL name='.adi_osal_Init..end' address='0x1c3f0c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c3f0c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E7FF0' name='seg_swco' start_address='0x1c3f0c' size='0x2e7' element_at='0x0' >
+<INPUT_SECTION id='03EB5F98' name='seg_swco' start_address='0x1c3f0c' size='0x2e7' element_at='0x0' >
 <INPUT_FILE><![CDATA[libosal_noos.dlb[adi_osal_noos_sem.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN0' address='0x1c3f0c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c3f0c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -3953,7 +3953,7 @@
 <SYMBOL name='.LN._adi_osal_IsCurrentLevelISR..end' address='0x1c41f3' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1c41f3' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E9330' name='seg_swco' start_address='0x1c41f4' size='0x3265' element_at='0x0' >
+<INPUT_SECTION id='03EB7398' name='seg_swco' start_address='0x1c41f4' size='0x3265' element_at='0x0' >
 <INPUT_FILE><![CDATA[libssl.dlb[adi_dma.doj]]]></INPUT_FILE>
 <SYMBOL name='ValidateBuffer.' address='0x1c41f4' size='0x83' binding='LOCAL'><DEMANGLED_NAME><![CDATA[ValidateBuffer]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c41f4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -6668,7 +6668,7 @@
 <SYMBOL name='.adi_dma_GetCurrentYCount..end' address='0x1c7459' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.LN.adi_dma_GetCurrentYCount..end' address='0x1c7459' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E4630' name='seg_swco' start_address='0x1c745a' size='0x709' element_at='0x0' >
+<INPUT_SECTION id='03EB21D8' name='seg_swco' start_address='0x1c745a' size='0x709' element_at='0x0' >
 <INPUT_FILE><![CDATA[libssl.dlb[adi_gpio.doj]]]></INPUT_FILE>
 <SYMBOL name='.epctext' address='0x1c745a' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.LNValidatePort.' address='0x1c745a' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNValidatePort]]></DEMANGLED_NAME></SYMBOL>
@@ -7095,7 +7095,7 @@
 <SYMBOL name='.LN.adi_gpio_GetRevision..end' address='0x1c7b63' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.adi_gpio_GetRevision..end' address='0x1c7b63' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E7DF0' name='seg_swco' start_address='0x1c7b64' size='0x18b' element_at='0x0' >
+<INPUT_SECTION id='03EB5D18' name='seg_swco' start_address='0x1c7b64' size='0x18b' element_at='0x0' >
 <INPUT_FILE><![CDATA[libssl.dlb[adi_int.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNadi_int_InstallHandler.' address='0x1c7b64' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNadi_int_InstallHandler]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c7b64' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -7233,7 +7233,7 @@
 <SYMBOL name='.LN.adi_int_ClearPending..end' address='0x1c7cef' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.adi_int_ClearPending..end' address='0x1c7cef' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E6030' name='seg_swco' start_address='0x1c7cf0' size='0x736' element_at='0x0' >
+<INPUT_SECTION id='03EB3F18' name='seg_swco' start_address='0x1c7cf0' size='0x736' element_at='0x0' >
 <INPUT_FILE><![CDATA[libssl.dlb[adi_sec.doj]]]></INPUT_FILE>
 <SYMBOL name='DefaultErrorHandler.' address='0x1c7cf0' size='0x6' binding='LOCAL'><DEMANGLED_NAME><![CDATA[DefaultErrorHandler]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1c7cf0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -7884,7 +7884,7 @@
 <SYMBOL name='.epctext.end' address='0x1c8426' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.adi_sec_RegisterErrorHandler..end' address='0x1c8426' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E4470' name='seg_swco' start_address='0x1c8426' size='0x716' element_at='0x0' >
+<INPUT_SECTION id='03EB2518' name='seg_swco' start_address='0x1c8426' size='0x716' element_at='0x0' >
 <INPUT_FILE><![CDATA[libssl.dlb[adi_spu.doj]]]></INPUT_FILE>
 <SYMBOL name='.epctext' address='0x1c8426' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.LNValidateDeviceHandle.' address='0x1c8426' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNValidateDeviceHandle]]></DEMANGLED_NAME></SYMBOL>
@@ -8303,7 +8303,7 @@
 <SYMBOL name='.LN.adi_spu_EnableMasterSecure..end' address='0x1c8b3c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.adi_spu_EnableMasterSecure..end' address='0x1c8b3c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E5570' name='seg_swco' start_address='0x1c8b3c' size='0x1644' element_at='0x0' >
+<INPUT_SECTION id='03EB2E58' name='seg_swco' start_address='0x1c8b3c' size='0x1644' element_at='0x0' >
 <INPUT_FILE><![CDATA[libdrv.dlb[adi_sport.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNValidateHandle.' address='0x1c8b3c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNValidateHandle]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='ValidateHandle.' address='0x1c8b3c' size='0x40' binding='LOCAL'><DEMANGLED_NAME><![CDATA[ValidateHandle]]></DEMANGLED_NAME></SYMBOL>
@@ -9550,7 +9550,7 @@
 <SYMBOL name='.LN.EnableDma..end' address='0x1ca180' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.EnableDma..end' address='0x1ca180' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048EB770' name='seg_swco' start_address='0x1ca180' size='0x1d20' element_at='0x0' >
+<INPUT_SECTION id='03EB14D8' name='seg_swco' start_address='0x1ca180' size='0x1d20' element_at='0x0' >
 <INPUT_FILE><![CDATA[libdrv.dlb[adi_twi.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNBufferReceive.' address='0x1ca180' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNBufferReceive]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1ca180' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11146,24 +11146,24 @@
 </INPUT_SECTION>
 </INPUT_SECTIONS>
 </OUTPUT_SECTION>
-<OUTPUT_SECTION name='dxe_block3_sw_code_prio3' id='054ED9C0' memory_id='03898F00' type='SHT_PROGBITS' start_address='0x1cbea2' word_size='0x1a65' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_block3_sw_code_prio3' id='04AD0FD0' memory_id='02E425D0' type='SHT_PROGBITS' start_address='0x1cbea2' word_size='0x1a65' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='048E6570' name='seg_pmco' start_address='0x1cbea2' size='0x19' element_at='0x0' >
+<INPUT_SECTION id='03EB4598' name='seg_pmco' start_address='0x1cbea2' size='0x19' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[adi_bad_reset_detected.doj]]]></INPUT_FILE>
 <SYMBOL name='_adi_bad_reset_detected' address='0x1cbea2' size='0x19' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[adi_bad_reset_detected]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='._adi_bad_reset_detected.end' address='0x1cbebb' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E6A70' name='seg_pmco' start_address='0x1cbebc' size='0x1b' element_at='0x0' >
+<INPUT_SECTION id='03EB4118' name='seg_pmco' start_address='0x1cbebc' size='0x1b' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[adi_ilop_detected.doj]]]></INPUT_FILE>
 <SYMBOL name='_adi_ilop_detected' address='0x1cbebc' size='0x1b' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[adi_ilop_detected]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='._adi_ilop_detected.end' address='0x1cbed7' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E66B0' name='seg_pmco' start_address='0x1cbed8' size='0x1b' element_at='0x0' >
+<INPUT_SECTION id='03EB4618' name='seg_pmco' start_address='0x1cbed8' size='0x1b' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[adi_parity_error_detected.doj]]]></INPUT_FILE>
 <SYMBOL name='_adi_parity_error_detected' address='0x1cbed8' size='0x1b' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[adi_parity_error_detected]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='._adi_parity_error_detected.end' address='0x1cbef3' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E8030' name='seg_swco' start_address='0x1cbef4' size='0x12' element_at='0x0' >
+<INPUT_SECTION id='03EB5B18' name='seg_swco' start_address='0x1cbef4' size='0x12' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[dbg_assert2_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN__dbg_assert2.' address='0x1cbef4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN__dbg_assert2]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cbef4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11174,7 +11174,7 @@
 <SYMBOL name='.epctext.end' address='0x1cbf06' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.LCJ1' address='0x1cbf06' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E4CB0' name='seg_swco' start_address='0x1cbf06' size='0x2c' element_at='0x0' >
+<INPUT_SECTION id='03EB2E98' name='seg_swco' start_address='0x1cbf06' size='0x2c' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[exit_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNexit.' address='0x1cbf06' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNexit]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cbf06' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11187,12 +11187,12 @@
 <SYMBOL name='.exit..end' address='0x1cbf32' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.LCJ1' address='0x1cbf32' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E6BF0' name='seg_pmco' start_address='0x1cbf32' size='0x1e' element_at='0x0' >
+<INPUT_SECTION id='03EB4C18' name='seg_pmco' start_address='0x1cbf32' size='0x1e' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[no_dispatched_handler.doj]]]></INPUT_FILE>
 <SYMBOL name='_adi_no_dispatched_handler' address='0x1cbf32' size='0x1e' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[adi_no_dispatched_handler]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='._adi_no_dispatched_handler.end' address='0x1cbf50' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05476338' name='seg_swco' start_address='0x1cbf50' size='0x70' element_at='0x0' >
+<INPUT_SECTION id='04A6A6B8' name='seg_swco' start_address='0x1cbf50' size='0x70' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[raise_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNraise.' address='0x1cbf50' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNraise]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cbf50' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11208,7 +11208,7 @@
 <SYMBOL name='.raise..end' address='0x1cbfc0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.LCJ2' address='0x1cbfc0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05477CB8' name='seg_swco' start_address='0x1cbfc0' size='0x23' element_at='0x0' >
+<INPUT_SECTION id='04A6C078' name='seg_swco' start_address='0x1cbfc0' size='0x23' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[signal_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNsignal.' address='0x1cbfc0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNsignal]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cbfc0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11219,7 +11219,7 @@
 <SYMBOL name='.epctext.end' address='0x1cbfe3' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.signal..end' address='0x1cbfe3' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E88F0' name='seg_swco' start_address='0x1cbfe4' size='0x8' element_at='0x0' >
+<INPUT_SECTION id='03EB6F98' name='seg_swco' start_address='0x1cbfe4' size='0x8' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[xexit.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN__Exit' address='0x1cbfe4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cbfe4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11228,7 +11228,7 @@
 <SYMBOL name='.__Exit.end' address='0x1cbfec' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1cbfec' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E8970' name='seg_swco' start_address='0x1cbfec' size='0xb0' element_at='0x0' >
+<INPUT_SECTION id='03EB6898' name='seg_swco' start_address='0x1cbfec' size='0xb0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[convert_FILE_table_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_convert_FILE_table.' address='0x1cbfec' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_convert_FILE_table]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cbfec' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11237,7 +11237,7 @@
 <SYMBOL name='._convert_FILE_table..end' address='0x1cc09c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1cc09c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054772F8' name='seg_swco' start_address='0x1cc09c' size='0x107' element_at='0x0' >
+<INPUT_SECTION id='04A6B538' name='seg_swco' start_address='0x1cc09c' size='0x107' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[dev_init_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN__init_devdrv.' address='0x1cc09c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN__init_devdrv]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cc09c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11268,7 +11268,7 @@
 <SYMBOL name='.__init_devtabs..end' address='0x1cc1a3' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1cc1a3' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05475EB8' name='seg_swco' start_address='0x1cc1a4' size='0xa4' element_at='0x0' >
+<INPUT_SECTION id='04A69B78' name='seg_swco' start_address='0x1cc1a4' size='0xa4' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[dev_write_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_dev_write.' address='0x1cc1a4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_dev_write]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cc1a4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11284,7 +11284,7 @@
 <SYMBOL name='._dev_write..end' address='0x1cc248' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1cc248' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E8930' name='seg_swco' start_address='0x1cc248' size='0xcb' element_at='0x0' >
+<INPUT_SECTION id='03EB6918' name='seg_swco' start_address='0x1cc248' size='0xcb' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[fflush_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_fflush_all.' address='0x1cc248' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_fflush_all]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cc248' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11315,7 +11315,7 @@
 <SYMBOL name='.epctext.end' address='0x1cc313' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.fflush..end' address='0x1cc313' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E80B0' name='seg_swco' start_address='0x1cc314' size='0xae' element_at='0x0' >
+<INPUT_SECTION id='03EB64D8' name='seg_swco' start_address='0x1cc314' size='0xae' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[fputc_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_fputc.' address='0x1cc314' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_fputc]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cc314' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11339,7 +11339,7 @@
 <SYMBOL name='.epctext.end' address='0x1cc3c2' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.fputc..end' address='0x1cc3c2' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E8630' name='seg_swco' start_address='0x1cc3c2' size='0xbc' element_at='0x0' >
+<INPUT_SECTION id='03EB6858' name='seg_swco' start_address='0x1cc3c2' size='0xbc' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[fputs_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNfputs.' address='0x1cc3c2' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNfputs]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cc3c2' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11360,7 +11360,7 @@
 <SYMBOL name='.epctext.end' address='0x1cc47e' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.fputs..end' address='0x1cc47e' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05478478' name='seg_swco' start_address='0x1cc47e' size='0x11' element_at='0x0' >
+<INPUT_SECTION id='04A6C4B8' name='seg_swco' start_address='0x1cc47e' size='0x11' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[primiolib_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_primio_ioctl.' address='0x1cc47e' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_primio_ioctl]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cc47e' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11373,10 +11373,10 @@
 <SYMBOL name='._primio_init..end' address='0x1cc48f' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1cc48f' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054787B8' name='seg_swco' start_address='0x1cc490' size='0x0' element_at='0x0' >
+<INPUT_SECTION id='04A6C6F8' name='seg_swco' start_address='0x1cc490' size='0x0' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[primiolibtab_c08_any.doj]]]></INPUT_FILE>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E4130' name='seg_swco' start_address='0x1cc490' size='0x56' element_at='0x0' >
+<INPUT_SECTION id='03EB20D8' name='seg_swco' start_address='0x1cc490' size='0x56' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[printf_c08_d32.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_printf32.' address='0x1cc490' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_printf32]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cc490' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11390,7 +11390,7 @@
 <SYMBOL name='._printf32..end' address='0x1cc4e6' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1cc4e6' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048EBCF0' name='seg_swco' start_address='0x1cc4e6' size='0x31' element_at='0x0' >
+<INPUT_SECTION id='03EB1C98' name='seg_swco' start_address='0x1cc4e6' size='0x31' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[puts_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNputs.' address='0x1cc4e6' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNputs]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cc4e6' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11404,7 +11404,7 @@
 <SYMBOL name='.epctext.end' address='0x1cc517' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.puts..end' address='0x1cc517' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054751B8' name='seg_swco' start_address='0x1cc518' size='0x1d4' element_at='0x0' >
+<INPUT_SECTION id='04A696B8' name='seg_swco' start_address='0x1cc518' size='0x1d4' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xdo_output_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='_do_output.' address='0x1cc518' size='0x1d4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[_do_output]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.LN_do_output.' address='0x1cc518' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_do_output]]></DEMANGLED_NAME></SYMBOL>
@@ -11440,7 +11440,7 @@
 <SYMBOL name='.LN._do_output..end' address='0x1cc6ec' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1cc6ec' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05474C78' name='seg_swco' start_address='0x1cc6ec' size='0x97' element_at='0x0' >
+<INPUT_SECTION id='04A688B8' name='seg_swco' start_address='0x1cc6ec' size='0x97' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xflushwritebuf_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_flushwritebuf.' address='0x1cc6ec' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_flushwritebuf]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cc6ec' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11459,7 +11459,7 @@
 <SYMBOL name='._flushwritebuf..end' address='0x1cc783' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1cc783' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05476B38' name='seg_swco' start_address='0x1cc784' size='0x61' element_at='0x0' >
+<INPUT_SECTION id='04A6AE38' name='seg_swco' start_address='0x1cc784' size='0x61' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xlong_to_string_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_long_to_string.' address='0x1cc784' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_long_to_string]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cc784' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11472,7 +11472,7 @@
 <SYMBOL name='._long_to_string..end' address='0x1cc7e5' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1cc7e5' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05476D38' name='seg_swco' start_address='0x1cc7e6' size='0x8c' element_at='0x0' >
+<INPUT_SECTION id='04A6AC38' name='seg_swco' start_address='0x1cc7e6' size='0x8c' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xlonglong_to_string_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_long_long_to_string.' address='0x1cc7e6' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_long_long_to_string]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cc7e6' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11485,7 +11485,7 @@
 <SYMBOL name='._long_long_to_string..end' address='0x1cc872' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1cc872' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05476EB8' name='seg_swco' start_address='0x1cc872' size='0x37' element_at='0x0' >
+<INPUT_SECTION id='04A6AD38' name='seg_swco' start_address='0x1cc872' size='0x37' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xpad_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_pad.' address='0x1cc872' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_pad]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cc872' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11497,7 +11497,7 @@
 <SYMBOL name='._pad..end' address='0x1cc8a9' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1cc8a9' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054762F8' name='seg_swco' start_address='0x1cc8aa' size='0x5d' element_at='0x0' >
+<INPUT_SECTION id='04A6A3F8' name='seg_swco' start_address='0x1cc8aa' size='0x5d' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xparse_field_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_parse_field.' address='0x1cc8aa' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_parse_field]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cc8aa' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11511,7 +11511,7 @@
 <SYMBOL name='._parse_field..end' address='0x1cc907' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1cc907' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05474DF8' name='seg_swco' start_address='0x1cc908' size='0x19e' element_at='0x0' >
+<INPUT_SECTION id='04A689B8' name='seg_swco' start_address='0x1cc908' size='0x19e' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xparse_format_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_parse_format.' address='0x1cc908' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_parse_format]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cc908' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11539,7 +11539,7 @@
 <SYMBOL name='._parse_format..end' address='0x1ccaa6' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1ccaa6' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05479378' name='seg_swco' start_address='0x1ccaa6' size='0x6' element_at='0x0' >
+<INPUT_SECTION id='04A6D2B8' name='seg_swco' start_address='0x1ccaa6' size='0x6' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprim_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN__primIO' address='0x1ccaa6' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1ccaa6' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11548,7 +11548,7 @@
 <SYMBOL name='.__primIO.end' address='0x1ccaac' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1ccaac' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05478AF8' name='seg_swco' start_address='0x1ccaac' size='0x38' element_at='0x0' >
+<INPUT_SECTION id='04A6CCB8' name='seg_swco' start_address='0x1ccaac' size='0x38' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprim_close_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNPRIMITIVE_CLOSE.' address='0x1ccaac' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNPRIMITIVE_CLOSE]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1ccaac' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11560,7 +11560,7 @@
 <SYMBOL name='.PRIMITIVE_CLOSE..end' address='0x1ccae4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1ccae4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054780B8' name='seg_swco' start_address='0x1ccae4' size='0x4a' element_at='0x0' >
+<INPUT_SECTION id='04A6C678' name='seg_swco' start_address='0x1ccae4' size='0x4a' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprim_open_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNPRIMITIVE_OPEN.' address='0x1ccae4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNPRIMITIVE_OPEN]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1ccae4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11573,7 +11573,7 @@
 <SYMBOL name='.PRIMITIVE_OPEN..end' address='0x1ccb2e' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1ccb2e' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05478BF8' name='seg_swco' start_address='0x1ccb2e' size='0x46' element_at='0x0' >
+<INPUT_SECTION id='04A6CC38' name='seg_swco' start_address='0x1ccb2e' size='0x46' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprim_read_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNPRIMITIVE_READ.' address='0x1ccb2e' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNPRIMITIVE_READ]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1ccb2e' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11585,7 +11585,7 @@
 <SYMBOL name='.PRIMITIVE_READ..end' address='0x1ccb74' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1ccb74' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05478F78' name='seg_swco' start_address='0x1ccb74' size='0x4a' element_at='0x0' >
+<INPUT_SECTION id='04A6CB38' name='seg_swco' start_address='0x1ccb74' size='0x4a' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprim_remove_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNPRIMITIVE_REMOVE.' address='0x1ccb74' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNPRIMITIVE_REMOVE]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1ccb74' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11598,7 +11598,7 @@
 <SYMBOL name='.PRIMITIVE_REMOVE..end' address='0x1ccbbe' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1ccbbe' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05478AB8' name='seg_swco' start_address='0x1ccbbe' size='0x56' element_at='0x0' >
+<INPUT_SECTION id='04A6CDF8' name='seg_swco' start_address='0x1ccbbe' size='0x56' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprim_rename_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNPRIMITIVE_RENAME.' address='0x1ccbbe' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNPRIMITIVE_RENAME]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1ccbbe' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11612,7 +11612,7 @@
 <SYMBOL name='.PRIMITIVE_RENAME..end' address='0x1ccc14' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1ccc14' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05478C78' name='seg_swco' start_address='0x1ccc14' size='0x62' element_at='0x0' >
+<INPUT_SECTION id='04A6CFF8' name='seg_swco' start_address='0x1ccc14' size='0x62' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprim_seek_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNPRIMITIVE_SEEK.' address='0x1ccc14' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNPRIMITIVE_SEEK]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1ccc14' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11627,7 +11627,7 @@
 <SYMBOL name='.PRIMITIVE_SEEK..end' address='0x1ccc76' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1ccc76' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05479038' name='seg_swco' start_address='0x1ccc76' size='0x49' element_at='0x0' >
+<INPUT_SECTION id='04A6C9B8' name='seg_swco' start_address='0x1ccc76' size='0x49' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprim_write2_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNPRIMITIVE_WRITE2.' address='0x1ccc76' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNPRIMITIVE_WRITE2]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1ccc76' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11639,7 +11639,7 @@
 <SYMBOL name='.PRIMITIVE_WRITE2..end' address='0x1cccbf' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1cccbf' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05474D78' name='seg_swco' start_address='0x1cccc0' size='0x288' element_at='0x0' >
+<INPUT_SECTION id='04A68F78' name='seg_swco' start_address='0x1cccc0' size='0x288' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprint_a_float_c08_d32.doj]]]></INPUT_FILE>
 <SYMBOL name='_mantissa_to_hex.' address='0x1cccc0' size='0x44' binding='LOCAL'><DEMANGLED_NAME><![CDATA[_mantissa_to_hex]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cccc0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11682,7 +11682,7 @@
 <SYMBOL name='._print_a_float_32..end' address='0x1ccf48' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1ccf48' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='054757F8' name='seg_swco' start_address='0x1ccf48' size='0x258' element_at='0x0' >
+<INPUT_SECTION id='04A69238' name='seg_swco' start_address='0x1ccf48' size='0x258' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprint_fixed_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='_print_fixed.' address='0x1ccf48' size='0x258' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[_print_fixed]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.LN_print_fixed.' address='0x1ccf48' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_print_fixed]]></DEMANGLED_NAME></SYMBOL>
@@ -11723,7 +11723,7 @@
 <SYMBOL name='._print_fixed..end' address='0x1cd1a0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1cd1a0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05475278' name='seg_swco' start_address='0x1cd1a0' size='0x476' element_at='0x0' >
+<INPUT_SECTION id='04A69878' name='seg_swco' start_address='0x1cd1a0' size='0x476' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprint_float_c08_d32.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_print_float_32.' address='0x1cd1a0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_print_float_32]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cd1a0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11805,7 +11805,7 @@
 <SYMBOL name='._print_float_32..end' address='0x1cd616' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1cd616' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048E8D30' name='seg_swco' start_address='0x1cd616' size='0x21e' element_at='0x0' >
+<INPUT_SECTION id='03EB6C58' name='seg_swco' start_address='0x1cd616' size='0x21e' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xprnt_c08_d32.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_doprnt_32.' address='0x1cd616' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_doprnt_32]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cd616' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11850,7 +11850,7 @@
 <SYMBOL name='._doprnt_32..end' address='0x1cd834' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1cd834' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='05475578' name='seg_swco' start_address='0x1cd834' size='0x3e' element_at='0x0' >
+<INPUT_SECTION id='04A69538' name='seg_swco' start_address='0x1cd834' size='0x3e' element_at='0x0' >
 <INPUT_FILE><![CDATA[libio.dlb[xput_string_c08_any.doj]]]></INPUT_FILE>
 <SYMBOL name='.LN_put_string.' address='0x1cd834' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LN_put_string]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cd834' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11862,7 +11862,7 @@
 <SYMBOL name='._put_string..end' address='0x1cd872' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext.end' address='0x1cd872' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048EBC70' name='seg_swco' start_address='0x1cd872' size='0x95' element_at='0x0' >
+<INPUT_SECTION id='03EB1DD8' name='seg_swco' start_address='0x1cd872' size='0x95' element_at='0x0' >
 <INPUT_FILE><![CDATA[libdsp.dlb[twidfftn_ba.doj]]]></INPUT_FILE>
 <SYMBOL name='.LNtwidfft.' address='0x1cd872' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[.LNtwidfft]]></DEMANGLED_NAME></SYMBOL>
 <SYMBOL name='.epctext' address='0x1cd872' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
@@ -11880,91 +11880,91 @@
 </OUTPUT_SECTION>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03898F10' name='mem_L2B1P1_bw' start_address='0x20080000' end_address='0x20080fff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x1000' >
+<MEMORY id='02E42620' name='mem_L2B1P1_bw' start_address='0x20080000' end_address='0x20080fff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x1000' >
 <OUTPUT_SECTIONS>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03898F30' name='mem_L2B1P2_bw' start_address='0x20081000' end_address='0x20081fff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x1000' >
+<MEMORY id='02E424B0' name='mem_L2B1P2_bw' start_address='0x20081000' end_address='0x20081fff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x1000' >
 <OUTPUT_SECTIONS>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03898F40' name='mem_L2B1P3_bw' start_address='0x20082000' end_address='0x20082fff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x1000' >
+<MEMORY id='02E424F0' name='mem_L2B1P3_bw' start_address='0x20082000' end_address='0x20082fff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x1000' >
 <OUTPUT_SECTIONS>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03898F50' name='mem_L2B1P4_bw' start_address='0x20083000' end_address='0x20083fff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x1000' >
+<MEMORY id='02E42500' name='mem_L2B1P4_bw' start_address='0x20083000' end_address='0x20083fff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x1000' >
 <OUTPUT_SECTIONS>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03898F90' name='mem_L2B1P5_bw' start_address='0x20084000' end_address='0x20087fff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x4000' >
+<MEMORY id='02E42520' name='mem_L2B1P5_bw' start_address='0x20084000' end_address='0x20087fff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x4000' >
 <OUTPUT_SECTIONS>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03897230' name='mem_L2B2toB4_bw' start_address='0x20088000' end_address='0x2009ffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x18000' >
+<MEMORY id='02E424D0' name='mem_L2B2toB4_bw' start_address='0x20088000' end_address='0x2009ffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x18000' >
 <OUTPUT_SECTIONS>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03897160' name='mem_L2B5B6_bw' start_address='0x200a0000' end_address='0x200affff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x10000' >
+<MEMORY id='02E425F0' name='mem_L2B5B6_bw' start_address='0x200a0000' end_address='0x200affff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x10000' >
 <OUTPUT_SECTIONS>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03897270' name='mem_L2B7B8_bw' start_address='0x200b0000' end_address='0x200bdffb' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0xdffc' >
+<MEMORY id='02E42540' name='mem_L2B7B8_bw' start_address='0x200b0000' end_address='0x200bdffb' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0xdffc' >
 <OUTPUT_SECTIONS>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03897120' name='mem_L2B8BC_bw' start_address='0x200bdffc' end_address='0x200bffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x2004' >
+<MEMORY id='02E42630' name='mem_L2B8BC_bw' start_address='0x200bdffc' end_address='0x200bffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x2004' >
 <OUTPUT_SECTIONS>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03897180' name='mem_DMC0_SDRAM_A1' start_address='0x80000000' end_address='0x802fffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x300000' >
+<MEMORY id='02E42660' name='mem_DMC0_SDRAM_A1' start_address='0x80000000' end_address='0x802fffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x300000' >
 <OUTPUT_SECTIONS>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03897130' name='mem_DMC0_SDRAM_A2' start_address='0x80300000' end_address='0x805fffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x300000' >
+<MEMORY id='02E424C0' name='mem_DMC0_SDRAM_A2' start_address='0x80300000' end_address='0x805fffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x300000' >
 <OUTPUT_SECTIONS>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='038972C0' name='mem_DMC0_SDRAM_A3' start_address='0x80600000' end_address='0x809fffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x34' words_unused='0x3fffcc' >
+<MEMORY id='02E42550' name='mem_DMC0_SDRAM_A3' start_address='0x80600000' end_address='0x809fffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x34' words_unused='0x3fffcc' >
 <OUTPUT_SECTIONS>
-<OUTPUT_SECTION name='dxe_sdram_cpp_ctors_nw' id='0557BF48' memory_id='038972C0' type='SHT_PROGBITS' start_address='0x10180000' word_size='0x2' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_sdram_cpp_ctors_nw' id='04B62DD0' memory_id='02E42550' type='SHT_PROGBITS' start_address='0x10180000' word_size='0x2' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='0170C498' name='seg_ctdml' start_address='0x10180000' size='0x1' element_at='0x0' >
+<INPUT_SECTION id='005A8230' name='seg_ctdml' start_address='0x10180000' size='0x1' element_at='0x0' >
 <INPUT_FILE><![CDATA[app_startup.doj]]></INPUT_FILE>
 <SYMBOL name='__ctor_NULL_marker' address='0x10180000' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[_ctor_NULL_marker]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
-<INPUT_SECTION id='048EA270' name='seg_ctdml' start_address='0x10180001' size='0x1' element_at='0x0' >
+<INPUT_SECTION id='03EB0658' name='seg_ctdml' start_address='0x10180001' size='0x1' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[set_c.doj]]]></INPUT_FILE>
 <SYMBOL name='___ctor_NULL_marker' address='0x10180001' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__ctor_NULL_marker]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
 </INPUT_SECTIONS>
 </OUTPUT_SECTION>
-<OUTPUT_SECTION name='dxe_sdram_cpp_eh_gdt_nw' id='0557BD50' memory_id='038972C0' type='SHT_PROGBITS' start_address='0x10180002' word_size='0x1' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_sdram_cpp_eh_gdt_nw' id='04B63400' memory_id='02E42550' type='SHT_PROGBITS' start_address='0x10180002' word_size='0x1' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='0170C418' name='.gdt32' start_address='0x10180002' size='0x1' element_at='0x0' >
+<INPUT_SECTION id='005A87B0' name='.gdt32' start_address='0x10180002' size='0x1' element_at='0x0' >
 <INPUT_FILE><![CDATA[app_startup.doj]]></INPUT_FILE>
 <SYMBOL name='___eh_gdt' address='0x10180002' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__eh_gdt]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
 </INPUT_SECTIONS>
 </OUTPUT_SECTION>
-<OUTPUT_SECTION name='dxe_sdram_cpp_eh_gdt_bw' id='0557BE70' memory_id='038972C0' type='SHT_PROGBITS' start_address='0x8060000c' word_size='0x4' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_sdram_cpp_eh_gdt_bw' id='04B63838' memory_id='02E42550' type='SHT_PROGBITS' start_address='0x8060000c' word_size='0x4' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='0170C258' name='.gdt' start_address='0x8060000c' size='0x4' element_at='0x0' >
+<INPUT_SECTION id='005A87F0' name='.gdt' start_address='0x8060000c' size='0x4' element_at='0x0' >
 <INPUT_FILE><![CDATA[app_startup.doj]]></INPUT_FILE>
 <SYMBOL name='__eh_gdt.' address='0x8060000c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__eh_gdt]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
 </INPUT_SECTIONS>
 </OUTPUT_SECTION>
-<OUTPUT_SECTION name='dxe_sdram_cpp_ctors_bw' id='0557C6E0' memory_id='038972C0' type='SHT_PROGBITS' start_address='0x80600010' word_size='0x4' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_sdram_cpp_ctors_bw' id='04B639E8' memory_id='02E42550' type='SHT_PROGBITS' start_address='0x80600010' word_size='0x4' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='048EA930' name='seg_ctdml_bw' start_address='0x80600010' size='0x4' element_at='0x0' >
+<INPUT_SECTION id='03EB0D18' name='seg_ctdml_bw' start_address='0x80600010' size='0x4' element_at='0x0' >
 <INPUT_FILE><![CDATA[libc.dlb[set_c.doj]]]></INPUT_FILE>
 <SYMBOL name='__ctor_NULL_marker.' address='0x80600010' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[__ctor_NULL_marker]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
 </INPUT_SECTIONS>
 </OUTPUT_SECTION>
-<OUTPUT_SECTION name='dxe_sdram_executable_name' id='0557C770' memory_id='038972C0' type='SHT_PROGBITS' start_address='0x80600014' word_size='0x1f' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<OUTPUT_SECTION name='dxe_sdram_executable_name' id='04B63760' memory_id='02E42550' type='SHT_PROGBITS' start_address='0x80600014' word_size='0x1f' word_size_unmapped='0x0' word_size_reserved='0x0' >
 <INPUT_SECTIONS>
-<INPUT_SECTION id='0547E5F8' name='.executable_name' start_address='0x80600014' size='0x1f' element_at='0x0' >
+<INPUT_SECTION id='04A72638' name='.executable_name' start_address='0x80600014' size='0x1f' element_at='0x0' >
 <INPUT_FILE><![CDATA[ChanFreq_SC584_SHARC_Core1.dxe.doj]]></INPUT_FILE>
 <SYMBOL name='_executable_name.' address='0x80600014' size='0x1f' binding='LOCAL'><DEMANGLED_NAME><![CDATA[_executable_name]]></DEMANGLED_NAME></SYMBOL>
 </INPUT_SECTION>
@@ -11972,23 +11972,23 @@
 </OUTPUT_SECTION>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03897240' name='mem_DMC0_SDRAM_A4' start_address='0x80a00000' end_address='0x80bfffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x200000' >
+<MEMORY id='02E42560' name='mem_DMC0_SDRAM_A4' start_address='0x80a00000' end_address='0x80bfffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x200000' >
 <OUTPUT_SECTIONS>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03897250' name='mem_DMC0_SDRAM_A5' start_address='0x80e00000' end_address='0x80ffffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x200000' >
+<MEMORY id='02E42830' name='mem_DMC0_SDRAM_A5' start_address='0x80e00000' end_address='0x80ffffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x200000' >
 <OUTPUT_SECTIONS>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03897190' name='mem_DMC0_SDRAM_A6' start_address='0x81000000' end_address='0x84dfffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x3e00000' >
+<MEMORY id='02E427A0' name='mem_DMC0_SDRAM_A6' start_address='0x81000000' end_address='0x84dfffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x3e00000' >
 <OUTPUT_SECTIONS>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03897140' name='mem_DMC0_SDRAM_A7' start_address='0x84e00000' end_address='0x88ffffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x4200000' >
+<MEMORY id='02E427C0' name='mem_DMC0_SDRAM_A7' start_address='0x84e00000' end_address='0x88ffffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x4200000' >
 <OUTPUT_SECTIONS>
 </OUTPUT_SECTIONS>
 </MEMORY>
-<MEMORY id='03897260' name='mem_DMC0_SDRAM_A8' start_address='0x89000000' end_address='0x8fffffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x7000000' >
+<MEMORY id='02E426D0' name='mem_DMC0_SDRAM_A8' start_address='0x89000000' end_address='0x8fffffff' type='BW' qualifier='RAM' externalqualifier='' width='0x8' words_used='0x0' words_unused='0x7000000' >
 <OUTPUT_SECTIONS>
 </OUTPUT_SECTIONS>
 </MEMORY>

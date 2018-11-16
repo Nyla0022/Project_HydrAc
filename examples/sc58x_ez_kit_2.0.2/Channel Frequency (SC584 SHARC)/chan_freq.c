@@ -563,23 +563,31 @@ void AdcCallback(void *pCBParam, uint32_t nEvent, void *pArg)
 			if (nSample == MAXDATA)
 			{
 				nSample = 0u;
+				//n=NUM_SAMPLES;
 				//printf("reset samples count");
 			}
 
 		}
-/*
-		for (n=0u; n<(NUM_SAMPLES/2); n++)
-		{
-			Chan2Data[nSample++] = *pData++;   primary slot2
-			Chan2Data[nSample] = *pData++;   primary slot2
 
-			if (nSample == MAXDATA)
-			{
-				nSample = 0u;
-			}
+//		nSample=0;
+//		/* copy single channel data to buffer */
+//		for (n=0u; n<(NUM_SAMPLES); n++)
+//		{
+//			Chan3Data[nSample] = *pData++;  /* primary slot1 */
+//			Chan4Data[nSample] = *pData++;  /* primary slot1 */
+//			//Chan3Data[nSample] = *pData++;  /* secondary slot1 */
+//			//Chan4Data[nSample] = *pData++;  /* secondary slot2 */
+//
+//			nSample++;
+//
+//			if (nSample == MAXDATA)
+//			{
+//				nSample = 0u;
+//				//printf("reset samples count");
+//			}
+//
+//		}
 
-
-		}*/
 		break;
 	default:
 		bError = true;

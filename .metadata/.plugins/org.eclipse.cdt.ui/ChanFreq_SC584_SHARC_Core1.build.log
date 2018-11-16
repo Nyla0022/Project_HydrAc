@@ -1,4 +1,4 @@
-21:53:23 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+22:17:35 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
 make all 
 'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
 'Invoking: CrossCore SHARC C/C++ Compiler'
@@ -15,5 +15,5 @@ cc21k -proc ADSP-SC584 -si-revision any -TC:/Users/JASP/Documents/Hydrac_Repo/Pr
 'Finished building target: ChanFreq_SC584_SHARC_Core1.dxe'
 ' '
 
-21:53:27 Build Finished (took 3s.717ms)
+22:17:39 Build Finished (took 3s.879ms)
 
