@@ -1,28 +1,12 @@
-15:52:48 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+20:55:12 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
 make all 
-'Building file: ../system/startup_ldf/app_IVT.s'
-'Invoking: CrossCore SHARC Assembler'
-easm21k -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -si-revision any -g -DCORE1 -D_DEBUG @includes-173fa1b0f0d442b1f80214509b0b6049.txt -absolute-path-dependencies -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_IVT.d" -o "system/startup_ldf/app_IVT.doj" "../system/startup_ldf/app_IVT.s"
-'Finished building: ../system/startup_ldf/app_IVT.s'
-' '
-'Building file: ../system/startup_ldf/app_heaptab.c'
-'Invoking: CrossCore SHARC C/C++ Compiler'
-cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/startup_ldf/app_heaptab.d" -o "system/startup_ldf/app_heaptab.doj" "../system/startup_ldf/app_heaptab.c"
-'Finished building: ../system/startup_ldf/app_heaptab.c'
-' '
-'Building file: ../system/startup_ldf/app_startup.s'
-'Invoking: CrossCore SHARC Assembler'
-easm21k -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -si-revision any -g -DCORE1 -D_DEBUG @includes-173fa1b0f0d442b1f80214509b0b6049.txt -absolute-path-dependencies -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_startup.d" -o "system/startup_ldf/app_startup.doj" "../system/startup_ldf/app_startup.s"
-'Finished building: ../system/startup_ldf/app_startup.s'
-' '
-'Building file: ../system/sru/sru_config.c'
-'Invoking: CrossCore SHARC C/C++ Compiler'
-cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/sru/sru_config.d" -o "system/sru/sru_config.doj" "../system/sru/sru_config.c"
-'Finished building: ../system/sru/sru_config.c'
-' '
 'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
 'Invoking: CrossCore SHARC C/C++ Compiler'
 cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/chan_freq.d" -o "src/chan_freq.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c"
+"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 269: cc0167: {D} warning: argument of type "int16_t *" is incompatible with parameter of type "int32_t *"
+  	freq = detectFreq(&Chan1Data[0]);
+  	                  ^
+
 'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
 ' '
 'Building target: ChanFreq_SC584_SHARC_Core1.dxe'
@@ -31,5 +15,5 @@ cc21k -proc ADSP-SC584 -si-revision any -TC:/Users/JASP/Documents/Hydrac_Repo/Pr
 'Finished building target: ChanFreq_SC584_SHARC_Core1.dxe'
 ' '
 
-15:52:57 Build Finished (took 9s.223ms)
+20:55:16 Build Finished (took 3s.589ms)
 

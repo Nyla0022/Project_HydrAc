@@ -146,6 +146,16 @@
 <stringAttribute key="AutomaticBreakpointPublic7" value="false"/>
 <stringAttribute key="AutomaticBreakpointPublic8" value="false"/>
 <stringAttribute key="AutomaticBreakpointPublic9" value="true"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation0" value="_exit"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation1" value="__fatal_error"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation10" value="0x1c1786"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation12" value="__primIO"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation15" value="___lib_prog_term"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation18" value="__fatal_error"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation19" value="0x1c08dd"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation2" value="0x89004fa2"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation6" value="___lib_prog_term"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation9" value="__fatal_error"/>
 <stringAttribute key="AutomaticBreakpointUser0" value="false"/>
 <stringAttribute key="AutomaticBreakpointUser1" value="false"/>
 <stringAttribute key="AutomaticBreakpointUser10" value="false"/>
@@ -173,8 +183,8 @@
 <stringAttribute key="CustomBoardSupportFileName" value=""/>
 <stringAttribute key="Debug Target" value="Emulation Debug Target"/>
 <stringAttribute key="Device0.HaltCoreAfterConnect0" value="b1"/>
-<stringAttribute key="Device0.HaltCoreAfterConnect1" value="b0"/>
-<stringAttribute key="Device0.HaltCoreAfterConnect2" value="b0"/>
+<stringAttribute key="Device0.HaltCoreAfterConnect1" value="b1"/>
+<stringAttribute key="Device0.HaltCoreAfterConnect2" value="b1"/>
 <stringAttribute key="Device0.HaltPeripherals0" value="b1"/>
 <stringAttribute key="Device0.HaltPeripherals1" value="b1"/>
 <stringAttribute key="Device0.HaltPeripherals2" value="b1"/>
@@ -198,18 +208,18 @@
 <intAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_COUNT.0" value="2"/>
 <intAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_COUNT.1" value="1"/>
 <intAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_COUNT.2" value="1"/>
-<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_NAME.0" value=""/>
-<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_NAME.1" value=""/>
-<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_NAME.2" value=""/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_NAME.0" value="Debug\ChanFreq_SC584_SHARC_Core0"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_NAME.1" value="Debug\ChanFreq_SC584_SHARC_Core1.dxe"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_NAME.2" value="Debug\ChanFreq_SC584_SHARC_Core2.dxe"/>
 <stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_NAME0.0" value="C:\Analog Devices\CrossCore Embedded Studio 2.8.0\SHARC\ldr\ezkitSC584_preload_core0_v01"/>
-<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_SIREV.0" value=""/>
-<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_SIREV.1" value=""/>
-<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_SIREV.2" value=""/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_SIREV.0" value="not available"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_SIREV.1" value="any"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_SIREV.2" value="any"/>
 <intAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROJECT_CORE" value="-1"/>
 <intAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROJECT_CORE.0" value="-1"/>
-<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROJECT_NAME.0" value=""/>
-<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROJECT_NAME.1" value=""/>
-<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROJECT_NAME.2" value=""/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROJECT_NAME.0" value="ChanFreq_SC584_SHARC_Core0"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROJECT_NAME.1" value="ChanFreq_SC584_SHARC_Core1"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROJECT_NAME.2" value="ChanFreq_SC584_SHARC_Core2"/>
 <stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROJECT_NAME0.0" value=""/>
 <stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_WORKING_DIR.0" value=""/>
 <stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_WORKING_DIR.1" value=""/>
@@ -217,4 +227,14 @@
 <stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_WORKING_DIR0.0" value=""/>
 <stringAttribute key="com.analog.crosscore.launch.MEMORY_BLOCKS" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;memoryBlockExpressionList context=&quot;Context string&quot;/&gt;&#13;&#10;"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value=""/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/ChanFreq_SC584_SHARC_Core0"/>
+<listEntry value="/ChanFreq_SC584_SHARC_Core1"/>
+<listEntry value="/ChanFreq_SC584_SHARC_Core2"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+<listEntry value="4"/>
+<listEntry value="4"/>
+</listAttribute>
 </launchConfiguration>

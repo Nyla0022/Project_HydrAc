@@ -81,15 +81,15 @@ static volatile uint32_t AdcCount = 0u;
 volatile bool bError = false;
 
 ADI_CACHE_ALIGN static int32_t AdcBuf1[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int32_t)];
-ADI_CACHE_ALIGN static int32_t AdcBuf2[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int32_t)];
+//ADI_CACHE_ALIGN static int32_t AdcBuf2[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int32_t)];
 
 #define MAXDATA  (AUDIO_BUFFER_SIZE*4u)
 
 
-static int32_t Chan1Data[MAXDATA];
-static int32_t Chan2Data[MAXDATA];
-static int32_t Chan3Data[MAXDATA];
-static int32_t Chan4Data[MAXDATA];
+static int16_t Chan1Data[MAXDATA];
+static int16_t Chan2Data[MAXDATA];
+static int16_t Chan3Data[MAXDATA];
+static int16_t Chan4Data[MAXDATA];
 
 
 volatile uint32_t nSample = 0u;
@@ -123,7 +123,9 @@ int main()
 	 * Initialize managed drivers and/or services that have been added to
 	 * the project.
 	 * @return zero on success
+	 *
 	 */
+
 	uint32_t Result = SUCCESS;
 
 	uint32_t i;
@@ -215,13 +217,13 @@ int main()
 		bError = true;
 		DBG_MSG("submit buffer failed\n");
 	}
-
-	/* Submit ADC buffer2 */
+/*
+	 Submit ADC buffer2
 	if(adi_adau1977_SubmitBuffer(phAdau1977, &AdcBuf2[0u], AUDIO_BUFFER_SIZE*BYTES_PER_SAMPLE) != ADI_ADAU1977_SUCCESS)
 	{
 		bError = true;
 		DBG_MSG("submit buffer failed\n");
-	}
+	}*/
 
 	/* Enable ADC data flow */
 	if(adi_adau1977_Enable(phAdau1977, true) != ADI_ADAU1977_SUCCESS)
@@ -256,9 +258,9 @@ int main()
 	}
 
 
-	printf("\nChan 1(Volts)\tChan 2(Volts)\n");
+	printf("\nChan 1[v]\tChan 2[v]\tChan 1[v]\tChan 2[v]\n");
 	for (i=0u; i<NUM_SAMPLES; i++){
-		printf("%f\t%f\n ",(double)((int)Chan1Data[i]* ADC_CONV_F), (double)((int)Chan2Data[i]* ADC_CONV_F));
+		printf("%f\t%f\t%f\t%f\n ",(double)((int)Chan1Data[i]* ADC_CONV_F_16), (double)((int)Chan2Data[i]* ADC_CONV_F_16),(double)((int)Chan3Data[i]* ADC_CONV_F_16), (double)((int)Chan4Data[i]* ADC_CONV_F_16));
 	}
 
 	printf("\n");
@@ -474,8 +476,8 @@ uint32_t Adau1977Init(void)
 		    false,
 		    true);
 
-	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL1, 122u); //122
-	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL2, 122u);
+	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL1, 0xa0u); //122
+	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL2, 0xa0u);
 	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL3, 0xa0u);
 	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL4, 0xa0u); //144u
 
@@ -552,9 +554,11 @@ void AdcCallback(void *pCBParam, uint32_t nEvent, void *pArg)
 		for (n=0u; n<NUM_SAMPLES; n++)
 		{
 			Chan1Data[nSample] = *pData++;  /* primary slot1 */
-			Chan3Data[nSample] = *pData++;  /* secondary slot1 */
+			Chan1Data[nSample] = *pData++;  /* primary slot1 */
+			//Chan3Data[nSample] = *pData++;  /* secondary slot1 */
 			Chan2Data[nSample] = *pData++;  /* primary slot2 */
-			Chan4Data[nSample] = *pData++;  /* secondary slot2 */
+			Chan2Data[nSample] = *pData++;  /* primary slot2 */
+			//Chan4Data[nSample] = *pData++;  /* secondary slot2 */
 			nSample++;
 
 			if (nSample == MAXDATA)
