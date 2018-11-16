@@ -88,8 +88,8 @@ ADI_CACHE_ALIGN static int32_t AdcBuf2[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE
 
 static int16_t Chan1Data[MAXDATA];
 static int16_t Chan2Data[MAXDATA];
-static int16_t Chan3Data[MAXDATA];
-static int16_t Chan4Data[MAXDATA];
+//static int16_t Chan3Data[MAXDATA];
+//static int16_t Chan4Data[MAXDATA];
 
 
 volatile uint32_t nSample = 0u;
@@ -258,9 +258,9 @@ int main()
 	}
 
 
-	printf("\nChan 1[v]\tChan 2[v]\tChan 3[v]\tChan 4[v]\n");
+	printf("\nChan 1[v]\tChan 2[v]\t\n");
 	for (i=0u; i<NUM_SAMPLES; i++){
-		printf("%f\t%f\t%f\t%f\n ",(double)((int)Chan1Data[i]* ADC_CONV_F_16), (double)((int)Chan2Data[i]* ADC_CONV_F_16),(double)((int)Chan3Data[i]* ADC_CONV_F_16), (double)((int)Chan4Data[i]* ADC_CONV_F_16));
+		printf("%f\t%f\t\n ",(double)((int)Chan1Data[i]* ADC_CONV_F_16));
 	}
 
 	printf("\n");

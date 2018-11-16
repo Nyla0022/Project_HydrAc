@@ -34,10 +34,10 @@ to the terms of the associated Analog Devices License Agreement.
 #endif
 
 /* Number of callbacks that occur before the program exits */
-#define CALLBACK_COUNT  		(2000u)
+#define CALLBACK_COUNT  		(1u)
 
 /* Macro to specify delay count for ADC/DAC reset */
-#define DELAY_COUNT             (100000u)
+#define DELAY_COUNT             (400000u)
 
 /*
  * ADC settings
@@ -49,7 +49,7 @@ to the terms of the associated Analog Devices License Agreement.
 
 #define NUM_CHANNELS				(4u)
 #define BYTES_PER_SAMPLE 			(2u)
-#define NUM_SAMPLES 				(128u)
+#define NUM_SAMPLES 				(100000u) //max 50K
 #define ADC_CONV_F_24				330e-9 //ADC Conversion Factor
 #define ADC_CONV_F_16				440.141e-6
 /* Macro to set buffer size */
