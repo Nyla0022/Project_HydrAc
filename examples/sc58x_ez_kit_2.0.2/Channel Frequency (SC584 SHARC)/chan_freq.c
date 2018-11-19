@@ -561,26 +561,27 @@ void AdcCallback(void *pCBParam, uint32_t nEvent, void *pArg)
 
 		/***** A solution for the number of callbacks is to compare this variable with MAX_CALLBACKS. If not equal,
 		 * then do not run the for loop as it is very inefficient */
+		if(AdcCount==CALLBACK_COUNT){
+				for (n=0u; (n<(NUM_SAMPLES)); n++)
+				{
+					Chan1Data[nSample] = *pData++;  /* primary slot1 */
+					tmp =/*Chan3Data[nSample] = */*pData++;  /* secondary slot1 */
 
-		for (n=0u; (n<(NUM_SAMPLES) && AdcCount==CALLBACK_COUNT); n++)
-		{
-			Chan1Data[nSample] = *pData++;  /* primary slot1 */
-			tmp =/*Chan3Data[nSample] = */*pData++;  /* secondary slot1 */
+					Chan2Data[nSample] = *pData++;  /* primary slot2 */
+					tmp =/*Chan4Data[nSample] =*/ *pData++;  /* secondary slot2 */
 
-			Chan2Data[nSample] = *pData++;  /* primary slot2 */
-			tmp =/*Chan4Data[nSample] =*/ *pData++;  /* secondary slot2 */
+					//I must be doing something wrong here, or the buffer composition changes when I switch to 16 bits.
+					//If the swith does not affect the buffer, then the data must be in the following order 1-3-2-4,1-3-2-4,...,1-3-2-4
 
-			//I must be doing something wrong here, or the buffer composition changes when I switch to 16 bits.
-			//If the swith does not affect the buffer, then the data must be in the following order 1-3-2-4,1-3-2-4,...,1-3-2-4
+					nSample++; //this happens because each channel buffer is declared with 16*N where N is the max number of samples
+								//per channel. This seems very inefficient. They fill each channel buffer with 16x its actual capacity.
+								//by the 17th callback each channel is overwritten. Why is this so?
 
-			nSample++; //this happens because each channel buffer is declared with 16*N where N is the max number of samples
-						//per channel. This seems very inefficient. They fill each channel buffer with 16x its actual capacity.
-						//by the 17th callback each channel is overwritten. Why is this so?
-
-			/*if (nSample == MAXDATA)	{ //MAXDATA is 16*N. why?
-				nSample = 0u; // it is abusrd. the array is filled in its entirety 125 times. An each fill is 16 times its actual capacity.
-			}
-*/
+					/*if (nSample == MAXDATA)	{ //MAXDATA is 16*N. why?
+						nSample = 0u; // it is abusrd. the array is filled in its entirety 125 times. An each fill is 16 times its actual capacity.
+					}
+		*/
+				}
 		}
 
 		break;
