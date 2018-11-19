@@ -1,27 +1,16 @@
-<<<<<<< HEAD
-14:45:07 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
-=======
-15:46:27 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
->>>>>>> ADC_wrap-up
+18:05:31 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
 make all 
 'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
 'Invoking: CrossCore SHARC C/C++ Compiler'
 cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/chan_freq.d" -o "src/chan_freq.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c"
-<<<<<<< HEAD
-"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 298: cc0167: {D} warning: argument of type "int16_t *" is incompatible with parameter of type "int32_t *"
-  	freq = detectFreq(&Chan1Data[0]);
-  	                  ^
-
-=======
-"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 266: cc0167: {D} warning: argument of type "int16_t *" is incompatible with parameter of type "int32_t *"
+"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 265: cc0167: {D} warning: argument of type "int16_t *" is incompatible with parameter of type "int32_t *"
   	freq = detectFreq( &Chan1Data[0]);
   	                   ^
 
-"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 270: cc0167: {D} warning: argument of type "int16_t *" is incompatible with parameter of type "int32_t *"
+"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 269: cc0167: {D} warning: argument of type "int16_t *" is incompatible with parameter of type "int32_t *"
   	freq = detectFreq( &Chan2Data[0]);
   	                   ^
 
->>>>>>> ADC_wrap-up
 'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
 ' '
 'Building target: ChanFreq_SC584_SHARC_Core1.dxe'
@@ -30,9 +19,5 @@ cc21k -proc ADSP-SC584 -si-revision any -TC:/Users/JASP/Documents/Hydrac_Repo/Pr
 'Finished building target: ChanFreq_SC584_SHARC_Core1.dxe'
 ' '
 
-<<<<<<< HEAD
-14:45:11 Build Finished (took 4s.510ms)
-=======
-15:46:32 Build Finished (took 4s.784ms)
->>>>>>> ADC_wrap-up
+18:05:35 Build Finished (took 4s.342ms)
 

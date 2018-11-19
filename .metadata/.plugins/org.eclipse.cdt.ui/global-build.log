@@ -3638,3 +3638,89 @@ make: Nothing to be done for `all'.
 >>>>>>> ADC_wrap-up
 make all 
 make: Nothing to be done for `all'.
+18:04:59 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+'Building file: ../system/startup_ldf/app_IVT.s'
+'Invoking: CrossCore SHARC Assembler'
+easm21k -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -si-revision any -g -DCORE1 -D_DEBUG @includes-173fa1b0f0d442b1f80214509b0b6049.txt -absolute-path-dependencies -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_IVT.d" -o "system/startup_ldf/app_IVT.doj" "../system/startup_ldf/app_IVT.s"
+'Finished building: ../system/startup_ldf/app_IVT.s'
+' '
+'Building file: ../system/sru/sru_config.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "system/sru/sru_config.d" -o "system/sru/sru_config.doj" "../system/sru/sru_config.c"
+'Finished building: ../system/sru/sru_config.c'
+' '
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/chan_freq.d" -o "src/chan_freq.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c"
+"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 128: cc0101:  error: "Result" has already been declared in the current scope
+  	uint32_t Result = SUCCESS, i=0, freq=0, m=0;
+  	         ^
+
+"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 128: cc0101:  error: "i" has already been declared in the current scope
+  	uint32_t Result = SUCCESS, i=0, freq=0, m=0;
+  	                           ^
+
+"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 128: cc0101:  error: "freq" has already been declared in the current scope
+  	uint32_t Result = SUCCESS, i=0, freq=0, m=0;
+  	                                ^
+
+"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 128: cc0101:  error: "m" has already been declared in the current scope
+  	uint32_t Result = SUCCESS, i=0, freq=0, m=0;
+  	                                        ^
+
+"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 130: cc0101:  error: "time" has already been declared in the current scope
+  	double time=0;
+  	       ^
+
+"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 132: cc0101:  error: "fp" has already been declared in the current scope
+  	FILE * fp;
+  	       ^
+
+"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 269: cc0167: {D} warning: argument of type "int16_t *" is incompatible with parameter of type "int32_t *"
+  	freq = detectFreq( &Chan1Data[0]);
+  	                   ^
+
+"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 273: cc0167: {D} warning: argument of type "int16_t *" is incompatible with parameter of type "int32_t *"
+  	freq = detectFreq( &Chan2Data[0]);
+  	                   ^
+
+6 errors detected in the compilation of "C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c".
+cc3089: fatal error: Compilation failed (code:2)
+make: *** [src/chan_freq.doj] Error 1
+18:05:03 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+'Building target: ChanFreq_SC584_SHARC_Core0'
+'Invoking: CrossCore ARM Bare Metal C Linker'
+arm-none-eabi-gcc -mproc=ADSP-SC584 -msi-revision=any -Wl,--gc-sections -mdebug-libs -o  "ChanFreq_SC584_SHARC_Core0" @input-file.txt -lm
+'Finished building target: ChanFreq_SC584_SHARC_Core0'
+' '
+18:05:04 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+18:05:31 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make all 
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="ChanFreq_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -DADI_DEBUG -D_DEBUG @includes-b5858349a8927fdb528e93abc854a4e0.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/chan_freq.d" -o "src/chan_freq.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c"
+"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 265: cc0167: {D} warning: argument of type "int16_t *" is incompatible with parameter of type "int32_t *"
+  	freq = detectFreq( &Chan1Data[0]);
+  	                   ^
+
+"C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\chan_freq.c", line 269: cc0167: {D} warning: argument of type "int16_t *" is incompatible with parameter of type "int32_t *"
+  	freq = detectFreq( &Chan2Data[0]);
+  	                   ^
+
+'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel Frequency (SC584 SHARC)/chan_freq.c'
+' '
+'Building target: ChanFreq_SC584_SHARC_Core1.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision any -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core1/system/startup_ldf/app.ldf -no-mem -map ChanFreq_SC584_SHARC_Core1.map.xml -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/Channel\ Frequency\ (SC584\ SHARC)/SC584/sharc/chan_freq_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o ChanFreq_SC584_SHARC_Core1.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: ChanFreq_SC584_SHARC_Core1.dxe'
+' '
+18:05:36 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+18:05:36 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.

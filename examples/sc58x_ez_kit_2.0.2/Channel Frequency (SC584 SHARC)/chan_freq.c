@@ -122,10 +122,6 @@ int main()
 	 *
 	 */
 	uint32_t Result = SUCCESS, i=0, freq=0, m=0;
-	double time=0;
-	FILE * fp;
-
-	uint32_t Result = SUCCESS, i=0, freq=0, m=0;
 
 	double time=0;
 
@@ -265,6 +261,7 @@ int main()
 	}
 
 
+/*
 	// calculate the detected freq (SHARC only)
 	freq = detectFreq( &Chan1Data[0]);
 	printf("Chan1 freq: %d\n", (int)freq);
@@ -272,6 +269,7 @@ int main()
 	// calculate the detected freq (SHARC only)
 	freq = detectFreq( &Chan2Data[0]);
 	printf("Chan2 freq: %d\n", (int)freq);
+*/
 
 
 	printf("\n");
