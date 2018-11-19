@@ -80,8 +80,8 @@ static volatile uint32_t AdcCount = 0u;
 /* error flag */
 volatile bool bError = false;
 
-ADI_CACHE_ALIGN static int32_t AdcBuf1[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int32_t)];
-ADI_CACHE_ALIGN static int32_t AdcBuf2[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int32_t)];
+ADI_CACHE_ALIGN static int32_t AdcBuf1[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int16_t)];
+ADI_CACHE_ALIGN static int32_t AdcBuf2[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int16_t)];
 
 #define MAXDATA  (AUDIO_BUFFER_SIZE*4u)
 
