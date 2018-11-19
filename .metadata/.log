@@ -5209,13 +5209,18 @@ java.lang.NoSuchMethodException: com.analog.crosscore.tpsdkserver.TpsdkServer.Ru
 !MESSAGE Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0
 !SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2018-11-19 00:18:16.314
 !MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@11f1d7b): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception.
+<<<<<<< HEAD
 !SESSION 2018-11-19 11:54:14.378 -----------------------------------------------
+=======
+!SESSION 2018-11-19 10:52:50.434 -----------------------------------------------
+>>>>>>> ADC_wrap-up
 eclipse.buildId=unknown
 java.version=1.8.0_102
 java.vendor=Oracle Corporation
 BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
 Command-line arguments:  -os win32 -ws win32 -arch x86
 
+<<<<<<< HEAD
 !ENTRY com.analog.crosscore.core 1 0 2018-11-19 11:54:18.183
 !MESSAGE 2018-11-19 11:54:18, 180 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.1.0 w1807161
 
@@ -5227,6 +5232,33 @@ Command-line arguments:  -os win32 -ws win32 -arch x86
 !ENTRY org.eclipse.ui 4 4 2018-11-19 11:54:20.364
 !MESSAGE Unable to create part
 !SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2018-11-19 11:54:20.364
+=======
+!ENTRY com.analog.crosscore.core 1 0 2018-11-19 10:55:39.626
+!MESSAGE 2018-11-19 10:55:39, 622 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.1.0 w1807161
+
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-19 10:55:39.637
+!MESSAGE 2018-11-19 10:55:39, 635 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/; environment variable CCES_HOME: not set
+
+!SESSION 2018-11-19 14:56:17.337 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-19 14:56:21.762
+!MESSAGE 2018-11-19 14:56:21, 758 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.1.0 w1807161
+
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-19 14:56:21.769
+!MESSAGE 2018-11-19 14:56:21, 769 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/; environment variable CCES_HOME: not set
+
+
+!ENTRY org.eclipse.ui 4 4 2018-11-19 14:56:24.020
+!MESSAGE Unable to create part
+!SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2018-11-19 14:56:24.020
+>>>>>>> ADC_wrap-up
 !MESSAGE Cannot determine URI for '/ChanFreq_SC584_SHARC_Core1/src/chan_freq.c'.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Cannot determine URI for '/ChanFreq_SC584_SHARC_Core1/src/chan_freq.c'.
@@ -5369,12 +5401,21 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/ChanFreq_SC58
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+<<<<<<< HEAD
 !SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2018-11-19 11:54:20.365
 !MESSAGE Cannot determine URI for '/ChanFreq_SC584_SHARC_Core1/src/chan_freq.c'.
 
 !ENTRY org.eclipse.ui 4 4 2018-11-19 11:54:23.250
 !MESSAGE Unable to create part
 !SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2018-11-19 11:54:23.250
+=======
+!SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2018-11-19 14:56:24.020
+!MESSAGE Cannot determine URI for '/ChanFreq_SC584_SHARC_Core1/src/chan_freq.c'.
+
+!ENTRY org.eclipse.ui 4 4 2018-11-19 14:56:26.433
+!MESSAGE Unable to create part
+!SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2018-11-19 14:56:26.434
+>>>>>>> ADC_wrap-up
 !MESSAGE Cannot determine URI for '/ChanFreq_SC584_SHARC_Core1/src/chan_freq.h'.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Cannot determine URI for '/ChanFreq_SC584_SHARC_Core1/src/chan_freq.h'.
@@ -5475,12 +5516,21 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/ChanFreq_SC58
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+<<<<<<< HEAD
 !SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2018-11-19 11:54:23.251
 !MESSAGE Cannot determine URI for '/ChanFreq_SC584_SHARC_Core1/src/chan_freq.h'.
 
 !ENTRY org.eclipse.ui 4 4 2018-11-19 11:54:23.936
 !MESSAGE Unable to create part
 !SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2018-11-19 11:54:23.936
+=======
+!SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2018-11-19 14:56:26.435
+!MESSAGE Cannot determine URI for '/ChanFreq_SC584_SHARC_Core1/src/chan_freq.h'.
+
+!ENTRY org.eclipse.ui 4 4 2018-11-19 14:56:27.087
+!MESSAGE Unable to create part
+!SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2018-11-19 14:56:27.087
+>>>>>>> ADC_wrap-up
 !MESSAGE Cannot determine URI for '/ChanFreq_SC584_SHARC_Core1/system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.c'.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Cannot determine URI for '/ChanFreq_SC584_SHARC_Core1/system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.c'.
@@ -5581,12 +5631,21 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/ChanFreq_SC58
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+<<<<<<< HEAD
 !SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2018-11-19 11:54:23.936
 !MESSAGE Cannot determine URI for '/ChanFreq_SC584_SHARC_Core1/system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.c'.
 
 !ENTRY org.eclipse.ui 4 4 2018-11-19 11:54:25.927
 !MESSAGE Unable to create part
 !SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2018-11-19 11:54:25.927
+=======
+!SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2018-11-19 14:56:27.087
+!MESSAGE Cannot determine URI for '/ChanFreq_SC584_SHARC_Core1/system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.c'.
+
+!ENTRY org.eclipse.ui 4 4 2018-11-19 14:56:28.495
+!MESSAGE Unable to create part
+!SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2018-11-19 14:56:28.495
+>>>>>>> ADC_wrap-up
 !MESSAGE Cannot determine URI for '/ChanFreq_SC584_SHARC_Core0/src/chan_freq_Core0.c'.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Cannot determine URI for '/ChanFreq_SC584_SHARC_Core0/src/chan_freq_Core0.c'.
@@ -5654,6 +5713,7 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/ChanFreq_SC58
 	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:60)
 	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:374)
 	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElement(ElementContainerImpl.java:173)
+<<<<<<< HEAD
 	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1308)
 	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1258)
 	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.closePart(StackRenderer.java:1266)
@@ -5776,6 +5836,19 @@ java.lang.NullPointerException
 	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer$5.close(StackRenderer.java:1121)
 	at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:1950)
 	at org.eclipse.swt.custom.CTabFolder.lambda$0(CTabFolder.java:333)
+=======
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer$3.widgetSelected(StackRenderer.java:1053)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:249)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:86)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4428)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1103)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1088)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:802)
+	at org.eclipse.swt.custom.CTabFolder.setSelection(CTabFolder.java:3187)
+	at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:1870)
+	at org.eclipse.swt.custom.CTabFolder.lambda$0(CTabFolder.java:328)
+>>>>>>> ADC_wrap-up
 	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:86)
 	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4428)
 	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079)
@@ -5802,6 +5875,7 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+<<<<<<< HEAD
 
 !ENTRY org.eclipse.e4.ui.workbench 4 0 2018-11-19 11:54:27.902
 !MESSAGE 
@@ -5869,6 +5943,38 @@ java.lang.IllegalArgumentException:
 	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079)
 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4238)
 	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3817)
+=======
+!SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2018-11-19 14:56:28.497
+!MESSAGE Cannot determine URI for '/ChanFreq_SC584_SHARC_Core0/src/chan_freq_Core0.c'.
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-11-19 14:56:59.135
+!MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core0' (2 sources, 24 headers) in 2.93 sec: 245 declarations; 592 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-11-19 14:57:03.549
+!MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core1' (7 sources, 72 headers) in 4.4 sec: 7,568 declarations; 13,008 references; 0 unresolved inclusions; 2 syntax errors; 475 unresolved names (2.3%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-11-19 14:57:04.631
+!MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core2' (1 sources, 0 headers) in 0.256 sec: 3 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-11-19 14:58:38.544
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-11-19 14:58:38.556
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.ui 4 0 2018-11-19 15:34:06.420
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at com.analog.crosscore.debug.ui.actions.RunToAddress.getContext(RunToAddress.java:149)
+	at com.analog.crosscore.debug.ui.actions.RunToAddress.canRunToAddress(RunToAddress.java:56)
+	at org.eclipse.cdt.dsf.debug.internal.ui.actions.DisassemblyRunToLineAdapter.canRunToLine(DisassemblyRunToLineAdapter.java:89)
+	at org.eclipse.debug.ui.actions.RunToLineActionDelegate$1.run(RunToLineActionDelegate.java:135)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:37)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:182)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4213)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3820)
+>>>>>>> ADC_wrap-up
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1150)
 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1039)
@@ -5891,6 +5997,7 @@ java.lang.IllegalArgumentException:
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.e4.ui.workbench 4 0 2018-11-19 11:54:27.911
 !MESSAGE Error setting focus to : org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl app_startup.s
 !STACK 0
@@ -5946,6 +6053,20 @@ java.lang.NullPointerException
 	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079)
 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4238)
 	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3817)
+=======
+!ENTRY org.eclipse.ui 4 0 2018-11-19 15:34:06.608
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at com.analog.crosscore.debug.ui.actions.RunToAddress.getContext(RunToAddress.java:149)
+	at com.analog.crosscore.debug.ui.actions.RunToAddress.canRunToAddress(RunToAddress.java:56)
+	at org.eclipse.cdt.dsf.debug.internal.ui.actions.DisassemblyRunToLineAdapter.canRunToLine(DisassemblyRunToLineAdapter.java:89)
+	at org.eclipse.debug.ui.actions.RunToLineActionDelegate$1.run(RunToLineActionDelegate.java:135)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:37)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:182)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4213)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3820)
+>>>>>>> ADC_wrap-up
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1150)
 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1039)
@@ -5968,6 +6089,7 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.e4.ui.workbench 4 0 2018-11-19 11:54:27.946
 !MESSAGE Error setting focus to : org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl app_startup.s
 !STACK 0
@@ -5999,6 +6121,20 @@ java.lang.NullPointerException
 	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079)
 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4238)
 	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3817)
+=======
+!ENTRY org.eclipse.ui 4 0 2018-11-19 15:34:09.024
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at com.analog.crosscore.debug.ui.actions.RunToAddress.getContext(RunToAddress.java:149)
+	at com.analog.crosscore.debug.ui.actions.RunToAddress.canRunToAddress(RunToAddress.java:56)
+	at org.eclipse.cdt.dsf.debug.internal.ui.actions.DisassemblyRunToLineAdapter.canRunToLine(DisassemblyRunToLineAdapter.java:89)
+	at org.eclipse.debug.ui.actions.RunToLineActionDelegate$1.run(RunToLineActionDelegate.java:135)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:37)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:182)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4213)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3820)
+>>>>>>> ADC_wrap-up
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1150)
 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1039)
@@ -6021,6 +6157,7 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.ui.ide 4 4 2018-11-19 11:54:27.953
 !MESSAGE IEditorPart (class org.eclipse.ui.internal.ErrorEditorPart) passed in without IEditorInput set.
 
@@ -7825,3 +7962,11 @@ java.lang.NoSuchMethodException: com.analog.crosscore.tpsdkserver.TpsdkServer.Ru
 !MESSAGE Executor shut down while executing Sequence Sequence "", result for executing step #1 = Status ERROR: com.analog.crosscore.debug code=10005 Service 'com.analog.crosscore.debug.service.Pipeline' not found. null, step #1
 !SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2018-11-19 14:45:05.107
 !MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@1ea239f): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #1 = Status ERROR: com.analog.crosscore.debug code=10005 Service 'com.analog.crosscore.debug.service.Pipeline' not found. null, step #1 null' resulted in a rejected execution exception.
+=======
+!ENTRY org.eclipse.cdt.dsf 4 10005 2018-11-19 15:44:03.791
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitor@2c5b13): Status ERROR: org.eclipse.cdt.dsf code=10005 Composite status null children=[Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null Status ERROR: org.eclipse.cdt.dsf code=10005 Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@d14071): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception. null]' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 0 2018-11-19 15:44:03.791
+!MESSAGE Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2018-11-19 15:44:03.791
+!MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@d14071): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception.
+>>>>>>> ADC_wrap-up
