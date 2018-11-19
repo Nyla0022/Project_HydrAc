@@ -1,6 +1,6 @@
-23:06:55 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+23:13:27 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
 make all 
 make: Nothing to be done for `all'.
 
-23:06:56 Build Finished (took 208ms)
+23:13:27 Build Finished (took 205ms)
 
