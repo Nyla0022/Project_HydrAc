@@ -27,6 +27,8 @@ to the terms of the associated Analog Devices License Agreement.
 #include "chan_freq.h"
 #include "adi_initialize.h"
 
+#include <time.h>
+
 #if !defined(ADI_CACHE_LINE_LENGTH)
 /* The ADI_CACHE_* macros were introduced in CCES 2.4.0 in <sys/platform.h>.
  * If using an older toolchain, define them here.
@@ -236,7 +238,9 @@ int main()
 		DBG_MSG("ADC enable failed\n");
 	}
 
-	printf("DATA FLOW ENABLED! processing callbacks...");
+	printf("DATA FLOW ENABLED! processing callbacks...\n");
+
+	clock_t begin = clock();
 
 	/* process samples for a while then exit */
 	while(AdcCount < CALLBACK_COUNT)
@@ -249,6 +253,13 @@ int main()
 			break;
 		}
     }
+
+	clock_t end = clock();
+
+	double exec_time = (double) (end-begin)/CLOCKS_PER_SEC;
+
+	printf("*****EXECUTION TIME: %f*****\n", exec_time);
+
 
 	/* Disable ADC data flow */
 	if(adi_adau1977_Enable(phAdau1977, false) != ADI_ADAU1977_SUCCESS)
