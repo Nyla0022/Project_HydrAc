@@ -122,12 +122,9 @@ int main()
 	 *
 	 */
 
-	uint32_t Result = SUCCESS, i=0, freq=0,time=0;
+	uint32_t Result = SUCCESS, i=0, freq=0,time=0, m=0;
 
 	FILE * fp;
-
-	int m;
-
 
 #if defined(__ADSPBF707_FAMILY__) || defined(__ADSP215xx__)
 	/* Memory required for the SPU operation */
