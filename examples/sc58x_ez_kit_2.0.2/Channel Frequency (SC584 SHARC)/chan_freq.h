@@ -53,7 +53,7 @@ to the terms of the associated Analog Devices License Agreement.
 #define ADC_CONV_F_24				330e-9 				//ADC Conversion Factor for 24 bits (assumes PADC Gain of 122u)
 #define ADC_CONV_F_16				440.141e-6			//ADC Conversion Factor for 16 bits (assumes PADC Gain of 0xA0u)
 #define FSAMPLING					192000				//Sampling frequency of ADC
-#define TIME_STEP					1/(FSAMPLING)		//time axis time step
+#define TIME_STEP					(double)( 1.0/(FSAMPLING))		//time axis time step
 
 /* Macro to set buffer size */
 #define AUDIO_BUFFER_SIZE 	        (NUM_SAMPLES * NUM_CHANNELS)

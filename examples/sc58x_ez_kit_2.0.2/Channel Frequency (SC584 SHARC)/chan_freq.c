@@ -82,12 +82,12 @@ static volatile uint32_t AdcCount = 0u;
 /* error flag */
 volatile bool bError = false;
 
-ADI_CACHE_ALIGN static int16_t AdcBuf1[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int16_t)];
+ADI_CACHE_ALIGN static int16_t AdcBuf1[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int16_t)]; //Between 1MB and 2MB
 ADI_CACHE_ALIGN static int16_t AdcBuf2[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int16_t)];
 
 
-static int16_t Chan1Data[NUM_SAMPLES]; //N*4*4 = 16N
-static int16_t Chan2Data[NUM_SAMPLES]; //16MB max for  (for 400Ksamples @2B/sample)
+static int16_t Chan1Data[NUM_SAMPLES]; //N
+static int16_t Chan2Data[NUM_SAMPLES]; //approx in the middle of 256KB and 512KB
 
 
 /*=============  L O C A L    F U N C T I O N    P R O T O T Y P E S =============*/
@@ -122,7 +122,9 @@ int main()
 	 *
 	 */
 
-	uint32_t Result = SUCCESS, i=0, freq=0,time=0, m=0;
+	uint32_t Result = SUCCESS, i=0, freq=0, m=0;
+
+	double time=0;
 
 	FILE * fp;
 
@@ -260,30 +262,36 @@ int main()
 	}
 
 
-	 fp = fopen ("adc_data.txt", "w+");
-
-	 fprintf(fp, "Time[s]\tChan 1[v]\tChan 2[v]\n");
-
-	 for(m=0;m<NUM_CHANNELS;m++){
-		 fprintf(fp, "%f\t%f\t%f\n", (double) time, (double)((int)Chan1Data[m]* ADC_CONV_F_16),(double)((int)Chan2Data[m]* ADC_CONV_F_16));
-		 time = time + TIME_STEP;
-	 }
-
-	 fclose(fp);
-
-	 printf("\nChan 1[v]\tChan 2[v]\t\n");
-	 for (i=0u; i<NUM_SAMPLES; i++)
-		printf("%f\t%f\n",(double)((int)Chan1Data[i]* ADC_CONV_F_16),(double)((int)Chan2Data[i]* ADC_CONV_F_16));
-
-
-	 printf("\n");
-
-	/* calculate the detected freq (SHARC only)
-	freq = detectFreq(&Chan1Data[0]);
+	// calculate the detected freq (SHARC only)
+	freq = detectFreq( &Chan1Data[0]);
 	printf("Chan1 freq: %d\n", (int)freq);
 
+	// calculate the detected freq (SHARC only)
+	freq = detectFreq( &Chan2Data[0]);
+	printf("Chan2 freq: %d\n", (int)freq);
+
+
 	printf("\n");
-*/
+	fp = fopen("adc_data.txt", "w+");
+
+	fprintf(fp, "Time[s]\tChan 1[v]\tChan 2[v]\n");
+	printf("\nTime[s]\tChan 1[v]\tChan 2[v]\t\n");
+
+	for (m = 0; m < NUM_SAMPLES; m++) {
+		fprintf(fp, "%f\t%f\t%f\n", (double) time,
+				(double) ((int) Chan1Data[m] * ADC_CONV_F_16),
+				(double) ((int) Chan2Data[m] * ADC_CONV_F_16));
+		printf("%f\t%f\t%f\t\n ", (double) time,
+				(double) ((int) Chan1Data[m] * ADC_CONV_F_16),
+				(double) ((int) Chan2Data[m] * ADC_CONV_F_16));
+		time = (double) (time + TIME_STEP);
+	}
+
+	fclose(fp);
+	printf("\n");
+
+
+
 	if (bError == false)
 		printf("All done\n");
 	else
