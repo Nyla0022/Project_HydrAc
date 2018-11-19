@@ -129,8 +129,8 @@ int main()
 	 * @return zero on success
 	 *
 	 */
-	uint32_t Result = SUCCESS, i=0, freq=0,time=0, m=0;
-
+	uint32_t Result = SUCCESS, i=0, freq=0, m=0;
+	double time=0;
 	FILE * fp;
 
 #if defined(__ADSPBF707_FAMILY__) || defined(__ADSP215xx__)
@@ -276,20 +276,22 @@ int main()
 	fp = fopen ("adc_data.txt", "w+");
 
 		 fprintf(fp, "Time[s]\tChan 1[v]\tChan 2[v]\n");
+		 printf("\nTime[s]\tChan 1[v]\tChan 2[v]\t\n");
 
-		 for(m=0;m<NUM_CHANNELS;m++){
+		 for(m=0;m<NUM_SAMPLES;m++){
 			 fprintf(fp, "%f\t%f\t%f\n", (double) time, (double)((int)Chan1Data[m]* ADC_CONV_F_16),(double)((int)Chan2Data[m]* ADC_CONV_F_16));
-			 time = time + (double) 1.0/(192000);
+			 printf("%f\t%f\t%f\t\n ",(double) time,(double)((int)Chan1Data[i]* ADC_CONV_F_16),(double)((int)Chan2Data[i]* ADC_CONV_F_16));
+			 time = (double) (time + TIME_STEP);
 		 }
 
 		 fclose(fp);
 
 
-	printf("\nChan 1[v]\tChan 2[v]\t\n");
-	for (i=0u; i<NUM_SAMPLES; i++){
-		printf("%f\t%f\t\n ",(double)((int)Chan1Data[i]* ADC_CONV_F_16),(double)((int)Chan2Data[i]* ADC_CONV_F_16));
-	}
 
+	/*for (i=0u; i<NUM_SAMPLES; i++){
+
+	}
+*/
 	printf("\n");
 
 	/* calculate the detected freq (SHARC only) */
