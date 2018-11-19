@@ -566,7 +566,7 @@ void AdcCallback(void *pCBParam, uint32_t nEvent, void *pArg)
 			//Chan4Data[nSample] = *pData++;  /* secondary slot2 */
 
 			//I must be doing something wrong here, or the buffer composition changes when I switch to 16 bits.
-			//If the swith does not affect the buffer, then the data is in the following order 1-3-2-4,1-3-2-4,...,1-3-2-4
+			//If the swith does not affect the buffer, then the data must be in the following order 1-3-2-4,1-3-2-4,...,1-3-2-4
 
 			nSample++; //this happens because each channel buffer is declared with 16*N where N is the max number of samples
 						//per channel. This seems very inefficient. They fill each channel buffer with 16x its actual capacity.
