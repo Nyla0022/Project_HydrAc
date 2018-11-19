@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
 <?xml-stylesheet type="text/xsl" href="file:///C:/Analog Devices/CrossCore Embedded Studio 2.8.1/System/linker_log.xsl"?>
-<DOCUMENT gen_time='Mon Nov 19 00:20:41 2018
+<DOCUMENT gen_time='Mon Nov 19 11:58:03 2018
 '>
-<MSG id='04F72AC8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507A3A8' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio0']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[cache_set_range_ba.doj](seg_int_data)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F72D68' mid='li3050' type='Informational' suppressed=''>
+<MSG id='05079E68' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio1']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[default_heap_ba.doj](seg_dmda)
@@ -24,13 +24,13 @@
     libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F72908' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507AAA8' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio1_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
     libc.dlb[sincosine_data_XI.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F72C88' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507A648' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio2']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\SoftConfig_SC584.doj(seg_dmda)
@@ -53,6 +53,7 @@
     libc.dlb[heaps_ba.doj](seg_dmda)
     libc.dlb[malloc_ba.doj](seg_dmda)
     libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libc.dlb[sys_malloc_ba.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_arch_c.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)
@@ -64,15 +65,14 @@
     libdrv.dlb[adi_sport.doj](seg_dmda)
     libdrv.dlb[adi_twi.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F72E48' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507A8E8' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio2_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[errno.doj](seg_dmda)
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
-    libc.dlb[proccycles.doj](seg_dmda)
     libc.dlb[sincosine_data_XI.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F72F28' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507A028' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio3']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\SoftConfig_SC584.doj(seg_dmda)
@@ -98,16 +98,23 @@
     libc.dlb[malloc_ba.doj](seg_dmda)
     libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
     libc.dlb[signal_ba.doj](seg_dmda)
+    libc.dlb[sys_malloc_ba.doj](seg_dmda)
     libc.dlb[xatexit_ba.doj](seg_dmda)
     libc.dlb[xsignal_ba.doj](seg_dmda)
+    libio.dlb[defiodev_c08_any.doj](seg_dmda)
     libio.dlb[devIOtab_c08_any.doj](seg_dmda)
+    libio.dlb[dev_close_c08_any.doj](seg_dmda)
     libio.dlb[dev_init_c08_any.doj](seg_dmda)
+    libio.dlb[dev_open_c08_any.doj](seg_dmda)
     libio.dlb[dev_write_c08_any.doj](seg_dmda)
     libio.dlb[devtab_c08_any.doj](seg_dmda)
+    libio.dlb[fclose_c08_any.doj](seg_dmda)
     libio.dlb[fflush_c08_any.doj](seg_dmda)
+    libio.dlb[fopen_c08_any.doj](seg_dmda)
     libio.dlb[primiolibtab_c08_any.doj](seg_dmda)
     libio.dlb[printf_c08_d32.doj](seg_dmda)
     libio.dlb[puts_c08_any.doj](seg_dmda)
+    libio.dlb[xdoopenfile_c08_any.doj](seg_dmda)
     libio.dlb[xfiles_c08_any.doj](seg_dmda)
     libio.dlb[xhexdigits_c08_any.doj](seg_dmda)
     libio.dlb[xlong_to_string_c08_any.doj](seg_dmda)
@@ -136,22 +143,21 @@
     libdrv.dlb[adi_sport.doj](seg_dmda)
     libdrv.dlb[adi_twi.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F73008' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507AF08' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio3_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[errno.doj](seg_dmda)
     libc.dlb[exit_value.doj](seg_dmda)
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
-    libc.dlb[proccycles.doj](seg_dmda)
     libc.dlb[sincosine_data_XI.doj](seg_dmda)
     libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F724A8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507B288' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio0']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[cache_set_range_ba.doj](seg_int_data)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F722E8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507A488' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio1']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[default_heap_ba.doj](seg_dmda)
@@ -168,13 +174,13 @@
     libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F729E8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507A808' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio1_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
     libc.dlb[sincosine_data_XI.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F730E8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507AFE8' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio2']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\SoftConfig_SC584.doj(seg_dmda)
@@ -197,6 +203,7 @@
     libc.dlb[heaps_ba.doj](seg_dmda)
     libc.dlb[malloc_ba.doj](seg_dmda)
     libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libc.dlb[sys_malloc_ba.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_arch_c.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)
@@ -208,15 +215,14 @@
     libdrv.dlb[adi_sport.doj](seg_dmda)
     libdrv.dlb[adi_twi.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F731C8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507A1E8' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio2_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[errno.doj](seg_dmda)
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
-    libc.dlb[proccycles.doj](seg_dmda)
     libc.dlb[sincosine_data_XI.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F738C8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507B368' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio3']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\SoftConfig_SC584.doj(seg_dmda)
@@ -242,16 +248,23 @@
     libc.dlb[malloc_ba.doj](seg_dmda)
     libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
     libc.dlb[signal_ba.doj](seg_dmda)
+    libc.dlb[sys_malloc_ba.doj](seg_dmda)
     libc.dlb[xatexit_ba.doj](seg_dmda)
     libc.dlb[xsignal_ba.doj](seg_dmda)
+    libio.dlb[defiodev_c08_any.doj](seg_dmda)
     libio.dlb[devIOtab_c08_any.doj](seg_dmda)
+    libio.dlb[dev_close_c08_any.doj](seg_dmda)
     libio.dlb[dev_init_c08_any.doj](seg_dmda)
+    libio.dlb[dev_open_c08_any.doj](seg_dmda)
     libio.dlb[dev_write_c08_any.doj](seg_dmda)
     libio.dlb[devtab_c08_any.doj](seg_dmda)
+    libio.dlb[fclose_c08_any.doj](seg_dmda)
     libio.dlb[fflush_c08_any.doj](seg_dmda)
+    libio.dlb[fopen_c08_any.doj](seg_dmda)
     libio.dlb[primiolibtab_c08_any.doj](seg_dmda)
     libio.dlb[printf_c08_d32.doj](seg_dmda)
     libio.dlb[puts_c08_any.doj](seg_dmda)
+    libio.dlb[xdoopenfile_c08_any.doj](seg_dmda)
     libio.dlb[xfiles_c08_any.doj](seg_dmda)
     libio.dlb[xhexdigits_c08_any.doj](seg_dmda)
     libio.dlb[xlong_to_string_c08_any.doj](seg_dmda)
@@ -280,33 +293,32 @@
     libdrv.dlb[adi_sport.doj](seg_dmda)
     libdrv.dlb[adi_twi.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F73388' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507AB88' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio3_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[errno.doj](seg_dmda)
     libc.dlb[exit_value.doj](seg_dmda)
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
-    libc.dlb[proccycles.doj](seg_dmda)
     libc.dlb[sincosine_data_XI.doj](seg_dmda)
     libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F723C8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507A9C8' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block2_pm_data_prio2']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\calc_freq.doj(seg_pmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F73468' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507AC68' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block2_pm_data_prio3']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\calc_freq.doj(seg_pmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F73548' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507AD48' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio0']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[cache_set_range_ba.doj](seg_int_code)
     libc.dlb[flush_data_buffer_ba.doj](seg_int_code)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F73628' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507B0C8' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio1']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[adi_fatal_error.doj](seg_pmco)
@@ -321,7 +333,7 @@
     libdsp.dlb[fft_magnitude_simd.doj](seg_pmco)
     libdsp.dlb[rfftn_simd.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F73B68' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507B448' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio2']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     app_startup.doj(seg_pmco)
@@ -349,7 +361,7 @@
     libdsp.dlb[fft_magnitude_simd.doj](seg_pmco)
     libdsp.dlb[rfftn_simd.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F72588' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507A568' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio3']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     app_startup.doj(seg_pmco)
@@ -381,7 +393,7 @@
     libdsp.dlb[fft_magnitude_simd.doj](seg_pmco)
     libdsp.dlb[rfftn_simd.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F73708' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507AE28' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_nw_code']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[cache_set_range_ba.doj](seg_int_code)
@@ -415,7 +427,7 @@
     libdsp.dlb[fft_magnitude_simd.doj](seg_pmco)
     libdsp.dlb[rfftn_simd.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F72048' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507A108' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block2_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\SoftConfig_SC584.doj(seg_dmda)
@@ -442,16 +454,23 @@
     libc.dlb[malloc_ba.doj](seg_dmda)
     libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
     libc.dlb[signal_ba.doj](seg_dmda)
+    libc.dlb[sys_malloc_ba.doj](seg_dmda)
     libc.dlb[xatexit_ba.doj](seg_dmda)
     libc.dlb[xsignal_ba.doj](seg_dmda)
+    libio.dlb[defiodev_c08_any.doj](seg_dmda)
     libio.dlb[devIOtab_c08_any.doj](seg_dmda)
+    libio.dlb[dev_close_c08_any.doj](seg_dmda)
     libio.dlb[dev_init_c08_any.doj](seg_dmda)
+    libio.dlb[dev_open_c08_any.doj](seg_dmda)
     libio.dlb[dev_write_c08_any.doj](seg_dmda)
     libio.dlb[devtab_c08_any.doj](seg_dmda)
+    libio.dlb[fclose_c08_any.doj](seg_dmda)
     libio.dlb[fflush_c08_any.doj](seg_dmda)
+    libio.dlb[fopen_c08_any.doj](seg_dmda)
     libio.dlb[primiolibtab_c08_any.doj](seg_dmda)
     libio.dlb[printf_c08_d32.doj](seg_dmda)
     libio.dlb[puts_c08_any.doj](seg_dmda)
+    libio.dlb[xdoopenfile_c08_any.doj](seg_dmda)
     libio.dlb[xfiles_c08_any.doj](seg_dmda)
     libio.dlb[xhexdigits_c08_any.doj](seg_dmda)
     libio.dlb[xlong_to_string_c08_any.doj](seg_dmda)
@@ -480,27 +499,26 @@
     libdrv.dlb[adi_sport.doj](seg_dmda)
     libdrv.dlb[adi_twi.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F739A8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507B1A8' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block2_data_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[errno.doj](seg_dmda)
     libc.dlb[exit_value.doj](seg_dmda)
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
-    libc.dlb[proccycles.doj](seg_dmda)
     libc.dlb[sincosine_data_XI.doj](seg_dmda)
     libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F72668' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507B528' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_pm_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\calc_freq.doj(seg_pmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F737E8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507B608' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_pm_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\calc_freq.doj(seg_pmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F73A88' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507B6E8' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\SoftConfig_SC584.doj(seg_dmda)
@@ -527,16 +545,23 @@
     libc.dlb[malloc_ba.doj](seg_dmda)
     libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
     libc.dlb[signal_ba.doj](seg_dmda)
+    libc.dlb[sys_malloc_ba.doj](seg_dmda)
     libc.dlb[xatexit_ba.doj](seg_dmda)
     libc.dlb[xsignal_ba.doj](seg_dmda)
+    libio.dlb[defiodev_c08_any.doj](seg_dmda)
     libio.dlb[devIOtab_c08_any.doj](seg_dmda)
+    libio.dlb[dev_close_c08_any.doj](seg_dmda)
     libio.dlb[dev_init_c08_any.doj](seg_dmda)
+    libio.dlb[dev_open_c08_any.doj](seg_dmda)
     libio.dlb[dev_write_c08_any.doj](seg_dmda)
     libio.dlb[devtab_c08_any.doj](seg_dmda)
+    libio.dlb[fclose_c08_any.doj](seg_dmda)
     libio.dlb[fflush_c08_any.doj](seg_dmda)
+    libio.dlb[fopen_c08_any.doj](seg_dmda)
     libio.dlb[primiolibtab_c08_any.doj](seg_dmda)
     libio.dlb[printf_c08_d32.doj](seg_dmda)
     libio.dlb[puts_c08_any.doj](seg_dmda)
+    libio.dlb[xdoopenfile_c08_any.doj](seg_dmda)
     libio.dlb[xfiles_c08_any.doj](seg_dmda)
     libio.dlb[xhexdigits_c08_any.doj](seg_dmda)
     libio.dlb[xlong_to_string_c08_any.doj](seg_dmda)
@@ -565,22 +590,21 @@
     libdrv.dlb[adi_sport.doj](seg_dmda)
     libdrv.dlb[adi_twi.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F73D28' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507B7C8' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_data_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[errno.doj](seg_dmda)
     libc.dlb[exit_value.doj](seg_dmda)
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
-    libc.dlb[proccycles.doj](seg_dmda)
     libc.dlb[sincosine_data_XI.doj](seg_dmda)
     libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F73EE8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='05079F48' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_pm_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\calc_freq.doj(seg_pmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F73C48' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507B988' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_nw_code']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     app_startup.doj(seg_pmco)
@@ -612,7 +636,7 @@
     libdsp.dlb[fft_magnitude_simd.doj](seg_pmco)
     libdsp.dlb[rfftn_simd.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04F73E08' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507B8A8' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\SoftConfig_SC584.doj(seg_dmda)
@@ -638,16 +662,23 @@
     libc.dlb[malloc_ba.doj](seg_dmda)
     libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
     libc.dlb[signal_ba.doj](seg_dmda)
+    libc.dlb[sys_malloc_ba.doj](seg_dmda)
     libc.dlb[xatexit_ba.doj](seg_dmda)
     libc.dlb[xsignal_ba.doj](seg_dmda)
+    libio.dlb[defiodev_c08_any.doj](seg_dmda)
     libio.dlb[devIOtab_c08_any.doj](seg_dmda)
+    libio.dlb[dev_close_c08_any.doj](seg_dmda)
     libio.dlb[dev_init_c08_any.doj](seg_dmda)
+    libio.dlb[dev_open_c08_any.doj](seg_dmda)
     libio.dlb[dev_write_c08_any.doj](seg_dmda)
     libio.dlb[devtab_c08_any.doj](seg_dmda)
+    libio.dlb[fclose_c08_any.doj](seg_dmda)
     libio.dlb[fflush_c08_any.doj](seg_dmda)
+    libio.dlb[fopen_c08_any.doj](seg_dmda)
     libio.dlb[primiolibtab_c08_any.doj](seg_dmda)
     libio.dlb[printf_c08_d32.doj](seg_dmda)
     libio.dlb[puts_c08_any.doj](seg_dmda)
+    libio.dlb[xdoopenfile_c08_any.doj](seg_dmda)
     libio.dlb[xfiles_c08_any.doj](seg_dmda)
     libio.dlb[xhexdigits_c08_any.doj](seg_dmda)
     libio.dlb[xlong_to_string_c08_any.doj](seg_dmda)
@@ -676,22 +707,21 @@
     libdrv.dlb[adi_sport.doj](seg_dmda)
     libdrv.dlb[adi_twi.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='06453068' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507BA68' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_data_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[errno.doj](seg_dmda)
     libc.dlb[exit_value.doj](seg_dmda)
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
-    libc.dlb[proccycles.doj](seg_dmda)
     libc.dlb[sincosine_data_XI.doj](seg_dmda)
     libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='06452F88' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0507BB48' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_pm_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\calc_freq.doj(seg_pmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='06453148' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0657F740' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_nw_code']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     app_startup.doj(seg_pmco)
@@ -723,20 +753,20 @@
     libdsp.dlb[fft_magnitude_simd.doj](seg_pmco)
     libdsp.dlb[rfftn_simd.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='06453228' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0657F200' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_cpp_eh_gdt_nw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     app_startup.doj(.gdt)
     app_startup.doj(.gdt)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='06451388' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0657EDA0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_cpp_ctors_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     app_startup.doj(seg_ctdml)
     app_startup.doj(seg_ctdml)
     libc.dlb[set_c.doj](seg_ctdml)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='06452DC8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0657F900' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\SoftConfig_SC584.doj(seg_dmda)
@@ -762,16 +792,23 @@
     libc.dlb[malloc_ba.doj](seg_dmda)
     libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
     libc.dlb[signal_ba.doj](seg_dmda)
+    libc.dlb[sys_malloc_ba.doj](seg_dmda)
     libc.dlb[xatexit_ba.doj](seg_dmda)
     libc.dlb[xsignal_ba.doj](seg_dmda)
+    libio.dlb[defiodev_c08_any.doj](seg_dmda)
     libio.dlb[devIOtab_c08_any.doj](seg_dmda)
+    libio.dlb[dev_close_c08_any.doj](seg_dmda)
     libio.dlb[dev_init_c08_any.doj](seg_dmda)
+    libio.dlb[dev_open_c08_any.doj](seg_dmda)
     libio.dlb[dev_write_c08_any.doj](seg_dmda)
     libio.dlb[devtab_c08_any.doj](seg_dmda)
+    libio.dlb[fclose_c08_any.doj](seg_dmda)
     libio.dlb[fflush_c08_any.doj](seg_dmda)
+    libio.dlb[fopen_c08_any.doj](seg_dmda)
     libio.dlb[primiolibtab_c08_any.doj](seg_dmda)
     libio.dlb[printf_c08_d32.doj](seg_dmda)
     libio.dlb[puts_c08_any.doj](seg_dmda)
+    libio.dlb[xdoopenfile_c08_any.doj](seg_dmda)
     libio.dlb[xfiles_c08_any.doj](seg_dmda)
     libio.dlb[xhexdigits_c08_any.doj](seg_dmda)
     libio.dlb[xlong_to_string_c08_any.doj](seg_dmda)
@@ -800,22 +837,21 @@
     libdrv.dlb[adi_sport.doj](seg_dmda)
     libdrv.dlb[adi_twi.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='06451468' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0657FE40' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_data_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[errno.doj](seg_dmda)
     libc.dlb[exit_value.doj](seg_dmda)
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
-    libc.dlb[proccycles.doj](seg_dmda)
     libc.dlb[sincosine_data_XI.doj](seg_dmda)
     libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='064518C8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0657F3C0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_pm_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\calc_freq.doj(seg_pmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='06452EA8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0657F4A0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_data2']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\SoftConfig_SC584.doj(seg_dmda)
@@ -841,16 +877,23 @@
     libc.dlb[malloc_ba.doj](seg_dmda)
     libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
     libc.dlb[signal_ba.doj](seg_dmda)
+    libc.dlb[sys_malloc_ba.doj](seg_dmda)
     libc.dlb[xatexit_ba.doj](seg_dmda)
     libc.dlb[xsignal_ba.doj](seg_dmda)
+    libio.dlb[defiodev_c08_any.doj](seg_dmda)
     libio.dlb[devIOtab_c08_any.doj](seg_dmda)
+    libio.dlb[dev_close_c08_any.doj](seg_dmda)
     libio.dlb[dev_init_c08_any.doj](seg_dmda)
+    libio.dlb[dev_open_c08_any.doj](seg_dmda)
     libio.dlb[dev_write_c08_any.doj](seg_dmda)
     libio.dlb[devtab_c08_any.doj](seg_dmda)
+    libio.dlb[fclose_c08_any.doj](seg_dmda)
     libio.dlb[fflush_c08_any.doj](seg_dmda)
+    libio.dlb[fopen_c08_any.doj](seg_dmda)
     libio.dlb[primiolibtab_c08_any.doj](seg_dmda)
     libio.dlb[printf_c08_d32.doj](seg_dmda)
     libio.dlb[puts_c08_any.doj](seg_dmda)
+    libio.dlb[xdoopenfile_c08_any.doj](seg_dmda)
     libio.dlb[xfiles_c08_any.doj](seg_dmda)
     libio.dlb[xhexdigits_c08_any.doj](seg_dmda)
     libio.dlb[xlong_to_string_c08_any.doj](seg_dmda)
@@ -879,17 +922,16 @@
     libdrv.dlb[adi_sport.doj](seg_dmda)
     libdrv.dlb[adi_twi.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='06451B68' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0657FF20' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_data2_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[errno.doj](seg_dmda)
     libc.dlb[exit_value.doj](seg_dmda)
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
-    libc.dlb[proccycles.doj](seg_dmda)
     libc.dlb[sincosine_data_XI.doj](seg_dmda)
     libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='06452A48' mid='li3050' type='Informational' suppressed=''>
+<MSG id='0657F120' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_pm_data2']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     src\calc_freq.doj(seg_pmda)]]></EXTENDED_INFO>

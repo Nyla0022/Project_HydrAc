@@ -1,6 +1,10 @@
-00:54:31 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
+11:58:05 **** Build of configuration Debug for project ChanFreq_SC584_SHARC_Core0 ****
 make all 
-make: Nothing to be done for `all'.
+'Building target: ChanFreq_SC584_SHARC_Core0'
+'Invoking: CrossCore ARM Bare Metal C Linker'
+arm-none-eabi-gcc -mproc=ADSP-SC584 -msi-revision=any -Wl,--gc-sections -mdebug-libs -o  "ChanFreq_SC584_SHARC_Core0" @input-file.txt -lm
+'Finished building target: ChanFreq_SC584_SHARC_Core0'
+' '
 
-00:54:31 Build Finished (took 214ms)
+11:58:05 Build Finished (took 417ms)
 
