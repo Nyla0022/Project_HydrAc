@@ -5209,3 +5209,17 @@ java.lang.NoSuchMethodException: com.analog.crosscore.tpsdkserver.TpsdkServer.Ru
 !MESSAGE Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0
 !SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2018-11-19 00:18:16.314
 !MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@11f1d7b): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception.
+!SESSION 2018-11-19 10:52:50.434 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-19 10:55:39.626
+!MESSAGE 2018-11-19 10:55:39, 622 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.1.0 w1807161
+
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-19 10:55:39.637
+!MESSAGE 2018-11-19 10:55:39, 635 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/; environment variable CCES_HOME: not set
+

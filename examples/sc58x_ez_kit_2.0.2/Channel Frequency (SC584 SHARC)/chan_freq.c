@@ -27,7 +27,7 @@ to the terms of the associated Analog Devices License Agreement.
 #include "chan_freq.h"
 #include "adi_initialize.h"
 
-#include <time.h>
+#include <stdlib.h>
 
 #if !defined(ADI_CACHE_LINE_LENGTH)
 /* The ADI_CACHE_* macros were introduced in CCES 2.4.0 in <sys/platform.h>.
@@ -85,18 +85,10 @@ volatile bool bError = false;
 ADI_CACHE_ALIGN static int16_t AdcBuf1[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int16_t)];
 ADI_CACHE_ALIGN static int16_t AdcBuf2[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int16_t)];
 
-#define MAXDATA  (AUDIO_BUFFER_SIZE*4u) //between 4MBytes and 8MBytes (for 400Ksamples @2B/sample)
-										//why do I need so much memory for a single channel?
-										//it does not make sense to me to have a channel buffer of 16N
-										//when the audio buffer is 4N.
 
 static int16_t Chan1Data[NUM_SAMPLES]; //N*4*4 = 16N
 static int16_t Chan2Data[NUM_SAMPLES]; //16MB max for  (for 400Ksamples @2B/sample)
-//static int16_t Chan3Data[NUM_SAMPLES];
-//static int16_t Chan4Data[NUM_SAMPLES];
 
-
-volatile uint32_t nSample = 0u;
 
 /*=============  L O C A L    F U N C T I O N    P R O T O T Y P E S =============*/
 /* Initialize GPIO and reset peripherals */
@@ -130,11 +122,11 @@ int main()
 	 *
 	 */
 
-	uint32_t Result = SUCCESS;
+	uint32_t Result = SUCCESS, i=0, freq=0,time=0;
 
-	uint32_t i;
+	FILE * fp;
 
-	uint32_t freq;
+	int m;
 
 
 #if defined(__ADSPBF707_FAMILY__) || defined(__ADSP215xx__)
@@ -238,9 +230,9 @@ int main()
 		DBG_MSG("ADC enable failed\n");
 	}
 
+
 	printf("DATA FLOW ENABLED! processing callbacks...\n");
 
-	clock_t begin = clock();
 
 	/* process samples for a while then exit */
 	while(AdcCount < CALLBACK_COUNT)
@@ -254,12 +246,7 @@ int main()
 		}
     }
 
-	clock_t end = clock();
-
-	double exec_time = (double) (end-begin)/CLOCKS_PER_SEC;
-
-	printf("*****EXECUTION TIME: %f*****\n", exec_time);
-
+	printf("ALL CALLBACKS PROCESSED!...\n");
 
 	/* Disable ADC data flow */
 	if(adi_adau1977_Enable(phAdau1977, false) != ADI_ADAU1977_SUCCESS)
@@ -276,27 +263,34 @@ int main()
 	}
 
 
-	printf("\nChan 1[v]\tChan 2[v]\t\n");
-	for (i=0u; i<NUM_SAMPLES; i++){
-		printf("%f\t%f\t\n ",(double)((int)Chan1Data[i]* ADC_CONV_F_16),(double)((int)Chan2Data[i]* ADC_CONV_F_16));
-	}
+	 fp = fopen ("adc_data.txt", "w+");
 
-	printf("\n");
+	 fprintf(fp, "Time[s]\tChan 1[v]\tChan 2[v]\n");
 
-	/* calculate the detected freq (SHARC only) */
+	 for(m=0;m<NUM_CHANNELS;m++){
+		 fprintf(fp, "%f\t%f\t%f\n", (double) time, (double)((int)Chan1Data[m]* ADC_CONV_F_16),(double)((int)Chan2Data[m]* ADC_CONV_F_16));
+		 time = time + TIME_STEP;
+	 }
+
+	 fclose(fp);
+
+	 printf("\nChan 1[v]\tChan 2[v]\t\n");
+	 for (i=0u; i<NUM_SAMPLES; i++)
+		printf("%f\t%f\n",(double)((int)Chan1Data[i]* ADC_CONV_F_16),(double)((int)Chan2Data[i]* ADC_CONV_F_16));
+
+
+	 printf("\n");
+
+	/* calculate the detected freq (SHARC only)
 	freq = detectFreq(&Chan1Data[0]);
 	printf("Chan1 freq: %d\n", (int)freq);
 
 	printf("\n");
-
+*/
 	if (bError == false)
-	{
 		printf("All done\n");
-	}
 	else
-	{
 		printf("Example failed\n");
-	}
 
 	return 0;
 }
@@ -469,8 +463,8 @@ uint32_t Adau1977Init(void)
 
 	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL1, false); //was true
 	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL2, false); //was true
-	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL3, false); //was true
-	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL4, false); //was true
+	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL3, true); //was true
+	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL4, true); //was true
 
 	/* setup mic */
 #if defined(ENABLE_MIC_BIAS)
@@ -553,8 +547,8 @@ void AdcCallback(void *pCBParam, uint32_t nEvent, void *pArg)
 	uint16_t *pData;
 	uint16_t tmp;
 	uint32_t n;
-	switch(nEvent)
-	{
+
+	switch(nEvent){
 	case ADI_SPORT_EVENT_RX_BUFFER_PROCESSED:
         	/* Update callback count */
         	AdcCount++;
@@ -568,32 +562,17 @@ void AdcCallback(void *pCBParam, uint32_t nEvent, void *pArg)
 			bError = true;
 		}
 
-		/* copy single channel data to buffer */
+		/* Copy single channel data to audio channel buffer */
+		if (AdcCount == CALLBACK_COUNT) //Only enter if reached the last callback
+			for (n = 0u; n < (NUM_SAMPLES); n++) {
 
-		/***** A solution for the number of callbacks is to compare this variable with MAX_CALLBACKS. If not equal,
-		 * then do not run the for loop as it is very inefficient */
-		if(AdcCount==CALLBACK_COUNT){
-				for (n=0u; (n<(NUM_SAMPLES)); n++)
-				{
-					Chan1Data[nSample] = *pData++;  /* primary slot1 */
-					tmp =/*Chan3Data[nSample] = */*pData++;  /* secondary slot1 */
+				Chan1Data[n] = *pData++; /* primary slot1 */
+				tmp = *pData++; /* secondary slot1 */
+				Chan2Data[n] = *pData++; /* primary slot2 */
+				tmp = *pData++; /* secondary slot2 */
 
-					Chan2Data[nSample] = *pData++;  /* primary slot2 */
-					tmp =/*Chan4Data[nSample] =*/ *pData++;  /* secondary slot2 */
-
-					//I must be doing something wrong here, or the buffer composition changes when I switch to 16 bits.
-					//If the swith does not affect the buffer, then the data must be in the following order 1-3-2-4,1-3-2-4,...,1-3-2-4
-
-					nSample++; //this happens because each channel buffer is declared with 16*N where N is the max number of samples
-								//per channel. This seems very inefficient. They fill each channel buffer with 16x its actual capacity.
-								//by the 17th callback each channel is overwritten. Why is this so?
-
-					/*if (nSample == MAXDATA)	{ //MAXDATA is 16*N. why?
-						nSample = 0u; // it is abusrd. the array is filled in its entirety 125 times. An each fill is 16 times its actual capacity.
-					}
-		*/
-				}
-		}
+				//data is in the following order 1-3-2-4,1-3-2-4,...,1-3-2-4 and repeats 4N times
+			}
 
 		break;
 	default:
