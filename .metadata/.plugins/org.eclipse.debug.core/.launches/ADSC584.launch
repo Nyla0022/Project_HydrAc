@@ -148,7 +148,7 @@
 <stringAttribute key="AutomaticBreakpointPublic9" value="true"/>
 <stringAttribute key="AutomaticBreakpointSetAtLocation0" value="_exit"/>
 <stringAttribute key="AutomaticBreakpointSetAtLocation1" value="__fatal_error"/>
-<stringAttribute key="AutomaticBreakpointSetAtLocation10" value="0x1c1780"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation10" value="0x1c1786"/>
 <stringAttribute key="AutomaticBreakpointSetAtLocation12" value="__primIO"/>
 <stringAttribute key="AutomaticBreakpointSetAtLocation15" value="___lib_prog_term"/>
 <stringAttribute key="AutomaticBreakpointSetAtLocation18" value="__fatal_error"/>
