@@ -80,14 +80,16 @@ static volatile uint32_t AdcCount = 0u;
 /* error flag */
 volatile bool bError = false;
 
-ADI_CACHE_ALIGN static int32_t AdcBuf1[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int16_t)];
-ADI_CACHE_ALIGN static int32_t AdcBuf2[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int16_t)];
+ADI_CACHE_ALIGN static int16_t AdcBuf1[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int16_t)];
+ADI_CACHE_ALIGN static int16_t AdcBuf2[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int16_t)];
 
-#define MAXDATA  (AUDIO_BUFFER_SIZE*4u)
+#define MAXDATA  (AUDIO_BUFFER_SIZE*4u) //between 4MBytes and 8MBytes (for 400Ksamples @2B/sample)
+										//why do I need so much memory for a single channel?
+										//it does not make sense to me to have a channel buffer of 16N
+										//when the audio buffer is 4N.
 
-
-static int16_t Chan1Data[MAXDATA];
-static int16_t Chan2Data[MAXDATA];
+static int16_t Chan1Data[MAXDATA]; //N*4*4 = 16N
+static int16_t Chan2Data[MAXDATA]; //16MB max for  (for 400Ksamples @2B/sample)
 //static int16_t Chan3Data[MAXDATA];
 //static int16_t Chan4Data[MAXDATA];
 
@@ -132,7 +134,7 @@ int main()
 
 	uint32_t freq;
 
-	bool clip = true;
+
 #if defined(__ADSPBF707_FAMILY__) || defined(__ADSP215xx__)
 	/* Memory required for the SPU operation */
 	uint8_t  SpuMemory[ADI_SPU_MEMORY_SIZE];
@@ -211,7 +213,9 @@ int main()
 		DBG_MSG("ADAU1977 Init failed\n");
 	}
 
-	/* Submit ADC buffer1 */
+	/* Submit ADC buffer1 */ //N*4*2 (2B/sample) or N*4*4(4B/sample)
+	// All it does is giving the buffer size in bytes not in samples. That is why it multiplies the size (in samples)
+	//the number of bytes/sample
 	if(adi_adau1977_SubmitBuffer(phAdau1977, &AdcBuf1[0u], AUDIO_BUFFER_SIZE*BYTES_PER_SAMPLE) != ADI_ADAU1977_SUCCESS)
 	{
 		bError = true;
@@ -260,7 +264,7 @@ int main()
 
 	printf("\nChan 1[v]\tChan 2[v]\t\n");
 	for (i=0u; i<NUM_SAMPLES; i++){
-		printf("%f\t%f\t\n ",(double)((int)Chan1Data[i]* ADC_CONV_F_16));
+		printf("%f\t%f\t\n ",(double)((int)Chan1Data[i]* ADC_CONV_F_16),(double)((int)Chan2Data[i]* ADC_CONV_F_16));
 	}
 
 	printf("\n");
@@ -532,9 +536,8 @@ uint32_t Adau1977Init(void)
 void AdcCallback(void *pCBParam, uint32_t nEvent, void *pArg)
 {
 	ADI_ADAU1977_RESULT eResult;
-	uint32_t *pData;
+	uint16_t *pData;
 	uint32_t n;
-	bool clip;
 	switch(nEvent)
 	{
 	case ADI_SPORT_EVENT_RX_BUFFER_PROCESSED:
@@ -551,6 +554,10 @@ void AdcCallback(void *pCBParam, uint32_t nEvent, void *pArg)
 		}
 
 		/* copy single channel data to buffer */
+
+		/***** A solution for the number of callbacks is to compare this variable with MAX_CALLBACKS. If not equal,
+		 * then do not run the for loop as it is very inefficient */
+
 		for (n=0u; n<(NUM_SAMPLES); n++)
 		{
 			Chan1Data[nSample] = *pData++;  /* primary slot1 */
@@ -558,35 +565,18 @@ void AdcCallback(void *pCBParam, uint32_t nEvent, void *pArg)
 			//Chan3Data[nSample] = *pData++;  /* secondary slot1 */
 			//Chan4Data[nSample] = *pData++;  /* secondary slot2 */
 
-			nSample++;
+			//I must be doing something wrong here, or the buffer composition changes when I switch to 16 bits.
+			//If the swith does not affect the buffer, then the data is in the following order 1-3-2-4,1-3-2-4,...,1-3-2-4
 
-			if (nSample == MAXDATA)
-			{
-				nSample = 0u;
-				//n=NUM_SAMPLES;
-				//printf("reset samples count");
+			nSample++; //this happens because each channel buffer is declared with 16*N where N is the max number of samples
+						//per channel. This seems very inefficient. They fill each channel buffer with 16x its actual capacity.
+						//by the 17th callback each channel is overwritten. Why is this so?
+
+			if (nSample == MAXDATA)	{ //MAXDATA is 16*N. why?
+				nSample = 0u; // it is abusrd. the array is filled in its entirety 125 times. An each fill is 16 times its actual capacity.
 			}
 
 		}
-
-//		nSample=0;
-//		/* copy single channel data to buffer */
-//		for (n=0u; n<(NUM_SAMPLES); n++)
-//		{
-//			Chan3Data[nSample] = *pData++;  /* primary slot1 */
-//			Chan4Data[nSample] = *pData++;  /* primary slot1 */
-//			//Chan3Data[nSample] = *pData++;  /* secondary slot1 */
-//			//Chan4Data[nSample] = *pData++;  /* secondary slot2 */
-//
-//			nSample++;
-//
-//			if (nSample == MAXDATA)
-//			{
-//				nSample = 0u;
-//				//printf("reset samples count");
-//			}
-//
-//		}
 
 		break;
 	default:
