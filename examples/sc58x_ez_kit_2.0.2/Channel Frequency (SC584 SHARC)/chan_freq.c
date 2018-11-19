@@ -90,8 +90,8 @@ ADI_CACHE_ALIGN static int16_t AdcBuf2[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE
 
 static int16_t Chan1Data[NUM_SAMPLES]; //N*4*4 = 16N
 static int16_t Chan2Data[NUM_SAMPLES]; //16MB max for  (for 400Ksamples @2B/sample)
-static int16_t Chan3Data[NUM_SAMPLES];
-static int16_t Chan4Data[NUM_SAMPLES];
+//static int16_t Chan3Data[NUM_SAMPLES];
+//static int16_t Chan4Data[NUM_SAMPLES];
 
 
 volatile uint32_t nSample = 0u;
@@ -236,6 +236,7 @@ int main()
 		DBG_MSG("ADC enable failed\n");
 	}
 
+	printf("DATA FLOW ENABLED! processing callbacks...");
 	/* process samples for a while then exit */
 	while(AdcCount < CALLBACK_COUNT)
 	{
@@ -537,6 +538,7 @@ void AdcCallback(void *pCBParam, uint32_t nEvent, void *pArg)
 {
 	ADI_ADAU1977_RESULT eResult;
 	uint16_t *pData;
+	uint16_t tmp;
 	uint32_t n;
 	switch(nEvent)
 	{
@@ -561,10 +563,10 @@ void AdcCallback(void *pCBParam, uint32_t nEvent, void *pArg)
 		for (n=0u; (n<(NUM_SAMPLES) && AdcCount==CALLBACK_COUNT); n++)
 		{
 			Chan1Data[nSample] = *pData++;  /* primary slot1 */
-			Chan3Data[nSample] = *pData++;  /* secondary slot1 */
+			tmp =/*Chan3Data[nSample] = */*pData++;  /* secondary slot1 */
 
 			Chan2Data[nSample] = *pData++;  /* primary slot2 */
-			Chan4Data[nSample] = *pData++;  /* secondary slot2 */
+			tmp =/*Chan4Data[nSample] =*/ *pData++;  /* secondary slot2 */
 
 			//I must be doing something wrong here, or the buffer composition changes when I switch to 16 bits.
 			//If the swith does not affect the buffer, then the data must be in the following order 1-3-2-4,1-3-2-4,...,1-3-2-4
