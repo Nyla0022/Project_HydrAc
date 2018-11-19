@@ -237,9 +237,11 @@ int main()
 	}
 
 	printf("DATA FLOW ENABLED! processing callbacks...");
+
 	/* process samples for a while then exit */
 	while(AdcCount < CALLBACK_COUNT)
 	{
+		printf("AdcCount==%d\n", AdcCount);
 		/* process samples in the callback */
 		if (bError)
 		{
@@ -575,10 +577,10 @@ void AdcCallback(void *pCBParam, uint32_t nEvent, void *pArg)
 						//per channel. This seems very inefficient. They fill each channel buffer with 16x its actual capacity.
 						//by the 17th callback each channel is overwritten. Why is this so?
 
-			if (nSample == MAXDATA)	{ //MAXDATA is 16*N. why?
+			/*if (nSample == MAXDATA)	{ //MAXDATA is 16*N. why?
 				nSample = 0u; // it is abusrd. the array is filled in its entirety 125 times. An each fill is 16 times its actual capacity.
 			}
-
+*/
 		}
 
 		break;
