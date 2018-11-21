@@ -276,15 +276,15 @@ int main()
 	fp = fopen("adc_data.txt", "w+");
 
 	fprintf(fp, "Time[s]\tChan 1[v]\tChan 2[v]\n");
-	printf("\nTime[s]\tChan 1[v]\tChan 2[v]\t\n");
+	//printf("\nTime[s]\tChan 1[v]\tChan 2[v]\t\n");
 
 	for (m = 0; m < NUM_SAMPLES; m++) {
 		fprintf(fp, "%f\t%f\t%f\n", (double) time,
 				(double) ((int) Chan1Data[m] * ADC_CONV_F_16),
 				(double) ((int) Chan2Data[m] * ADC_CONV_F_16));
-		printf("%f\t%f\t%f\t\n ", (double) time,
-				(double) ((int) Chan1Data[m] * ADC_CONV_F_16),
-				(double) ((int) Chan2Data[m] * ADC_CONV_F_16));
+//		printf("%f\t%f\t%f\t\n ", (double) time,
+//				(double) ((int) Chan1Data[m] * ADC_CONV_F_16),
+//				(double) ((int) Chan2Data[m] * ADC_CONV_F_16));
 		time = (double) (time + TIME_STEP);
 	}
 
