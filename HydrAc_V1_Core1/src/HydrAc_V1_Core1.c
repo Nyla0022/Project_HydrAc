@@ -117,12 +117,9 @@ extern void ConfigSoftSwitches(void);
 int main(int argc, char *argv[]){
 
 	/**
-	 * Initialize managed drivers and/or services that have been added to 
-	 * the project.
-	 * @return zero on success 
+	 * Initialize managed drivers and/or services that have been added to the project.
 	 */
 	adi_initComponents();
-	
 
 	/* Software Switch Configuration for the EZ-Board */
 	ConfigSoftSwitches();
