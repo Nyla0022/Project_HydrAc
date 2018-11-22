@@ -136,29 +136,19 @@ int main(int argc, char *argv[]){
 	/*Initialize ADC for HydrAc System (ADAU 1977)*/
 	hydrac_adc_init();
 
+	//-----A loop would start here
+
 	/*Enable dataflow and Open the ADC*/
 	hydrac_adc_enable();
 
-
-	printf("DATA FLOW ENABLED! processing callbacks...\n");
-
-
-	/* process samples and then exit */
-	while(AdcCount < CALLBACK_COUNT)
-	{
-		printf("AdcCount==%d\n", AdcCount);
-		/* process samples in the callback */
-		if (bError)
-		{
-			DBG_MSG("ADC callback failed\n");
-			break;
-		}
-    }
-
-	printf("ALL CALLBACKS PROCESSED!...\n");
-
 	/*Disable dataflow and close the ADC*/
 	hydrac_adc_disable();
+
+
+	//ADC acquisition data is ready!
+	//----- Do something with the data
+	//----- Integration code goes here
+
 
 	/*copy acquisition data into a file*/
 	printf("\n");
@@ -183,6 +173,9 @@ int main(int argc, char *argv[]){
 		printf("All done!\n");
 	else
 		printf("Code failed\n");
+
+
+	//------A loop would end here
 
 	return 0;
 }
@@ -529,6 +522,23 @@ void hydrac_adc_disable(void){
 		bError = true;
 		DBG_MSG("ADC close failed\n");
 	}
+
+	printf("DATA FLOW ENABLED! processing callbacks...\n");
+
+
+	/* process samples and then exit */
+	while(AdcCount < CALLBACK_COUNT)
+	{
+		printf("AdcCount==%d\n", AdcCount);
+		/* process samples in the callback */
+		if (bError)
+		{
+			DBG_MSG("ADC callback failed\n");
+			break;
+		}
+    }
+
+	printf("ALL CALLBACKS PROCESSED!...\n");
 }
 
 void hydrac_gpio_init(void){

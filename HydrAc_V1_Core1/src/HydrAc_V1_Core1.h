@@ -37,7 +37,7 @@ to the terms of the associated Analog Devices License Agreement.
 #define CALLBACK_COUNT  		(3u) 			//3u
 
 /* Macro to specify delay count for ADC/DAC reset */
-#define DELAY_COUNT             (400000u)
+#define DELAY_COUNT             (100000u)
 
 /*
  * ADC settings
