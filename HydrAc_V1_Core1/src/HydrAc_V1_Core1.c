@@ -69,6 +69,12 @@ static volatile uint32_t AdcCount = 0u;
 /* error flag */
 volatile bool bError = false;
 
+/* Memory required for the SPU operation */
+static uint8_t  SpuMemory[ADI_SPU_MEMORY_SIZE];
+
+/* SPU handle */
+static ADI_SPU_HANDLE hSpu;
+
 ADI_CACHE_ALIGN static int16_t AdcBuf1[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int16_t)]; //Between 1MB and 2MB
 ADI_CACHE_ALIGN static int16_t AdcBuf2[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int16_t)];
 
@@ -83,6 +89,12 @@ uint32_t    GpioInit(void);
 /* Initializes ADC */
 uint32_t    Adau1977Init(void);
 
+/*Initializes system ADC	*/
+void hydrac_gpio_init(void);
+void hydrac_adc_init(void);
+void hydrac_spu_init(void);
+void hydrac_adc_enable(void);
+void hydrac_adc_disable(void);
 /*=============  C A L L B A C K    F U N C T I O N    P R O T O T Y P E S =============*/
 
 /* ADC callback */
@@ -98,27 +110,11 @@ extern void ConfigSoftSwitches(void);
 /*=============  C O D E  =============*/
 
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]){
 
-	/**
-	 * Initialize managed drivers and/or services that have been added to
-	 * the project.
-	 * @return zero on success
-	 *
-	 */
-	uint32_t Result = SUCCESS, i = 0, freq = 0, m = 0;
-
+	uint32_t i = 0, freq = 0, m = 0;
 	double time = 0;
-
 	FILE * fp;
-
-	/* Memory required for the SPU operation */
-	uint8_t  SpuMemory[ADI_SPU_MEMORY_SIZE];
-
-	/* SPU handle */
-	ADI_SPU_HANDLE hSpu;
-
 
 	/**
 	 * Initialize managed drivers and/or services that have been added to 
@@ -131,71 +127,23 @@ int main(int argc, char *argv[])
 	/* Software Switch Configuration for the EZ-Board */
 	ConfigSoftSwitches();
 
-	Result = GpioInit();
-	if (Result == FAILURE)
-	{
-		bError = true;
-		DBG_MSG("GPIO Init failed\n");
-	}
+	/*Initialize GPIO peripheral for HydrAc System*/
+	hydrac_gpio_init();
 
+	/*Initialize SPU peripheral for HydrAc System*/
+	hydrac_spu_init();
 
-	/* Initialize SPU Service */
-	if(adi_spu_Init(0u, SpuMemory, NULL, NULL, &hSpu) != ADI_SPU_SUCCESS)
-	{
-		bError = true;
-		DBG_MSG("Failed to initialize SPU service\n");
-	}
+	/*Initialize ADC for HydrAc System (ADAU 1977)*/
+	hydrac_adc_init();
 
-	/* Make SPORT 5A to generate secure transactions */
-	if(adi_spu_EnableMasterSecure(hSpu, SPORT_5A_SPU_PID, true) != ADI_SPU_SUCCESS)
-	{
-		bError = true;
-		DBG_MSG("Failed to enable Master secure for SPORT 5A\n");
-	}
-
-	/* Make SPORT 5A DMA to generate secure transactions */
-	if(adi_spu_EnableMasterSecure(hSpu, SPORT_5A_DMA12_SPU_PID, true) != ADI_SPU_SUCCESS)
-	{
-		bError = true;
-		DBG_MSG("Failed to enable Master secure for SPORT 5A DMA\n");
-	}
-
-	/* Initialize ADAU1977 */
-	Result = Adau1977Init();
-	if (Result == FAILURE)
-	{
-		bError = true;
-		DBG_MSG("ADAU1977 Init failed\n");
-	}
-
-	/* Submit ADC buffer1 */ //N*4*2 (2B/sample) or N*4*4(4B/sample)
-	// All it does is giving the buffer size in bytes not in samples. That is why it multiplies the size (in samples)
-	//the number of bytes/sample
-	if(adi_adau1977_SubmitBuffer(phAdau1977, &AdcBuf1[0u], AUDIO_BUFFER_SIZE*BYTES_PER_SAMPLE) != ADI_ADAU1977_SUCCESS)
-	{
-		bError = true;
-		DBG_MSG("submit buffer failed\n");
-	}
-
-	 //Submit ADC buffer2
-	if(adi_adau1977_SubmitBuffer(phAdau1977, &AdcBuf2[0u], AUDIO_BUFFER_SIZE*BYTES_PER_SAMPLE) != ADI_ADAU1977_SUCCESS)
-	{
-		bError = true;
-		DBG_MSG("submit buffer failed\n");
-	}
-
-	/* Enable ADC data flow */
-	if(adi_adau1977_Enable(phAdau1977, true) != ADI_ADAU1977_SUCCESS)
-	{
-		bError = true;
-		DBG_MSG("ADC enable failed\n");
-	}
+	/*Enable dataflow and Open the ADC*/
+	hydrac_adc_enable();
 
 
 	printf("DATA FLOW ENABLED! processing callbacks...\n");
 
 
-	/* process samples for a while then exit */
+	/* process samples and then exit */
 	while(AdcCount < CALLBACK_COUNT)
 	{
 		printf("AdcCount==%d\n", AdcCount);
@@ -209,20 +157,10 @@ int main(int argc, char *argv[])
 
 	printf("ALL CALLBACKS PROCESSED!...\n");
 
-	/* Disable ADC data flow */
-	if(adi_adau1977_Enable(phAdau1977, false) != ADI_ADAU1977_SUCCESS)
-	{
-		bError = true;
-		DBG_MSG("ADC disable failed\n");
-	}
+	/*Disable dataflow and close the ADC*/
+	hydrac_adc_disable();
 
-	/* Close ADC device */
-	if (adi_adau1977_Close(phAdau1977) != ADI_ADAU1977_SUCCESS)
-	{
-		bError = true;
-		DBG_MSG("ADC close failed\n");
-	}
-
+	/*copy acquisition data into a file*/
 	printf("\n");
 	fp = fopen("adc_data.txt", "w+");
 
@@ -239,11 +177,12 @@ int main(int argc, char *argv[])
 	printf("\n");
 
 
+	/*Check if an error occurred*/
 
 	if (bError == false)
-		printf("All done\n");
+		printf("All done!\n");
 	else
-		printf("Example failed\n");
+		printf("Code failed\n");
 
 	return 0;
 }
@@ -537,3 +476,91 @@ void AdcCallback(void *pCBParam, uint32_t nEvent, void *pArg)
 }
 
 
+void hydrac_adc_init(void){
+	uint32_t Result = SUCCESS;
+
+	/* Initialize ADAU1977 */
+	Result = Adau1977Init();
+	if (Result == FAILURE)
+	{
+		bError = true;
+		DBG_MSG("ADAU1977 Init failed\n");
+	}
+
+	/* Submit ADC buffer1 */ //N*4*2 (2B/sample) or N*4*4(4B/sample)
+	// All it does is giving the buffer size in bytes not in samples. That is why it multiplies the size (in samples)
+	//the number of bytes/sample
+	if(adi_adau1977_SubmitBuffer(phAdau1977, &AdcBuf1[0u], AUDIO_BUFFER_SIZE*BYTES_PER_SAMPLE) != ADI_ADAU1977_SUCCESS)
+	{
+		bError = true;
+		DBG_MSG("submit buffer failed\n");
+	}
+
+	 //Submit ADC buffer2
+	if(adi_adau1977_SubmitBuffer(phAdau1977, &AdcBuf2[0u], AUDIO_BUFFER_SIZE*BYTES_PER_SAMPLE) != ADI_ADAU1977_SUCCESS)
+	{
+		bError = true;
+		DBG_MSG("submit buffer failed\n");
+	}
+
+}
+
+void hydrac_adc_enable(void){
+	/* Enable ADC data flow */
+	if(adi_adau1977_Enable(phAdau1977, true) != ADI_ADAU1977_SUCCESS)
+	{
+		bError = true;
+		DBG_MSG("ADC enable failed\n");
+	}
+}
+
+void hydrac_adc_disable(void){
+
+	/* Disable ADC data flow */
+	if(adi_adau1977_Enable(phAdau1977, false) != ADI_ADAU1977_SUCCESS)
+	{
+		bError = true;
+		DBG_MSG("ADC disable failed\n");
+	}
+
+	/* Close ADC device */
+	if (adi_adau1977_Close(phAdau1977) != ADI_ADAU1977_SUCCESS)
+	{
+		bError = true;
+		DBG_MSG("ADC close failed\n");
+	}
+}
+
+void hydrac_gpio_init(void){
+	uint32_t Result = GpioInit();
+	if (Result == FAILURE)
+	{
+		bError = true;
+		DBG_MSG("GPIO Init failed\n");
+	}
+
+}
+
+void hydrac_spu_init(void){
+	/* Initialize SPU Service */
+	if(adi_spu_Init(0u, SpuMemory, NULL, NULL, &hSpu) != ADI_SPU_SUCCESS)
+	{
+		bError = true;
+		DBG_MSG("Failed to initialize SPU service\n");
+	}
+
+	/* Make SPORT 5A to generate secure transactions */
+	if(adi_spu_EnableMasterSecure(hSpu, SPORT_5A_SPU_PID, true) != ADI_SPU_SUCCESS)
+	{
+		bError = true;
+		DBG_MSG("Failed to enable Master secure for SPORT 5A\n");
+	}
+
+	/* Make SPORT 5A DMA to generate secure transactions */
+	if(adi_spu_EnableMasterSecure(hSpu, SPORT_5A_DMA12_SPU_PID, true) != ADI_SPU_SUCCESS)
+	{
+		bError = true;
+		DBG_MSG("Failed to enable Master secure for SPORT 5A DMA\n");
+	}
+
+}
