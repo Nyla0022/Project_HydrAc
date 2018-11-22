@@ -95,26 +95,21 @@ void hydrac_adc_init(void);
 void hydrac_spu_init(void);
 void hydrac_adc_enable(void);
 void hydrac_adc_disable(void);
+
+void save_chan_data_to_file(char*);
 /*=============  C A L L B A C K    F U N C T I O N    P R O T O T Y P E S =============*/
 
 /* ADC callback */
 void AdcCallback(void *pCBParam, uint32_t nEvent, void *pArg);
 
 /*=============  E X T E R N A L    F U N C T I O N    P R O T O T Y P E S =============*/
-
 /* Configures soft switches */
 extern void ConfigSoftSwitches(void);
-
-
 
 /*=============  C O D E  =============*/
 
 
 int main(int argc, char *argv[]){
-
-	uint32_t i = 0, freq = 0, m = 0;
-	double time = 0;
-	FILE * fp;
 
 	/**
 	 * Initialize managed drivers and/or services that have been added to 
@@ -149,26 +144,10 @@ int main(int argc, char *argv[]){
 	//----- Do something with the data
 	//----- Integration code goes here
 
-
-	/*copy acquisition data into a file*/
-	printf("\n");
-	fp = fopen("adc_data.txt", "w+");
-
-	fprintf(fp, "Time[s]\tChan 1[v]\tChan 2[v]\n");
-
-	for (m = 0; m < NUM_SAMPLES; m++) {
-		fprintf(fp, "%f\t%f\t%f\n", (double) time,
-				(double) ((int) Chan1Data[m] * ADC_CONV_F_16),
-				(double) ((int) Chan2Data[m] * ADC_CONV_F_16));
-		time = (double) (time + TIME_STEP);
-	}
-
-	fclose(fp);
-	printf("\n");
+	save_chan_data_to_file("adc_data2.txt");
 
 
 	/*Check if an error occurred*/
-
 	if (bError == false)
 		printf("All done!\n");
 	else
@@ -505,23 +484,6 @@ void hydrac_adc_enable(void){
 		bError = true;
 		DBG_MSG("ADC enable failed\n");
 	}
-}
-
-void hydrac_adc_disable(void){
-
-	/* Disable ADC data flow */
-	if(adi_adau1977_Enable(phAdau1977, false) != ADI_ADAU1977_SUCCESS)
-	{
-		bError = true;
-		DBG_MSG("ADC disable failed\n");
-	}
-
-	/* Close ADC device */
-	if (adi_adau1977_Close(phAdau1977) != ADI_ADAU1977_SUCCESS)
-	{
-		bError = true;
-		DBG_MSG("ADC close failed\n");
-	}
 
 	printf("DATA FLOW ENABLED! processing callbacks...\n");
 
@@ -539,6 +501,23 @@ void hydrac_adc_disable(void){
     }
 
 	printf("ALL CALLBACKS PROCESSED!...\n");
+}
+
+void hydrac_adc_disable(void){
+
+	/* Disable ADC data flow */
+	if(adi_adau1977_Enable(phAdau1977, false) != ADI_ADAU1977_SUCCESS)
+	{
+		bError = true;
+		DBG_MSG("ADC disable failed\n");
+	}
+
+	/* Close ADC device */
+	if (adi_adau1977_Close(phAdau1977) != ADI_ADAU1977_SUCCESS)
+	{
+		bError = true;
+		DBG_MSG("ADC close failed\n");
+	}
 }
 
 void hydrac_gpio_init(void){
@@ -572,5 +551,30 @@ void hydrac_spu_init(void){
 		bError = true;
 		DBG_MSG("Failed to enable Master secure for SPORT 5A DMA\n");
 	}
+
+}
+
+
+void save_chan_data_to_file(char* filename){
+	uint32_t m = 0;
+	double time = 0;
+	FILE * fp;
+
+	/*copy acquisition data into a file*/
+	printf("\n");
+	fp = fopen(filename, "w+");
+
+	fprintf(fp, "Time[s]\tChan 1[v]\tChan 2[v]\n");
+
+	for (m = 0; m < NUM_SAMPLES; m++) {
+		fprintf(fp, "%f\t%f\t%f\n", (double) time,
+				(double) ((int) Chan1Data[m] * ADC_CONV_F_16),
+				(double) ((int) Chan2Data[m] * ADC_CONV_F_16));
+		time = (double) (time + TIME_STEP);
+	}
+
+	fclose(fp);
+	printf("\n");
+
 
 }
