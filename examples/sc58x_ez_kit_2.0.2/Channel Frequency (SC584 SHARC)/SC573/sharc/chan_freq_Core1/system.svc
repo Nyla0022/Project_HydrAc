@@ -26,8 +26,8 @@ It provides information needed to link your code. It can be used to configure me
 			<startup_ldf-configuration>
 				<crt_and_ldf>
 					<propertygroup name="template_schemas" value="true">
-						<property name="ldf_schema" value="23.03"/>
-						<property name="startup_code_schema" value="23.03"/>
+						<property name="ldf_schema" value="28.00"/>
+						<property name="startup_code_schema" value="27.00"/>
 					</propertygroup>
 					<propertygroup name="mandatory">
 						<property name="si_revision" value="any"/>
@@ -68,12 +68,12 @@ It provides information needed to link your code. It can be used to configure me
 						<propertygroup name="use_sdram" value="false">
 							<property name="partitioned" value="default"/>
 							<property name="size" value="256"/>
-							<property name="dmc_size_0" value="256"/>
 							<property name="size_units" value="MegaBytes"/>
+							<property name="dmc_size_0" value="256"/>
 						</propertygroup>
 						<propertygroup name="system_heap" value="L1">
-							<property name="size_units" value="kB"/>
 							<property name="min_size" value="2"/>
+							<property name="size_units" value="kB"/>
 							<property name="customized" value="false"/>
 						</propertygroup>
 						<propertygroup name="system_stack" value="L1">
@@ -90,8 +90,8 @@ It provides information needed to link your code. It can be used to configure me
 							<property name="use_alt_io_lib" value="false"/>
 						</propertygroup>
 						<property name="use_eh" value="true"/>
-						<property name="use_full_cpplib" value="false"/>
 						<property name="user_heap_src_file" value="app_heaptab.c"/>
+						<property name="use_full_cpplib" value="false"/>
 						<property name="use_software_modules" value="false"/>
 						<property name="use_user_mod_ldf" value="true"/>
 						<property name="use_pgo_hw" value="false"/>
@@ -109,6 +109,9 @@ It provides information needed to link your code. It can be used to configure me
 					<propertygroup name="dmcache" value="true">
 						<property name="disabled" value="false"/>
 						<property name="size_in_KB" value="16"/>
+					</propertygroup>
+					<propertygroup name="cache_ranges" value="true">
+						<property name="noncacheable_arm_sdram" value="true"/>
 					</propertygroup>
 				</sharc_caches>
 			</startup_ldf-configuration>

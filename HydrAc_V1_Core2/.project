@@ -32,4 +32,10 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 		<nature>com.analog.crosscore.managedbuilder.core.CCESProjectNature</nature>
 	</natures>
+	<variableList>
+		<variable>
+			<name>CCES</name>
+			<value>file:/C:/Analog%20Devices/CrossCore%20Embedded%20Studio%202.8.1</value>
+		</variable>
+	</variableList>
 </projectDescription>

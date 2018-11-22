@@ -51,6 +51,10 @@
 	</linkedResources>
 	<variableList>
 		<variable>
+			<name>CCES</name>
+			<value>file:/C:/Analog%20Devices/CrossCore%20Embedded%20Studio%202.8.1</value>
+		</variable>
+		<variable>
 			<name>COM_ANALOG_CROSSCORE_ADDINS_SC58X_EZ_KIT_2_0_2_LOC</name>
 			<value>file:/C:/Analog%20Devices/ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2/ADSP-SC5xx_EZ-KIT</value>
 		</variable>

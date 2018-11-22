@@ -16,7 +16,7 @@
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,com.analog.crosscore.managedbuilder.buildType=com.analog.crosscore.managedbuilder.buildType.debug" cleanCommand="clean" description="" id="sharc.toolchain.configuration.debug.1146677564" name="Debug" parent="sharc.toolchain.configuration.debug">
 					<folderInfo id="sharc.toolchain.configuration.debug.1146677564." name="/" resourcePath="">
-						<toolChain id="sharc.toolchain.debug.2122351337" isAbstract="false" name="CrossCore SHARC Toolchain" superClass="sharc.toolchain">
+						<toolChain id="sharc.toolchain.debug.2122351337" isAbstract="false" name="CrossCore SHARC Toolchain" superClass="sharc.toolchain" targetTool="sharc.toolchain.linker">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="sharc.platform.1034881437" name="CrossCore SHARC Target Platform" osList="all" superClass="sharc.platform"/>
 							<builder buildPath="${workspace_loc:/HydrAc_V1_Core1}/Debug" id="sharc.toolchain.builder.449892080" keepEnvironmentInBuildfile="false" name="CrossCore SHARC Builder" superClass="sharc.toolchain.builder"/>
 							<tool id="sharc.toolchain.assembler.1601725763" name="CrossCore SHARC Assembler" superClass="sharc.toolchain.assembler">
@@ -47,6 +47,7 @@
 									<listOptionValue builtIn="false" value="&quot;${COM_ANALOG_CROSSCORE_ADDINS_SC58X_EZ_KIT_2_0_2_LOC}/include&quot;"/>
 								</option>
 								<option id="compiler.option.compilerswitch.2071355398" name="Compiler Switch" superClass="compiler.option.compilerswitch" value="false" valueType="boolean"/>
+								<option id="compiler.option.processpeed.167835533" name="Processor speed (MHz) (-D__PROCESSOR_SPEED__):" superClass="compiler.option.processpeed" value="" valueType="string"/>
 								<inputType id="compiler.inputType.927876282" name="C/C++ Source" superClass="compiler.inputType"/>
 							</tool>
 							<tool id="sharc.toolchain.linker.1624720585" name="CrossCore SHARC Linker" superClass="sharc.toolchain.linker">
@@ -64,6 +65,7 @@
 								<option id="linker.option.srchdir.981155944" name="Library search directories (-L):" superClass="linker.option.srchdir" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${OutDir}/system/startup_ldf&quot;"/>
 								</option>
+								<option id="linker.option.misrachecksrcfiles.415883242" name="-misra-no-cross-module" superClass="linker.option.misrachecksrcfiles" value="true" valueType="boolean"/>
 								<inputType id="linker.doj.input.225771735" name="Object Files" superClass="linker.doj.input"/>
 							</tool>
 							<tool id="sharc.toolchain.archiver.1921682564" name="CrossCore SHARC Archiver" superClass="sharc.toolchain.archiver">
@@ -73,7 +75,22 @@
 							<tool id="sharc.toolchain.loader.1602814504" name="CrossCore SHARC Loader" superClass="sharc.toolchain.loader">
 								<option id="loader.option.proc.1767855766" name="-proc" superClass="loader.option.proc" value=" ADSP-SC584" valueType="string"/>
 								<option id="loader.option.sirevision.1740213832" name="-si-revision" superClass="loader.option.sirevision" value=" 1.0" valueType="string"/>
+								<option id="sharc.loader.option.kernelfile.208971233" name="Kernel file (-l)" superClass="sharc.loader.option.kernelfile" value="C:\Analog Devices\CrossCore Embedded Studio 2.8.1\SHARC\ldr\_prom.dxe" valueType="string"/>
 							</tool>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="sharc.toolchain.configuration.debug.1146677564.system" name="system" resourcePath="system">
+						<toolChain id="sharc.toolchain.1974308088" name="CrossCore SHARC Toolchain" superClass="sharc.toolchain" unusedChildren="">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="sharc.platform" name="CrossCore SHARC Target Platform" osList="all" superClass="sharc.platform"/>
+							<tool id="sharc.toolchain.assembler.681523297" name="CrossCore SHARC Assembler" superClass="sharc.toolchain.assembler.1601725763">
+								<inputType id="assembler.input.1227782558" name="Assembler Source" superClass="assembler.input"/>
+							</tool>
+							<tool id="sharc.toolchain.compiler.789433876" name="CrossCore SHARC C/C++ Compiler" superClass="sharc.toolchain.compiler.512105145">
+								<inputType id="compiler.inputType.1562394807" name="C/C++ Source" superClass="compiler.inputType"/>
+							</tool>
+							<tool id="sharc.toolchain.linker.1023573520" name="CrossCore SHARC Linker" superClass="sharc.toolchain.linker.1624720585"/>
+							<tool id="sharc.toolchain.archiver.914329880" name="CrossCore SHARC Archiver" superClass="sharc.toolchain.archiver.1921682564"/>
+							<tool id="sharc.toolchain.loader.737057017" name="CrossCore SHARC Loader" superClass="sharc.toolchain.loader.1602814504"/>
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
@@ -100,7 +117,7 @@
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,com.analog.crosscore.managedbuilder.buildType=com.analog.crosscore.managedbuilder.buildType.release" cleanCommand="clean" description="" id="sharc.toolchain.configuration.release.292679142" name="Release" parent="sharc.toolchain.configuration.release">
 					<folderInfo id="sharc.toolchain.configuration.release.292679142." name="/" resourcePath="">
-						<toolChain id="sharc.toolchain.release.2049389797" isAbstract="false" name="CrossCore SHARC Toolchain" superClass="sharc.toolchain">
+						<toolChain id="sharc.toolchain.release.2049389797" isAbstract="false" name="CrossCore SHARC Toolchain" superClass="sharc.toolchain" targetTool="sharc.toolchain.linker">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="sharc.platform.1281314405" name="CrossCore SHARC Target Platform" osList="all" superClass="sharc.platform"/>
 							<builder buildPath="${workspace_loc:/HydrAc_V1_Core1}/Release" id="sharc.toolchain.builder.1934248529" keepEnvironmentInBuildfile="false" name="CrossCore SHARC Builder" superClass="sharc.toolchain.builder"/>
 							<tool id="sharc.toolchain.assembler.1641685415" name="CrossCore SHARC Assembler" superClass="sharc.toolchain.assembler">
@@ -148,6 +165,7 @@
 								<option id="linker.option.srchdir.1493704298" name="Library search directories (-L):" superClass="linker.option.srchdir" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${OutDir}/system/startup_ldf&quot;"/>
 								</option>
+								<option id="linker.option.misrachecksrcfiles.567340305" name="-misra-no-cross-module" superClass="linker.option.misrachecksrcfiles" value="true" valueType="boolean"/>
 								<inputType id="linker.doj.input.65189692" name="Object Files" superClass="linker.doj.input"/>
 							</tool>
 							<tool id="sharc.toolchain.archiver.1367888857" name="CrossCore SHARC Archiver" superClass="sharc.toolchain.archiver">
@@ -157,7 +175,22 @@
 							<tool id="sharc.toolchain.loader.1376506990" name="CrossCore SHARC Loader" superClass="sharc.toolchain.loader">
 								<option id="loader.option.proc.60546450" name="-proc" superClass="loader.option.proc" value=" ADSP-SC584" valueType="string"/>
 								<option id="loader.option.sirevision.548398" name="-si-revision" superClass="loader.option.sirevision" value=" 1.0" valueType="string"/>
+								<option id="sharc.loader.option.kernelfile.2086414757" name="Kernel file (-l)" superClass="sharc.loader.option.kernelfile" value="C:\Analog Devices\CrossCore Embedded Studio 2.8.1\SHARC\ldr\_prom.dxe" valueType="string"/>
 							</tool>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="sharc.toolchain.configuration.release.292679142.system" name="system" resourcePath="system">
+						<toolChain id="sharc.toolchain.2144734707" name="CrossCore SHARC Toolchain" superClass="sharc.toolchain" unusedChildren="">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="sharc.platform" name="CrossCore SHARC Target Platform" osList="all" superClass="sharc.platform"/>
+							<tool id="sharc.toolchain.assembler.345914130" name="CrossCore SHARC Assembler" superClass="sharc.toolchain.assembler.1641685415">
+								<inputType id="assembler.input.1702264585" name="Assembler Source" superClass="assembler.input"/>
+							</tool>
+							<tool id="sharc.toolchain.compiler.2088357853" name="CrossCore SHARC C/C++ Compiler" superClass="sharc.toolchain.compiler.793677558">
+								<inputType id="compiler.inputType.447998880" name="C/C++ Source" superClass="compiler.inputType"/>
+							</tool>
+							<tool id="sharc.toolchain.linker.1491164873" name="CrossCore SHARC Linker" superClass="sharc.toolchain.linker.248775702"/>
+							<tool id="sharc.toolchain.archiver.1487953568" name="CrossCore SHARC Archiver" superClass="sharc.toolchain.archiver.1367888857"/>
+							<tool id="sharc.toolchain.loader.1907040721" name="CrossCore SHARC Loader" superClass="sharc.toolchain.loader.1376506990"/>
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
@@ -186,6 +219,13 @@
 			<content-type-mapping configuration="" content-type="org.eclipse.cdt.core.cxxSource" language="org.eclipse.cdt.core.c++.adi.extension"/>
 		</project-mappings>
 	</storageModule>
-	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/HydrAc_V1_Core1"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/HydrAc_V1_Core1"/>
+		</configuration>
+	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>

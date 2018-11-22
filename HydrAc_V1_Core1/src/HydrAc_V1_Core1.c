@@ -11,7 +11,7 @@
 #include <string.h>
 #include "adi_initialize.h"
 #include <stdlib.h>
-
+#include <time.h>
 #include "HydrAc_V1_Core1.h"
 #include <sys/adi_core.h>
 
@@ -480,12 +480,18 @@ void hydrac_adc_init(void){
 }
 
 void hydrac_adc_enable(void){
+    volatile clock_t clock_start;
+    volatile clock_t clock_stop;
+    double secs;
+
 	/* Enable ADC data flow */
 	if(adi_adau1977_Enable(phAdau1977, true) != ADI_ADAU1977_SUCCESS)
 	{
 		bError = true;
 		DBG_MSG("ADC enable failed\n");
 	}
+
+    clock_start = clock();
 
 	printf("DATA FLOW ENABLED! processing callbacks...\n");
 
@@ -501,6 +507,11 @@ void hydrac_adc_enable(void){
 			break;
 		}
     }
+    clock_stop = clock();
+
+    secs = ((double) (clock_stop - clock_start))
+           / CLOCKS_PER_SEC;
+    printf("Time taken is %e seconds\n",secs);
 
 	printf("ALL CALLBACKS PROCESSED!...\n");
 }

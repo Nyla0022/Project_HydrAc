@@ -5,17 +5,17 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="arm.toolchain.bare.target.exe.debug.1188678545" moduleId="org.eclipse.cdt.core.settings" name="Debug">
 				<externalSettings/>
 				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.analog.crosscore.core.CCESARMErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="clean" description="" errorParsers="com.analog.crosscore.core.CCESARMErrorParser" id="arm.toolchain.bare.target.exe.debug.1188678545" name="Debug" parent="arm.toolchain.bare.target.exe.debug">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="clean" description="" errorParsers="com.analog.crosscore.core.CCESARMErrorParser" id="arm.toolchain.bare.target.exe.debug.1188678545" name="Debug" parent="arm.toolchain.bare.target.exe.debug">
 					<folderInfo id="arm.toolchain.bare.target.exe.debug.1188678545." name="/" resourcePath="">
 						<toolChain id="arm.bare.toolchain.exe.debug.668035697" name="CrossCore ARM Bare-Metal Toolchain" superClass="arm.bare.toolchain">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="arm.toolchain.platform.base.1628920996" name="Development Platform" osList="all" superClass="arm.toolchain.platform.base"/>
@@ -54,7 +54,7 @@
 								<option id="arm.linker.option.proc.965467174" name="-mproc" superClass="arm.linker.option.proc" value=" ADSP-SC573" valueType="string"/>
 								<option id="arm.linker.option.sirevision.769191978" name="-msi-revision" superClass="arm.linker.option.sirevision" value=" any" valueType="string"/>
 								<inputType id="arm.linker.input.1713592879" superClass="arm.linker.input">
-									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionaldependency" paths="$(USER_OBJS)"/>
 								</inputType>
 							</tool>
 							<tool id="arm.toolchain.bare.cpp.compiler.614806443" name="CrossCore ARM Bare Metal C++ Compiler" superClass="arm.toolchain.bare.cpp.compiler">
@@ -93,17 +93,17 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="arm.toolchain.bare.target.exe.release.853636553" moduleId="org.eclipse.cdt.core.settings" name="Release">
 				<externalSettings/>
 				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.analog.crosscore.core.CCESARMErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="clean" description="" errorParsers="com.analog.crosscore.core.CCESARMErrorParser" id="arm.toolchain.bare.target.exe.release.853636553" name="Release" parent="arm.toolchain.bare.target.exe.release">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="clean" description="" errorParsers="com.analog.crosscore.core.CCESARMErrorParser" id="arm.toolchain.bare.target.exe.release.853636553" name="Release" parent="arm.toolchain.bare.target.exe.release">
 					<folderInfo id="arm.toolchain.bare.target.exe.release.853636553." name="/" resourcePath="">
 						<toolChain id="arm.bare.toolchain.exe.release.1337499546" name="CrossCore ARM Bare-Metal Toolchain" superClass="arm.bare.toolchain">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="arm.toolchain.platform.base.1773136119" name="Development Platform" osList="all" superClass="arm.toolchain.platform.base"/>
@@ -142,7 +142,7 @@
 								<option id="arm.linker.option.proc.575984" name="-mproc" superClass="arm.linker.option.proc" value=" ADSP-SC573" valueType="string"/>
 								<option id="arm.linker.option.sirevision.2061026528" name="-msi-revision" superClass="arm.linker.option.sirevision" value=" any" valueType="string"/>
 								<inputType id="arm.linker.input.959346589" superClass="arm.linker.input">
-									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionaldependency" paths="$(USER_OBJS)"/>
 								</inputType>
 							</tool>
 							<tool id="arm.toolchain.bare.cpp.compiler.1282045562" name="CrossCore ARM Bare Metal C++ Compiler" superClass="arm.toolchain.bare.cpp.compiler">
