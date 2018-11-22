@@ -1,0 +1,5 @@
+ArtifactType=org.eclipse.cdt.build.core.buildArtefactType.exe
+CoreId=0
+Processor=ADSP-SC584
+Revision=1.0
+eclipse.preferences.version=1

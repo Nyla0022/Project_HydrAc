@@ -151,6 +151,7 @@ int main()
 /* config SPU for ADSP-BF707 or ADSP-SC589 Processor family */
 #if defined(__ADSPBF707_FAMILY__) || defined(__ADSPSC589_FAMILY__)
 
+	printf("ADSP-BF707 or ADSP-SC589\n");
 	/* Initialize SPU Service */
 	if(adi_spu_Init(0u, SpuMemory, NULL, NULL, &hSpu) != ADI_SPU_SUCCESS)
 	{
@@ -174,6 +175,7 @@ int main()
 
 #elif defined(__ADSPSC573_FAMILY__)
 
+	printf("ADSPSC573\n");
    /* Initialize SPU Service */
    if(adi_spu_Init(0u, SpuMemory, NULL, NULL, &hSpu) != ADI_SPU_SUCCESS)
    {
