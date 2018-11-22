@@ -89,14 +89,19 @@ uint32_t    GpioInit(void);
 /* Initializes ADC */
 uint32_t    Adau1977Init(void);
 
-/*Initializes system ADC	*/
+/*Initializes GPIO peripherals*/
 void hydrac_gpio_init(void);
+/*Initializes system ADC (ADAU19177)*/
 void hydrac_adc_init(void);
+/*Initializes system SPU*/
 void hydrac_spu_init(void);
+/*Enable and open ADC*/
 void hydrac_adc_enable(void);
+/*Disable and close ADC*/
 void hydrac_adc_disable(void);
-
+/*Save data to text file*/
 void save_chan_data_to_file(char*);
+
 /*=============  C A L L B A C K    F U N C T I O N    P R O T O T Y P E S =============*/
 
 /* ADC callback */
@@ -144,7 +149,7 @@ int main(int argc, char *argv[]){
 	//----- Do something with the data
 	//----- Integration code goes here
 
-	save_chan_data_to_file("adc_data2.txt");
+	save_chan_data_to_file("adc_data3.txt");
 
 
 	/*Check if an error occurred*/
