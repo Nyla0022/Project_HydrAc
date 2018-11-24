@@ -515,7 +515,8 @@ void hydrac_adc_enable(void){
     clock_stop = clock();
 
     exec_time = 2*((double) (clock_stop - clock_start))
-           / CLOCKS_PER_SEC;
+           / CLOCKS_PER_SEC; //used hrm and schematic to discover that the CLK is 25MHz
+    	//then it is divided by two.
     printf("Time taken is %e seconds\n",exec_time);
 
 	printf("ALL CALLBACKS PROCESSED!...\n");
