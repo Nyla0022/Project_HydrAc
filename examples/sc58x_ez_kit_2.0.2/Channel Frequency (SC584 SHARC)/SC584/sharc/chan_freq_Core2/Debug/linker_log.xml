@@ -1,8 +1,8 @@
 <?xml version="1.0" standalone="no"?>
 <?xml-stylesheet type="text/xsl" href="file:///C:/Analog Devices/CrossCore Embedded Studio 2.8.1/System/linker_log.xsl"?>
-<DOCUMENT gen_time='Wed Oct 31 18:37:39 2018
+<DOCUMENT gen_time='Fri Nov  9 02:09:09 2018
 '>
-<MSG id='04496938' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8EFC0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio1']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
@@ -16,12 +16,12 @@
     libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04495F98' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8E8C0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio1_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04496078' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8F260' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio2']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
@@ -44,12 +44,12 @@
     libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04496AF8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B903E0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio2_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04496238' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8FCE0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio3']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
@@ -75,14 +75,14 @@
     libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04496BD8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8F0A0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio3_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[exit_value.doj](seg_dmda)
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
     libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04497038' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8ED20' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio1']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
@@ -96,12 +96,12 @@
     libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04496858' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8F6C0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio1_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='044965B8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8F340' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio2']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
@@ -124,12 +124,12 @@
     libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04496CB8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8FDC0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio2_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04496A18' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8E9A0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio3']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
@@ -155,14 +155,14 @@
     libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04496158' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B90220' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio3_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[exit_value.doj](seg_dmda)
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
     libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04495EB8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8F500' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio1']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[adi_fatal_error.doj](seg_pmco)
@@ -170,7 +170,7 @@
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_pmco)
     libc.dlb[set_c.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04496698' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8FEA0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio2']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     sc584_core2_hdr.doj(seg_pmco)
@@ -182,7 +182,7 @@
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_pmco)
     libc.dlb[set_c.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04497578' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8F960' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio3']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     sc584_core2_hdr.doj(seg_pmco)
@@ -198,7 +198,7 @@
     libc.dlb[no_dispatched_handler.doj](seg_pmco)
     libc.dlb[set_c.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04496D98' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8FF80' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_nw_code']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     sc584_core2_hdr.doj(seg_pmco)
@@ -214,7 +214,7 @@
     libc.dlb[no_dispatched_handler.doj](seg_pmco)
     libc.dlb[set_c.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04496318' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8FB20' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block2_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
@@ -240,14 +240,14 @@
     libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04497118' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8F880' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block2_data_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[exit_value.doj](seg_dmda)
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
     libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04496E78' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B90060' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
@@ -273,14 +273,14 @@
     libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04495DD8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B90140' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_data_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[exit_value.doj](seg_dmda)
     libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
     libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='044963F8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8F5E0' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_nw_code']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     sc584_core2_hdr.doj(seg_pmco)
@@ -296,7 +296,7 @@
     libc.dlb[no_dispatched_handler.doj](seg_pmco)
     libc.dlb[set_c.doj](seg_pmco)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='044973B8' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8FC00' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_data']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
@@ -322,7 +322,7 @@
     libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)
     libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)]]></EXTENDED_INFO>
 </MSG>
-<MSG id='04496F58' mid='li3050' type='Informational' suppressed=''>
+<MSG id='03B8EB60' mid='li3050' type='Informational' suppressed=''>
 <TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_data_bw']]></TEXT>
 <EXTENDED_INFO><![CDATA[The following input section(s) were excluded
     libc.dlb[exit_value.doj](seg_dmda)

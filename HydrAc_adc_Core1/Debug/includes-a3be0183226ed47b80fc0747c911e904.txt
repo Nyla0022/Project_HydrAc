@@ -1,0 +1,2 @@
+-I"C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_adc_Core1/system"
+-I"C:/Analog Devices/ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2/ADSP-SC5xx_EZ-KIT/include"

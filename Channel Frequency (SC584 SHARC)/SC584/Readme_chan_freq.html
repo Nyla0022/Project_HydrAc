@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Readme_chan_freq</title>
+  <style type="text/css">
+    body {font: 12px Arial, Helvetica, Verdana;}
+    table {font: 12px Arial, Helvetica, Verdana;}
+    h1 { font: bold 24px Helvetica; color:#003366; width:100%; border-bottom:1px solid #003366; margin-top:30px; margin-bottom:30px }
+    h2 { font: bold 18px Helvetica; color:#000000; border:0px; margin-top:20px; margin-bottom:20px }
+    h3 { font: bold 14px Helvetica; color:#000000; border:0px; margin-top:20px; margin-bottom:20px }
+    table {tet-align: left; width: 600px }
+    caption {caption-side: bottom;}
+    td {vertical-align: top;}
+    td.heading1 {vertical-align: top; width: 220px; text-align: center; font-weight: bold;}
+    td.heading2 {vertical-align: top; text-align: center; font-weight: bold;}
+    
+  </style></head>
+  <body>
+    <h1>Analog Devices, Inc. CrossCore(R) Embedded Studio Application Example</h1>
+    <h2>ADSP-SC5xx EZ-Kit Board Support Package</h2>
+    <h3>Project Name: chan_freq</h3>
+    <h3>CONTENTS</h3>
+    <ol>
+      <li><a href="#DE">Description</a></li>
+      <li><a href="#PR">Processor</a></li>
+      <li><a href="#OV">Overview</a></li>
+      <li><a href="#SRU">SRU Setup</a></li>
+      <li><a href="#EC">External connections</a></li>
+      <li><a href="#MACRO">User macros</a></li>
+      <li><a href="#SWITCH">Software switch settings</a></li>
+      <li><a href="#REF">References</a></li>
+    </ol>
+
+    <h3><a name="DE">1. Description<br></a></h3>
+    <p>	This example shows how to configure and use the adau1977 device driver.  This example reads the 
+	ADC channels and calculates the detected frequency. 
+	</p>
+    
+    <h3><a name="PR">2. Processor</a></h3>
+    <ul><li>ADSP-SC584</li></ul>
+
+    <h3><a name="OV">3. Overview</a></h3>
+    <p> This example demonstrates the usage of the ADAU1977 ADC. The ADC is configured to transfer 4 channels of audio, 
+	    at a sampling rate of 48kHz, to the SPORT 5A device.  This example operates in I2S (stereo mode).  The ADC input
+		channels are connected to the Mic1, Mic2, Mic3 and Mic4 terminals on the ADSP-SC584 EZ-Kit.  Either electret 
+		microphones (ECM) or a line input source needs connected to the Mic terminals.  The audio data is copied to
+		a buffer.  When enough audio samples are transferred a FFT is executed on the audio data which produces a
+        frequency result.		
+    </p>
+
+    <h3><a name="SRU">4. SRU Setup</a></h3>
+    <p> The following SRU configuration is used in this example.
+    <br><br>
+    <img style="width: 934px; height: 663px;" alt="SRU configuration" src="chan_freq.PNG"> 		
+    </p>
+    
+    <h3><a name="EC">5. External connections</a></h3>
+    <p> 
+	Either electret microphone (ECM) or a line input source can be used for this example.
+    <ul><li>
+    	Electret microphone (ECM): <br> 
+      	Connect electret microphones to the Mic1, Mic2, Mic3 and Mic4 terminals on the ADSP-SC584 EZ-Kit.
+		<br>
+		Note: MIC Bias should be enabled for electret microphones.
+		<br><br>
+		Play a sine wave from speakers into the microphones.
+    </ul></li> 	
+    <ul><li> 	
+     	Line input:<br>
+      	Connect an audio line output source to the Mic1, Mic2, Mic3 and Mic4 terminals on the ADSP-SC584 EZ-Kit.  
+		<br>
+		Note: MIC Bias should be disabled for line input.
+		<br><br>
+		Play a sine wave from an audio line output source.
+    </ul></li> 
+    </p>
+
+    <h3><a name="MACRO">6. User Macros</a></h3>
+	<ul>
+	<li>ENABLE_MIC_BIAS (chan_freq.h)<br>
+	To enable MIC bias uncomment this macro.  To disable MIC bias comment out this macro.
+	</li> 
+    </ul>
+
+    <h3><a name="SWITCH">7. Software switch settings</a></h3>
+    Enable:
+	<ul>
+	<li>ADAU1977_EN</li> 
+	<li>ADAU1977_FAULT_RST_EN</li> 
+    </ul>
+    Disable:
+	<ul><li>
+	PUSHBUTTON1_EN
+    </ul></li> 
+    <p>See SoftConfig_SC584.c for more information.</p>
+
+    <h3><a name="REF">8. References</a></h3>
+    <ul>
+      <li>ADSP-SC58x Hardware Reference Manual</li>
+      <li>ADSP-SC584 EZ-Kit Schematic</li>
+    </ul>
+    
+    <br>
+    <br>
+
+</body></html>

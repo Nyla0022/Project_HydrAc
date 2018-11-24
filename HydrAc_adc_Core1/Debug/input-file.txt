@@ -1,0 +1,7 @@
+"src/HydrAc_adc_Core1.doj"
+"system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.doj"
+"system/adi_initialize.doj"
+"system/sru/sru_config.doj"
+"system/startup_ldf/app_IVT.doj"
+"system/startup_ldf/app_heaptab.doj"
+"system/startup_ldf/app_startup.doj"
