@@ -576,7 +576,7 @@ void hydrac_spu_init(void){
 
 void save_chan_data_to_file(char* filename){
 	uint32_t m = 0;
-	double time;
+	double time=0;
 	FILE * fp;
 
 	/*copy acquisition data into a file*/
