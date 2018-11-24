@@ -75,13 +75,19 @@ static uint8_t  SpuMemory[ADI_SPU_MEMORY_SIZE];
 /* SPU handle */
 static ADI_SPU_HANDLE hSpu;
 
+/*ADC buffers*/
 ADI_CACHE_ALIGN static int16_t AdcBuf1[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int16_t)]; //Between 1MB and 2MB
 ADI_CACHE_ALIGN static int16_t AdcBuf2[ADI_CACHE_ROUND_UP_SIZE(AUDIO_BUFFER_SIZE, int16_t)];
 
-
+/*ADC channel buffers*/
 static int16_t Chan1Data[NUM_SAMPLES]; //N
 static int16_t Chan2Data[NUM_SAMPLES]; //approx in the middle of 256KB and 512KB
 
+
+/*Cycle counting*/
+static volatile clock_t clock_start;
+static volatile clock_t clock_stop;
+static volatile double exec_time;
 
 /*=============  L O C A L    F U N C T I O N    P R O T O T Y P E S =============*/
 /* Initialize GPIO and reset peripherals */
@@ -142,11 +148,12 @@ int main(int argc, char *argv[]){
 	hydrac_adc_disable();
 
 
+
 	//ADC acquisition data is ready!
 	//----- Do something with the data
 	//----- Integration code goes here
 
-	save_chan_data_to_file("adc_data3.txt");
+	save_chan_data_to_file("adc_data_2chan_1.txt");
 
 
 	/*Check if an error occurred*/
@@ -480,9 +487,7 @@ void hydrac_adc_init(void){
 }
 
 void hydrac_adc_enable(void){
-    volatile clock_t clock_start;
-    volatile clock_t clock_stop;
-    double secs;
+
 
 	/* Enable ADC data flow */
 	if(adi_adau1977_Enable(phAdau1977, true) != ADI_ADAU1977_SUCCESS)
@@ -509,9 +514,9 @@ void hydrac_adc_enable(void){
     }
     clock_stop = clock();
 
-    secs = ((double) (clock_stop - clock_start))
+    exec_time = 2*((double) (clock_stop - clock_start))
            / CLOCKS_PER_SEC;
-    printf("Time taken is %e seconds\n",secs);
+    printf("Time taken is %e seconds\n",exec_time);
 
 	printf("ALL CALLBACKS PROCESSED!...\n");
 }
@@ -585,6 +590,8 @@ void save_chan_data_to_file(char* filename){
 				(double) ((int) Chan2Data[m] * ADC_CONV_F_16));
 		time = (double) (time + TIME_STEP);
 	}
+
+	fprintf(fp, "\n****Exec time:%f\n", exec_time);
 
 	fclose(fp);
 	printf("\n");

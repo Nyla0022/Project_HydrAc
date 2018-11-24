@@ -47,7 +47,7 @@
 									<listOptionValue builtIn="false" value="&quot;${COM_ANALOG_CROSSCORE_ADDINS_SC58X_EZ_KIT_2_0_2_LOC}/include&quot;"/>
 								</option>
 								<option id="compiler.option.compilerswitch.2071355398" name="Compiler Switch" superClass="compiler.option.compilerswitch" value="false" valueType="boolean"/>
-								<option id="compiler.option.processpeed.167835533" name="Processor speed (MHz) (-D__PROCESSOR_SPEED__):" superClass="compiler.option.processpeed" value="" valueType="string"/>
+								<option id="compiler.option.processpeed.167835533" name="Processor speed (MHz) (-D__PROCESSOR_SPEED__):" superClass="compiler.option.processpeed" value="25" valueType="string"/>
 								<inputType id="compiler.inputType.927876282" name="C/C++ Source" superClass="compiler.inputType"/>
 							</tool>
 							<tool id="sharc.toolchain.linker.1624720585" name="CrossCore SHARC Linker" superClass="sharc.toolchain.linker">
