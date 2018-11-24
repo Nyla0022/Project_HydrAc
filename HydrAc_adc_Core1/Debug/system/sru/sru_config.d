@@ -1,0 +1,23 @@
+system/sru/sru_config.doj: ../system/sru/sru_config.c
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/stdint.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/yvals.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/platform.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/platform_include.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/cdefSC584.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/cdef215xx_core.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/def215xx_core.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/defSC584.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/ADSP_SC589.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/defSC58x_id_macros.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/ADSP_SC5xx_legacy.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/ADSP_SC589_cdef.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/internal_system_prototypes.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/processor_include.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/SC589.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/platform_include.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/adi_core.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/platform.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/cache.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/stdbool.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/builtins.h
+system/sru/sru_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/builtins_support.h

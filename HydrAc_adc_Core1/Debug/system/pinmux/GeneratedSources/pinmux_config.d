@@ -1,0 +1,23 @@
+system/pinmux/GeneratedSources/pinmux_config.doj: ../system/pinmux/GeneratedSources/pinmux_config.c
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/platform.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/platform_include.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/cdefSC584.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/cdef215xx_core.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/stdint.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/yvals.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/def215xx_core.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/defSC584.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/ADSP_SC589.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/defSC58x_id_macros.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/ADSP_SC5xx_legacy.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/ADSP_SC589_cdef.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/internal_system_prototypes.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/processor_include.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/SC589.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/platform_include.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/adi_core.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/platform.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/cache.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/stdbool.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/builtins.h
+system/pinmux/GeneratedSources/pinmux_config.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.1/SHARC/include/sys/builtins_support.h
