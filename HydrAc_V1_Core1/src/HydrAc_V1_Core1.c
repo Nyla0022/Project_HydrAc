@@ -642,7 +642,7 @@ void hydrac_compute_angle(double tau, double* angle, uint8_t dir){
 	double b=0;
 	/*check if tau does not exceed the maximum value*/
 	if(tau <= MAX_TAU && tau >= (-1*MAX_TAU)){
-		*angle = 180/3.1415*asin((SOUND_CONST*tau)/H_DIST);
+		*angle = 180/PI*asin((SOUND_CONST*tau)/H_DIST);
 		//b = 90 - angle;
 
 		//check direction of arrival

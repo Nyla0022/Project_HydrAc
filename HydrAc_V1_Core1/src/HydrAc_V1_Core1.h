@@ -67,7 +67,7 @@ to the terms of the associated Analog Devices License Agreement.
 #define SOUND_CONST				1500
 #define MAX_TAU					(double) (H_DIST/SOUND_CONST) //set by the hydrophones separation to satisfy arcsin requirements
 														// |T|< H_distance/c
-//#define PI						3.1415926535897932   //pi
+#define PI						3.1415926535897932   //pi
 
 #if defined(__ADSPBF707_FAMILY__) || defined(__ADSPSC589_FAMILY__)
 /* SPU Peripheral ID */
