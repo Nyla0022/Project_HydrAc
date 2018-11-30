@@ -52,7 +52,29 @@
 #define SUCCESS  (0u)
 #define FAILURE  (1u)
 
+/**
+ * UART DEFINITIONS
+ */
+
+/* Rx/Tx Buffer size */
+#define BUFFER_SIZE    	 	30
+
+/*Angle No of Digits*/
+#define ANGLE_SIZE 			10
+
+/*Distance No of Digits*/
+#define DIST_SIZE 			10
+
+/*execution time No of Digits*/
+#define EXECTIME_SIZE 		10
+
+
 /*=============  D A T A  =============*/
+
+
+/**
+ * 				ADC
+ */
 
 /* Twi  */
 static uint32_t TwiMemory[ADI_TWI_MEMORY_SIZE];
@@ -95,27 +117,22 @@ static int16_t Chan1Data[NUM_SAMPLES]; //N
 static int16_t Chan2Data[NUM_SAMPLES]; //approx in the middle of 256KB and 512KB
 
 
-/*Cycle counting*/
+
+/**
+ * 				Execution Time measurement
+ */
 static volatile clock_t clock_start;
 static volatile clock_t clock_stop;
 static volatile double exec_time;
 
 
-/*UART inits*/
+/**
+ * 				UART DEFINITIONS
+ */
 
-/* Rx/Tx Buffer size */
-#define BUFFER_SIZE     20
-
-/*Angle No of Digits*/
-#define ANGLE_SIZE 		10
-
-/*Distance No of Digits*/
-#define DIST_SIZE 		10
 
 /* UART Handle */
 static ADI_UART_HANDLE ghUART;
-
-
 
 	/* Memory required for operating UART in interrupt mode */
 static uint8_t gUARTMemory[ADI_UART_BIDIR_INT_MEMORY_SIZE];
@@ -127,11 +144,8 @@ static ADI_UART_RESULT eResult;
 static bool bStopFlag = false;
 
 
-void ftoa(float, char*);
-
-
-
 /*=============  L O C A L    F U N C T I O N    P R O T O T Y P E S =============*/
+
 /* Initialize GPIO and reset peripherals */
 uint32_t    GpioInit(void);
 /* Initializes ADC */
@@ -143,15 +157,23 @@ void hydrac_gpio_init(void);
 void hydrac_adc_init(void);
 /*Initializes system SPU*/
 void hydrac_spu_init(void);
+/*Initializes UART peripheral*/
+void hydrac_uart_init(void);
+
 /*Enable and open ADC*/
 void hydrac_adc_enable(void);
 /*Disable and close ADC*/
 void hydrac_adc_disable(void);
+
 /*Save data to text file*/
 void save_chan_data_to_file(char*);
 
 /*computes bearing angle*/
 void hydrac_compute_angle(double tau, double* angle, uint8_t);
+
+/*float to array*/
+void ftoa(float, char*);
+
 
 /*=============  C A L L B A C K    F U N C T I O N    P R O T O T Y P E S =============*/
 
@@ -162,26 +184,37 @@ void AdcCallback(void *pCBParam, uint32_t nEvent, void *pArg);
 /* Configures soft switches */
 extern void ConfigSoftSwitches(void);
 
-/*=============  C O D E  =============*/
 
 
 int main(int argc, char *argv[]){
 
-	uint8_t dir=1;
+	//
+	//-----------LOCAL VARIABLES------------------//
+	//
+//	uint8_t dir=1;
+//	double tau=0;
+
 	uint16_t i = 0;
 
-	double tau=0;
+	/*Distance and angle variables*/
 	float distance = .070, angle = -90;
 
+	/* distance string for UART*/
 	char dist_c[10] = { '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' };
+	/* angle string for Angle*/
 	char angle_c[10] = { '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' };
+	/* angle string for execution time*/
+	char exectime_c[10] = { '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' };
 
-	/* Rx and Tx buffer */
+	/*Tx buffer */
 	char TxBuffer[BUFFER_SIZE];
 
-	/**
-	 * Initialize managed drivers and/or services that have been added to the project.
-	 */
+
+	//
+	//---------PERIPHERALS INITALIZATION--------------//
+	//
+
+	/* Initialize managed drivers and/or services that have been added to the project*/
 	adi_initComponents();
 
 	/* Software Switch Configuration for the EZ-Board */
@@ -196,77 +229,51 @@ int main(int argc, char *argv[]){
 	/*Initialize ADC for HydrAc System (ADAU 1977)*/
 	hydrac_adc_init();
 
+	/* Initialize UART */
+	hydrac_uart_init();
 
-	if (adi_pwr_Init(0u, UART_CLKIN) != ADI_PWR_SUCCESS) {
-		DBG_MSG("Failed to initialize power service\n");
-		return FAILED;
-	}
+	//
+	//---------MAIN PROGRAM--------------//
+	//
 
 	/*
-	 * Initialize UART
+	 * Fill ADC Buffers
 	 */
-	/* Open UART driver */
-	eResult = adi_uart_Open(UART_DEVICE_NUM, ADI_UART_DIR_BIDIRECTION,
-			gUARTMemory,
-			ADI_UART_BIDIR_INT_MEMORY_SIZE, &ghUART);
-	if (eResult != ADI_UART_SUCCESS) {
-		DBG_MSG("Could not open UART Device 0x%08X\n", eResult);
-		return FAILED;
-	}
-
-	/* Set the UART Mode */
-	eResult = adi_uart_SetMode(ghUART, ADI_UART_MODE_UART);
-	if (eResult != ADI_UART_SUCCESS) {
-		DBG_MSG("Could not set the Mode 0x%08X\n", eResult);
-		return FAILED;
-	}
-
-	/* Set UART Baud Rate */
-	eResult = adi_uart_SetBaudRate(ghUART, BAUD_RATE);
-	if (eResult != ADI_UART_SUCCESS) {
-		DBG_MSG("Could not set the Baud Rate 0x%08X\n", eResult);
-		return FAILED;
-	}
-
-	/* Set number of stop bits */
-	eResult = adi_uart_SetNumStopBits(ghUART, ADI_UART_ONE_STOPBIT);
-	if (eResult != ADI_UART_SUCCESS) {
-		DBG_MSG("Could not set the stop bits 0x%08X\n", eResult);
-		return FAILED;
-	}
-
-	/* Set number of stop bits */
-	eResult = adi_uart_SetWordLen(ghUART, ADI_UART_WORDLEN_8BITS);
-	if (eResult != ADI_UART_SUCCESS) {
-		DBG_MSG("Could not set word length 0x%08X\n", eResult);
-		return FAILED;
-	}
-
-	//-----A loop would start here
 
 	/*Enable dataflow and Open the ADC*/
 	hydrac_adc_enable();
-
 	/*Disable dataflow and close the ADC*/
 	hydrac_adc_disable();
 
 
+	/*
+	 * Compute angle and distance
+	 */
 
-	//ADC acquisition data is ready!
-	//----- Do something with the data
-	//----- Integration code goes here
 
-	//----->compute angle and distance
 
-	//----->prepare results to be sent via UART
-	ftoa(angle, angle_c);
-	ftoa(distance, dist_c);
+	/*
+	 * Prepare data to send via UART
+	 */
+
+	//***NOTE time is in miliseconds****
+
+	ftoa(angle, angle_c); 				//convert angle data to string array
+	ftoa(distance, dist_c); 			//convert distance data to string array
+	ftoa((float)(exec_time*1e3),exectime_c);	//convert execution time data to string array
 
 	for (i = 0; i < sizeof(angle_c); i++)
 		TxBuffer[i] = angle_c[i];
 
 	for (i = 0; i < sizeof(dist_c); i++)
 		TxBuffer[i + 10] = dist_c[i];
+
+	for (i = 0; i < sizeof(exectime_c); i++)
+		TxBuffer[i + 20] = exectime_c[i];
+
+	/*
+	 * Send data via UART
+	 */
 
 	/* UART processing loop */
 	while (bStopFlag == false) {
@@ -781,4 +788,51 @@ void ftoa(float f, char *buf) {
 		f = f * 10.0;
 		dp--;
 	}
+}
+
+
+void hydrac_uart_init(){
+
+	if (adi_pwr_Init(0u, UART_CLKIN) != ADI_PWR_SUCCESS) {
+		DBG_MSG("Failed to initialize power service\n");
+		bError= FAILED;
+	}
+
+	/* Open UART driver */
+	eResult = adi_uart_Open(UART_DEVICE_NUM, ADI_UART_DIR_BIDIRECTION,
+			gUARTMemory,
+			ADI_UART_BIDIR_INT_MEMORY_SIZE, &ghUART);
+	if (eResult != ADI_UART_SUCCESS) {
+		DBG_MSG("Could not open UART Device 0x%08X\n", eResult);
+		bError= FAILED;
+	}
+
+	/* Set the UART Mode */
+	eResult = adi_uart_SetMode(ghUART, ADI_UART_MODE_UART);
+	if (eResult != ADI_UART_SUCCESS) {
+		DBG_MSG("Could not set the Mode 0x%08X\n", eResult);
+		bError= FAILED;
+	}
+
+	/* Set UART Baud Rate */
+	eResult = adi_uart_SetBaudRate(ghUART, BAUD_RATE);
+	if (eResult != ADI_UART_SUCCESS) {
+		DBG_MSG("Could not set the Baud Rate 0x%08X\n", eResult);
+		bError= FAILED;
+	}
+
+	/* Set number of stop bits */
+	eResult = adi_uart_SetNumStopBits(ghUART, ADI_UART_ONE_STOPBIT);
+	if (eResult != ADI_UART_SUCCESS) {
+		DBG_MSG("Could not set the stop bits 0x%08X\n", eResult);
+		bError= FAILED;
+	}
+
+	/* Set number of stop bits */
+	eResult = adi_uart_SetWordLen(ghUART, ADI_UART_WORDLEN_8BITS);
+	if (eResult != ADI_UART_SUCCESS) {
+		DBG_MSG("Could not set word length 0x%08X\n", eResult);
+		bError= FAILED;
+	}
+
 }

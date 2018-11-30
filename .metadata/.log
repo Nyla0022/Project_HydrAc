@@ -1117,3 +1117,17 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/HydrAc_V1_Cor
 
 !ENTRY org.eclipse.launchbar.core 2 0 2018-11-30 11:45:29.872
 !MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2018-11-30 12:27:38.851
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitor@e9d70f): Status ERROR: org.eclipse.cdt.dsf code=10005 Composite status null children=[Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null Status ERROR: org.eclipse.cdt.dsf code=10005 Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@128df91): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception. null]' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 0 2018-11-30 12:27:38.851
+!MESSAGE Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2018-11-30 12:27:38.851
+!MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@128df91): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2018-11-30 12:29:44.603
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitor@621494): Status ERROR: org.eclipse.cdt.dsf code=10005 Composite status null children=[Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null Status ERROR: org.eclipse.cdt.dsf code=10005 Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@ceb5b3): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception. null]' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 0 2018-11-30 12:29:44.603
+!MESSAGE Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2018-11-30 12:29:44.603
+!MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@ceb5b3): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception.
