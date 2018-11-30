@@ -47,16 +47,27 @@ to the terms of the associated Analog Devices License Agreement.
 #define BCLK_RISING_1977 	    (true)
 #define LRCLK_HI_LO_1977 	    (true)
 
-#define NUM_CHANNELS				(4u)
-#define BYTES_PER_SAMPLE 			(2u)
-#define NUM_SAMPLES 				(384000u) 				//384000u
-#define ADC_CONV_F_24				330e-9 				//ADC Conversion Factor for 24 bits (assumes PADC Gain of 122u)
-#define ADC_CONV_F_16				440.141e-6			//ADC Conversion Factor for 16 bits (assumes PADC Gain of 0xA0u)
-#define FSAMPLING					192000				//Sampling frequency of ADC
-#define TIME_STEP					(double)( 1.0/(FSAMPLING))		//time axis time step
+#define NUM_CHANNELS			(4u)
+#define BYTES_PER_SAMPLE 		(2u)
+#define NUM_SAMPLES 			(10u) 				//384000u
+#define ADC_CONV_F_24			330e-9 				//ADC Conversion Factor for 24 bits (assumes PADC Gain of 122u)
+#define ADC_CONV_F_16			440.141e-6			//ADC Conversion Factor for 16 bits (assumes PADC Gain of 0xA0u)
+#define FSAMPLING				192000				//Sampling frequency of ADC
+#define TIME_STEP				(double)( 1.0/(FSAMPLING))		//time axis time step
 
 /* Macro to set buffer size */
 #define AUDIO_BUFFER_SIZE 	        (NUM_SAMPLES * NUM_CHANNELS)
+
+
+/*
+ * Angle and distance functions settings
+ *
+ */
+#define H_DIST					0.0282					//hydrophones distance (separation) in meters
+#define SOUND_CONST				1500
+#define MAX_TAU					(double) (H_DIST/SOUND_CONST) //set by the hydrophones separation to satisfy arcsin requirements
+														// |T|< H_distance/c
+#define PI						3.1415926535897932   //pi
 
 #if defined(__ADSPBF707_FAMILY__) || defined(__ADSPSC589_FAMILY__)
 /* SPU Peripheral ID */

@@ -12,6 +12,7 @@
 #include "adi_initialize.h"
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 #include "HydrAc_V1_Core1.h"
 #include <sys/adi_core.h>
 
@@ -108,6 +109,9 @@ void hydrac_adc_disable(void);
 /*Save data to text file*/
 void save_chan_data_to_file(char*);
 
+/*computes bearing angle*/
+void hydrac_compute_angle(double tau, double* angle, uint8_t);
+
 /*=============  C A L L B A C K    F U N C T I O N    P R O T O T Y P E S =============*/
 
 /* ADC callback */
@@ -121,6 +125,10 @@ extern void ConfigSoftSwitches(void);
 
 
 int main(int argc, char *argv[]){
+
+	double tau=0;
+	double angle =0;
+	uint8_t dir=1;
 
 	/**
 	 * Initialize managed drivers and/or services that have been added to the project.
@@ -153,7 +161,36 @@ int main(int argc, char *argv[]){
 	//----- Do something with the data
 	//----- Integration code goes here
 
-	save_chan_data_to_file("adc_data_2chan_1.txt");
+	//save_chan_data_to_file("adc_data_2chan_1.txt");
+
+	tau = 15e-6;
+	hydrac_compute_angle(tau, &angle,dir );
+
+	printf("angle for Tau=%f is %f \n", tau, angle);
+
+
+	tau = 18e-6;
+	hydrac_compute_angle(tau, &angle,0);
+	printf("angle for Tau=%f is %f \n", tau, angle);
+
+	tau = 5e-6;
+	hydrac_compute_angle(tau, &angle,1);
+	printf("angle for Tau=%f is %f \n", tau, angle);
+
+
+	tau = -5e-6;
+	hydrac_compute_angle(tau, &angle,1);
+	printf("angle for Tau=%f is %f \n", tau, angle);
+
+
+	tau = -25e-6;
+	hydrac_compute_angle(tau, &angle,1);
+	printf("angle for Tau=%f is %f \n", tau, angle);
+
+
+	tau = 25e-6;
+	hydrac_compute_angle(tau, &angle,1);
+	printf("angle for Tau=%f is %f \n", tau, angle);
 
 
 	/*Check if an error occurred*/
@@ -597,5 +634,24 @@ void save_chan_data_to_file(char* filename){
 	fclose(fp);
 	printf("\n");
 
+
+}
+
+void hydrac_compute_angle(double tau, double* angle, uint8_t dir){
+	double percentage=0;
+	double b=0;
+	/*check if tau does not exceed the maximum value*/
+	if(tau <= MAX_TAU && tau >= (-1*MAX_TAU)){
+		*angle = 180/PI*asin((SOUND_CONST*tau)/H_DIST);
+		//b = 90 - angle;
+
+		//check direction of arrival
+		//continue Jan's code...
+	}else
+		*angle = 90;
+
+	/*check if angle is negative (left side)*/
+	if(!dir || tau<0)
+		*angle = -1*(*angle); //left
 
 }
