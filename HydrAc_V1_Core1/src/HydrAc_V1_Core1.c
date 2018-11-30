@@ -508,12 +508,6 @@ uint32_t Adau1977Init(void)
 	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL3, 0xa0u);
 	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL4, 0xa0u); //144u
 
-	//Enable channel clipping
-//	result = adi_adau1977_ClipChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL1, true);
-//	result = adi_adau1977_ClipChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL2, true);
-//	result = adi_adau1977_ClipChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL3, true);
-//	result = adi_adau1977_ClipChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL4, true);
-
 
 #endif
 
