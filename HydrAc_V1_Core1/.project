@@ -34,6 +34,31 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>system/drivers/uart/adi_uart.c</name>
+			<type>1</type>
+			<locationURI>CCES/SHARC/lib/src/drivers/Source/uart/adi_uart.c</locationURI>
+		</link>
+		<link>
+			<name>system/services/stdio/adi_stdio.c</name>
+			<type>1</type>
+			<locationURI>CCES/SHARC/lib/src/services/Source/stdio/adi_stdio.c</locationURI>
+		</link>
+		<link>
+			<name>system/services/stdio/adi_stdio_jtag.c</name>
+			<type>1</type>
+			<locationURI>CCES/SHARC/lib/src/services/Source/stdio/adi_stdio_jtag.c</locationURI>
+		</link>
+		<link>
+			<name>system/services/stdio/adi_stdio_null.c</name>
+			<type>1</type>
+			<locationURI>CCES/SHARC/lib/src/services/Source/stdio/adi_stdio_null.c</locationURI>
+		</link>
+		<link>
+			<name>system/services/stdio/adi_stdio_uart.c</name>
+			<type>1</type>
+			<locationURI>CCES/SHARC/lib/src/services/Source/stdio/adi_stdio_uart.c</locationURI>
+		</link>
+		<link>
 			<name>system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.c</name>
 			<type>1</type>
 			<locationURI>COM_ANALOG_CROSSCORE_ADDINS_SC58X_EZ_KIT_2_0_2_LOC/src/drivers/adc/adau1977/adi_adau1977.c</locationURI>

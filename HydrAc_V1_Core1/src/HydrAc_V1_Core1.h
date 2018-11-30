@@ -39,6 +39,9 @@ to the terms of the associated Analog Devices License Agreement.
 /* Macro to specify delay count for ADC/DAC reset */
 #define DELAY_COUNT             (100000u)
 
+
+
+
 /*
  * ADC settings
  */
@@ -59,6 +62,8 @@ to the terms of the associated Analog Devices License Agreement.
 #define AUDIO_BUFFER_SIZE 	        (NUM_SAMPLES * NUM_CHANNELS)
 
 
+
+
 /*
  * Angle and distance functions settings
  *
@@ -68,6 +73,28 @@ to the terms of the associated Analog Devices License Agreement.
 #define MAX_TAU					(double) (H_DIST/SOUND_CONST) //set by the hydrophones separation to satisfy arcsin requirements
 														// |T|< H_distance/c
 #define PI						3.1415926535897932   //pi
+
+
+
+/*
+ * UART settings
+ *
+ */
+
+#define UART_DEVICE_NUM     0u
+
+#define MHZTOHZ       (1000000u)
+#define CLKIN         (25u  * MHZTOHZ)
+
+/* Baud rate to be used for char echo */
+#define BAUD_RATE           9600u
+
+
+/* Example result definitions */
+#define FAILED              (-1)
+#define PASSED              0
+
+
 
 #if defined(__ADSPBF707_FAMILY__) || defined(__ADSPSC589_FAMILY__)
 /* SPU Peripheral ID */

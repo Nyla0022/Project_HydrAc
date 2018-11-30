@@ -4,6 +4,8 @@
 		<cconfiguration id="sharc.toolchain.configuration.debug.1146677564">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="sharc.toolchain.configuration.debug.1146677564" moduleId="org.eclipse.cdt.core.settings" name="Debug">
 				<macros>
+					<stringMacro name="stdio-service-version" type="VALUE_TEXT" value="1.0"/>
+					<stringMacro name="uart-driver-version" type="VALUE_TEXT" value="1.0"/>
 					<stringMacro name="addin-name" type="VALUE_TEXT" value="ADAU1977 Quad ADC with Diagnostics driver"/>
 				</macros>
 				<externalSettings/>
@@ -40,6 +42,7 @@
 								<option id="compiler.option.preprocessdefs.2075606550" name="Preprocessor definitions (-D):" superClass="compiler.option.preprocessdefs" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="CORE1"/>
 									<listOptionValue builtIn="false" value="_DEBUG"/>
+									<listOptionValue builtIn="false" value="ADI_DEBUG"/>
 								</option>
 								<option id="compiler.option.coreid.963432291" name="Specify the core Id (-DCORE[A|B|0-2])" superClass="compiler.option.coreid" value="1" valueType="string"/>
 								<option id="compiler.option.additionaldirectories.1085071155" name="Additional include directories (-I):" superClass="compiler.option.additionaldirectories" valueType="includePath">
@@ -105,6 +108,8 @@
 		<cconfiguration id="sharc.toolchain.configuration.release.292679142">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="sharc.toolchain.configuration.release.292679142" moduleId="org.eclipse.cdt.core.settings" name="Release">
 				<macros>
+					<stringMacro name="stdio-service-version" type="VALUE_TEXT" value="1.0"/>
+					<stringMacro name="uart-driver-version" type="VALUE_TEXT" value="1.0"/>
 					<stringMacro name="addin-name" type="VALUE_TEXT" value="ADAU1977 Quad ADC with Diagnostics driver"/>
 				</macros>
 				<externalSettings/>

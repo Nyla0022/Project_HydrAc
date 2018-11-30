@@ -1,5 +1,5 @@
 /*
-** adi_initialize.c source file generated on November 21, 2018 at 22:35:19.
+** adi_initialize.c source file generated on November 30, 2018 at 01:31:34.
 **
 ** Copyright (C) 2000-2018 Analog Devices Inc., All Rights Reserved.
 **
@@ -13,6 +13,7 @@
 #include "adi_initialize.h"
 
 extern int32_t adi_SRU_Init(void);
+extern int32_t adi_initpinmux(void);
 
 int32_t adi_initComponents(void)
 {
@@ -23,6 +24,10 @@ int32_t adi_initComponents(void)
 
 	if (result == 0) {
 		result = adi_SRU_Init(); /* auto-generated code (order:0) */
+	}
+
+	if (result == 0) {
+		result = adi_initpinmux(); /* auto-generated code (order:0) */
 	}
 
 	return result;

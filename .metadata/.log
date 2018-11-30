@@ -770,3 +770,50 @@ Command-line arguments:  -os win32 -ws win32 -arch x86
 !MESSAGE Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0
 !SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2018-11-30 01:02:08.066
 !MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@36f2f0): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception.
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-11-30 01:25:45.742
+!MESSAGE Indexed 'STDIO_CharEcho_SC584_SHARC_Core0' (2 sources, 24 headers) in 5 sec: 245 declarations; 592 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-11-30 01:25:52.806
+!MESSAGE Indexed 'STDIO_CharEcho_SC584_SHARC_Core1' (10 sources, 73 headers) in 5.99 sec: 6,261 declarations; 12,406 references; 0 unresolved inclusions; 4 syntax errors; 273 unresolved names (1.4%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-11-30 01:25:53.378
+!MESSAGE Indexed 'STDIO_CharEcho_SC584_SHARC_Core2' (1 sources, 0 headers) in 0.172 sec: 3 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-11-30 01:25:55.940
+!MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core0' (2 sources, 24 headers) in 2.53 sec: 245 declarations; 592 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-11-30 01:26:02.426
+!MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core1' (8 sources, 72 headers) in 5.72 sec: 7,572 declarations; 13,040 references; 0 unresolved inclusions; 2 syntax errors; 475 unresolved names (2.3%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-11-30 01:26:03.942
+!MESSAGE Indexed 'ChanFreq_SC584_SHARC_Core2' (1 sources, 0 headers) in 0.23 sec: 3 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-11-30 01:26:06.394
+!MESSAGE Indexed 'HydrAc_V1_Core0' (1 sources, 18 headers) in 2.44 sec: 86 declarations; 463 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-11-30 01:26:11.807
+!MESSAGE Indexed 'HydrAc_V1_Core1' (6 sources, 72 headers) in 5.39 sec: 7,130 declarations; 12,683 references; 0 unresolved inclusions; 2 syntax errors; 302 unresolved names (1.5%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-11-30 01:26:16.480
+!MESSAGE Indexed 'HydrAc_V1_Core2' (1 sources, 22 headers) in 2.5 sec: 1,023 declarations; 2,363 references; 0 unresolved inclusions; 2 syntax errors; 3 unresolved names (0.089%)
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-11-30 01:47:20.916
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-11-30 01:47:20.943
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2018-11-30 01:54:28.373
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitor@10421a2): Status ERROR: org.eclipse.cdt.dsf code=10005 Composite status null children=[Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null Status ERROR: org.eclipse.cdt.dsf code=10005 Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@ca968): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception. null]' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 0 2018-11-30 01:54:28.373
+!MESSAGE Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2018-11-30 01:54:28.373
+!MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@ca968): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2018-11-30 01:56:12.005
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitor@2825e4): Status ERROR: org.eclipse.cdt.dsf code=10005 Composite status null children=[Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null Status ERROR: org.eclipse.cdt.dsf code=10005 Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@4277a1): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception. null]' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 0 2018-11-30 01:56:12.005
+!MESSAGE Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2018-11-30 01:56:12.005
+!MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@4277a1): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception.
