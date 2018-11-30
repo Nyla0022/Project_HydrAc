@@ -191,6 +191,7 @@ int main(int argc, char *argv[]){
 	//
 	//-----------LOCAL VARIABLES------------------//
 	//
+
 //	uint8_t dir=1;
 //	double tau=0;
 
@@ -214,6 +215,7 @@ int main(int argc, char *argv[]){
 	//---------PERIPHERALS INITALIZATION--------------//
 	//
 
+
 	/* Initialize managed drivers and/or services that have been added to the project*/
 	adi_initComponents();
 
@@ -232,85 +234,91 @@ int main(int argc, char *argv[]){
 	/* Initialize UART */
 	hydrac_uart_init();
 
+
 	//
 	//---------MAIN PROGRAM--------------//
 	//
 
-	/*
-	 * Fill ADC Buffers
-	 */
 
-	/*Enable dataflow and Open the ADC*/
-	hydrac_adc_enable();
-	/*Disable dataflow and close the ADC*/
-	hydrac_adc_disable();
+	uint32_t loop=1;
+
+	while(true){
+
+		/*
+		 * Fill ADC Buffers
+		 */
+
+		/*Enable dataflow and Open the ADC*/
+		hydrac_adc_enable();
+
+		/*Disable dataflow and close the ADC*/
+		hydrac_adc_disable();
 
 
-	/*
-	 * Compute angle and distance
-	 */
+
+
+		/*
+		 * Compute angle and distance
+		 */
 
 
 
-	/*
-	 * Prepare data to send via UART
-	 */
 
-	//***NOTE time is in miliseconds****
+		/*
+		 * Prepare data to send via UART
+		 */
 
-	ftoa(angle, angle_c); 				//convert angle data to string array
-	ftoa(distance, dist_c); 			//convert distance data to string array
-	ftoa((float)(exec_time*1e3),exectime_c);	//convert execution time data to string array
+		//***NOTE time is in miliseconds****
 
-	for (i = 0; i < sizeof(angle_c); i++)
-		TxBuffer[i] = angle_c[i];
+		ftoa(angle, angle_c); 				//convert angle data to string array
+		ftoa(distance, dist_c); 			//convert distance data to string array
+		ftoa((float)(exec_time*1e3),exectime_c);	//convert execution time data to string array
 
-	for (i = 0; i < sizeof(dist_c); i++)
-		TxBuffer[i + 10] = dist_c[i];
+		for (i = 0; i < sizeof(angle_c); i++)
+			TxBuffer[i] = angle_c[i];
 
-	for (i = 0; i < sizeof(exectime_c); i++)
-		TxBuffer[i + 20] = exectime_c[i];
+		for (i = 0; i < sizeof(dist_c); i++)
+			TxBuffer[i + 10] = dist_c[i];
 
-	/*
-	 * Send data via UART
-	 */
+		for (i = 0; i < sizeof(exectime_c); i++)
+			TxBuffer[i + 20] = exectime_c[i];
 
-	/* UART processing loop */
-	while (bStopFlag == false) {
+		/*
+		 * Send data via UART
+		 */
+
 		/* Write the character */
+		printf("Transmitting Result#%d: %s\n\n",loop++, TxBuffer);
+		/*comment when interfacing to arduino*/
+		eResult = adi_uart_Write(ghUART, "Transmitting Result", 20);
+		/*comment when interfacing to arduino*/
+		eResult = adi_uart_Write(ghUART, "\n",2);
+
 		eResult = adi_uart_Write(ghUART, &TxBuffer[0], BUFFER_SIZE);
 
-		printf("Transmitting: %s\n", TxBuffer);
+		/*comment when interfacing to arduino*/
+		eResult = adi_uart_Write(ghUART, "\n",2);
+
+
+		/*
+		 * Save data to file
+		 */
+		save_chan_data_to_file("t.txt");
+
+		printf("data written to file\n");
+	}
+
+	/*
+	 * CLOSE PERIPHERALS
+	 */
+/*	 Close the UART
+		eResult = adi_uart_Close(ghUART);
 		if (eResult != ADI_UART_SUCCESS) {
-			DBG_MSG("Could not do a write 0x%08X\n", eResult);
-			return FAILED;
-		}
-	}
+			DBG_MSG("Could not close UART driver 0x%08X\n", eResult);
+			bError= FAILURE;
+		}*/
 
-	/* Close the UART */
-	eResult = adi_uart_Close(ghUART);
-	if (eResult != ADI_UART_SUCCESS) {
-		DBG_MSG("Could not close UART driver 0x%08X\n", eResult);
-		return FAILED;
-	}
-
-	//--->finished UART transmission
-
-	//save_chan_data_to_file("adc_data_2chan_1.txt");
-
-
-
-
-	/*Check if an error occurred*/
-	if (bError == false)
-		printf("All done!\n");
-	else
-		printf("Code failed\n");
-
-
-	//------A loop would end here
-
-	return 0;
+	//return 0;
 }
 
 
@@ -795,7 +803,7 @@ void hydrac_uart_init(){
 
 	if (adi_pwr_Init(0u, UART_CLKIN) != ADI_PWR_SUCCESS) {
 		DBG_MSG("Failed to initialize power service\n");
-		bError= FAILED;
+		bError= FAILURE;
 	}
 
 	/* Open UART driver */
@@ -804,35 +812,35 @@ void hydrac_uart_init(){
 			ADI_UART_BIDIR_INT_MEMORY_SIZE, &ghUART);
 	if (eResult != ADI_UART_SUCCESS) {
 		DBG_MSG("Could not open UART Device 0x%08X\n", eResult);
-		bError= FAILED;
+		bError= FAILURE;
 	}
 
 	/* Set the UART Mode */
 	eResult = adi_uart_SetMode(ghUART, ADI_UART_MODE_UART);
 	if (eResult != ADI_UART_SUCCESS) {
 		DBG_MSG("Could not set the Mode 0x%08X\n", eResult);
-		bError= FAILED;
+		bError= FAILURE;
 	}
 
 	/* Set UART Baud Rate */
 	eResult = adi_uart_SetBaudRate(ghUART, BAUD_RATE);
 	if (eResult != ADI_UART_SUCCESS) {
 		DBG_MSG("Could not set the Baud Rate 0x%08X\n", eResult);
-		bError= FAILED;
+		bError= FAILURE;
 	}
 
 	/* Set number of stop bits */
 	eResult = adi_uart_SetNumStopBits(ghUART, ADI_UART_ONE_STOPBIT);
 	if (eResult != ADI_UART_SUCCESS) {
 		DBG_MSG("Could not set the stop bits 0x%08X\n", eResult);
-		bError= FAILED;
+		bError= FAILURE;
 	}
 
 	/* Set number of stop bits */
 	eResult = adi_uart_SetWordLen(ghUART, ADI_UART_WORDLEN_8BITS);
 	if (eResult != ADI_UART_SUCCESS) {
 		DBG_MSG("Could not set word length 0x%08X\n", eResult);
-		bError= FAILED;
+		bError= FAILURE;
 	}
 
 }
