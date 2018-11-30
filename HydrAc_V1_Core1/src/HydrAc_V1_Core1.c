@@ -293,6 +293,8 @@ int main(int argc, char *argv[]){
 		eResult = adi_uart_Write(ghUART, "Transmitting Result", 20);
 		/*comment when interfacing to arduino*/
 		eResult = adi_uart_Write(ghUART, "\n",2);
+		for(i=0;i<(BUFFER_SIZE+20)-2;i++)
+			eResult = adi_uart_Write(ghUART, "\b",2);
 
 		eResult = adi_uart_Write(ghUART, &TxBuffer[0], BUFFER_SIZE);
 
