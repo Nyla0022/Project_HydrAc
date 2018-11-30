@@ -740,3 +740,33 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/STDIO_CharEch
 !MESSAGE Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0
 !SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2018-11-30 00:34:09.075
 !MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@16f9455): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception.
+!SESSION 2018-11-30 00:57:08.089 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-11-30 00:57:16.930
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-30 00:57:17.560
+!MESSAGE 2018-11-30 00:57:17, 559 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.1.0 w1807161
+
+
+!ENTRY com.analog.crosscore.core 1 0 2018-11-30 00:57:17.567
+!MESSAGE 2018-11-30 00:57:17, 567 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/; environment variable CCES_HOME: not set
+
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-11-30 00:57:57.079
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-11-30 00:57:57.107
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2018-11-30 01:02:08.065
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitor@164d789): Status ERROR: org.eclipse.cdt.dsf code=10005 Composite status null children=[Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null Status ERROR: org.eclipse.cdt.dsf code=10005 Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@36f2f0): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception. null]' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 0 2018-11-30 01:02:08.066
+!MESSAGE Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2018-11-30 01:02:08.066
+!MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@36f2f0): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception.

@@ -1,4 +1,4 @@
-00:27:44 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core1 ****
+00:44:00 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core1 ****
 make all 
 'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO Character Echo (SC584 SHARC)/char_echo.c'
 'Invoking: CrossCore SHARC C/C++ Compiler'
@@ -10,25 +10,16 @@ cc21k -c -file-attr ProjectName="STDIO_CharEcho_SC584_SHARC_Core1" -proc ADSP-SC
 cc21k -proc ADSP-SC584 -si-revision any -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO\ Character\ Echo\ (SC584\ SHARC)/SC584/sharc/stdio_char_echo_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO\ Character\ Echo\ (SC584\ SHARC)/SC584/sharc/stdio_char_echo_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o STDIO_CharEcho_SC584_SHARC_Core1.dxe @input-file.txt  -flags-link -od,.\.
 'Finished building target: STDIO_CharEcho_SC584_SHARC_Core1.dxe'
 ' '
-00:27:50 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core0 ****
+00:44:07 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core0 ****
 make all 
 make: Nothing to be done for `all'.
-00:27:51 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core2 ****
+00:44:09 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core2 ****
 make all 
 make: Nothing to be done for `all'.
-00:28:54 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core0 ****
+00:51:49 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core0 ****
 make all 
 make: Nothing to be done for `all'.
-00:28:56 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core1 ****
-make all 
-make: Nothing to be done for `all'.
-00:28:58 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core2 ****
-make all 
-make: Nothing to be done for `all'.
-00:30:07 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core0 ****
-make all 
-make: Nothing to be done for `all'.
-00:30:10 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core1 ****
+00:51:51 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core1 ****
 make all 
 'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO Character Echo (SC584 SHARC)/char_echo.c'
 'Invoking: CrossCore SHARC C/C++ Compiler'
@@ -40,22 +31,13 @@ cc21k -c -file-attr ProjectName="STDIO_CharEcho_SC584_SHARC_Core1" -proc ADSP-SC
 cc21k -proc ADSP-SC584 -si-revision any -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO\ Character\ Echo\ (SC584\ SHARC)/SC584/sharc/stdio_char_echo_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO\ Character\ Echo\ (SC584\ SHARC)/SC584/sharc/stdio_char_echo_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o STDIO_CharEcho_SC584_SHARC_Core1.dxe @input-file.txt  -flags-link -od,.\.
 'Finished building target: STDIO_CharEcho_SC584_SHARC_Core1.dxe'
 ' '
-00:30:16 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core2 ****
+00:51:56 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core2 ****
 make all 
 make: Nothing to be done for `all'.
-00:31:26 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core0 ****
+00:55:17 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core0 ****
 make all 
 make: Nothing to be done for `all'.
-00:31:31 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core1 ****
-make all 
-make: Nothing to be done for `all'.
-00:31:33 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core2 ****
-make all 
-make: Nothing to be done for `all'.
-00:32:53 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core0 ****
-make all 
-make: Nothing to be done for `all'.
-00:32:56 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core1 ****
+00:55:20 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core1 ****
 make all 
 'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO Character Echo (SC584 SHARC)/char_echo.c'
 'Invoking: CrossCore SHARC C/C++ Compiler'
@@ -67,13 +49,13 @@ cc21k -c -file-attr ProjectName="STDIO_CharEcho_SC584_SHARC_Core1" -proc ADSP-SC
 cc21k -proc ADSP-SC584 -si-revision any -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO\ Character\ Echo\ (SC584\ SHARC)/SC584/sharc/stdio_char_echo_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO\ Character\ Echo\ (SC584\ SHARC)/SC584/sharc/stdio_char_echo_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o STDIO_CharEcho_SC584_SHARC_Core1.dxe @input-file.txt  -flags-link -od,.\.
 'Finished building target: STDIO_CharEcho_SC584_SHARC_Core1.dxe'
 ' '
-00:33:02 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core2 ****
+00:55:27 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core2 ****
 make all 
 make: Nothing to be done for `all'.
-00:34:11 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core0 ****
+00:56:10 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core0 ****
 make all 
 make: Nothing to be done for `all'.
-00:34:14 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core1 ****
+00:56:12 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core1 ****
 make all 
 'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO Character Echo (SC584 SHARC)/char_echo.c'
 'Invoking: CrossCore SHARC C/C++ Compiler'
@@ -85,6 +67,51 @@ cc21k -c -file-attr ProjectName="STDIO_CharEcho_SC584_SHARC_Core1" -proc ADSP-SC
 cc21k -proc ADSP-SC584 -si-revision any -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO\ Character\ Echo\ (SC584\ SHARC)/SC584/sharc/stdio_char_echo_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO\ Character\ Echo\ (SC584\ SHARC)/SC584/sharc/stdio_char_echo_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o STDIO_CharEcho_SC584_SHARC_Core1.dxe @input-file.txt  -flags-link -od,.\.
 'Finished building target: STDIO_CharEcho_SC584_SHARC_Core1.dxe'
 ' '
-00:34:18 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core2 ****
+00:56:19 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+00:57:40 **** Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+00:57:43 **** Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core1 ****
+make all 
+make: Nothing to be done for `all'.
+00:57:46 **** Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+00:59:18 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+00:59:22 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core1 ****
+make all 
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO Character Echo (SC584 SHARC)/char_echo.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="STDIO_CharEcho_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-228f24e89bacbb9d5b8be660ddcf8e0a.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/char_echo.d" -o "src/char_echo.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO Character Echo (SC584 SHARC)/char_echo.c"
+'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO Character Echo (SC584 SHARC)/char_echo.c'
+' '
+'Building target: STDIO_CharEcho_SC584_SHARC_Core1.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision any -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO\ Character\ Echo\ (SC584\ SHARC)/SC584/sharc/stdio_char_echo_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO\ Character\ Echo\ (SC584\ SHARC)/SC584/sharc/stdio_char_echo_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o STDIO_CharEcho_SC584_SHARC_Core1.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: STDIO_CharEcho_SC584_SHARC_Core1.dxe'
+' '
+00:59:28 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+01:02:08 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+01:02:10 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core1 ****
+make all 
+'Building file: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO Character Echo (SC584 SHARC)/char_echo.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="STDIO_CharEcho_SC584_SHARC_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-228f24e89bacbb9d5b8be660ddcf8e0a.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -absolute-path-dependencies -gnu-style-dependencies -MD -Mo "src/char_echo.d" -o "src/char_echo.doj" "C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO Character Echo (SC584 SHARC)/char_echo.c"
+'Finished building: C:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO Character Echo (SC584 SHARC)/char_echo.c'
+' '
+'Building target: STDIO_CharEcho_SC584_SHARC_Core1.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision any -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO\ Character\ Echo\ (SC584\ SHARC)/SC584/sharc/stdio_char_echo_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/examples/sc58x_ez_kit_2.0.2/STDIO\ Character\ Echo\ (SC584\ SHARC)/SC584/sharc/stdio_char_echo_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o STDIO_CharEcho_SC584_SHARC_Core1.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: STDIO_CharEcho_SC584_SHARC_Core1.dxe'
+' '
+01:02:15 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core2 ****
 make all 
 make: Nothing to be done for `all'.
