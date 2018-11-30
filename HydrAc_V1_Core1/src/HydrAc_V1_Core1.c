@@ -306,21 +306,8 @@ int main(int argc, char *argv[]){
 		 * Save data to file
 		 */
 		save_chan_data_to_file("t.txt");
-
-		printf("data written to file\n");
 	}
 
-	/*
-	 * CLOSE PERIPHERALS
-	 */
-/*	 Close the UART
-		eResult = adi_uart_Close(ghUART);
-		if (eResult != ADI_UART_SUCCESS) {
-			DBG_MSG("Could not close UART driver 0x%08X\n", eResult);
-			bError= FAILURE;
-		}*/
-
-	//return 0;
 }
 
 
@@ -750,9 +737,8 @@ void save_chan_data_to_file(char* filename){
 	fprintf(fp, "\n****Exec time:%f\n", exec_time);
 
 	fclose(fp);
-	printf("\n");
 
-
+	printf("data written to file\n");
 }
 
 void hydrac_compute_angle(double tau, double* angle, uint8_t dir){
