@@ -197,7 +197,7 @@ int main(int argc, char *argv[]){
 	hydrac_adc_init();
 
 
-	if (adi_pwr_Init(0u, CLKIN) != ADI_PWR_SUCCESS) {
+	if (adi_pwr_Init(0u, UART_CLKIN) != ADI_PWR_SUCCESS) {
 		DBG_MSG("Failed to initialize power service\n");
 		return FAILED;
 	}

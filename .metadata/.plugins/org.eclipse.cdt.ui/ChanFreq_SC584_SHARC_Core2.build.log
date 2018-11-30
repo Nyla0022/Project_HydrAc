@@ -1,6 +1,7 @@
-23:38:59 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
-make all 
-make: Nothing to be done for `all'.
+11:39:00 **** Clean-only build of configuration Debug for project ChanFreq_SC584_SHARC_Core2 ****
+make clean 
+clean  linker_log.xml  "./src/empty_main.doj" "./src/empty_main.d" ChanFreq_SC584_SHARC_Core2.dxe
+' '
 
-23:39:00 Build Finished (took 189ms)
+11:39:01 Build Finished (took 497ms)
 

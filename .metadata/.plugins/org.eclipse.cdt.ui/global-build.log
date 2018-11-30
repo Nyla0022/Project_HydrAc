@@ -1,5 +1,15 @@
-01:52:49 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
+11:44:51 **** Build of configuration Debug for project HydrAc_V1_Core1 ****
 make all 
+'Building file: ../system/sru/sru_config.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "system/sru/sru_config.d" -o "system/sru/sru_config.doj" "../system/sru/sru_config.c"
+'Finished building: ../system/sru/sru_config.c'
+' '
+'Building file: ../system/pinmux/GeneratedSources/pinmux_config.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "system/pinmux/GeneratedSources/pinmux_config.d" -o "system/pinmux/GeneratedSources/pinmux_config.doj" "../system/pinmux/GeneratedSources/pinmux_config.c"
+'Finished building: ../system/pinmux/GeneratedSources/pinmux_config.c'
+' '
 'Building file: ../src/HydrAc_V1_Core1.c'
 'Invoking: CrossCore SHARC C/C++ Compiler'
 cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core1.d" -o "src/HydrAc_V1_Core1.doj" "../src/HydrAc_V1_Core1.c"
@@ -10,36 +20,22 @@ cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compil
 cc21k -proc ADSP-SC584 -si-revision 1.0 -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o HydrAc_V1_Core1.dxe @input-file.txt  -flags-link -od,.\.
 'Finished building target: HydrAc_V1_Core1.dxe'
 ' '
-01:52:54 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
+11:44:58 **** Build of configuration Debug for project HydrAc_V1_Core0 ****
+make all 
+'Building target: HydrAc_V1_Core0'
+'Invoking: CrossCore ARM Bare Metal C Linker'
+arm-none-eabi-gcc -mproc=ADSP-SC584 -msi-revision=1.0 -Wl,--gc-sections -mdebug-libs -o  "HydrAc_V1_Core0" @input-file.txt -lm
+'Finished building target: HydrAc_V1_Core0'
+' '
+11:45:00 **** Build of configuration Debug for project HydrAc_V1_Core2 ****
 make all 
 make: Nothing to be done for `all'.
-01:52:55 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
+11:45:30 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
 make all 
 make: Nothing to be done for `all'.
-01:53:17 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core0 ****
+11:45:32 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
 make all 
 make: Nothing to be done for `all'.
-01:53:19 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core1 ****
-make all 
-make: Nothing to be done for `all'.
-01:53:20 **** Incremental Build of configuration Debug for project STDIO_CharEcho_SC584_SHARC_Core2 ****
-make all 
-make: Nothing to be done for `all'.
-01:54:28 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
-make all 
-make: Nothing to be done for `all'.
-01:54:30 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
-make all 
-make: Nothing to be done for `all'.
-01:54:33 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
-make all 
-make: Nothing to be done for `all'.
-01:56:12 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
-make all 
-make: Nothing to be done for `all'.
-01:56:14 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
-make all 
-make: Nothing to be done for `all'.
-01:56:16 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
+11:45:35 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
 make all 
 make: Nothing to be done for `all'.

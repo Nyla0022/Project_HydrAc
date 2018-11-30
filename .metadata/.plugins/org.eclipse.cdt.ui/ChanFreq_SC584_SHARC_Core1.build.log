@@ -1,6 +1,7 @@
-23:38:57 **** Incremental Build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
-make all 
-make: Nothing to be done for `all'.
+11:38:57 **** Clean-only build of configuration Debug for project ChanFreq_SC584_SHARC_Core1 ****
+make clean 
+clean  linker_log.xml  "./system/startup_ldf/app_IVT.doj"  "./system/startup_ldf/app_heaptab.doj"  "./system/startup_ldf/app_startup.doj"  "./system/sru/sru_config.doj"  "./system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.doj"  "./system/adi_initialize.doj"  "./src/SoftConfig_SC584.doj"  "./src/calc_freq.doj"  "./src/chan_freq.doj" "./system/startup_ldf/app_IVT.d"  "./system/startup_ldf/app_startup.d" "./system/startup_ldf/app_heaptab.d"  "./system/sru/sru_config.d"  "./system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.d"  "./system/adi_initialize.d"  "./src/SoftConfig_SC584.d"  "./src/calc_freq.d"  "./src/chan_freq.d" ChanFreq_SC584_SHARC_Core1.dxe
+' '
 
-23:38:58 Build Finished (took 242ms)
+11:39:00 Build Finished (took 2s.799ms)
 

@@ -84,7 +84,7 @@ to the terms of the associated Analog Devices License Agreement.
 #define UART_DEVICE_NUM     0u
 
 #define MHZTOHZ       (1000000u)
-#define CLKIN         (25u  * MHZTOHZ)
+#define UART_CLKIN         (25u  * MHZTOHZ)
 
 /* Baud rate to be used for char echo */
 #define BAUD_RATE           9600u
