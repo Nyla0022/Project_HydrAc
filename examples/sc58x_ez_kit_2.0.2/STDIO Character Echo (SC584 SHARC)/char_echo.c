@@ -29,15 +29,12 @@ to the terms of the associated Analog Devices License Agreement.
 #include <services/pwr/adi_pwr.h>
 
 /* Rx/Tx Buffer size */
-#define BUFFER_SIZE     2
+#define BUFFER_SIZE     20
 
 /* ADI initialization header */
 #include "adi_initialize.h"
 
 /* ConfigSoftSwitches() sets the software-controlled switches. */
-//#include "SoftConfig_SC584.c"
-
-
 extern void ConfigSoftSwitches(void);
 
 
@@ -48,6 +45,7 @@ int main(void)
 
     /* Rx and Tx buffer */
     static uint8_t RxBuffer[BUFFER_SIZE];
+    static char TxBuffer[BUFFER_SIZE];
 
     /* Memory required for operating UART in interrupt mode */
     static uint8_t gUARTMemory[ADI_UART_BIDIR_INT_MEMORY_SIZE];
@@ -56,7 +54,7 @@ int main(void)
     ADI_UART_RESULT    eResult;
 
     /* Tx size */
-    uint32_t           nTxSize = 1u;
+    uint32_t           nTxSize = BUFFER_SIZE;
 
     /* Flag which indicates whether to stop the program */
     bool bStopFlag = false;
@@ -125,14 +123,17 @@ int main(void)
            "Press any key on the keyboard and notice the character being echoed to the serial terminal console.\n"
            "\n Press the return key to stop the program.\n");
 
-    *RxBuffer = 9;
+    for(int i=0;i<BUFFER_SIZE;i++){
+    	TxBuffer[i] = 's';
+    }
+
     /* UART processing loop */
     while(bStopFlag == false)
     {
-        /* Write back the character */
-        eResult = adi_uart_Write(ghUART, &RxBuffer[0], nTxSize);
+        /* Write the character */
+        eResult = adi_uart_Write(ghUART, &TxBuffer[0],nTxSize);
 
-        printf("received: %s\n", RxBuffer);
+        printf("Transmitting: %s\n", TxBuffer);
         if (eResult != ADI_UART_SUCCESS)
         {
             REPORT_ERROR("Could not do a write 0x%08X\n", eResult);
