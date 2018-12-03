@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Readme_MCAPI_remote_printf</title>
+    
+  
+  <style type="text/css">
+            body {font: 12px Arial, Helvetica, Verdana;}
+            table {font: 12px Arial, Helvetica, Verdana;}
+            h1 { font: bold 24px Helvetica; color:#003366; width:100%; border-bottom:1px solid #003366; margin-top:30px; margin-bottom:30px }
+            h2 { font: bold 18px Helvetica; color:#000000; border:0px; margin-top:20px; margin-bottom:20px }
+            h3 { font: bold 14px Helvetica; color:#000000; border:0px; margin-top:20px; margin-bottom:20px }
+        </style></head><body>
+<h1>
+
+            Analog Devices, Inc. CrossCore(R) Embedded Studio Application Example
+</h1>
+
+<h2>ADSP-SC5xx EZ-Kit Board Support Package</h2>
+
+<h3> Project Name: MCAPI_remote_printf </h3>
+
+<h3>CONTENTS</h3>
+
+<ol>
+
+  <li><a href="#DE">Description</a></li>
+  <li><a href="#PR">Processor</a></li>
+  <li><a href="#TESTED">Tested with</a></li>
+  <li><a href="#OV">Overview</a></li>
+  <li><a href="#CF">User Configuration Macros</a></li>
+  <li><a href="#EC">External connections</a></li>
+  <li><a href="#SS">Software Switches</a></li>
+  <li><a href="#REF">References</a></li>
+</ol>
+
+<h3><a name="DE">1. Description<br>
+</a></h3>
+
+This example uses MCAPI to send text logging and shutdown commands from node 1 to node 0. Each node corresponds to a core in the processor.
+
+<h3><a name="PR">2. Processor</a></h3>
+
+    <ul><li>ADSP-SC5xx</li></ul>
+ 
+
+<h3><a name="TESTED">3. Tested with</a></h3>
+
+<ul>
+  <li>ADSP-SC589 EZ-Board</li>
+  <li>ADSP-SC573 EZ-Board</li>
+  <li>Analog Devices CrossCore Embedded Studio</li>
+  <li>ADDS ICE-1000</li>
+</ul>
+
+<h3><a name="OV">4. Overview</a></h3>
+<div style="text-align: left;">
+    This example uses the MCAPI inter-core communication mechanism to allow
+    node 1 (normally core 1) to send logging or error strings to an output
+    stream which is managed by node 0 (normally core 0). This stream might also
+    be used by node 0 for its own logging (though not in this example) thus
+    providing a unified log of activity on both cores. The example writes the
+    logging stream to stdout (the console) but this could be modified to go to
+    a file or to a UART or similar.
+
+    An additional facility is provided which allows node 1 to instruct
+    node 0 to shut down (exit the program) after logging a final
+    message. This is used to terminate the execution of the example.
+
+    The "server" on node 0 is organized as a framework which allows
+    additional MCAPI-based services to easily be added, and processed
+    as part of a main loop which can also be performing application
+    work.
+
+    The "client" on node 1 uses functions providing a printf-style
+    interface, with a standard format string and argument list. These
+    functions take care of the details of formatting the text and
+    sending it via MCAPI to the server on the other core.
+</div>
+
+<h3><a name="CF">5. User Configuration Macros</a></h3>
+    An alternative implementation of the RemotePrintf() client
+    function is provided as part of the source file
+    RemotePrintf.c. This version uses blocking rather than
+    non-blocking MCAPI functions, and may be selected by uncommenting #define
+    BLOCKING in the header file RemotePrintf.h. It is simpler than the default implementation,
+    but less efficient for use in non-multithreaded applications.
+
+<h3><a name="EC">6. External Connections</a></h3>
+    None
+
+<h3><a name="SS">7. Software Switches </a></h3>
+
+	See SoftConfig_SC5xx.c for more information. <br>
+	Please refer to the ADSP-SC5xx EZ-KIT Lite Evaluation System Manual for information on software-controlled switches.
+
+<h3><a name="REF">8. References</a></h3>
+
+<ul>
+      <li>ADSP-SC589 Hardware Reference Manual</li>
+      <li>ADSP-SC589 EZ-Kit Schematic</li>
+      <li>ADSP-SC573 Hardware Reference Manual</li>
+      <li>ADSP-SC573 EZ-Kit Schematic</li>
+      <li>Multicore Communication API (MCAPI) Specification V2.015</li>
+</ul>
+
+<br>
+
+<br>
+
+            

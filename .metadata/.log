@@ -1236,3 +1236,136 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/HydrAc_V1_Cor
 !MESSAGE Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0
 !SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2018-11-30 14:10:03.847
 !MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@133fc32): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception.
+!SESSION 2018-12-02 10:19:11.514 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2018-12-02 10:19:24.338
+!MESSAGE 2018-12-02 10:19:24, 338 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.1.0 w1807161
+
+
+!ENTRY com.analog.crosscore.core 1 0 2018-12-02 10:19:24.354
+!MESSAGE 2018-12-02 10:19:24, 354 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/; environment variable CCES_HOME: not set
+
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-02 10:31:54.099
+!MESSAGE Indexed 'ThreeCore_SC584_Core0' (9 sources, 86 headers) in 8.16 sec: 4,782 declarations; 9,679 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-02 10:31:59.509
+!MESSAGE Indexed 'ThreeCore_SC584_Core1' (7 sources, 63 headers) in 5.4 sec: 5,166 declarations; 10,422 references; 0 unresolved inclusions; 2 syntax errors; 340 unresolved names (2.1%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-02 10:32:02.739
+!MESSAGE Indexed 'ThreeCore_SC584_Core2' (6 sources, 62 headers) in 3.22 sec: 5,163 declarations; 10,415 references; 0 unresolved inclusions; 2 syntax errors; 340 unresolved names (2.1%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-02 15:09:13.752
+!MESSAGE Indexed 'FIR_Accelerator_Two_Channels_Core0' (5 sources, 44 headers) in 3.24 sec: 1,256 declarations; 1,891 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-02 15:09:17.167
+!MESSAGE Indexed 'FIR_Accelerator_Two_Channels_Core1' (7 sources, 58 headers) in 3.4 sec: 3,874 declarations; 7,264 references; 0 unresolved inclusions; 2 syntax errors; 245 unresolved names (2.2%)
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-12-02 15:13:43.354
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-12-02 15:13:43.368
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY com.analog.crosscore.debug 1 0 2018-12-02 15:13:49.906
+!MESSAGE Trying to load "ADSP-SC589" executable into "ADSP-SC584" session.
+
+!ENTRY com.analog.crosscore.debug 1 0 2018-12-02 15:13:49.923
+!MESSAGE Trying to load an executable built for 0.1 silicon into a 1.0 silicon target in core 1.
+
+!ENTRY com.analog.crosscore.debug 4 -1 2018-12-02 15:13:53.619
+!MESSAGE Session shutdown failed
+!SUBENTRY 1 com.analog.crosscore.debug 4 10005 2018-12-02 15:13:53.619
+!MESSAGE Service 'org.eclipse.cdt.dsf.debug.service.BreakpointsMediator' not found.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2018-12-02 15:13:53.658
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitor@c83423): Status ERROR: com.analog.crosscore.debug code=10005 Service 'org.eclipse.cdt.dsf.debug.service.BreakpointsMediator' not found. null' resulted in an error.
+!SUBENTRY 1 com.analog.crosscore.debug 4 10005 2018-12-02 15:13:53.658
+!MESSAGE Service 'org.eclipse.cdt.dsf.debug.service.BreakpointsMediator' not found.
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-02 15:25:09.090
+!MESSAGE Indexed 'FIR_TWO_CHANNELS_Core0' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-02 15:25:10.575
+!MESSAGE Indexed 'FIR_TWO_CHANNELS_Core0' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-02 15:25:24.489
+!MESSAGE Indexed 'FIR_TWO_CHANNELS_Core0' (6 sources, 44 headers) in 2.96 sec: 1,262 declarations; 1,933 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-02 15:25:27.916
+!MESSAGE Indexed 'FIR_TWO_CHANNELS_Core1' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-02 15:25:29.594
+!MESSAGE Indexed 'FIR_TWO_CHANNELS_Core1' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-02 15:25:47.451
+!MESSAGE Indexed 'FIR_TWO_CHANNELS_Core1' (5 sources, 47 headers) in 6.74 sec: 3,635 declarations; 6,951 references; 0 unresolved inclusions; 2 syntax errors; 233 unresolved names (2.2%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-02 15:25:47.462
+!MESSAGE Indexed 'FIR_TWO_CHANNELS_Core2' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-02 15:26:04.575
+!MESSAGE Indexed 'FIR_TWO_CHANNELS_Core2' (4 sources, 46 headers) in 2.62 sec: 3,628 declarations; 6,938 references; 0 unresolved inclusions; 2 syntax errors; 233 unresolved names (2.2%)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2018-12-02 15:39:18.968
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitor@1d91df4): Status ERROR: org.eclipse.cdt.dsf code=10005 Composite status null children=[Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null Status ERROR: org.eclipse.cdt.dsf code=10005 Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@14bd70b): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception. null]' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 0 2018-12-02 15:39:18.968
+!MESSAGE Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2018-12-02 15:39:18.968
+!MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@14bd70b): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception.
+
+!ENTRY com.analog.crosscore.debug 1 0 2018-12-02 15:49:28.783
+!MESSAGE Trying to load "C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\FIR_TWO_CHANNELS_Core1\Debug\FIR_TWO_CHANNELS_Core1.dxe" executable, but it does not exist at the location specified.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2018-12-02 15:58:00.363
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitor@1447591): Status ERROR: org.eclipse.cdt.dsf code=10005 Composite status null children=[Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null Status ERROR: org.eclipse.cdt.dsf code=10005 Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@f1de5c): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception. null]' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 0 2018-12-02 15:58:00.363
+!MESSAGE Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2018-12-02 15:58:00.363
+!MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@f1de5c): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception.
+
+!ENTRY com.analog.crosscore.debug 4 10004 2018-12-02 16:02:33.403
+!MESSAGE Failed to set breakpoint at C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\FIR_TWO_CHANNELS_Core1\src\main.c [line: 125] because there is no debug line info.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2018-12-02 16:07:32.965
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitor@1166e07): Status ERROR: org.eclipse.cdt.dsf code=10005 Composite status null children=[Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null Status ERROR: org.eclipse.cdt.dsf code=10005 Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@ab73ac): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception. null]' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 0 2018-12-02 16:07:32.965
+!MESSAGE Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2018-12-02 16:07:32.965
+!MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@ab73ac): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2018-12-02 16:28:20.420
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitor@15e7aa6): Status ERROR: org.eclipse.cdt.dsf code=10005 Composite status null children=[Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null Status ERROR: org.eclipse.cdt.dsf code=10005 Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@15a14f3): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception. null]' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 0 2018-12-02 16:28:20.420
+!MESSAGE Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2018-12-02 16:28:20.420
+!MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@15a14f3): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception.
+
+!ENTRY com.analog.crosscore.debug.ui 4 0 2018-12-02 16:32:23.618
+!MESSAGE Failed to toggle breakpoint at C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\FIR_TWO_CHANNELS_Core1\src\main.c [line: 120] because target is running.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2018-12-02 16:54:11.107
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitor@1b35136): Status ERROR: org.eclipse.cdt.dsf code=10005 Composite status null children=[Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null Status ERROR: org.eclipse.cdt.dsf code=10005 Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@cc9da1): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception. null]' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 0 2018-12-02 16:54:11.107
+!MESSAGE Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2018-12-02 16:54:11.107
+!MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@cc9da1): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception.
+!SESSION 2018-12-02 22:42:08.090 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.analog.crosscore.core 1 0 2018-12-02 22:42:16.343
+!MESSAGE 2018-12-02 22:42:16, 343 [Thread: main] INFO - CrossCore(R) Embedded Studio 2.8.1.0 w1807161
+
+
+!ENTRY com.analog.crosscore.core 1 0 2018-12-02 22:42:16.358
+!MESSAGE 2018-12-02 22:42:16, 358 [Thread: main] INFO - CCES install path: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/; environment variable CCES_HOME: not set
+

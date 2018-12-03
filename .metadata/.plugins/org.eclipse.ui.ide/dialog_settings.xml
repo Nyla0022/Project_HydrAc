@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\JASP\Downloads\FIR_Example_Code\FIR"/>
 		<item value="C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc"/>
 		<item value="C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\examples\sc58x_ez_kit_2.0.2\Channel Frequency (SC584 SHARC)\SC584"/>
 	</list>

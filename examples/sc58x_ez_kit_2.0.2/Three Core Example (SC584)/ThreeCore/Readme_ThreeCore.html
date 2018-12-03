@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Readme_ThreeCore</title>
+    
+  
+  <style type="text/css">
+            body {font: 12px Arial, Helvetica, Verdana;}
+            table {font: 12px Arial, Helvetica, Verdana;}
+            h1 { font: bold 24px Helvetica; color:#003366; width:100%; border-bottom:1px solid #003366; margin-top:30px; margin-bottom:30px }
+            h2 { font: bold 18px Helvetica; color:#000000; border:0px; margin-top:20px; margin-bottom:20px }
+            h3 { font: bold 14px Helvetica; color:#000000; border:0px; margin-top:20px; margin-bottom:20px }
+        </style></head><body>
+<h1>
+
+        Analog Devices, Inc. CrossCore(R) Embedded Studio Application Example
+</h1>
+<h2>ADSP-SC5xx EZ-Kit Board Support Package</h2>
+
+<h3> Project Name: ThreeCore </h3>
+
+<h3>CONTENTS</h3>
+
+<ol>
+
+  <li><a href="#DE">Description</a></li>
+  <li><a href="#PR">Processor</a></li>
+  <li><a href="#TESTED">Tested with</a></li>
+  <li><a href="#OV">Overview</a></li>
+  <li><a href="#CF">User Configuration Macros</a></li>
+  <li><a href="#EC">External connections</a></li>
+  <li><a href="#SS">Software Switches</a></li>
+  <li><a href="#REF">References</a></li>
+</ol>
+
+<h3><a name="DE">1. Description<br>
+</a></h3>
+
+    This example is a simple illustration of a three core project that builds
+    an application that can be booted on an ADSP-SC573, ADSP-SC584 or ADSP-SC589 EZ-Kit. The
+    application uses the MCAPI communications API for very basic communication
+    between the cores,
+    and interacts with the user using LEDs and Push Buttons. Output can also
+    be printed to the console or via UART.
+
+<h3><a name="PR">2. Processor</a></h3>
+
+    <ul><li>ADSP-SC5xx</li></ul>
+ 
+
+<h3><a name="TESTED">3. Tested with</a></h3>
+
+<ul>
+  <li>ADSP-SC573 EZ-Kit</li>
+  <li>ADSP-SC584 EZ-Kit, processor silicon revision 1.0</li>
+  <li>ADSP-SC589 EZ-Kit, processor silicon revision 1.0</li>
+  <li>Analog Devices CrossCore Embedded Studio</li>
+  <li>ICE-1000</li>
+</ul>
+
+<h3><a name="OV">4. Overview</a></h3>
+<div style="text-align: left;">
+
+<p>
+    This example is a simple illustration of a three core project that builds
+    an application that can be booted on an ADSP-SC5xx EZ-Kit. The
+    application uses the MCAPI communications API for very basic communication
+    between the cores,
+    and interacts with the user using LEDs and Push Buttons. Output can also
+    be printed to the console or via UART.
+</p>
+<p>
+The application can be built and run in four ways:
+<ul>
+<li>Running under CCES connected to the EZ-Kit using an emulator (e.g. ICE-1000 or ICE-2000). Output can be printed to the console. To build in this mode, define the IO_TO_CONSOLE macro in ThreeCore.h. (This is the default setup.)</li>
+<li>Running under CCES connected to the EZ-Kit using an emulator (e.g. ICE-1000 or ICE-2000), but with output sent to a terminal using UART. To build in this mode, define the IO_TO_UART macro in ThreeCore.h, and comment out the define of IO_TO_CONSOLE.</li>
+<li>Booted onto the EZ-Kit, with output sent to a terminal using UART. To build in this mode, define the IO_TO_UART macro in ThreeCore.h, and comment out the define of IO_TO_CONSOLE.</li>
+<li>Booted onto the EZ-Kit, with no output. Interaction with the application requires knowledge of the LED and Push Button usage of the application. To build in this mode, do not define either the IO_TO_CONSOLE or the IO_TO_UART macro in ThreeCore.h.</li>
+</ul>
+</p>
+<p>
+The application waits for user input in the form of push button presses, before sending commands between the three cores. Instructions on what button pressed are expected are detailed in the runtime output of the example. If using the example with no output, run the example first with either console or UART output to understand the sequence of push button presses expected.
+</p>
+<p>The Core 2 project is set up to build the loader stream. This image is named ThreeCore.ldr and can be found in the Core 2 Debug or Release folder after a successful build.
+</p>
+<p>
+To flash the loader image to the EZ-Kit, the Command Line Device Programmer application must be used. This application, called cldp.exe, is located in the root directory of your CCES install, for example at C:\Analog Devices\CrossCore Embedded Studio 2.3.0. This application should be run from the command line. To do this, open a Command Prompt window. Then change directory to the location of the ThreeCore.ldr file. This is located in the Debug or Release directory of the ThreeCore Core2 project. You can find the location by right-clicking the ThreeCore.ldr file found in the Debug or Release folder of the Core2 project in Project Explorer, and selecting Properties. Then follow the steps below:
+</p>
+<p>
+<ul>
+<li>Connect the EZ-Kit to your computer using an emulator such as the ICE-1000 or ICE-2000.</li>
+<li>Execute the appropriate cldp.exe command from Table 1,
+where ${CCES} refers to your CCES install directory (e.g. C:\Analog Devices\CrossCore Embedded Studio 2.3.0)
+and ${BSP} refers to your Board Support Package install directory (e.g. c:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0). Please specify ICE-2000 instead of ICE-1000 if you are using that emulator.</li>
+</ul>
+</p>
+
+    <table border="1" cellpadding="2" cellspacing="2">
+      <caption> Table 1: CLDP commands </caption>
+      <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: center; font-weight: bold;">Processor<br>
+      </td>
+      <td style="vertical-align: top; text-align: center; font-weight: bold;">CLDP command<br>
+      </td>
+    </tr>
+  <tr><td>ADSP-SC573</td><td>"${CCES}\cldp.exe" -proc ADSP-SC573 -core 1 -emu ICE-1000 -driver "${BSP}\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc573\sharc\sc573_w25q128fv_dpia_Core1\sc573_w25q128fv_dpia_Core1.dxe" -cmd prog -erase affected -format bin -file ThreeCore.ldr</td></tr>
+  <tr><td>ADSP-SC584</td><td>"${CCES}\cldp.exe" -proc ADSP-SC584 -core 1 -emu ICE-1000 -driver "${BSP}\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc584\sharc\sc584_w25q128fv_dpia_Core1\sc584_w25q128fv_dpia_Core1.dxe" -cmd prog -erase affected -format bin -file ThreeCore.ldr</td></tr>
+  <tr><td>ADSP-SC589</td><td>"${CCES}\cldp.exe" -proc ADSP-SC589 -core 1 -emu ICE-1000 -driver "${BSP}\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core1\sc589_w25q128fv_dpia_Core1.dxe" -cmd prog -erase affected -format bin -file ThreeCore.ldr</td></tr>
+      </tbody>
+    </table>
+
+<p> After a few moments the ThreeCore application will be loaded onto the EZ-Kit. To run the application, set the boot mode to 1 (to match the boot mode used when building the ThreeCore.ldr file) using the switch SW1 on the EZ-Kit. Then press the Reset button SW2. The loaded application will then run.
+</p>
+<h3><a name="CF">5. User Configuration Macros</a></h3>
+
+    <p>User configuration macros listed in Table 2 are specified in file ThreeCore.h</p>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <caption> Table 2: User Configuration Macros </caption>
+      <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: center; font-weight: bold;">Macro<br>
+      </td>
+      <td style="vertical-align: top; text-align: center; font-weight: bold;">Function<br>
+      </td>
+    </tr>
+  <tr><td>IO_TO_CONSOLE</td><td>Prints output to the console using printf.</td></tr>
+  <tr><td>IO_TO_UART</td><td>Prints output over UART.</td></tr>
+      </tbody>
+    </table>
+
+<h3><a name="EC">6. External Connections</a></h3>
+    <p>If defining the IO_TO_UART macro, connect a Micro USB cable between the PC and "USB to UART" connector - P8 for ADSP-SC589 board and P7 for ADSP-SC573/ADSP-SC584.</p>
+    <p>On the PC open Control Panel -> Device Manager -> Ports (COM & LPT) to determine which COM port is being used by the 'USB Serial Port'. Then open a serial terminal application (for example PuTTY or TeraTerm) and configure a serial connection to the COM port with the settings in Table 3.</p>
+
+    <table border="1" cellpadding="2" cellspacing="2">
+      <caption> Table 3: COM Settings </caption>
+      <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: center; font-weight: bold;">Configuration<br>
+      </td>
+      <td style="vertical-align: top; text-align: center; font-weight: bold;">Value<br>
+      </td>
+    </tr>
+  <tr><td>Bits per second</td><td>9600</td></tr>
+  <tr><td>Data bits</td><td>8</td></tr>
+  <tr><td>Parity</td><td>None</td></tr>
+  <tr><td>Stop bits</td><td>1</td></tr>
+  <tr><td>Flow Control</td><td>None</td></tr>
+      </tbody>
+    </table>
+
+<h3><a name="SS">7. Software Switches </a></h3>
+    Use default software switch settings.
+
+<h3><a name="REF">8. References</a></h3>
+
+<ul>
+      <li>ADSP-SC573 EZ-Kit Schematic</li>
+      <li>ADSP-SC584 EZ-Kit Schematic</li>
+      <li>ADSP-SC589 EZ-Kit Schematic</li>
+      <li>ADSP-SC57x Hardware Reference Manual</li>
+      <li>ADSP-SC58x Hardware Reference Manual</li>
+      <li>Multicore Communication API (MCAPI) Specification V2.015</li>
+</ul>
+
+<br>
+
+<br>
