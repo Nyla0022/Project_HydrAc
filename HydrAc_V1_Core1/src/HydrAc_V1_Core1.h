@@ -95,6 +95,22 @@ to the terms of the associated Analog Devices License Agreement.
 #define PASSED              0
 
 
+/*
+ * FILTER SETTINGS
+ */
+
+#define TAP_LENGTH1	3073
+#define TAP_LENGTH2	3073
+#define FIR_TCB_SIZE 13
+#define WINDOW_SIZE1 1024
+#define WINDOW_SIZE2 1024
+#define CHANNEL_NO 2
+#define TOTAL_SAMPLES 384000
+#define SUBSET_LENGTH 4096
+
+
+
+
 
 #if defined(__ADSPBF707_FAMILY__) || defined(__ADSPSC589_FAMILY__)
 /* SPU Peripheral ID */

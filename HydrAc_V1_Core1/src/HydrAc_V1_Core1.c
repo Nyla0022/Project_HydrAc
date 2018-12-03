@@ -9,6 +9,7 @@
 #include <services/gpio/adi_gpio.h>
 #include <services/pwr/adi_pwr.h>
 #include <services/int/adi_int.h>
+#include <services/int/adi_sec.h>
 
 #include <drivers/adc/adau1977/adi_adau1977.h>
 #include <drivers/twi/adi_twi.h>
@@ -21,6 +22,9 @@
 #include <time.h>
 #include <math.h>
 #include <stdbool.h>
+
+#include "FIRInit.h"
+
 
 #include "adi_initialize.h"
 #include "HydrAc_V1_Core1.h"
@@ -68,6 +72,7 @@
 /*execution time No of Digits*/
 #define EXECTIME_SIZE 		10
 
+#define TOTAL_SAMPLES 		384000
 
 /*=============  D A T A  =============*/
 
@@ -144,6 +149,67 @@ static ADI_UART_RESULT eResult;
 static bool bStopFlag = false;
 
 
+
+/*
+ * 				FILTERING DEFINITIONS
+ */
+
+static int FIRA_TCB1[FIR_TCB_SIZE];
+static int FIRA_TCB2[FIR_TCB_SIZE];
+
+static float Channel_1[TOTAL_SAMPLES]=
+{
+	#include "neysha_45degrees_hpf_fc24_2/45_CH1.dat"
+};
+
+static float Channel_2[TOTAL_SAMPLES]=
+{
+	#include "neysha_45degrees_hpf_fc24_2/45_CH2.dat"
+};
+
+
+static float InputBuff1[TAP_LENGTH1+WINDOW_SIZE1-1]=
+{
+	#include "neysha_45degrees_hpf_fc24_2/fir_input.dat"
+};
+
+static float InputBuff2[TAP_LENGTH2+WINDOW_SIZE2-1]=
+{
+	#include "neysha_45degrees_hpf_fc24_2/fir_input.dat"
+};
+
+
+static float CoeffBuff1[TAP_LENGTH1]=
+{
+	#include "neysha_45degrees_hpf_fc24_2/fir_coeffs.dat"
+};
+
+static float CoeffBuff2[TAP_LENGTH2]=
+{
+	#include "neysha_45degrees_hpf_fc24_2/fir_coeffs.dat"
+};
+
+static float OutputBuff1[WINDOW_SIZE1];
+static float OutputBuff2[WINDOW_SIZE2];
+
+static float ExectedOutput1[WINDOW_SIZE1]=
+{
+	#include "neysha_45degrees_hpf_fc24_2/fir_output.dat"
+};
+
+static float ExectedOutput2[WINDOW_SIZE2]=
+{
+	#include "neysha_45degrees_hpf_fc24_2/fir_output.dat"
+};
+
+
+static float max_diff1;
+static float max_diff2;
+static float subset_channel_1 [TAP_LENGTH1+WINDOW_SIZE1-1];
+static float subset_channel_2 [TAP_LENGTH1+WINDOW_SIZE1-1];
+static int indexes_max_ch1[TOTAL_SAMPLES];
+
+
 /*=============  L O C A L    F U N C T I O N    P R O T O T Y P E S =============*/
 
 /* Initialize GPIO and reset peripherals */
@@ -195,7 +261,7 @@ int main(int argc, char *argv[]){
 //	uint8_t dir=1;
 //	double tau=0;
 
-	uint16_t i = 0;
+	uint32_t i = 0;
 
 	/*Distance and angle variables*/
 	float distance = .070, angle = -90;
@@ -210,6 +276,24 @@ int main(int argc, char *argv[]){
 	/*Tx buffer */
 	char TxBuffer[BUFFER_SIZE];
 
+	float max = 1.505;
+
+	int j = 0;
+	int location_ch1 = 0;
+
+
+
+//	//printf("SIGNALS LOADED\n");
+//
+//	for(int i=0 ; i<TOTAL_SAMPLES; i++)
+//	{
+//		if(Channel_1[i] > 1.505)
+//		{
+//			indexes_max_ch1[j] = i;
+//			j++;
+//		}
+//	}
+
 
 	//
 	//---------PERIPHERALS INITALIZATION--------------//
@@ -218,6 +302,7 @@ int main(int argc, char *argv[]){
 
 	/* Initialize managed drivers and/or services that have been added to the project*/
 	adi_initComponents();
+
 
 	/* Software Switch Configuration for the EZ-Board */
 	ConfigSoftSwitches();
@@ -228,11 +313,21 @@ int main(int argc, char *argv[]){
 	/*Initialize SPU peripheral for HydrAc System*/
 	hydrac_spu_init();
 
+
 	/*Initialize ADC for HydrAc System (ADAU 1977)*/
 	hydrac_adc_init();
 
 	/* Initialize UART */
 	hydrac_uart_init();
+
+	//Configure FIR accelerator as secure master
+	*pREG_SPU0_SECUREP155=BITM_SPU_SECUREP_MSEC;
+
+	//Enable the interrupts globally
+	*pREG_SEC0_GCTL=ENUM_SEC_GCTL_EN;
+	*pREG_SEC0_CCTL1=ENUM_SEC_CCTL1_EN;
+	adi_sec_EnableEdgeSense(INTR_FIR0_DMA, true);
+	adi_int_InstallHandler(INTR_FIR0_DMA,FIR_DMA_Interrupt_Handler,0,true);
 
 
 	//
@@ -240,73 +335,171 @@ int main(int argc, char *argv[]){
 	//
 
 
-	uint32_t loop=1;
+//	printf("%d", indexes_max_ch1[0]);
+//
+//	if ((Channel_1[0] < 1.505) && (Channel_2[0] < 1.505)) {
+//		if ((Channel_1[0]) == (Channel_2[0])) {
+//			for (i = 1; i < 384000; i++) {
+//				float dif = Channel_1[indexes_max_ch1[i]]
+//						- Channel_1[indexes_max_ch1[i - 1]];
+//				if (dif > 5) {
+//					location_ch1 = i;
+//					break;
+//				}
+//			}
+//		}
+//
+//
+//		int start_cut = indexes_max_ch1[location_ch1];
+//
+//		for (i = 2047; i <= 0; i--) {
+//			subset_channel_1[2047 - i] = Channel_1[start_cut - i];
+//			subset_channel_2[2047 - i] = Channel_2[start_cut - i];
+//		}
+//
+//		for (i = 1; i < 2048; i++) {
+//			subset_channel_1[i] = Channel_1[start_cut + i];
+//			subset_channel_2[i] = Channel_2[start_cut + i];
+//		}
+//	} else {
+//		for (i = 0; i < 4096; i++) {
+//			subset_channel_1[i] = Channel_1[i];
+//			subset_channel_2[i] = Channel_2[i];
+//		}
+//	}
+
+
+
+	//Initialize FIR TCBs for both the channels
+	FIRA_TCB1[0]=((int)(FIRA_TCB2+12)>>2)|0xA000000;	//CP
+	FIRA_TCB1[1]=TAP_LENGTH1;	//CL
+	FIRA_TCB1[2]=1;	//CM
+	FIRA_TCB1[3]=((int)CoeffBuff1>>2)|0xA000000;	//CI
+	FIRA_TCB1[4]=((int)OutputBuff1>>2)|0xA000000;	//OB
+	FIRA_TCB1[5]=WINDOW_SIZE1;	//OL
+	FIRA_TCB1[6]=1;	//OM
+	FIRA_TCB1[7]=((int)OutputBuff1>>2)|0xA000000;	//OI
+	FIRA_TCB1[8]=((int)InputBuff1>>2)|0xA000000;	//IB
+	FIRA_TCB1[9]=TAP_LENGTH1+WINDOW_SIZE1-1;	//IL
+	FIRA_TCB1[10]=1;	//IM
+	FIRA_TCB1[11]=((int)InputBuff1>>2)|0xA000000;	//II
+	FIRA_TCB1[12]=(TAP_LENGTH1-1)|(WINDOW_SIZE1-1)<<14;	//FIRCTL2
+
+	FIRA_TCB2[0]=0;	//CP
+	FIRA_TCB2[1]=TAP_LENGTH2;	//CL
+	FIRA_TCB2[2]=1;	//CM
+	FIRA_TCB2[3]=((int)CoeffBuff2>>2)|0xA000000;	//CI
+	FIRA_TCB2[4]=((int)OutputBuff2>>2)|0xA000000;	//OB
+	FIRA_TCB2[5]=WINDOW_SIZE2;	//OL
+	FIRA_TCB2[6]=1;	//OM
+	FIRA_TCB2[7]=((int)OutputBuff2>>2)|0xA000000;	//OI
+	FIRA_TCB2[8]=((int)InputBuff2>>2)|0xA000000;	//IB
+	FIRA_TCB2[9]=TAP_LENGTH2+WINDOW_SIZE2-1;	//IL
+	FIRA_TCB2[10]=1;	//IM
+	FIRA_TCB2[11]=((int)InputBuff2>>2)|0xA000000;	//II
+	FIRA_TCB2[12]=(TAP_LENGTH2-1)|(WINDOW_SIZE2-1)<<14;	//FIRCTL2
+
+
+
+	//Initialize the FIR accelerator
+	FIRA_Init(BITM_FIR_CTL1_EN|BITM_FIR_CTL1_DMAEN|BITM_FIR_CTL1_CCINTR|(CHANNEL_NO-1)<<BITP_FIR_CTL1_CH,(int*)(((int)(FIRA_TCB1+12)>>2)|0xA000000));
+
+	//i=0;
+
+	//Wait till both the channels are processed
+	while(FIR_DMA_Done<CHANNEL_NO);
+
+	//data filtered!
+
+
+
+
+
+
+	//Compare the FIR accelerator output with expected (MATLAB) output for both the channels.
+		max_diff1=FIRA_Find_Max_Diff(OutputBuff1, ExectedOutput1,WINDOW_SIZE1);
+		max_diff2=FIRA_Find_Max_Diff(OutputBuff2, ExectedOutput2,WINDOW_SIZE2);
+
+		printf("\n\nMaximum normalized difference between actual and expected values for buffer 1 = %.*e\n\n",10,max_diff1);
+		printf("\n\nMaximum normalized difference between actual and expected values for buffer 2= %.*e\n\n",10,max_diff2);
+
+		if(max_diff1>0.0001||max_diff2>0.0001>0.0001)
+			printf("\n\nFIR test failed...\n\n");
+		else
+			printf("\n\nFIR test passed...\n\n");
+
+
+
+	printf("going into infinite loop...\n");
 
 	while(true){
 
-		/*
-		 * Fill ADC Buffers
-		 */
-
-		/*Enable dataflow and Open the ADC*/
-		hydrac_adc_enable();
-
-		/*Disable dataflow and close the ADC*/
-		hydrac_adc_disable();
 
 
-
-
-		/*
-		 * Compute angle and distance
-		 */
-
-
-
-
-		/*
-		 * Prepare data to send via UART
-		 */
-
-		//***NOTE time is in miliseconds****
-
-		ftoa(angle, angle_c); 				//convert angle data to string array
-		ftoa(distance, dist_c); 			//convert distance data to string array
-		ftoa((float)(exec_time*1e3),exectime_c);	//convert execution time data to string array
-
-		for (i = 0; i < sizeof(angle_c); i++)
-			TxBuffer[i] = angle_c[i];
-
-		for (i = 0; i < sizeof(dist_c); i++)
-			TxBuffer[i + 10] = dist_c[i];
-
-		for (i = 0; i < sizeof(exectime_c); i++)
-			TxBuffer[i + 20] = exectime_c[i];
-
-		/*
-		 * Send data via UART
-		 */
-
-		/* Write the character */
-		printf("Transmitting Result#%d: %s\n\n",loop++, TxBuffer);
-		/*comment when interfacing to arduino*/
-		eResult = adi_uart_Write(ghUART, "Transmitting Result", 20);
-		/*comment when interfacing to arduino*/
-		eResult = adi_uart_Write(ghUART, "\n",2);
-		for(i=0;i<(BUFFER_SIZE+20)-2;i++)
-			eResult = adi_uart_Write(ghUART, "\b",2);
-
-		eResult = adi_uart_Write(ghUART, &TxBuffer[0], BUFFER_SIZE);
-
-		/*comment when interfacing to arduino*/
-		eResult = adi_uart_Write(ghUART, "\n",2);
-
-
-		/*
-		 * Save data to file
-		 */
-		save_chan_data_to_file("t.txt");
+//		/*
+//		 * Fill ADC Buffers
+//		 */
+//
+//		/*Enable dataflow and Open the ADC*/
+//		hydrac_adc_enable();
+//
+//		/*Disable dataflow and close the ADC*/
+//		hydrac_adc_disable();
+//
+//
+//
+//
+//		/*
+//		 * Compute angle and distance
+//		 */
+//
+//
+//
+//
+//		/*
+//		 * Prepare data to send via UART
+//		 */
+//
+//		//***NOTE time is in miliseconds****
+//
+//		ftoa(angle, angle_c); 				//convert angle data to string array
+//		ftoa(distance, dist_c); 			//convert distance data to string array
+//		ftoa((float)(exec_time*1e3),exectime_c);	//convert execution time data to string array
+//
+//		for (i = 0; i < sizeof(angle_c); i++)
+//			TxBuffer[i] = angle_c[i];
+//
+//		for (i = 0; i < sizeof(dist_c); i++)
+//			TxBuffer[i + 10] = dist_c[i];
+//
+//		for (i = 0; i < sizeof(exectime_c); i++)
+//			TxBuffer[i + 20] = exectime_c[i];
+//
+//		/*
+//		 * Send data via UART
+//		 */
+//
+//		/* Write the character */
+//		printf("Transmitting Result#%d: %s\n\n",loop++, TxBuffer);
+//		/*comment when interfacing to arduino*/
+//		eResult = adi_uart_Write(ghUART, "Transmitting Result", 20);
+//		/*comment when interfacing to arduino*/
+//		eResult = adi_uart_Write(ghUART, "\n",2);
+//		for(i=0;i<(BUFFER_SIZE+20)-2;i++)
+//			eResult = adi_uart_Write(ghUART, "\b",2);
+//
+//		eResult = adi_uart_Write(ghUART, &TxBuffer[0], BUFFER_SIZE);
+//
+//		/*comment when interfacing to arduino*/
+//		eResult = adi_uart_Write(ghUART, "\n",2);
+//
+//
+//		/*
+//		 * Save data to file
+//		 */
+//		save_chan_data_to_file("t.txt");
 	}
+
 
 }
 
