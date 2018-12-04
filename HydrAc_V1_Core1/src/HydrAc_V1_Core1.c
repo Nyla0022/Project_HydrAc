@@ -325,14 +325,19 @@ int main(int argc, char *argv[]){
 		hydrac_adc_disable();
 
 
-		save_chan_data_to_file(Chan1Data,Chan2Data,"in.txt");
+		//save_chan_data_to_file(Chan1Data,Chan2Data,"in.txt");
 
+//		double t=0;
+//		for (m = 0; m < NUM_SAMPLES; m++) {
+//				printf("%f\t%f\t%f\n", (double) t,Chan1Data[m],Chan2Data[m] );
+//				t = (double) (t+ TIME_STEP);
+//			}
 
 		/*
 		 * Compute angle and distance
 		 */
 		printf("\n***DETECTING DIRECTION...\n");
-		//hydrac_detect_direction(&direction);
+		hydrac_detect_direction(&direction);
 
 			if(direction == 2){
 				printf("\n***LEFT!\n");
@@ -824,8 +829,8 @@ void save_chan_data_to_file(float chan1[], float chan2[], char* filename){
 	//save data for both channels and execution time
 	for (m = 0; m < NUM_SAMPLES; m++) {
 		fprintf(fp, "%f\t%f\t%f\n", (double) time,
-				(chan1[m] * ADC_CONV_F_16),
-				(chan2[m] * ADC_CONV_F_16));
+				(chan1[m]),
+				(chan2[m]));
 		time = (double) (time + TIME_STEP);
 	}
 
@@ -959,11 +964,12 @@ void hydrac_detect_direction(int* direction){
 	int location = 0;
 	int flag = 1;
 
+
 	for (int c = 1; c < TOTAL_SAMPLES; c++) {
-		if (channel_1[c] > max_1) {
+		if (Chan1Data[c] > max_1) {
 			max_1 = channel_1[c];
 		}
-		if (channel_2[c] > max_2) {
+		if (Chan2Data[c] > max_2) {
 			max_2 = channel_2[c];
 		}
 	}
