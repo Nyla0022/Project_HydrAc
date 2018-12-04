@@ -221,6 +221,9 @@ void hydrac_compute_angle(double tau, double* angle, uint8_t);
 void ftoa(float, char*);
 
 
+/*detect direction */
+void hydrac_detect_direction(int* direction);
+
 /*=============  C A L L B A C K    F U N C T I O N    P R O T O T Y P E S =============*/
 
 /* ADC callback */
@@ -254,15 +257,7 @@ int main(int argc, char *argv[]){
 	char TxBuffer[BUFFER_SIZE];
 
 
-	int j = 0;
-	int location_ch1 =0;
-	int location_ch2=0;
-	int loc_min_ch1 =0;
-	int loc_max_ch1 =0;
-	int loc_min_ch2 =0;
-	int loc_max_ch2 =0;
-	int loc_ch1_final = 0;
-	int loc_ch2_final = 0;
+
 	static int direction =0;
 
 
@@ -308,155 +303,24 @@ int main(int argc, char *argv[]){
 
 
 
-	for (int i = 0; i < TOTAL_SAMPLES; i++)
-	{
-		if (channel_1[i] >  1.505)
-		{
-			location_ch1 = i;
-			break;
-		}
-	}
-
-	for (int i = 0; i < TOTAL_SAMPLES; i++)
-	{
-		if (channel_2[i] >  1.505)
-		{
-			location_ch2 = i;
-			break;
-		}
-	}
-
-
-
-	if (( location_ch2 > 2047) && ( location_ch2 > 2047))
-	{
-			j = 2047;
-			for (i = 0; i < 2048; i++)
-			{
-				subset_channel_1[i] =  channel_1[location_ch1 - j];
-				subset_channel_2[i] =  channel_2[location_ch1 - j];
-				j--;
-			}
-
-			j = 1;
-			for (i = 2048; i < SAMPLES; i++)
-			{
-				subset_channel_1[i] =  channel_1[location_ch1 + j];
-				subset_channel_2[i] =  channel_2[location_ch1 + j];
-				j++;
-			}
-		}
-	else
-	{
-			for (i = 0; i < SAMPLES; i++)
-			{
-				subset_channel_1[i] =  channel_1[i];
-				subset_channel_2[i] =  channel_2[i];
-			}
-		}
-
-
-	for (i = 0; i < TAPS + 1; i++)
-		state[i] = 0; /* initialize state array */
-
-	fir (subset_channel_1, out_ch_1, coeffs, state, SAMPLES, TAPS);
-
-	for (i = 0; i < TAPS + 1; i++)
-		state[i] = 0; /* initialize state array */
-
-	//filter second signal
-	fir (subset_channel_2, out_ch_2,coeffs, state, SAMPLES, TAPS);
-
-	printf("%e, %e filtered\n", out_ch_1[0], out_ch_2[0]);
-
-	for (int i=0; i<1024; i++) {
-			out_ch_1[i] = 0;
-			out_ch_2[i] = 0;
-		}
-
-
-	for(i=0; i<SAMPLES; i++){
-		if (out_ch_1[i] > 0.3)
-		{
-			loc_max_ch1 = i;
-			break;
-		}
-	}
-
-	for(i=0; i<SAMPLES; i++){
-		if (out_ch_2[i] > 0.3)
-		{
-			loc_max_ch2 = i;
-			break;
-		}
-	}
-
-	for(i=0; i<SAMPLES; i++){
-		if (out_ch_1[i] < -0.3)
-		{
-			loc_min_ch1 = i;
-			break;
-		}
-	}
-
-	for(i=0; i<SAMPLES; i++){
-		if (out_ch_2[i] < -0.3)
-		{
-			loc_min_ch2 = i;
-			break;
-		}
-	}
-
-
-	if (loc_max_ch1 < loc_min_ch1)
-		loc_ch1_final = loc_max_ch1;
-	else
-		loc_ch1_final = loc_min_ch1;
-
-	if (loc_max_ch2 < loc_min_ch2)
-		loc_ch2_final = loc_max_ch2;
-	else
-		loc_ch2_final = loc_min_ch2;
-
-	if (loc_ch1_final < loc_ch2_final)
-	{
-		direction = 2;
-		printf("SIGNAL IS COMING FROM THE RIGHT. \n");
-	}
-	else if (loc_ch1_final > loc_ch2_final)
-	{
-		direction = 1;
-		printf("SIGNAL IS COMING FROM THE LEFT. \n");
-	}
-	else
-	{
-		direction = -1;
-		printf("IN FRONT OR ERROR . \n");
-	}
-
 
 	printf("going into infinite loop...\n");
 
 
 
-	uint32_t loop=1;
 	volatile uint32_t loop=1;
 	uint32_t m =0;
 
-	while(false){
+	while(true){
 
 
-//
-//		/*
-//		 * Fill ADC Buffers
-//		 */
-//
-//		/*Enable dataflow and Open the ADC*/
-//		hydrac_adc_enable();
-//
-//		/*Disable dataflow and close the ADC*/
-//		hydrac_adc_disable();
 
+		/*
+		 * Fill ADC Buffers
+		 */
+
+		/*Enable dataflow and Open the ADC*/
+		hydrac_adc_enable();
 
 		/*Disable dataflow and close the ADC*/
 		hydrac_adc_disable();
@@ -466,6 +330,16 @@ int main(int argc, char *argv[]){
 		/*
 		 * Compute angle and distance
 		 */
+
+		hydrac_detect_direction(&direction);
+
+			if(direction == 2){
+				printf("\n***LEFT!\n");
+			}else if(direction==1)
+				printf("\n***RIGHT!\n");
+			else
+				printf("\n***FRONT OR ERROR!\n");
+
 
 
 
@@ -517,11 +391,11 @@ int main(int argc, char *argv[]){
 
 
 
-			//reset both channels
-			for (m = 0; m < NUM_SAMPLES; m++) {
-				Chan1Data[m] = 0;
-				Chan2Data[m] =0;
-			}
+//			//reset both channels
+//			for (m = 0; m < NUM_SAMPLES; m++) {
+//				Chan1Data[m] = 0;
+//				Chan2Data[m] =0;
+//			}
 
 	}
 
@@ -529,13 +403,13 @@ int main(int argc, char *argv[]){
 
 
 
-
-		/* Close ADC device */
-		if (adi_adau1977_Close(phAdau1977) != ADI_ADAU1977_SUCCESS)
-		{
-			bError = true;
-			DBG_MSG("ADC close failed\n");
-		}
+//
+//		/* Close ADC device */
+//		if (adi_adau1977_Close(phAdau1977) != ADI_ADAU1977_SUCCESS)
+//		{
+//			bError = true;
+//			DBG_MSG("ADC close failed\n");
+//		}
 
 
 
@@ -1086,6 +960,148 @@ void hydrac_uart_init(){
 	if (eResult != ADI_UART_SUCCESS) {
 		DBG_MSG("Could not set word length 0x%08X\n", eResult);
 		bError= FAILURE;
+	}
+
+}
+
+void hydrac_detect_direction(int* direction){
+
+
+
+	int j = 0, i = 0;
+	int location_ch1 = 0;
+	int location_ch2 = 0;
+	int loc_min_ch1 = 0;
+	int loc_max_ch1 = 0;
+	int loc_min_ch2 = 0;
+	int loc_max_ch2 = 0;
+	int loc_ch1_final = 0;
+	int loc_ch2_final = 0;
+
+	for (int i = 0; i < TOTAL_SAMPLES; i++)
+	{
+		if (channel_1[i] >  1.505)
+		{
+			location_ch1 = i;
+			break;
+		}
+	}
+
+	for (int i = 0; i < TOTAL_SAMPLES; i++)
+	{
+		if (channel_2[i] >  1.505)
+		{
+			location_ch2 = i;
+			break;
+		}
+	}
+
+
+
+	if (( location_ch2 > 2047) && ( location_ch2 > 2047))
+	{
+			j = 2047;
+			for (i = 0; i < 2048; i++)
+			{
+				subset_channel_1[i] =  channel_1[location_ch1 - j];
+				subset_channel_2[i] =  channel_2[location_ch1 - j];
+				j--;
+			}
+
+			j = 1;
+			for (i = 2048; i < SAMPLES; i++)
+			{
+				subset_channel_1[i] =  channel_1[location_ch1 + j];
+				subset_channel_2[i] =  channel_2[location_ch1 + j];
+				j++;
+			}
+		}
+	else
+	{
+			for (i = 0; i < SAMPLES; i++)
+			{
+				subset_channel_1[i] =  channel_1[i];
+				subset_channel_2[i] =  channel_2[i];
+			}
+		}
+
+
+	for (i = 0; i < TAPS + 1; i++)
+		state[i] = 0; /* initialize state array */
+
+	fir (subset_channel_1, out_ch_1, coeffs, state, SAMPLES, TAPS);
+
+	for (i = 0; i < TAPS + 1; i++)
+		state[i] = 0; /* initialize state array */
+
+	//filter second signal
+	fir (subset_channel_2, out_ch_2,coeffs, state, SAMPLES, TAPS);
+
+	printf("%e, %e filtered\n", out_ch_1[0], out_ch_2[0]);
+
+	for (int i=0; i<1024; i++) {
+			out_ch_1[i] = 0;
+			out_ch_2[i] = 0;
+		}
+
+
+	for(i=0; i<SAMPLES; i++){
+		if (out_ch_1[i] > 0.3)
+		{
+			loc_max_ch1 = i;
+			break;
+		}
+	}
+
+	for(i=0; i<SAMPLES; i++){
+		if (out_ch_2[i] > 0.3)
+		{
+			loc_max_ch2 = i;
+			break;
+		}
+	}
+
+	for(i=0; i<SAMPLES; i++){
+		if (out_ch_1[i] < -0.3)
+		{
+			loc_min_ch1 = i;
+			break;
+		}
+	}
+
+	for(i=0; i<SAMPLES; i++){
+		if (out_ch_2[i] < -0.3)
+		{
+			loc_min_ch2 = i;
+			break;
+		}
+	}
+
+
+	if (loc_max_ch1 < loc_min_ch1)
+		loc_ch1_final = loc_max_ch1;
+	else
+		loc_ch1_final = loc_min_ch1;
+
+	if (loc_max_ch2 < loc_min_ch2)
+		loc_ch2_final = loc_max_ch2;
+	else
+		loc_ch2_final = loc_min_ch2;
+
+	if (loc_ch1_final < loc_ch2_final)
+	{
+		(*direction) = 1;
+		printf("SIGNAL IS COMING FROM THE RIGHT. \n");
+	}
+	else if (loc_ch1_final > loc_ch2_final)
+	{
+		(*direction) = 2;
+		printf("SIGNAL IS COMING FROM THE LEFT. \n");
+	}
+	else
+	{
+		(*direction) = -1;
+		printf("IN FRONT OR ERROR . \n");
 	}
 
 }
