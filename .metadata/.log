@@ -1481,3 +1481,21 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -data file:/C:/Users/JASP
 
 !ENTRY org.eclipse.launchbar.core 2 0 2018-12-04 00:08:47.411
 !MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-04 11:06:04.475
+!MESSAGE Indexed 'HydrAc_V1_Core0' (1 sources, 18 headers) in 3.42 sec: 86 declarations; 463 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-04 11:06:11.060
+!MESSAGE Indexed 'HydrAc_V1_Core1' (13 sources, 101 headers) in 6.56 sec: 9,783 declarations; 18,678 references; 0 unresolved inclusions; 4 syntax errors; 648 unresolved names (2.2%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-04 11:06:14.210
+!MESSAGE Indexed 'HydrAc_V1_Core2' (1 sources, 22 headers) in 1.82 sec: 1,023 declarations; 2,363 references; 0 unresolved inclusions; 2 syntax errors; 3 unresolved names (0.089%)
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-12-04 11:16:37.384
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-12-04 11:16:37.399
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY com.analog.crosscore.debug 1 0 2018-12-04 11:20:29.573
+!MESSAGE Trying to load "C:\Users\JASP\Documents\Hydrac_Repo\Project_HydrAc\HydrAc_V1_Core1\Debug\HydrAc_V1_Core1.dxe" executable, but it does not exist at the location specified.

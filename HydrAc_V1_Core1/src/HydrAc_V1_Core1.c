@@ -166,21 +166,15 @@ static float HIGH_COEF[TAPS]=
 	};
 
 
-	/**EXPECTED FILTERED VALUES - LOW**/
-static float x_filtered_low[SAMPLES]=
-	{
-			#include "data/75_4096_CH1_F.dat"
-	};
-
 	/**INPUT SIGNAL**/
-static float channel_1[SAMPLES]=
+static float channel_1[TOTAL_SAMPLES]=
 	{
-			#include "45_degrees/45_CH1.dat"
+			#include "345_data/345_CH1.dat"
 	};
 
-static float channel_2[SAMPLES]=
+static float channel_2[TOTAL_SAMPLES]=
 	{
-			#include "45_degrees/45_CH2.dat"
+			#include "345_data/345_CH2.dat"
 	};
 
 
@@ -191,9 +185,10 @@ static float out_ch_2[SAMPLES];
 	static float pm coeffs[TAPS]; /* coeffs array must be */
 							/* initialized and in PM memory */
 
-static float subset_channel_1 [TAP_LENGTH1+WINDOW_SIZE1-1];
-static float subset_channel_2 [TAP_LENGTH1+WINDOW_SIZE1-1];
-static int indexes_max_ch1[TOTAL_SAMPLES];
+static float subset_channel_1 [SAMPLES];
+static float subset_channel_2 [SAMPLES];
+
+static float state[TAPS + 1];
 
 /*=============  L O C A L    F U N C T I O N    P R O T O T Y P E S =============*/
 
@@ -243,9 +238,6 @@ int main(int argc, char *argv[]){
 	//-----------LOCAL VARIABLES------------------//
 	//
 
-//	uint8_t dir=1;
-//	double tau=0;
-
 	uint32_t i = 0;
 
 	/*Distance and angle variables*/
@@ -261,19 +253,24 @@ int main(int argc, char *argv[]){
 	/*Tx buffer */
 	char TxBuffer[BUFFER_SIZE];
 
-	float max = 1.505;
 
 	int j = 0;
-	int location_ch1 = 0;
+	int location_ch1 =0;
+	int location_ch2=0;
+	int loc_min_ch1 =0;
+	int loc_max_ch1 =0;
+	int loc_min_ch2 =0;
+	int loc_max_ch2 =0;
+	int loc_ch1_final = 0;
+	int loc_ch2_final = 0;
+	static int direction =0;
 
 
 	for (int i = TAPS-1; i >= 0; i--) {
 		coeffs[i] = HIGH_COEF[(TAPS-1)-i];
 	}
 
-	float state[TAPS + 1];
-	for (i = 0; i < TAPS + 1; i++)
-		state[i] = 0; /* initialize state array */
+
 
 
 	//
@@ -311,11 +308,140 @@ int main(int argc, char *argv[]){
 
 
 
+	for (int i = 0; i < TOTAL_SAMPLES; i++)
+	{
+		if (channel_1[i] >  1.505)
+		{
+			location_ch1 = i;
+			break;
+		}
+	}
+
+	for (int i = 0; i < TOTAL_SAMPLES; i++)
+	{
+		if (channel_2[i] >  1.505)
+		{
+			location_ch2 = i;
+			break;
+		}
+	}
+
+
+
+	if (( location_ch2 > 2047) && ( location_ch2 > 2047))
+	{
+			j = 2047;
+			for (i = 0; i < 2048; i++)
+			{
+				subset_channel_1[i] =  channel_1[location_ch1 - j];
+				subset_channel_2[i] =  channel_2[location_ch1 - j];
+				j--;
+			}
+
+			j = 1;
+			for (i = 2048; i < SAMPLES; i++)
+			{
+				subset_channel_1[i] =  channel_1[location_ch1 + j];
+				subset_channel_2[i] =  channel_2[location_ch1 + j];
+				j++;
+			}
+		}
+	else
+	{
+			for (i = 0; i < SAMPLES; i++)
+			{
+				subset_channel_1[i] =  channel_1[i];
+				subset_channel_2[i] =  channel_2[i];
+			}
+		}
+
+
+	for (i = 0; i < TAPS + 1; i++)
+		state[i] = 0; /* initialize state array */
+
+	fir (subset_channel_1, out_ch_1, coeffs, state, SAMPLES, TAPS);
+
+	for (i = 0; i < TAPS + 1; i++)
+		state[i] = 0; /* initialize state array */
+
+	//filter second signal
+	fir (subset_channel_2, out_ch_2,coeffs, state, SAMPLES, TAPS);
+
+	printf("%e, %e filtered\n", out_ch_1[0], out_ch_2[0]);
+
+	for (int i=0; i<1024; i++) {
+			out_ch_1[i] = 0;
+			out_ch_2[i] = 0;
+		}
+
+
+	for(i=0; i<SAMPLES; i++){
+		if (out_ch_1[i] > 0.3)
+		{
+			loc_max_ch1 = i;
+			break;
+		}
+	}
+
+	for(i=0; i<SAMPLES; i++){
+		if (out_ch_2[i] > 0.3)
+		{
+			loc_max_ch2 = i;
+			break;
+		}
+	}
+
+	for(i=0; i<SAMPLES; i++){
+		if (out_ch_1[i] < -0.3)
+		{
+			loc_min_ch1 = i;
+			break;
+		}
+	}
+
+	for(i=0; i<SAMPLES; i++){
+		if (out_ch_2[i] < -0.3)
+		{
+			loc_min_ch2 = i;
+			break;
+		}
+	}
+
+
+	if (loc_max_ch1 < loc_min_ch1)
+		loc_ch1_final = loc_max_ch1;
+	else
+		loc_ch1_final = loc_min_ch1;
+
+	if (loc_max_ch2 < loc_min_ch2)
+		loc_ch2_final = loc_max_ch2;
+	else
+		loc_ch2_final = loc_min_ch2;
+
+	if (loc_ch1_final < loc_ch2_final)
+	{
+		direction = 2;
+		printf("SIGNAL IS COMING FROM THE RIGHT. \n");
+	}
+	else if (loc_ch1_final > loc_ch2_final)
+	{
+		direction = 1;
+		printf("SIGNAL IS COMING FROM THE LEFT. \n");
+	}
+	else
+	{
+		direction = -1;
+		printf("IN FRONT OR ERROR . \n");
+	}
+
 
 	printf("going into infinite loop...\n");
+
+
+
 	uint32_t loop=1;
 
-	while(true){
+	while(false){
 
 
 //
@@ -336,129 +462,6 @@ int main(int argc, char *argv[]){
 		 * Compute angle and distance
 		 */
 
-
-		for (int i = 0; i < TOTAL_SAMPLES; i++) {
-			if (channel_1[i] > 1.505) {
-				indexes_max_ch1[j] = i;
-				j++;
-			}
-		}
-
-
-		if (( channel_1[0] < 1.505) && ( channel_2[0] < 1.505)) {
-				if (( channel_1[0]) == ( channel_2[0])) {
-					for (i = 1; i < 384000; i++) {
-						float dif =  channel_1[indexes_max_ch1[i]]
-								-  channel_1[indexes_max_ch1[i - 1]];
-						if (dif > 5) {
-							location_ch1 = i;
-							break;
-						}
-					}
-				}
-
-
-				int start_cut = indexes_max_ch1[location_ch1];
-
-				for (i = 2047; i <= 0; i--) {
-					subset_channel_1[2047 - i] =  channel_1[start_cut - i];
-					subset_channel_2[2047 - i] =  channel_2[start_cut - i];
-				}
-
-				for (i = 1; i < 2048; i++) {
-					subset_channel_1[i] =  channel_1[start_cut + i];
-					subset_channel_2[i] =  channel_2[start_cut + i];
-				}
-			} else {
-				for (i = 0; i < 4096; i++) {
-					subset_channel_1[i] =  channel_1[i];
-					subset_channel_2[i] =  channel_2[i];
-				}
-			}
-
-
-			//filter first signal
-			fir (channel_1, out_ch_1, coeffs, state, SAMPLES, TAPS);
-
-			for (i = 0; i < TAPS + 1; i++)
-				state[i] = 0; /* initialize state array */
-
-			//filter second signal
-			fir (channel_2, out_ch_2,coeffs, state, SAMPLES, TAPS);
-
-
-
-			for (int i=0; i<1024; i++) {
-					out_ch_1[i] = 0;
-					out_ch_2[i] = 0;
-				}
-
-			int MAX_CH =  0.3;
-			int MIN_CN = -0.3;
-
-			int loc_min_ch1 =0;
-			int loc_max_ch1 =0;
-			int loc_min_ch2 =0;
-			int loc_max_ch2 =0;
-
-
-			for(i=0; i<4096; i++){
-				if (out_ch_1[i] > 0.3)
-				{
-					loc_max_ch1 = i;
-					break;
-				}
-			}
-
-			for(i=0; i<4096; i++){
-				if (out_ch_2[i] > 0.3)
-				{
-					loc_max_ch2 = i;
-					break;
-				}
-			}
-
-			for(i=0; i<4096; i++){
-				if (out_ch_1[i] < -0.3)
-				{
-					loc_min_ch1 = i;
-					break;
-				}
-			}
-
-			for(i=0; i<4096; i++){
-				if (out_ch_2[i] < -0.3)
-				{
-					loc_min_ch2 = i;
-					break;
-				}
-			}
-
-			int loc_ch1_final = 0;
-			int loc_ch2_final = 0;
-
-			if (loc_max_ch1 < loc_min_ch1)
-				loc_ch1_final = loc_max_ch1;
-			else
-				loc_ch1_final = loc_min_ch1;
-
-			if (loc_max_ch2 < loc_min_ch2)
-				loc_ch2_final = loc_max_ch2;
-			else
-				loc_ch2_final = loc_min_ch2;
-
-			if (loc_ch1_final < loc_ch2_final)
-			{
-				printf("RIGHT");
-			}
-			else if (loc_ch1_final > loc_ch2_final)
-			{
-				printf("LEFT");
-			}
-			else
-			{
-				printf("IN FRONT OR ERROR");
-			}
 
 
 		/*
@@ -504,6 +507,8 @@ int main(int argc, char *argv[]){
 		 */
 		//save_chan_data_to_file("t.txt");
 	}
+
+	return 0;
 
 
 }
