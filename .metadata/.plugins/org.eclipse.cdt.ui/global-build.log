@@ -1,232 +1,34 @@
-11:48:58 **** Clean-only build of configuration Debug for project HydrAc_V1_Core1 ****
-make clean 
-clean  linker_log.xml  "./system/startup_ldf/app_IVT.doj"  "./system/startup_ldf/app_heaptab.doj"  "./system/startup_ldf/app_startup.doj"  "./system/sru/sru_config.doj"  "./system/services/stdio/adi_stdio.doj"  "./system/services/stdio/adi_stdio_jtag.doj"  "./system/services/stdio/adi_stdio_null.doj"  "./system/services/stdio/adi_stdio_uart.doj"  "./system/pinmux/GeneratedSources/pinmux_config.doj"  "./system/drivers/uart/adi_uart.doj"  "./system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.doj"  "./system/adi_initialize.doj"  "./src/FIRInit.doj"  "./src/HydrAc_V1_Core1.doj"  "./src/SoftConfig_SC584.doj" "./system/startup_ldf/app_IVT.d"  "./system/startup_ldf/app_startup.d" "./system/startup_ldf/app_heaptab.d"  "./system/sru/sru_config.d"  "./system/services/stdio/adi_stdio.d"  "./system/services/stdio/adi_stdio_jtag.d"  "./system/services/stdio/adi_stdio_null.d"  "./system/services/stdio/adi_stdio_uart.d"  "./system/pinmux/GeneratedSources/pinmux_config.d"  "./system/drivers/uart/adi_uart.d"  "./system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.d"  "./system/adi_initialize.d"  "./src/FIRInit.d"  "./src/HydrAc_V1_Core1.d"  "./src/SoftConfig_SC584.d" HydrAc_V1_Core1.dxe
-' '
-11:49:00 **** Clean-only build of configuration Debug for project HydrAc_V1_Core0 ****
-make clean 
-clean  "./src/HydrAc_V1_Core0.o" "./src/HydrAc_V1_Core0.d" HydrAc_V1_Core0
-' '
-11:49:00 **** Clean-only build of configuration Debug for project HydrAc_V1_Core2 ****
-make clean 
-clean  linker_log.xml  "./src/HydrAc_V1_Core2.doj" "./src/HydrAc_V1_Core2.d" HydrAc_V1_Core2.dxe
-' '
-11:49:31 **** Build of configuration Debug for project HydrAc_V1_Core0 ****
-make all 
-'Building file: ../src/HydrAc_V1_Core0.c'
-'Invoking: CrossCore ARM Bare Metal C Compiler'
-arm-none-eabi-gcc -g -gdwarf-2 -ffunction-sections -fdata-sections -DCORE0 -D_DEBUG @includes-d41d8cd98f00b204e9800998ecf8427e.txt -Wall -c -mproc=ADSP-SC584 -msi-revision=1.0 -MMD -MP -MF"src/HydrAc_V1_Core0.d" -o  "src/HydrAc_V1_Core0.o" "../src/HydrAc_V1_Core0.c"
-'Finished building: ../src/HydrAc_V1_Core0.c'
-' '
-'Building target: HydrAc_V1_Core0'
-'Invoking: CrossCore ARM Bare Metal C Linker'
-arm-none-eabi-gcc -mproc=ADSP-SC584 -msi-revision=1.0 -Wl,--gc-sections -mdebug-libs -o  "HydrAc_V1_Core0" @input-file.txt -lm
-'Finished building target: HydrAc_V1_Core0'
-' '
-11:49:35 **** Build of configuration Debug for project HydrAc_V1_Core1 ****
-make all 
-'Building file: ../system/startup_ldf/app_IVT.s'
-'Invoking: CrossCore SHARC Assembler'
-easm21k -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -si-revision 1.0 -g -DCORE1 -D_DEBUG @includes-35a9f97ab97bc9fc40e878ee6a010f50.txt -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_IVT.d" -o "system/startup_ldf/app_IVT.doj" "../system/startup_ldf/app_IVT.s"
-'Finished building: ../system/startup_ldf/app_IVT.s'
-' '
-'Building file: ../system/startup_ldf/app_heaptab.c'
-'Invoking: CrossCore SHARC C/C++ Compiler'
-cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "system/startup_ldf/app_heaptab.d" -o "system/startup_ldf/app_heaptab.doj" "../system/startup_ldf/app_heaptab.c"
-'Finished building: ../system/startup_ldf/app_heaptab.c'
-' '
-'Building file: ../system/startup_ldf/app_startup.s'
-'Invoking: CrossCore SHARC Assembler'
-easm21k -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -si-revision 1.0 -g -DCORE1 -D_DEBUG @includes-35a9f97ab97bc9fc40e878ee6a010f50.txt -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_startup.d" -o "system/startup_ldf/app_startup.doj" "../system/startup_ldf/app_startup.s"
-'Finished building: ../system/startup_ldf/app_startup.s'
-' '
-'Building file: ../system/sru/sru_config.c'
-'Invoking: CrossCore SHARC C/C++ Compiler'
-cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "system/sru/sru_config.d" -o "system/sru/sru_config.doj" "../system/sru/sru_config.c"
-'Finished building: ../system/sru/sru_config.c'
-' '
-'Building file: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/SHARC/lib/src/services/Source/stdio/adi_stdio.c'
-'Invoking: CrossCore SHARC C/C++ Compiler'
-cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "system/services/stdio/adi_stdio.d" -o "system/services/stdio/adi_stdio.doj" "C:/Analog Devices/CrossCore Embedded Studio 2.8.1/SHARC/lib/src/services/Source/stdio/adi_stdio.c"
-'Finished building: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/SHARC/lib/src/services/Source/stdio/adi_stdio.c'
-' '
-'Building file: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/SHARC/lib/src/services/Source/stdio/adi_stdio_jtag.c'
-'Invoking: CrossCore SHARC C/C++ Compiler'
-cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "system/services/stdio/adi_stdio_jtag.d" -o "system/services/stdio/adi_stdio_jtag.doj" "C:/Analog Devices/CrossCore Embedded Studio 2.8.1/SHARC/lib/src/services/Source/stdio/adi_stdio_jtag.c"
-'Finished building: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/SHARC/lib/src/services/Source/stdio/adi_stdio_jtag.c'
-' '
-'Building file: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/SHARC/lib/src/services/Source/stdio/adi_stdio_null.c'
-'Invoking: CrossCore SHARC C/C++ Compiler'
-cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "system/services/stdio/adi_stdio_null.d" -o "system/services/stdio/adi_stdio_null.doj" "C:/Analog Devices/CrossCore Embedded Studio 2.8.1/SHARC/lib/src/services/Source/stdio/adi_stdio_null.c"
-'Finished building: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/SHARC/lib/src/services/Source/stdio/adi_stdio_null.c'
-' '
-'Building file: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/SHARC/lib/src/services/Source/stdio/adi_stdio_uart.c'
-'Invoking: CrossCore SHARC C/C++ Compiler'
-cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "system/services/stdio/adi_stdio_uart.d" -o "system/services/stdio/adi_stdio_uart.doj" "C:/Analog Devices/CrossCore Embedded Studio 2.8.1/SHARC/lib/src/services/Source/stdio/adi_stdio_uart.c"
-'Finished building: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/SHARC/lib/src/services/Source/stdio/adi_stdio_uart.c'
-' '
-'Building file: ../system/pinmux/GeneratedSources/pinmux_config.c'
-'Invoking: CrossCore SHARC C/C++ Compiler'
-cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "system/pinmux/GeneratedSources/pinmux_config.d" -o "system/pinmux/GeneratedSources/pinmux_config.doj" "../system/pinmux/GeneratedSources/pinmux_config.c"
-'Finished building: ../system/pinmux/GeneratedSources/pinmux_config.c'
-' '
-'Building file: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/SHARC/lib/src/drivers/Source/uart/adi_uart.c'
-'Invoking: CrossCore SHARC C/C++ Compiler'
-cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "system/drivers/uart/adi_uart.d" -o "system/drivers/uart/adi_uart.doj" "C:/Analog Devices/CrossCore Embedded Studio 2.8.1/SHARC/lib/src/drivers/Source/uart/adi_uart.c"
-'Finished building: C:/Analog Devices/CrossCore Embedded Studio 2.8.1/SHARC/lib/src/drivers/Source/uart/adi_uart.c'
-' '
-'Building file: C:/Analog Devices/ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2/ADSP-SC5xx_EZ-KIT/src/drivers/adc/adau1977/adi_adau1977.c'
-'Invoking: CrossCore SHARC C/C++ Compiler'
-cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.d" -o "system/SC5xx_EZ-Kit/drivers/adc/adau1977/adi_adau1977.doj" "C:/Analog Devices/ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2/ADSP-SC5xx_EZ-KIT/src/drivers/adc/adau1977/adi_adau1977.c"
-'Finished building: C:/Analog Devices/ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.2/ADSP-SC5xx_EZ-KIT/src/drivers/adc/adau1977/adi_adau1977.c'
-' '
-'Building file: ../system/adi_initialize.c'
-'Invoking: CrossCore SHARC C/C++ Compiler'
-cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "system/adi_initialize.d" -o "system/adi_initialize.doj" "../system/adi_initialize.c"
-'Finished building: ../system/adi_initialize.c'
-' '
-'Building file: ../src/FIRInit.c'
-'Invoking: CrossCore SHARC C/C++ Compiler'
-cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/FIRInit.d" -o "src/FIRInit.doj" "../src/FIRInit.c"
-'Finished building: ../src/FIRInit.c'
-' '
-'Building file: ../src/HydrAc_V1_Core1.c'
-'Invoking: CrossCore SHARC C/C++ Compiler'
-cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core1.d" -o "src/HydrAc_V1_Core1.doj" "../src/HydrAc_V1_Core1.c"
-"..\src\HydrAc_V1_Core1.c", line 529: cc0111: {D} warning: statement is unreachable
-  		if (adi_adau1977_Close(phAdau1977) != ADI_ADAU1977_SUCCESS)
-  		^
-
-'Finished building: ../src/HydrAc_V1_Core1.c'
-' '
-'Building file: ../src/SoftConfig_SC584.c'
-'Invoking: CrossCore SHARC C/C++ Compiler'
-cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/SoftConfig_SC584.d" -o "src/SoftConfig_SC584.doj" "../src/SoftConfig_SC584.c"
-'Finished building: ../src/SoftConfig_SC584.c'
-' '
-'Building target: HydrAc_V1_Core1.dxe'
-'Invoking: CrossCore SHARC Linker'
-cc21k -proc ADSP-SC584 -si-revision 1.0 -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o HydrAc_V1_Core1.dxe @input-file.txt  -flags-link -od,.\.
-'Finished building target: HydrAc_V1_Core1.dxe'
-' '
-11:50:14 **** Build of configuration Debug for project HydrAc_V1_Core2 ****
-make all 
-'Building file: ../src/HydrAc_V1_Core2.c'
-'Invoking: CrossCore SHARC C/C++ Compiler'
-cc21k -c -file-attr ProjectName="HydrAc_V1_Core2" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE2 -D_DEBUG @includes-d41d8cd98f00b204e9800998ecf8427e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core2.d" -o "src/HydrAc_V1_Core2.doj" "../src/HydrAc_V1_Core2.c"
-'Finished building: ../src/HydrAc_V1_Core2.c'
-' '
-'Building target: HydrAc_V1_Core2.dxe'
-'Invoking: CrossCore SHARC Linker'
-cc21k -proc ADSP-SC584 -si-revision 1.0 -no-mem -flags-link -MDCORE2,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o HydrAc_V1_Core2.dxe @input-file.txt   -flags-link -od,.\.
-'Finished building target: HydrAc_V1_Core2.dxe'
-' '
-11:58:29 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
-make all 
-make: Nothing to be done for `all'.
-11:58:32 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
+14:19:00 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
 make all 
 'Building file: ../src/HydrAc_V1_Core1.c'
 'Invoking: CrossCore SHARC C/C++ Compiler'
 cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core1.d" -o "src/HydrAc_V1_Core1.doj" "../src/HydrAc_V1_Core1.c"
-"..\src\HydrAc_V1_Core1.c", line 407: cc0111: {D} warning: statement is unreachable
-  		if (adi_adau1977_Close(phAdau1977) != ADI_ADAU1977_SUCCESS)
-  		^
+"..\src\HydrAc_V1_Core1.c", line 413: cc0111: {D} warning: statement is unreachable
+  	return 0;
+  	^
 
-"..\src\HydrAc_V1_Core1.c", line 1092: cc0513: {D} warning: a value of type "int" cannot be assigned to an entity of type "int *"
-  		direction = 2;
-  		          ^
+"..\src\HydrAc_V1_Core1.c", line 836: cc0147:  error: declaration is incompatible with "void save_chan_data_to_file(uint16_t *, uint16_t *, char *)" (declared at line 215)
+  void save_chan_data_to_file(float chan1[], float chan2[], char* filename){
+       ^
 
-"..\src\HydrAc_V1_Core1.c", line 1092: cc1967: {D} warning: "int *" pointer set to literal value - volatile needed?
-  		direction = 2;
-  		            ^
-
-"..\src\HydrAc_V1_Core1.c", line 1092: cc0152: {D} warning: conversion of nonzero integer to pointer
-  		direction = 2;
-  		            ^
-
-"..\src\HydrAc_V1_Core1.c", line 1097: cc0513: {D} warning: a value of type "int" cannot be assigned to an entity of type "int *"
-  		direction = 1;
-  		          ^
-
-"..\src\HydrAc_V1_Core1.c", line 1097: cc1967: {D} warning: "int *" pointer set to literal value - volatile needed?
-  		direction = 1;
-  		            ^
-
-"..\src\HydrAc_V1_Core1.c", line 1097: cc0152: {D} warning: conversion of nonzero integer to pointer
-  		direction = 1;
-  		            ^
-
-"..\src\HydrAc_V1_Core1.c", line 1102: cc0513: {D} warning: a value of type "int" cannot be assigned to an entity of type "int *"
-  		direction = -1;
-  		          ^
-
-"..\src\HydrAc_V1_Core1.c", line 1102: cc0152: {D} warning: conversion of nonzero integer to pointer
-  		direction = -1;
-  		            ^
-
-'Finished building: ../src/HydrAc_V1_Core1.c'
-' '
-'Building target: HydrAc_V1_Core1.dxe'
-'Invoking: CrossCore SHARC Linker'
-cc21k -proc ADSP-SC584 -si-revision 1.0 -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o HydrAc_V1_Core1.dxe @input-file.txt  -flags-link -od,.\.
-'Finished building target: HydrAc_V1_Core1.dxe'
-' '
-11:58:41 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
+1 error detected in the compilation of "..\src\HydrAc_V1_Core1.c".
+cc3089: fatal error: Compilation failed (code:2)
+make: *** [src/HydrAc_V1_Core1.doj] Error 1
+14:19:04 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
 make all 
 make: Nothing to be done for `all'.
-12:01:17 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
+14:19:05 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
 make all 
 make: Nothing to be done for `all'.
-12:01:20 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
+14:19:51 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+14:19:54 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
 make all 
 'Building file: ../src/HydrAc_V1_Core1.c'
 'Invoking: CrossCore SHARC C/C++ Compiler'
 cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core1.d" -o "src/HydrAc_V1_Core1.doj" "../src/HydrAc_V1_Core1.c"
-"..\src\HydrAc_V1_Core1.c", line 407: cc0111: {D} warning: statement is unreachable
-  		if (adi_adau1977_Close(phAdau1977) != ADI_ADAU1977_SUCCESS)
-  		^
-
-'Finished building: ../src/HydrAc_V1_Core1.c'
-' '
-'Building target: HydrAc_V1_Core1.dxe'
-'Invoking: CrossCore SHARC Linker'
-cc21k -proc ADSP-SC584 -si-revision 1.0 -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o HydrAc_V1_Core1.dxe @input-file.txt  -flags-link -od,.\.
-'Finished building target: HydrAc_V1_Core1.dxe'
-' '
-12:01:28 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
-make all 
-make: Nothing to be done for `all'.
-12:05:45 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
-make all 
-make: Nothing to be done for `all'.
-12:05:48 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
-make all 
-'Building file: ../src/HydrAc_V1_Core1.c'
-'Invoking: CrossCore SHARC C/C++ Compiler'
-cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core1.d" -o "src/HydrAc_V1_Core1.doj" "../src/HydrAc_V1_Core1.c"
-"..\src\HydrAc_V1_Core1.c", line 407: cc0111: {D} warning: statement is unreachable
-  		if (adi_adau1977_Close(phAdau1977) != ADI_ADAU1977_SUCCESS)
-  		^
-
-'Finished building: ../src/HydrAc_V1_Core1.c'
-' '
-'Building target: HydrAc_V1_Core1.dxe'
-'Invoking: CrossCore SHARC Linker'
-cc21k -proc ADSP-SC584 -si-revision 1.0 -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o HydrAc_V1_Core1.dxe @input-file.txt  -flags-link -od,.\.
-'Finished building target: HydrAc_V1_Core1.dxe'
-' '
-12:05:56 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
-make all 
-make: Nothing to be done for `all'.
-12:08:28 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
-make all 
-make: Nothing to be done for `all'.
-12:08:30 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
-make all 
-'Building file: ../src/HydrAc_V1_Core1.c'
-'Invoking: CrossCore SHARC C/C++ Compiler'
-cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core1.d" -o "src/HydrAc_V1_Core1.doj" "../src/HydrAc_V1_Core1.c"
-"..\src\HydrAc_V1_Core1.c", line 402: cc0111: {D} warning: statement is unreachable
+"..\src\HydrAc_V1_Core1.c", line 413: cc0111: {D} warning: statement is unreachable
   	return 0;
   	^
 
@@ -237,21 +39,17 @@ cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compil
 cc21k -proc ADSP-SC584 -si-revision 1.0 -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o HydrAc_V1_Core1.dxe @input-file.txt  -flags-link -od,.\.
 'Finished building target: HydrAc_V1_Core1.dxe'
 ' '
-12:08:38 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
+14:20:03 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
 make all 
 make: Nothing to be done for `all'.
-12:13:09 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
+14:24:09 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
 make all 
 make: Nothing to be done for `all'.
-12:13:11 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
+14:24:12 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
 make all 
 'Building file: ../src/HydrAc_V1_Core1.c'
 'Invoking: CrossCore SHARC C/C++ Compiler'
 cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core1.d" -o "src/HydrAc_V1_Core1.doj" "../src/HydrAc_V1_Core1.c"
-"..\src\HydrAc_V1_Core1.c", line 412: cc0111: {D} warning: statement is unreachable
-  	return 0;
-  	^
-
 'Finished building: ../src/HydrAc_V1_Core1.c'
 ' '
 'Building target: HydrAc_V1_Core1.dxe'
@@ -259,21 +57,26 @@ cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compil
 cc21k -proc ADSP-SC584 -si-revision 1.0 -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o HydrAc_V1_Core1.dxe @input-file.txt  -flags-link -od,.\.
 'Finished building target: HydrAc_V1_Core1.dxe'
 ' '
-12:13:20 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
+14:24:22 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
 make all 
 make: Nothing to be done for `all'.
-12:20:18 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
+14:27:21 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
 make all 
 make: Nothing to be done for `all'.
-12:20:21 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
+14:27:25 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
+make all 
+make: Nothing to be done for `all'.
+14:27:28 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+14:31:22 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+14:31:25 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
 make all 
 'Building file: ../src/HydrAc_V1_Core1.c'
 'Invoking: CrossCore SHARC C/C++ Compiler'
 cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core1.d" -o "src/HydrAc_V1_Core1.doj" "../src/HydrAc_V1_Core1.c"
-"..\src\HydrAc_V1_Core1.c", line 412: cc0111: {D} warning: statement is unreachable
-  	return 0;
-  	^
-
 'Finished building: ../src/HydrAc_V1_Core1.c'
 ' '
 'Building target: HydrAc_V1_Core1.dxe'
@@ -281,21 +84,17 @@ cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compil
 cc21k -proc ADSP-SC584 -si-revision 1.0 -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o HydrAc_V1_Core1.dxe @input-file.txt  -flags-link -od,.\.
 'Finished building target: HydrAc_V1_Core1.dxe'
 ' '
-12:20:29 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
+14:31:40 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
 make all 
 make: Nothing to be done for `all'.
-12:25:04 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
+15:16:29 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
 make all 
 make: Nothing to be done for `all'.
-12:25:06 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
+15:16:31 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
 make all 
 'Building file: ../src/HydrAc_V1_Core1.c'
 'Invoking: CrossCore SHARC C/C++ Compiler'
 cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core1.d" -o "src/HydrAc_V1_Core1.doj" "../src/HydrAc_V1_Core1.c"
-"..\src\HydrAc_V1_Core1.c", line 412: cc0111: {D} warning: statement is unreachable
-  	return 0;
-  	^
-
 'Finished building: ../src/HydrAc_V1_Core1.c'
 ' '
 'Building target: HydrAc_V1_Core1.dxe'
@@ -303,6 +102,78 @@ cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compil
 cc21k -proc ADSP-SC584 -si-revision 1.0 -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o HydrAc_V1_Core1.dxe @input-file.txt  -flags-link -od,.\.
 'Finished building target: HydrAc_V1_Core1.dxe'
 ' '
-12:25:14 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
+15:16:41 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+15:19:20 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+15:19:24 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
+make all 
+'Building file: ../src/HydrAc_V1_Core1.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core1.d" -o "src/HydrAc_V1_Core1.doj" "../src/HydrAc_V1_Core1.c"
+'Finished building: ../src/HydrAc_V1_Core1.c'
+' '
+'Building target: HydrAc_V1_Core1.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision 1.0 -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o HydrAc_V1_Core1.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: HydrAc_V1_Core1.dxe'
+' '
+15:19:35 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+15:23:54 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+15:23:57 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
+make all 
+'Building file: ../src/HydrAc_V1_Core1.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core1.d" -o "src/HydrAc_V1_Core1.doj" "../src/HydrAc_V1_Core1.c"
+'Finished building: ../src/HydrAc_V1_Core1.c'
+' '
+'Building target: HydrAc_V1_Core1.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision 1.0 -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o HydrAc_V1_Core1.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: HydrAc_V1_Core1.dxe'
+' '
+15:24:07 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+15:30:43 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+15:30:46 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
+make all 
+'Building file: ../src/HydrAc_V1_Core1.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core1.d" -o "src/HydrAc_V1_Core1.doj" "../src/HydrAc_V1_Core1.c"
+'Finished building: ../src/HydrAc_V1_Core1.c'
+' '
+'Building target: HydrAc_V1_Core1.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision 1.0 -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o HydrAc_V1_Core1.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: HydrAc_V1_Core1.dxe'
+' '
+15:30:58 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+15:39:30 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+15:39:33 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
+make all 
+'Building file: ../src/HydrAc_V1_Core1.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core1.d" -o "src/HydrAc_V1_Core1.doj" "../src/HydrAc_V1_Core1.c"
+'Finished building: ../src/HydrAc_V1_Core1.c'
+' '
+'Building target: HydrAc_V1_Core1.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision 1.0 -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o HydrAc_V1_Core1.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: HydrAc_V1_Core1.dxe'
+' '
+15:39:43 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
 make all 
 make: Nothing to be done for `all'.
