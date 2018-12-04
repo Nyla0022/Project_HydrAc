@@ -175,12 +175,12 @@ static float x_filtered_low[SAMPLES]=
 	/**INPUT SIGNAL**/
 static float channel_1[SAMPLES]=
 	{
-			#include "data/75_4096_CH1.dat"
+			#include "45_degrees/45_CH1.dat"
 	};
 
 static float channel_2[SAMPLES]=
 	{
-			#include "data/75_4096_CH1.dat"
+			#include "45_degrees/45_CH2.dat"
 	};
 
 
@@ -309,137 +309,16 @@ int main(int argc, char *argv[]){
 
 		//printf("SIGNALS LOADED\n");
 
-	for (int i = 0; i < TOTAL_SAMPLES; i++) {
-		if (channel_1[i] > 1.505) {
-			indexes_max_ch1[j] = i;
-			j++;
-		}
-	}
-
-
-	if (( channel_1[0] < 1.505) && ( channel_2[0] < 1.505)) {
-			if (( channel_1[0]) == ( channel_2[0])) {
-				for (i = 1; i < 384000; i++) {
-					float dif =  channel_1[indexes_max_ch1[i]]
-							-  channel_1[indexes_max_ch1[i - 1]];
-					if (dif > 5) {
-						location_ch1 = i;
-						break;
-					}
-				}
-			}
-
-
-			int start_cut = indexes_max_ch1[location_ch1];
-
-			for (i = 2047; i <= 0; i--) {
-				subset_channel_1[2047 - i] =  channel_1[start_cut - i];
-				subset_channel_2[2047 - i] =  channel_2[start_cut - i];
-			}
-
-			for (i = 1; i < 2048; i++) {
-				subset_channel_1[i] =  channel_1[start_cut + i];
-				subset_channel_2[i] =  channel_2[start_cut + i];
-			}
-		} else {
-			for (i = 0; i < 4096; i++) {
-				subset_channel_1[i] =  channel_1[i];
-				subset_channel_2[i] =  channel_2[i];
-			}
-		}
-
-
-		//filter first signal
-		fir (channel_1, out_ch_1, coeffs, state, SAMPLES, TAPS);
-
-		for (i = 0; i < TAPS + 1; i++)
-			state[i] = 0; /* initialize state array */
-
-		//filter second signal
-		fir (channel_2, out_ch_2,coeffs, state, SAMPLES, TAPS);
-
-
-
-		for (int i=0; i<1024; i++) {
-				out_ch_1[i] = 0;
-				out_ch_2[i] = 0;
-			}
-
-		int MAX_CH =  0.3;
-		int MIN_CN = -0.3;
-
-		int loc_min_ch1 =0;
-		int loc_max_ch1 =0;
-		int loc_min_ch2 =0;
-		int loc_max_ch2 =0;
-
-
-		for(i=0; i<4096; i++){
-			if (out_ch_1[i] > 0.3)
-			{
-				loc_max_ch1 = i;
-				break;
-			}
-		}
-
-		for(i=0; i<4096; i++){
-			if (out_ch_2[i] > 0.3)
-			{
-				loc_max_ch2 = i;
-				break;
-			}
-		}
-
-		for(i=0; i<4096; i++){
-			if (out_ch_1[i] < 0.3)
-			{
-				loc_min_ch1 = i;
-				break;
-			}
-		}
-
-		for(i=0; i<4096; i++){
-			if (out_ch_2[i] < 0.3)
-			{
-				loc_min_ch2 = i;
-				break;
-			}
-		}
-
-		int loc_ch1_final = 0;
-		int loc_ch2_final = 0;
-
-		if (loc_max_ch1 < loc_min_ch1)
-			loc_ch1_final = loc_max_ch1;
-		else
-			loc_ch1_final = loc_min_ch1;
-
-		if (loc_max_ch2 < loc_min_ch2)
-			loc_ch2_final = loc_max_ch2;
-		else
-			loc_ch2_final = loc_min_ch2;
-
-		if (loc_ch1_final < loc_ch2_final)
-		{
-			printf("RIGHT");
-		}
-		else if (loc_ch1_final > loc_ch2_final)
-		{
-			printf("LEFT");
-		}
-		else
-		{
-			printf("IN FRONT OR ERROR");
-		}
 
 
 
 	printf("going into infinite loop...\n");
+	uint32_t loop=1;
 
 	while(true){
 
 
-
+//
 //		/*
 //		 * Fill ADC Buffers
 //		 */
@@ -449,59 +328,181 @@ int main(int argc, char *argv[]){
 //
 //		/*Disable dataflow and close the ADC*/
 //		hydrac_adc_disable();
-//
-//
-//
-//
-//		/*
-//		 * Compute angle and distance
-//		 */
-//
-//
-//
-//
-//		/*
-//		 * Prepare data to send via UART
-//		 */
-//
-//		//***NOTE time is in miliseconds****
-//
-//		ftoa(angle, angle_c); 				//convert angle data to string array
-//		ftoa(distance, dist_c); 			//convert distance data to string array
-//		ftoa((float)(exec_time*1e3),exectime_c);	//convert execution time data to string array
-//
-//		for (i = 0; i < sizeof(angle_c); i++)
-//			TxBuffer[i] = angle_c[i];
-//
-//		for (i = 0; i < sizeof(dist_c); i++)
-//			TxBuffer[i + 10] = dist_c[i];
-//
-//		for (i = 0; i < sizeof(exectime_c); i++)
-//			TxBuffer[i + 20] = exectime_c[i];
-//
-//		/*
-//		 * Send data via UART
-//		 */
-//
-//		/* Write the character */
-//		printf("Transmitting Result#%d: %s\n\n",loop++, TxBuffer);
-//		/*comment when interfacing to arduino*/
-//		eResult = adi_uart_Write(ghUART, "Transmitting Result", 20);
-//		/*comment when interfacing to arduino*/
-//		eResult = adi_uart_Write(ghUART, "\n",2);
-//		for(i=0;i<(BUFFER_SIZE+20)-2;i++)
-//			eResult = adi_uart_Write(ghUART, "\b",2);
-//
-//		eResult = adi_uart_Write(ghUART, &TxBuffer[0], BUFFER_SIZE);
-//
-//		/*comment when interfacing to arduino*/
-//		eResult = adi_uart_Write(ghUART, "\n",2);
-//
-//
-//		/*
-//		 * Save data to file
-//		 */
-//		save_chan_data_to_file("t.txt");
+
+
+
+
+		/*
+		 * Compute angle and distance
+		 */
+
+
+		for (int i = 0; i < TOTAL_SAMPLES; i++) {
+			if (channel_1[i] > 1.505) {
+				indexes_max_ch1[j] = i;
+				j++;
+			}
+		}
+
+
+		if (( channel_1[0] < 1.505) && ( channel_2[0] < 1.505)) {
+				if (( channel_1[0]) == ( channel_2[0])) {
+					for (i = 1; i < 384000; i++) {
+						float dif =  channel_1[indexes_max_ch1[i]]
+								-  channel_1[indexes_max_ch1[i - 1]];
+						if (dif > 5) {
+							location_ch1 = i;
+							break;
+						}
+					}
+				}
+
+
+				int start_cut = indexes_max_ch1[location_ch1];
+
+				for (i = 2047; i <= 0; i--) {
+					subset_channel_1[2047 - i] =  channel_1[start_cut - i];
+					subset_channel_2[2047 - i] =  channel_2[start_cut - i];
+				}
+
+				for (i = 1; i < 2048; i++) {
+					subset_channel_1[i] =  channel_1[start_cut + i];
+					subset_channel_2[i] =  channel_2[start_cut + i];
+				}
+			} else {
+				for (i = 0; i < 4096; i++) {
+					subset_channel_1[i] =  channel_1[i];
+					subset_channel_2[i] =  channel_2[i];
+				}
+			}
+
+
+			//filter first signal
+			fir (channel_1, out_ch_1, coeffs, state, SAMPLES, TAPS);
+
+			for (i = 0; i < TAPS + 1; i++)
+				state[i] = 0; /* initialize state array */
+
+			//filter second signal
+			fir (channel_2, out_ch_2,coeffs, state, SAMPLES, TAPS);
+
+
+
+			for (int i=0; i<1024; i++) {
+					out_ch_1[i] = 0;
+					out_ch_2[i] = 0;
+				}
+
+			int MAX_CH =  0.3;
+			int MIN_CN = -0.3;
+
+			int loc_min_ch1 =0;
+			int loc_max_ch1 =0;
+			int loc_min_ch2 =0;
+			int loc_max_ch2 =0;
+
+
+			for(i=0; i<4096; i++){
+				if (out_ch_1[i] > 0.3)
+				{
+					loc_max_ch1 = i;
+					break;
+				}
+			}
+
+			for(i=0; i<4096; i++){
+				if (out_ch_2[i] > 0.3)
+				{
+					loc_max_ch2 = i;
+					break;
+				}
+			}
+
+			for(i=0; i<4096; i++){
+				if (out_ch_1[i] < -0.3)
+				{
+					loc_min_ch1 = i;
+					break;
+				}
+			}
+
+			for(i=0; i<4096; i++){
+				if (out_ch_2[i] < -0.3)
+				{
+					loc_min_ch2 = i;
+					break;
+				}
+			}
+
+			int loc_ch1_final = 0;
+			int loc_ch2_final = 0;
+
+			if (loc_max_ch1 < loc_min_ch1)
+				loc_ch1_final = loc_max_ch1;
+			else
+				loc_ch1_final = loc_min_ch1;
+
+			if (loc_max_ch2 < loc_min_ch2)
+				loc_ch2_final = loc_max_ch2;
+			else
+				loc_ch2_final = loc_min_ch2;
+
+			if (loc_ch1_final < loc_ch2_final)
+			{
+				printf("RIGHT");
+			}
+			else if (loc_ch1_final > loc_ch2_final)
+			{
+				printf("LEFT");
+			}
+			else
+			{
+				printf("IN FRONT OR ERROR");
+			}
+
+
+		/*
+		 * Prepare data to send via UART
+		 */
+
+		//***NOTE time is in miliseconds****
+
+		ftoa(angle, angle_c); 				//convert angle data to string array
+		ftoa(distance, dist_c); 			//convert distance data to string array
+		ftoa((float)(exec_time*1e3),exectime_c);	//convert execution time data to string array
+
+		for (i = 0; i < sizeof(angle_c); i++)
+			TxBuffer[i] = angle_c[i];
+
+		for (i = 0; i < sizeof(dist_c); i++)
+			TxBuffer[i + 10] = dist_c[i];
+
+		for (i = 0; i < sizeof(exectime_c); i++)
+			TxBuffer[i + 20] = exectime_c[i];
+
+		/*
+		 * Send data via UART
+		 */
+
+		/* Write the character */
+		printf("Transmitting Result#%d: %s\n\n",loop++, TxBuffer);
+		/*comment when interfacing to arduino*/
+		eResult = adi_uart_Write(ghUART, "Transmitting Result", 20);
+		/*comment when interfacing to arduino*/
+		eResult = adi_uart_Write(ghUART, "\n",2);
+		for(i=0;i<(BUFFER_SIZE+20)-2;i++)
+			eResult = adi_uart_Write(ghUART, "\b",2);
+
+		eResult = adi_uart_Write(ghUART, &TxBuffer[0], BUFFER_SIZE);
+
+		/*comment when interfacing to arduino*/
+		eResult = adi_uart_Write(ghUART, "\n",2);
+
+
+		/*
+		 * Save data to file
+		 */
+		//save_chan_data_to_file("t.txt");
 	}
 
 
@@ -845,6 +846,8 @@ void hydrac_adc_enable(void){
 			break;
 		}
     }
+
+	AdcCount =0u;
     clock_stop = clock();
 
     exec_time = 2*((double) (clock_stop - clock_start))

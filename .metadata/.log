@@ -1466,3 +1466,18 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -data file:/C:/Users/JASP
 !MESSAGE Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0
 !SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2018-12-03 21:57:16.944
 !MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.launch.CustomLaunchBase$4@1c9a22e): Status ERROR: org.eclipse.cdt.dsf code=0 Executor shut down while executing Sequence Sequence "", result for executing step #0 = Status OK: unknown code=0 OK null, step #0 null' resulted in a rejected execution exception.
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-04 00:07:26.430
+!MESSAGE Indexed 'HydrAc_V1_Core0' (1 sources, 18 headers) in 2.34 sec: 86 declarations; 463 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-04 00:07:32.182
+!MESSAGE Indexed 'HydrAc_V1_Core1' (13 sources, 100 headers) in 5.74 sec: 9,782 declarations; 18,619 references; 0 unresolved inclusions; 4 syntax errors; 648 unresolved names (2.2%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-04 00:07:34.631
+!MESSAGE Indexed 'HydrAc_V1_Core2' (1 sources, 22 headers) in 2.05 sec: 1,023 declarations; 2,363 references; 0 unresolved inclusions; 2 syntax errors; 3 unresolved names (0.089%)
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-12-04 00:08:47.396
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-12-04 00:08:47.411
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
