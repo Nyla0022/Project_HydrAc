@@ -241,6 +241,7 @@ int main(int argc, char *argv[]){
 
 
 	volatile uint32_t loop=1;
+	uint32_t m =0;
 
 	while(true){
 
@@ -307,6 +308,17 @@ int main(int argc, char *argv[]){
 		 * Save data to file
 		 */
 		//save_chan_data_to_file("t.txt");
+
+
+
+
+
+			//reset both channels
+			for (m = 0; m < NUM_SAMPLES; m++) {
+				Chan1Data[m] = 0;
+				Chan2Data[m] =0;
+			}
+
 	}
 
 
@@ -458,6 +470,7 @@ uint32_t Adau1977Init(void)
 		return FAILURE;
 	}
 
+	/*Configure Serial Clock*/
 	result = adi_adau1977_ConfigSerialClk(phAdau1977,
 			BCLK_RISING_1977,
 			LRCLK_HI_LO_1977);
@@ -467,6 +480,7 @@ uint32_t Adau1977Init(void)
 		return FAILURE;
 	}
 
+	/*Set ADC Sample Rate (192KHz)*/
 	result = adi_adau1977_SetSampleRate(phAdau1977, ADI_ADAU1977_SAMPLE_RATE_192000HZ);
 	if (result != ADI_ADAU1977_SUCCESS)
 	{
@@ -474,6 +488,7 @@ uint32_t Adau1977Init(void)
 		return FAILURE;
 	}
 
+	/*Set ADC word width (in bits) */
 	result = adi_adau1977_SetWordWidth(phAdau1977, ADI_ADAU1977_WORD_WIDTH_16);
 	if (result != ADI_ADAU1977_SUCCESS)
 	{
@@ -481,6 +496,7 @@ uint32_t Adau1977Init(void)
 		return FAILURE;
 	}
 
+	/*Register the callback function that will notify when the ADC acquisition  data is ready*/
 	result = adi_adau1977_RegisterCallback(phAdau1977, AdcCallback, NULL);
 	if (result != ADI_ADAU1977_SUCCESS)
 	{
@@ -488,46 +504,36 @@ uint32_t Adau1977Init(void)
 		return FAILURE;
 	}
 
-	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL1, false); //was true
-	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL2, false); //was true
-	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL3, true); //was true
-	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL4, true); //was true
+	/* Configure ADC high pass filters*/
+	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL1, false); //input has a DC voltage offset
+	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL2, false); //input has a DC voltage offset
+	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL3, true);
+	result = adi_adau1977_HighPassChannel (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL4, true);
 
-	/* setup mic */
-#if defined(ENABLE_MIC_BIAS)
-	result = adi_adau1977_ConfigMic (phAdau1977,
-			ADI_ADAU1977_MIC_BIAS_VOLT_8_5,
-		    true,
-		    true,
-		    false,
-		    true);
 
-	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL1, 0x40u);
-	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL2, 0x40u);
-	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL3, 0x40u);
-	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL4, 0x40u);
 
-#else
+	/*Configure ADC microphone bias */
 	result = adi_adau1977_ConfigMic (phAdau1977,
 			ADI_ADAU1977_MIC_BIAS_VOLT_6_0,
 		    false,
 		    false,
 		    false,
-		    true);
+		    true); //disable bias
 
-	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL1, 0xa0u); //122
-	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL2, 0xa0u);
-	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL3, 0xa0u);
-	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL4, 0xa0u); //144u
+	/*Configure Post-ADC gain*/
 
+	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL1, 0xa0u); //0dB
+	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL2, 0xa0u); //0dB
+	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL3, 0xa0u); //0dB
+	result = adi_adau1977_SetVolume (phAdau1977, ADI_ADAU1977_AUDIO_CHANNEL4, 0xa0u); //0dB
 
-#endif
 
 	if (result != ADI_ADAU1977_SUCCESS)
 	{
 		DBG_MSG("ADAU1977: adi_adau1977_ConfigMic failed\n");
 		return FAILURE;
 	}
+
 
 	result = adi_adau1977_GetMicConfig (phAdau1977,
 		    &ebias,
@@ -554,8 +560,7 @@ uint32_t Adau1977Init(void)
 		printf("\nBoost good\n");
 	} else {
 		printf("\nBoost unstable\n");
-	}
-
+}
 	return SUCCESS;
 }
 
@@ -605,6 +610,9 @@ void AdcCallback(void *pCBParam, uint32_t nEvent, void *pArg)
 }
 
 
+/*
+ * Initialize HydrAc ADC Module
+ */
 void hydrac_adc_init(void){
 	uint32_t Result = SUCCESS;
 
@@ -615,9 +623,11 @@ void hydrac_adc_init(void){
 		bError = true;
 		DBG_MSG("ADAU1977 Init failed\n");
 	}
-
 }
 
+/*
+ * Enable HydrAc ADC data flow
+ */
 void hydrac_adc_enable(void){
 
 	/* Submit ADC buffer1 */ //N*4*2 (2B/sample) or N*4*4(4B/sample)
@@ -644,7 +654,8 @@ void hydrac_adc_enable(void){
 		DBG_MSG("ADC enable failed\n");
 	}
 
-    clock_start = clock();
+
+    clock_start = clock(); //start counting cycles
 
 	printf("DATA FLOW ENABLED! processing callbacks...\n");
 
@@ -661,18 +672,31 @@ void hydrac_adc_enable(void){
 		}
     }
 
-	AdcCount=0;
-    clock_stop = clock();
+	AdcCount=0; //reset Adc Counts
 
+
+    clock_stop = clock(); //stop counting cycles
+
+
+    /*compute execution time*/
     exec_time = 2*((double) (clock_stop - clock_start))
            / CLOCKS_PER_SEC; //used hrm and schematic to discover that the CLK is 25MHz
     	//then it is divided by two.
+
+
     printf("Time taken is %e seconds\n",exec_time);
 
 	printf("ALL CALLBACKS PROCESSED!...\n");
 }
 
+
+/*
+ *  Disable HydrAc ADC module data flow
+ */
 void hydrac_adc_disable(void){
+
+	uint32_t m=0;
+
 
 	/* Disable ADC data flow */
 	if(adi_adau1977_Enable(phAdau1977, false) != ADI_ADAU1977_SUCCESS)
@@ -684,6 +708,9 @@ void hydrac_adc_disable(void){
 
 }
 
+/*
+ * Initialize DSP GPIO peripherals
+ */
 void hydrac_gpio_init(void){
 	uint32_t Result = GpioInit();
 	if (Result == FAILURE)
@@ -694,6 +721,10 @@ void hydrac_gpio_init(void){
 
 }
 
+
+/*
+ * Initialize DSP SPU Peripheral
+ */
 void hydrac_spu_init(void){
 	/* Initialize SPU Service */
 	if(adi_spu_Init(0u, SpuMemory, NULL, NULL, &hSpu) != ADI_SPU_SUCCESS)
@@ -718,7 +749,9 @@ void hydrac_spu_init(void){
 
 }
 
-
+/*
+ * Save Channel data to Text File
+ */
 void save_chan_data_to_file(char* filename){
 	uint32_t m = 0;
 	double time=0;
@@ -726,10 +759,11 @@ void save_chan_data_to_file(char* filename){
 
 	/*copy acquisition data into a file*/
 	printf("\n");
-	fp = fopen(filename, "w+");
+	fp = fopen(filename, "w+"); //open file
 
 	fprintf(fp, "Time[s]\tChan 1[v]\tChan 2[v]\n");
 
+	//save data for both channels and execution time
 	for (m = 0; m < NUM_SAMPLES; m++) {
 		fprintf(fp, "%f\t%f\t%f\n", (double) time,
 				(double) ((int) Chan1Data[m] * ADC_CONV_F_16),
@@ -739,11 +773,14 @@ void save_chan_data_to_file(char* filename){
 
 	fprintf(fp, "\n****Exec time:%f\n", exec_time);
 
-	fclose(fp);
+	fclose(fp); //close file
 
 	printf("data written to file\n");
 }
 
+/*
+ * Compute Bearing Angle
+ */
 void hydrac_compute_angle(double tau, double* angle, uint8_t dir){
 	double percentage=0;
 	double b=0;
@@ -764,6 +801,9 @@ void hydrac_compute_angle(double tau, double* angle, uint8_t dir){
 }
 
 
+/*
+ * Convert float data type to Array
+ */
 void ftoa(float f, char *buf) {
 	int pos = 0, ix, dp, num;
 	if (f < 0) {
@@ -789,9 +829,13 @@ void ftoa(float f, char *buf) {
 	}
 }
 
+/*
+ * Initialize HydrAc UART module
+ */
 
 void hydrac_uart_init(){
 
+	/*Power up UART module*/
 	if (adi_pwr_Init(0u, UART_CLKIN) != ADI_PWR_SUCCESS) {
 		DBG_MSG("Failed to initialize power service\n");
 		bError= FAILURE;
