@@ -22,12 +22,17 @@
 #include <time.h>
 #include <math.h>
 #include <stdbool.h>
-
-#include "FIRInit.h"
+#include <stddef.h>
+#include <filter.h>
+#include <complex.h>
 
 
 #include "adi_initialize.h"
 #include "HydrAc_V1_Core1.h"
+
+
+#define SAMPLES 4096
+#define TAPS 411
 
 
 
@@ -154,61 +159,41 @@ static bool bStopFlag = false;
  * 				FILTERING DEFINITIONS
  */
 
-static int FIRA_TCB1[FIR_TCB_SIZE];
-static int FIRA_TCB2[FIR_TCB_SIZE];
-
-static float Channel_1[TOTAL_SAMPLES]=
-{
-	#include "neysha_45degrees_hpf_fc24_2/45_CH1.dat"
-};
-
-static float Channel_2[TOTAL_SAMPLES]=
-{
-	#include "neysha_45degrees_hpf_fc24_2/45_CH2.dat"
-};
+/**LOW PASS FILTER COEFFICIENTS**/
+static float HIGH_COEF[TAPS]=
+	{
+			#include "data/HIGH_4096.dat"
+	};
 
 
-static float InputBuff1[TAP_LENGTH1+WINDOW_SIZE1-1]=
-{
-	#include "neysha_45degrees_hpf_fc24_2/fir_input.dat"
-};
+	/**EXPECTED FILTERED VALUES - LOW**/
+static float x_filtered_low[SAMPLES]=
+	{
+			#include "data/75_4096_CH1_F.dat"
+	};
 
-static float InputBuff2[TAP_LENGTH2+WINDOW_SIZE2-1]=
-{
-	#include "neysha_45degrees_hpf_fc24_2/fir_input.dat"
-};
+	/**INPUT SIGNAL**/
+static float channel_1[SAMPLES]=
+	{
+			#include "data/75_4096_CH1.dat"
+	};
 
-
-static float CoeffBuff1[TAP_LENGTH1]=
-{
-	#include "neysha_45degrees_hpf_fc24_2/fir_coeffs.dat"
-};
-
-static float CoeffBuff2[TAP_LENGTH2]=
-{
-	#include "neysha_45degrees_hpf_fc24_2/fir_coeffs.dat"
-};
-
-static float OutputBuff1[WINDOW_SIZE1];
-static float OutputBuff2[WINDOW_SIZE2];
-
-static float ExectedOutput1[WINDOW_SIZE1]=
-{
-	#include "neysha_45degrees_hpf_fc24_2/fir_output.dat"
-};
-
-static float ExectedOutput2[WINDOW_SIZE2]=
-{
-	#include "neysha_45degrees_hpf_fc24_2/fir_output.dat"
-};
+static float channel_2[SAMPLES]=
+	{
+			#include "data/75_4096_CH1.dat"
+	};
 
 
-static float max_diff1;
-static float max_diff2;
+static float out_ch_1[SAMPLES];
+static float out_ch_2[SAMPLES];
+
+#pragma align 512
+	static float pm coeffs[TAPS]; /* coeffs array must be */
+							/* initialized and in PM memory */
+
 static float subset_channel_1 [TAP_LENGTH1+WINDOW_SIZE1-1];
 static float subset_channel_2 [TAP_LENGTH1+WINDOW_SIZE1-1];
 static int indexes_max_ch1[TOTAL_SAMPLES];
-
 
 /*=============  L O C A L    F U N C T I O N    P R O T O T Y P E S =============*/
 
@@ -282,17 +267,13 @@ int main(int argc, char *argv[]){
 	int location_ch1 = 0;
 
 
+	for (int i = TAPS-1; i >= 0; i--) {
+		coeffs[i] = HIGH_COEF[(TAPS-1)-i];
+	}
 
-//	//printf("SIGNALS LOADED\n");
-//
-//	for(int i=0 ; i<TOTAL_SAMPLES; i++)
-//	{
-//		if(Channel_1[i] > 1.505)
-//		{
-//			indexes_max_ch1[j] = i;
-//			j++;
-//		}
-//	}
+	float state[TAPS + 1];
+	for (i = 0; i < TAPS + 1; i++)
+		state[i] = 0; /* initialize state array */
 
 
 	//
@@ -320,113 +301,62 @@ int main(int argc, char *argv[]){
 	/* Initialize UART */
 	hydrac_uart_init();
 
-	//Configure FIR accelerator as secure master
-	*pREG_SPU0_SECUREP155=BITM_SPU_SECUREP_MSEC;
-
-	//Enable the interrupts globally
-	*pREG_SEC0_GCTL=ENUM_SEC_GCTL_EN;
-	*pREG_SEC0_CCTL1=ENUM_SEC_CCTL1_EN;
-	adi_sec_EnableEdgeSense(INTR_FIR0_DMA, true);
-	adi_int_InstallHandler(INTR_FIR0_DMA,FIR_DMA_Interrupt_Handler,0,true);
-
 
 	//
 	//---------MAIN PROGRAM--------------//
 	//
 
 
-//	printf("%d", indexes_max_ch1[0]);
-//
-//	if ((Channel_1[0] < 1.505) && (Channel_2[0] < 1.505)) {
-//		if ((Channel_1[0]) == (Channel_2[0])) {
-//			for (i = 1; i < 384000; i++) {
-//				float dif = Channel_1[indexes_max_ch1[i]]
-//						- Channel_1[indexes_max_ch1[i - 1]];
-//				if (dif > 5) {
-//					location_ch1 = i;
-//					break;
-//				}
-//			}
-//		}
-//
-//
-//		int start_cut = indexes_max_ch1[location_ch1];
-//
-//		for (i = 2047; i <= 0; i--) {
-//			subset_channel_1[2047 - i] = Channel_1[start_cut - i];
-//			subset_channel_2[2047 - i] = Channel_2[start_cut - i];
-//		}
-//
-//		for (i = 1; i < 2048; i++) {
-//			subset_channel_1[i] = Channel_1[start_cut + i];
-//			subset_channel_2[i] = Channel_2[start_cut + i];
-//		}
-//	} else {
-//		for (i = 0; i < 4096; i++) {
-//			subset_channel_1[i] = Channel_1[i];
-//			subset_channel_2[i] = Channel_2[i];
-//		}
-//	}
+		//printf("SIGNALS LOADED\n");
+
+	for (int i = 0; i < TOTAL_SAMPLES; i++) {
+		if (channel_1[i] > 1.505) {
+			indexes_max_ch1[j] = i;
+			j++;
+		}
+	}
 
 
-
-	//Initialize FIR TCBs for both the channels
-	FIRA_TCB1[0]=((int)(FIRA_TCB2+12)>>2)|0xA000000;	//CP
-	FIRA_TCB1[1]=TAP_LENGTH1;	//CL
-	FIRA_TCB1[2]=1;	//CM
-	FIRA_TCB1[3]=((int)CoeffBuff1>>2)|0xA000000;	//CI
-	FIRA_TCB1[4]=((int)OutputBuff1>>2)|0xA000000;	//OB
-	FIRA_TCB1[5]=WINDOW_SIZE1;	//OL
-	FIRA_TCB1[6]=1;	//OM
-	FIRA_TCB1[7]=((int)OutputBuff1>>2)|0xA000000;	//OI
-	FIRA_TCB1[8]=((int)InputBuff1>>2)|0xA000000;	//IB
-	FIRA_TCB1[9]=TAP_LENGTH1+WINDOW_SIZE1-1;	//IL
-	FIRA_TCB1[10]=1;	//IM
-	FIRA_TCB1[11]=((int)InputBuff1>>2)|0xA000000;	//II
-	FIRA_TCB1[12]=(TAP_LENGTH1-1)|(WINDOW_SIZE1-1)<<14;	//FIRCTL2
-
-	FIRA_TCB2[0]=0;	//CP
-	FIRA_TCB2[1]=TAP_LENGTH2;	//CL
-	FIRA_TCB2[2]=1;	//CM
-	FIRA_TCB2[3]=((int)CoeffBuff2>>2)|0xA000000;	//CI
-	FIRA_TCB2[4]=((int)OutputBuff2>>2)|0xA000000;	//OB
-	FIRA_TCB2[5]=WINDOW_SIZE2;	//OL
-	FIRA_TCB2[6]=1;	//OM
-	FIRA_TCB2[7]=((int)OutputBuff2>>2)|0xA000000;	//OI
-	FIRA_TCB2[8]=((int)InputBuff2>>2)|0xA000000;	//IB
-	FIRA_TCB2[9]=TAP_LENGTH2+WINDOW_SIZE2-1;	//IL
-	FIRA_TCB2[10]=1;	//IM
-	FIRA_TCB2[11]=((int)InputBuff2>>2)|0xA000000;	//II
-	FIRA_TCB2[12]=(TAP_LENGTH2-1)|(WINDOW_SIZE2-1)<<14;	//FIRCTL2
+	if (( channel_1[0] < 1.505) && ( channel_2[0] < 1.505)) {
+			if (( channel_1[0]) == ( channel_2[0])) {
+				for (i = 1; i < 384000; i++) {
+					float dif =  channel_1[indexes_max_ch1[i]]
+							-  channel_1[indexes_max_ch1[i - 1]];
+					if (dif > 5) {
+						location_ch1 = i;
+						break;
+					}
+				}
+			}
 
 
+			int start_cut = indexes_max_ch1[location_ch1];
 
-	//Initialize the FIR accelerator
-	FIRA_Init(BITM_FIR_CTL1_EN|BITM_FIR_CTL1_DMAEN|BITM_FIR_CTL1_CCINTR|(CHANNEL_NO-1)<<BITP_FIR_CTL1_CH,(int*)(((int)(FIRA_TCB1+12)>>2)|0xA000000));
+			for (i = 2047; i <= 0; i--) {
+				subset_channel_1[2047 - i] =  channel_1[start_cut - i];
+				subset_channel_2[2047 - i] =  channel_2[start_cut - i];
+			}
 
-	//i=0;
+			for (i = 1; i < 2048; i++) {
+				subset_channel_1[i] =  channel_1[start_cut + i];
+				subset_channel_2[i] =  channel_2[start_cut + i];
+			}
+		} else {
+			for (i = 0; i < 4096; i++) {
+				subset_channel_1[i] =  channel_1[i];
+				subset_channel_2[i] =  channel_2[i];
+			}
+		}
 
-	//Wait till both the channels are processed
-	while(FIR_DMA_Done<CHANNEL_NO);
 
-	//data filtered!
+		//filter first signal
+		fir (channel_1, out_ch_1, coeffs, state, SAMPLES, TAPS);
 
+		for (i = 0; i < TAPS + 1; i++)
+			state[i] = 0; /* initialize state array */
 
-
-
-
-
-	//Compare the FIR accelerator output with expected (MATLAB) output for both the channels.
-		max_diff1=FIRA_Find_Max_Diff(OutputBuff1, ExectedOutput1,WINDOW_SIZE1);
-		max_diff2=FIRA_Find_Max_Diff(OutputBuff2, ExectedOutput2,WINDOW_SIZE2);
-
-		printf("\n\nMaximum normalized difference between actual and expected values for buffer 1 = %.*e\n\n",10,max_diff1);
-		printf("\n\nMaximum normalized difference between actual and expected values for buffer 2= %.*e\n\n",10,max_diff2);
-
-		if(max_diff1>0.0001||max_diff2>0.0001>0.0001)
-			printf("\n\nFIR test failed...\n\n");
-		else
-			printf("\n\nFIR test passed...\n\n");
+		//filter second signal
+		fir (channel_2, out_ch_2,coeffs, state, SAMPLES, TAPS);
 
 
 
