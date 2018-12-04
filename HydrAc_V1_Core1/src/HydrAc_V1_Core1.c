@@ -167,12 +167,12 @@ static float HIGH_COEF[TAPS]=
 
 
 	/**INPUT SIGNAL**/
-static float channel_1[TOTAL_SAMPLES]=
+static uint16_t channel_1[TOTAL_SAMPLES]=
 	{
 			#include "345_data/345_CH1.dat"
 	};
 
-static float channel_2[TOTAL_SAMPLES]=
+static uint16_t channel_2[TOTAL_SAMPLES]=
 	{
 			#include "345_data/345_CH2.dat"
 	};
@@ -339,6 +339,16 @@ int main(int argc, char *argv[]){
 				printf("\n***RIGHT!\n");
 			else
 				printf("\n***FRONT OR ERROR!\n");
+
+
+
+		clock_stop = clock(); //stop counting cycles
+
+		/*compute execution time*/
+		exec_time = 2 * ((double) (clock_stop - clock_start)) / CLOCKS_PER_SEC; //used hrm and schematic to discover that the CLK is 25MHz
+		//then it is divided by two.
+
+		printf("Time taken is %e seconds\n", exec_time);
 
 
 
@@ -754,21 +764,7 @@ void hydrac_adc_enable(void){
     }
 
 	AdcCount =0u;
-    clock_stop = clock();
 
-	AdcCount=0; //reset Adc Counts
-
-
-    clock_stop = clock(); //stop counting cycles
-
-
-    /*compute execution time*/
-    exec_time = 2*((double) (clock_stop - clock_start))
-           / CLOCKS_PER_SEC; //used hrm and schematic to discover that the CLK is 25MHz
-    	//then it is divided by two.
-
-
-    printf("Time taken is %e seconds\n",exec_time);
 
 	printf("ALL CALLBACKS PROCESSED!...\n");
 }
@@ -966,8 +962,6 @@ void hydrac_uart_init(){
 
 void hydrac_detect_direction(int* direction){
 
-
-
 	int j = 0, i = 0;
 	int location_ch1 = 0;
 	int location_ch2 = 0;
@@ -980,7 +974,7 @@ void hydrac_detect_direction(int* direction){
 
 	for (int i = 0; i < TOTAL_SAMPLES; i++)
 	{
-		if (channel_1[i] >  1.505)
+		if (/*Chan1Data*/channel_1[i] >  1.505)
 		{
 			location_ch1 = i;
 			break;
@@ -989,7 +983,7 @@ void hydrac_detect_direction(int* direction){
 
 	for (int i = 0; i < TOTAL_SAMPLES; i++)
 	{
-		if (channel_2[i] >  1.505)
+		if (/*Chan2Data*/channel_2[i] >  1.505)
 		{
 			location_ch2 = i;
 			break;
@@ -1037,7 +1031,7 @@ void hydrac_detect_direction(int* direction){
 	//filter second signal
 	fir (subset_channel_2, out_ch_2,coeffs, state, SAMPLES, TAPS);
 
-	printf("%e, %e filtered\n", out_ch_1[0], out_ch_2[0]);
+	//printf("%e, %e filtered\n", out_ch_1[0], out_ch_2[0]);
 
 	for (int i=0; i<1024; i++) {
 			out_ch_1[i] = 0;
@@ -1091,17 +1085,17 @@ void hydrac_detect_direction(int* direction){
 	if (loc_ch1_final < loc_ch2_final)
 	{
 		(*direction) = 1;
-		printf("SIGNAL IS COMING FROM THE RIGHT. \n");
+		//printf("SIGNAL IS COMING FROM THE RIGHT. \n");
 	}
 	else if (loc_ch1_final > loc_ch2_final)
 	{
 		(*direction) = 2;
-		printf("SIGNAL IS COMING FROM THE LEFT. \n");
+		//printf("SIGNAL IS COMING FROM THE LEFT. \n");
 	}
 	else
 	{
 		(*direction) = -1;
-		printf("IN FRONT OR ERROR . \n");
+		//printf("IN FRONT OR ERROR . \n");
 	}
 
 }
