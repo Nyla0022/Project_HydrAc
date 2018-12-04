@@ -166,16 +166,16 @@ static float HIGH_COEF[TAPS]=
 	};
 
 
-	/**INPUT SIGNAL**/
-static float channel_1[TOTAL_SAMPLES]=
-	{
-			#include "345_data/345_CH1.dat"
-	};
-
-static float channel_2[TOTAL_SAMPLES]=
-	{
-			#include "345_data/345_CH2.dat"
-	};
+//	/**INPUT SIGNAL**/
+//static float channel_1[TOTAL_SAMPLES]=
+//	{
+//			#include "345_data/345_CH1.dat"
+//	};
+//
+//static float channel_2[TOTAL_SAMPLES]=
+//	{
+//			#include "345_data/345_CH2.dat"
+//	};
 
 
 static float out_ch_1[SAMPLES];
@@ -242,6 +242,7 @@ int main(int argc, char *argv[]){
 	//
 
 	uint32_t i = 0;
+	uint32_t m =0;
 
 	/*Distance and angle variables*/
 	float distance = .070, angle = -90;
@@ -264,6 +265,12 @@ int main(int argc, char *argv[]){
 		coeffs[i] = HIGH_COEF[(TAPS-1)-i];
 	}
 
+
+	//reset both channels
+	for (m = 0; m < NUM_SAMPLES; m++) {
+	Chan1Data[m] = 0;
+	Chan2Data[m] =0;
+	}
 
 
 
@@ -308,7 +315,7 @@ int main(int argc, char *argv[]){
 
 
 	volatile uint32_t loop=1;
-	uint32_t m =0;
+
 
 	while(true){
 
@@ -327,11 +334,12 @@ int main(int argc, char *argv[]){
 
 		//save_chan_data_to_file(Chan1Data,Chan2Data,"in.txt");
 
-//		double t=0;
-//		for (m = 0; m < NUM_SAMPLES; m++) {
-//				printf("%f\t%f\t%f\n", (double) t,Chan1Data[m],Chan2Data[m] );
-//				t = (double) (t+ TIME_STEP);
-//			}
+		printf("\n\nAcquired data:");
+		double t=0;
+		for (m = 0; m < 20; m++) {
+				printf("%f\t%f\t%f\n", (double) t,Chan1Data[m],Chan2Data[m] );
+				t = (double) (t+ TIME_STEP);
+			}
 
 		/*
 		 * Compute angle and distance
@@ -343,10 +351,13 @@ int main(int argc, char *argv[]){
 				printf("\n***LEFT!\n");
 			}else if(direction==1)
 				printf("\n***RIGHT!\n");
-			else
+			else if(direction==-1)
 				printf("\n***FRONT OR ERROR!\n");
+			else
+				printf("\n\n***CLIPPED!\n\n");
 
 
+		direction=0;
 		clock_stop = clock(); //stop counting cycles
 
 
@@ -398,11 +409,6 @@ int main(int argc, char *argv[]){
 		eResult = adi_uart_Write(ghUART, "\n",2);
 
 
-//			//reset both channels
-//			for (m = 0; m < NUM_SAMPLES; m++) {
-//				Chan1Data[m] = 0;
-//				Chan2Data[m] =0;
-//			}
 
 	}
 
@@ -945,178 +951,185 @@ void hydrac_uart_init(){
 
 void hydrac_detect_direction(int* direction){
 	int j = 0, i = 0;
-	int location_ch1 = 0;
-	int location_ch2 = 0;
-	int loc_min_ch1 = 0;
-	int loc_max_ch1 = 0;
-	int loc_min_ch2 = 0;
-	int loc_max_ch2 = 0;
-	int loc_ch1_final = 0;
-	int loc_ch2_final = 0;
-	float max_1 = channel_1[0];
-	float max_2 = channel_2[0];
-	float max_f_1 = out_ch_1[0];
-	float max_f_2 = out_ch_2[0];
-	float min_f_1 = out_ch_1[0];
-	float min_f_2 = out_ch_2[0];
-	float max = 0;
-	float max_f = 0, min_f = 0;
-	int location = 0;
-	int flag = 1;
+		int location_ch1 = 0;
+		int location_ch2 = 0;
+		int loc_min_ch1 = 0;
+		int loc_max_ch1 = 0;
+		int loc_min_ch2 = 0;
+		int loc_max_ch2 = 0;
+		int loc_ch1_final = 0;
+		int loc_ch2_final = 0;
+		float max_1 =Chan1Data[0];
+		float max_2 =Chan2Data[0];
+		float max_f_1 = out_ch_1[0];
+		float max_f_2 = out_ch_2[0];
+		float min_f_1 = out_ch_1[0];
+		float min_f_2 = out_ch_2[0];
+		float max = 0;
+		float max_f = 0, min_f = 0;
+		int location = 0;
+		int flag = 1;
 
 
-	for (int c = 1; c < TOTAL_SAMPLES; c++) {
-		if (Chan1Data[c] > max_1) {
-			max_1 = channel_1[c];
-		}
-		if (Chan2Data[c] > max_2) {
-			max_2 = channel_2[c];
-		}
-	}
-
-	if (max_1 < max_2)
-		max = max_1 * 0.75;
-	else
-		max = max_2 * 0.75;
-
-	printf("%f %f %f \n", max, max_1, max_2);
-
-	for (int i = 0; i < TOTAL_SAMPLES; i++) {
-		if (/*Chan1Data*/channel_1[i] > max) {
-			location_ch1 = i;
-			break;
-		}
-	}
-
-	for (int i = 0; i < TOTAL_SAMPLES; i++) {
-		if (/*Chan2Data*/channel_2[i] > max) {
-			location_ch2 = i;
-			break;
-		}
-	}
-
-	if (location_ch1 < location_ch2)
-		location = location_ch1;
-	else
-		location = location_ch2;
-
-	if ((location > 2047) && (location < 381952)) {
-		j = 2047;
-		for (i = 0; i < 2048; i++) {
-			subset_channel_1[i] = channel_1[location_ch1 - j];
-			subset_channel_2[i] = channel_2[location_ch1 - j];
-			j--;
-		}
-
-		j = 1;
-		for (i = 2048; i < SAMPLES; i++) {
-			subset_channel_1[i] = channel_1[location_ch1 + j];
-			subset_channel_2[i] = channel_2[location_ch1 + j];
-			j++;
-		}
-		flag = 1;
-	} else if ((location > 0) && (location < 1024)) {
-		for (i = 0; i < SAMPLES; i++) {
-			subset_channel_1[i] = channel_1[i];
-			subset_channel_2[i] = channel_2[i];
-		}
-		flag = 1;
-	} else
-		flag = -1;
-
-	if (flag > 0) {
-		for (i = 0; i < TAPS + 1; i++)
-			state[i] = 0; /* initialize state array */
-
-		fir(subset_channel_1, out_ch_1, coeffs, state, SAMPLES, TAPS);
-
-		for (i = 0; i < TAPS + 1; i++)
-			state[i] = 0; /* initialize state array */
-
-		//filter second signal
-		fir(subset_channel_2, out_ch_2, coeffs, state, SAMPLES, TAPS);
-
-		for (int i = 0; i < 1024; i++) {
-			out_ch_1[i] = 0;
-			out_ch_2[i] = 0;
-		}
-
-		for (int c = 1; c < SAMPLES; c++) {
-			if (out_ch_1[c] > max_f_1) {
-				max_f_1 = out_ch_1[c];
+		for (int c = 1; c < TOTAL_SAMPLES; c++) {
+			if (Chan1Data[c] > max_1) {
+				max_1 =Chan1Data[c];
 			}
-			if (out_ch_2[c] > max_f_2) {
-				max_f_2 = out_ch_2[c];
-			}
-			if (out_ch_1[c] < min_f_1) {
-				min_f_1 = out_ch_1[c];
-			}
-			if (out_ch_2[c] < min_f_2) {
-				min_f_2 = out_ch_2[c];
+			if (Chan2Data[c] > max_2) {
+				max_2 =Chan2Data[c];
 			}
 		}
 
-		if (max_f_1 < max_f_2)
-			max_f = max_f_1 * 0.75;
+		if (max_1 > max_2)
+			max = max_1 * 0.85;
 		else
-			max_f = max_f_2 * 0.75;
+			max = max_2 * 0.85;
 
-		if (min_f_1 > min_f_2)
-			min_f = min_f_1 * 0.75;
-		else
-			min_f = min_f_2 * 0.75;
+		printf("%f %f %f \n", max, max_1, max_2);
 
-		for (i = 0; i < SAMPLES; i++) {
-			if (out_ch_1[i] > max_f) {
-				loc_max_ch1 = i;
+		for (int i = 0; i < TOTAL_SAMPLES; i++) {
+			if (Chan1Data[i] > max) {
+				location_ch1 = i;
 				break;
 			}
 		}
 
-		for (i = 0; i < SAMPLES; i++) {
-			if (out_ch_2[i] > max_f) {
-				loc_max_ch2 = i;
+		for (int i = 0; i < TOTAL_SAMPLES; i++) {
+			if (Chan2Data[i] > max) {
+				location_ch2 = i;
 				break;
 			}
 		}
 
-		for (i = 0; i < SAMPLES; i++) {
-			if (out_ch_1[i] < min_f) {
-				loc_min_ch1 = i;
-				break;
-			}
-		}
-
-		for (i = 0; i < SAMPLES; i++) {
-			if (out_ch_2[i] < min_f) {
-				loc_min_ch2 = i;
-				break;
-			}
-		}
-
-		if (loc_max_ch1 < loc_min_ch1)
-			loc_ch1_final = loc_max_ch1;
+		if (location_ch1 < location_ch2)
+			location = location_ch1;
 		else
-			loc_ch1_final = loc_min_ch1;
+			location = location_ch2;
 
-		if (loc_max_ch2 < loc_min_ch2)
-			loc_ch2_final = loc_max_ch2;
-		else
-			loc_ch2_final = loc_min_ch2;
+		printf("Chan1Data[0]=%f\n", Chan1Data[0]);
+		printf("Chan2Data[0]=%f\n", Chan2Data[0]);
+		printf("location=%d\n", location);
+		printf("loaction_ch1=%d\n", location_ch1);
+		printf("loaction_ch2=%d\n", location_ch2);
+		printf("location=%d\n", location);
 
-		if (loc_ch1_final < loc_ch2_final) {
-			(*direction) = 1;
-			printf("SIGNAL IS COMING FROM THE RIGHT. \n");
-		} else if (loc_ch1_final > loc_ch2_final) {
-			(*direction) = 2;
-			printf("SIGNAL IS COMING FROM THE LEFT. \n");
-		} else {
-			(*direction) = -1;
-			printf("IN FRONT OR ERROR. \n");
-		}
-	} else
-		printf("SIGNAL ACQUISITION UNSUCCESSFUL, CLIPPED SIGNAL.");
+		if ((location > 2047) && (location < 381952)) {
+			j = 2047;
+			for (i = 0; i < 2048; i++) {
+				subset_channel_1[i] =Chan1Data[location - j];
+				subset_channel_2[i] =Chan2Data[location - j];
+				j--;
+			}
 
-	//save_chan_data_to_file(out_ch_1,out_ch_2,"out_data.txt");
+			j = 1;
+			for (i = 2048; i < SAMPLES; i++) {
+				subset_channel_1[i] =Chan1Data[location + j];
+				subset_channel_2[i] =Chan2Data[location + j];
+				j++;
+			}
+			flag = 1;
+		} else if ((location > 0) && (location < 1024)) {
+			for (i = 0; i < SAMPLES; i++) {
+				subset_channel_1[i] =Chan1Data[i];
+				subset_channel_2[i] =Chan2Data[i];
+			}
+			flag = 1;
+		} else
+			flag = -1;
+
+		if (flag > 0) {
+			for (i = 0; i < TAPS + 1; i++)
+				state[i] = 0; /* initialize state array */
+
+			fir(subset_channel_1, out_ch_1, coeffs, state, SAMPLES, TAPS);
+
+			for (i = 0; i < TAPS + 1; i++)
+				state[i] = 0; /* initialize state array */
+
+			//filter second signal
+			fir(subset_channel_2, out_ch_2, coeffs, state, SAMPLES, TAPS);
+
+			for (int i = 0; i < 1024; i++) {
+				out_ch_1[i] = 0;
+				out_ch_2[i] = 0;
+			}
+
+			for (int c = 1; c < SAMPLES; c++) {
+				if (out_ch_1[c] > max_f_1) {
+					max_f_1 = out_ch_1[c];
+				}
+				if (out_ch_2[c] > max_f_2) {
+					max_f_2 = out_ch_2[c];
+				}
+				if (out_ch_1[c] < min_f_1) {
+					min_f_1 = out_ch_1[c];
+				}
+				if (out_ch_2[c] < min_f_2) {
+					min_f_2 = out_ch_2[c];
+				}
+			}
+
+			if (max_f_1 < max_f_2)
+				max_f = max_f_1 * 0.75;
+			else
+				max_f = max_f_2 * 0.75;
+
+			if (min_f_1 > min_f_2)
+				min_f = min_f_1 * 0.75;
+			else
+				min_f = min_f_2 * 0.75;
+
+			for (i = 0; i < SAMPLES; i++) {
+				if (out_ch_1[i] > max_f) {
+					loc_max_ch1 = i;
+					break;
+				}
+			}
+
+			for (i = 0; i < SAMPLES; i++) {
+				if (out_ch_2[i] > max_f) {
+					loc_max_ch2 = i;
+					break;
+				}
+			}
+
+			for (i = 0; i < SAMPLES; i++) {
+				if (out_ch_1[i] < min_f) {
+					loc_min_ch1 = i;
+					break;
+				}
+			}
+
+			for (i = 0; i < SAMPLES; i++) {
+				if (out_ch_2[i] < min_f) {
+					loc_min_ch2 = i;
+					break;
+				}
+			}
+
+			if (loc_max_ch1 < loc_min_ch1)
+				loc_ch1_final = loc_max_ch1;
+			else
+				loc_ch1_final = loc_min_ch1;
+
+			if (loc_max_ch2 < loc_min_ch2)
+				loc_ch2_final = loc_max_ch2;
+			else
+				loc_ch2_final = loc_min_ch2;
+
+			if (loc_ch1_final < loc_ch2_final) {
+				(*direction) = 1;
+				printf("SIGNAL IS COMING FROM THE RIGHT. \n");
+			} else if (loc_ch1_final > loc_ch2_final) {
+				(*direction) = 2;
+				printf("SIGNAL IS COMING FROM THE LEFT. \n");
+			} else {
+				(*direction) = -1;
+				printf("IN FRONT OR ERROR. \n");
+			}
+		} else
+			printf("SIGNAL ACQUISITION UNSUCCESSFUL, CLIPPED SIGNAL.");
+
+		//save_chan_data_to_file(out_ch_1,out_ch_2,"out_data.txt");
 
 }
