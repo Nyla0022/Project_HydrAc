@@ -57,7 +57,7 @@
  */
 
 /* Rx/Tx Buffer size */
-#define BUFFER_SIZE    	 	30
+#define BUFFER_SIZE    	 	20
 
 /*Angle No of Digits*/
 #define ANGLE_SIZE 			10
@@ -198,7 +198,7 @@ int main(int argc, char *argv[]){
 	uint16_t i = 0;
 
 	/*Distance and angle variables*/
-	float distance = .070, angle = -90;
+	float distance = .070, angle = 90;
 
 	/* distance string for UART*/
 	char dist_c[10] = { '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' };
@@ -240,7 +240,7 @@ int main(int argc, char *argv[]){
 	//
 
 
-	uint32_t loop=1;
+	volatile uint32_t loop=1;
 
 	while(true){
 
@@ -280,8 +280,8 @@ int main(int argc, char *argv[]){
 		for (i = 0; i < sizeof(dist_c); i++)
 			TxBuffer[i + 10] = dist_c[i];
 
-		for (i = 0; i < sizeof(exectime_c); i++)
-			TxBuffer[i + 20] = exectime_c[i];
+//		for (i = 0; i < sizeof(exectime_c); i++)
+//			TxBuffer[i + 20] = exectime_c[i];
 
 		/*
 		 * Send data via UART
@@ -289,24 +289,26 @@ int main(int argc, char *argv[]){
 
 		/* Write the character */
 		printf("Transmitting Result#%d: %s\n\n",loop++, TxBuffer);
-		/*comment when interfacing to arduino*/
-		eResult = adi_uart_Write(ghUART, "Transmitting Result", 20);
-		/*comment when interfacing to arduino*/
-		eResult = adi_uart_Write(ghUART, "\n",2);
-		for(i=0;i<(BUFFER_SIZE+20)-2;i++)
-			eResult = adi_uart_Write(ghUART, "\b",2);
+
 
 		eResult = adi_uart_Write(ghUART, &TxBuffer[0], BUFFER_SIZE);
 
-		/*comment when interfacing to arduino*/
-		eResult = adi_uart_Write(ghUART, "\n",2);
 
 
 		/*
 		 * Save data to file
 		 */
-		save_chan_data_to_file("t.txt");
+
+
+
+		if(loop==25)
+			save_chan_data_to_file("t4.txt");
+
+		//loop++;
 	}
+
+	return 0;
+
 
 }
 
