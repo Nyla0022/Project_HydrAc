@@ -240,7 +240,7 @@ int main(int argc, char *argv[]){
 	//
 
 
-	uint32_t loop=1;
+	volatile uint32_t loop=1;
 
 	while(true){
 
@@ -250,6 +250,7 @@ int main(int argc, char *argv[]){
 
 		/*Enable dataflow and Open the ADC*/
 		hydrac_adc_enable();
+
 
 		/*Disable dataflow and close the ADC*/
 		hydrac_adc_disable();
@@ -305,8 +306,19 @@ int main(int argc, char *argv[]){
 		/*
 		 * Save data to file
 		 */
-		save_chan_data_to_file("t.txt");
+		//save_chan_data_to_file("t.txt");
 	}
+
+
+
+		/* Close ADC device */
+		if (adi_adau1977_Close(phAdau1977) != ADI_ADAU1977_SUCCESS)
+		{
+			bError = true;
+			DBG_MSG("ADC close failed\n");
+		}
+
+
 
 }
 
@@ -604,6 +616,10 @@ void hydrac_adc_init(void){
 		DBG_MSG("ADAU1977 Init failed\n");
 	}
 
+}
+
+void hydrac_adc_enable(void){
+
 	/* Submit ADC buffer1 */ //N*4*2 (2B/sample) or N*4*4(4B/sample)
 	// All it does is giving the buffer size in bytes not in samples. That is why it multiplies the size (in samples)
 	//the number of bytes/sample
@@ -619,10 +635,6 @@ void hydrac_adc_init(void){
 		bError = true;
 		DBG_MSG("submit buffer failed\n");
 	}
-
-}
-
-void hydrac_adc_enable(void){
 
 
 	/* Enable ADC data flow */
@@ -648,6 +660,8 @@ void hydrac_adc_enable(void){
 			break;
 		}
     }
+
+	AdcCount=0;
     clock_stop = clock();
 
     exec_time = 2*((double) (clock_stop - clock_start))
@@ -667,12 +681,7 @@ void hydrac_adc_disable(void){
 		DBG_MSG("ADC disable failed\n");
 	}
 
-	/* Close ADC device */
-	if (adi_adau1977_Close(phAdau1977) != ADI_ADAU1977_SUCCESS)
-	{
-		bError = true;
-		DBG_MSG("ADC close failed\n");
-	}
+
 }
 
 void hydrac_gpio_init(void){
