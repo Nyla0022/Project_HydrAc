@@ -1,0 +1,17 @@
+float voltage_chan1 [9] = {2.43,2.31,2.20,2.14,2.09,2.06,2.04,2.046,2.054}; //lut for chan1
+float voltage_chan2 [9] = {2.57,2.53,2.49,2.41,2.34,2.30,2.27,2.23,2.29}; //lut for chan2
+
+float distance (float volt, int dir){
+  if(dir==1){
+ for(int j=0;j<8;j++){
+  if(volt<voltage_chan1[j] && volt>=voltage_chan1[j+1]
+    distance=j*1.5;
+ }
+}else{
+  for(int j=0;j<8;j++){
+  if(volt<voltage_chan2[j] && volt>=voltage_chan2[j+1]
+    distance=j*1.5;
+ }
+}
+return distance;
+}
