@@ -9,6 +9,7 @@
 #include <services/gpio/adi_gpio.h>
 #include <services/pwr/adi_pwr.h>
 #include <services/int/adi_int.h>
+#include <services/int/adi_sec.h>
 
 #include <drivers/adc/adau1977/adi_adau1977.h>
 #include <drivers/twi/adi_twi.h>
@@ -21,9 +22,17 @@
 #include <time.h>
 #include <math.h>
 #include <stdbool.h>
+#include <stddef.h>
+#include <filter.h>
+#include <complex.h>
+
 
 #include "adi_initialize.h"
 #include "HydrAc_V1_Core1.h"
+
+
+#define SAMPLES 4096
+#define TAPS 411
 
 
 
@@ -68,6 +77,7 @@
 /*execution time No of Digits*/
 #define EXECTIME_SIZE 		10
 
+#define TOTAL_SAMPLES 		384000
 
 /*=============  D A T A  =============*/
 
@@ -144,6 +154,42 @@ static ADI_UART_RESULT eResult;
 static bool bStopFlag = false;
 
 
+
+/*
+ * 				FILTERING DEFINITIONS
+ */
+
+/**LOW PASS FILTER COEFFICIENTS**/
+static float HIGH_COEF[TAPS]=
+	{
+			#include "data/HIGH_4096.dat"
+	};
+
+
+	/**INPUT SIGNAL**/
+static float channel_1[TOTAL_SAMPLES]=
+	{
+			#include "345_data/345_CH1.dat"
+	};
+
+static float channel_2[TOTAL_SAMPLES]=
+	{
+			#include "345_data/345_CH2.dat"
+	};
+
+
+static float out_ch_1[SAMPLES];
+static float out_ch_2[SAMPLES];
+
+#pragma align 512
+	static float pm coeffs[TAPS]; /* coeffs array must be */
+							/* initialized and in PM memory */
+
+static float subset_channel_1 [SAMPLES];
+static float subset_channel_2 [SAMPLES];
+
+static float state[TAPS + 1];
+
 /*=============  L O C A L    F U N C T I O N    P R O T O T Y P E S =============*/
 
 /* Initialize GPIO and reset peripherals */
@@ -192,10 +238,7 @@ int main(int argc, char *argv[]){
 	//-----------LOCAL VARIABLES------------------//
 	//
 
-//	uint8_t dir=1;
-//	double tau=0;
-
-	uint16_t i = 0;
+	uint32_t i = 0;
 
 	/*Distance and angle variables*/
 	float distance = .070, angle = -90;
@@ -211,6 +254,25 @@ int main(int argc, char *argv[]){
 	char TxBuffer[BUFFER_SIZE];
 
 
+	int j = 0;
+	int location_ch1 =0;
+	int location_ch2=0;
+	int loc_min_ch1 =0;
+	int loc_max_ch1 =0;
+	int loc_min_ch2 =0;
+	int loc_max_ch2 =0;
+	int loc_ch1_final = 0;
+	int loc_ch2_final = 0;
+	static int direction =0;
+
+
+	for (int i = TAPS-1; i >= 0; i--) {
+		coeffs[i] = HIGH_COEF[(TAPS-1)-i];
+	}
+
+
+
+
 	//
 	//---------PERIPHERALS INITALIZATION--------------//
 	//
@@ -218,6 +280,7 @@ int main(int argc, char *argv[]){
 
 	/* Initialize managed drivers and/or services that have been added to the project*/
 	adi_initComponents();
+
 
 	/* Software Switch Configuration for the EZ-Board */
 	ConfigSoftSwitches();
@@ -227,6 +290,7 @@ int main(int argc, char *argv[]){
 
 	/*Initialize SPU peripheral for HydrAc System*/
 	hydrac_spu_init();
+
 
 	/*Initialize ADC for HydrAc System (ADAU 1977)*/
 	hydrac_adc_init();
@@ -240,17 +304,158 @@ int main(int argc, char *argv[]){
 	//
 
 
+		//printf("SIGNALS LOADED\n");
+
+
+
+	for (int i = 0; i < TOTAL_SAMPLES; i++)
+	{
+		if (channel_1[i] >  1.505)
+		{
+			location_ch1 = i;
+			break;
+		}
+	}
+
+	for (int i = 0; i < TOTAL_SAMPLES; i++)
+	{
+		if (channel_2[i] >  1.505)
+		{
+			location_ch2 = i;
+			break;
+		}
+	}
+
+
+
+	if (( location_ch2 > 2047) && ( location_ch2 > 2047))
+	{
+			j = 2047;
+			for (i = 0; i < 2048; i++)
+			{
+				subset_channel_1[i] =  channel_1[location_ch1 - j];
+				subset_channel_2[i] =  channel_2[location_ch1 - j];
+				j--;
+			}
+
+			j = 1;
+			for (i = 2048; i < SAMPLES; i++)
+			{
+				subset_channel_1[i] =  channel_1[location_ch1 + j];
+				subset_channel_2[i] =  channel_2[location_ch1 + j];
+				j++;
+			}
+		}
+	else
+	{
+			for (i = 0; i < SAMPLES; i++)
+			{
+				subset_channel_1[i] =  channel_1[i];
+				subset_channel_2[i] =  channel_2[i];
+			}
+		}
+
+
+	for (i = 0; i < TAPS + 1; i++)
+		state[i] = 0; /* initialize state array */
+
+	fir (subset_channel_1, out_ch_1, coeffs, state, SAMPLES, TAPS);
+
+	for (i = 0; i < TAPS + 1; i++)
+		state[i] = 0; /* initialize state array */
+
+	//filter second signal
+	fir (subset_channel_2, out_ch_2,coeffs, state, SAMPLES, TAPS);
+
+	printf("%e, %e filtered\n", out_ch_1[0], out_ch_2[0]);
+
+	for (int i=0; i<1024; i++) {
+			out_ch_1[i] = 0;
+			out_ch_2[i] = 0;
+		}
+
+
+	for(i=0; i<SAMPLES; i++){
+		if (out_ch_1[i] > 0.3)
+		{
+			loc_max_ch1 = i;
+			break;
+		}
+	}
+
+	for(i=0; i<SAMPLES; i++){
+		if (out_ch_2[i] > 0.3)
+		{
+			loc_max_ch2 = i;
+			break;
+		}
+	}
+
+	for(i=0; i<SAMPLES; i++){
+		if (out_ch_1[i] < -0.3)
+		{
+			loc_min_ch1 = i;
+			break;
+		}
+	}
+
+	for(i=0; i<SAMPLES; i++){
+		if (out_ch_2[i] < -0.3)
+		{
+			loc_min_ch2 = i;
+			break;
+		}
+	}
+
+
+	if (loc_max_ch1 < loc_min_ch1)
+		loc_ch1_final = loc_max_ch1;
+	else
+		loc_ch1_final = loc_min_ch1;
+
+	if (loc_max_ch2 < loc_min_ch2)
+		loc_ch2_final = loc_max_ch2;
+	else
+		loc_ch2_final = loc_min_ch2;
+
+	if (loc_ch1_final < loc_ch2_final)
+	{
+		direction = 2;
+		printf("SIGNAL IS COMING FROM THE RIGHT. \n");
+	}
+	else if (loc_ch1_final > loc_ch2_final)
+	{
+		direction = 1;
+		printf("SIGNAL IS COMING FROM THE LEFT. \n");
+	}
+	else
+	{
+		direction = -1;
+		printf("IN FRONT OR ERROR . \n");
+	}
+
+
+	printf("going into infinite loop...\n");
+
+
+
+	uint32_t loop=1;
 	volatile uint32_t loop=1;
 	uint32_t m =0;
 
-	while(true){
+	while(false){
 
-		/*
-		 * Fill ADC Buffers
-		 */
 
-		/*Enable dataflow and Open the ADC*/
-		hydrac_adc_enable();
+//
+//		/*
+//		 * Fill ADC Buffers
+//		 */
+//
+//		/*Enable dataflow and Open the ADC*/
+//		hydrac_adc_enable();
+//
+//		/*Disable dataflow and close the ADC*/
+//		hydrac_adc_disable();
 
 
 		/*Disable dataflow and close the ADC*/
@@ -258,11 +463,9 @@ int main(int argc, char *argv[]){
 
 
 
-
 		/*
 		 * Compute angle and distance
 		 */
-
 
 
 
@@ -308,6 +511,7 @@ int main(int argc, char *argv[]){
 		 * Save data to file
 		 */
 		//save_chan_data_to_file("t.txt");
+		//save_chan_data_to_file("t.txt");
 
 
 
@@ -320,6 +524,9 @@ int main(int argc, char *argv[]){
 			}
 
 	}
+
+	return 0;
+
 
 
 
@@ -671,6 +878,9 @@ void hydrac_adc_enable(void){
 			break;
 		}
     }
+
+	AdcCount =0u;
+    clock_stop = clock();
 
 	AdcCount=0; //reset Adc Counts
 

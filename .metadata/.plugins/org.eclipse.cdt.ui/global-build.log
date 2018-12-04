@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 09:30:09 **** Build of configuration Debug for project HydrAc_V1_Core1 ****
 make all 
 'Building file: ../system/startup_ldf/app_IVT.s'
@@ -498,14 +499,49 @@ make: Nothing to be done for `all'.
 make all 
 make: Nothing to be done for `all'.
 10:59:36 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
+=======
+11:20:42 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
 make all 
 'Building file: ../src/HydrAc_V1_Core1.c'
 'Invoking: CrossCore SHARC C/C++ Compiler'
 cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core1.d" -o "src/HydrAc_V1_Core1.doj" "../src/HydrAc_V1_Core1.c"
+"..\src\HydrAc_V1_Core1.c", line 471: cc0020:  error: identifier "indexes_max_ch1" is undefined
+  				indexes_max_ch1[j] = i;
+  				^
+
+"..\src\HydrAc_V1_Core1.c", line 480: cc0020:  error: identifier "indexes_max_ch1" is undefined
+  						float dif =  channel_1[indexes_max_ch1[i]]
+  						                       ^
+
+"..\src\HydrAc_V1_Core1.c", line 490: cc0020:  error: identifier "indexes_max_ch1" is undefined
+  				int start_cut = indexes_max_ch1[location_ch1];
+  				                ^
+
+3 errors detected in the compilation of "..\src\HydrAc_V1_Core1.c".
+cc3089: fatal error: Compilation failed (code:2)
+make: *** [src/HydrAc_V1_Core1.doj] Error 1
+11:20:46 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+11:20:47 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+11:27:51 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+11:27:53 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
+>>>>>>> filter_integration_fir
+make all 
+'Building file: ../src/HydrAc_V1_Core1.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core1.d" -o "src/HydrAc_V1_Core1.doj" "../src/HydrAc_V1_Core1.c"
+<<<<<<< HEAD
 "..\src\HydrAc_V1_Core1.c", line 327: cc0111: {D} warning: statement is unreachable
   		if (adi_adau1977_Close(phAdau1977) != ADI_ADAU1977_SUCCESS)
   		^
 
+=======
+>>>>>>> filter_integration_fir
 'Finished building: ../src/HydrAc_V1_Core1.c'
 ' '
 'Building target: HydrAc_V1_Core1.dxe'
@@ -513,6 +549,10 @@ cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compil
 cc21k -proc ADSP-SC584 -si-revision 1.0 -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o HydrAc_V1_Core1.dxe @input-file.txt  -flags-link -od,.\.
 'Finished building target: HydrAc_V1_Core1.dxe'
 ' '
+<<<<<<< HEAD
 10:59:43 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
+=======
+11:28:02 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
+>>>>>>> filter_integration_fir
 make all 
 make: Nothing to be done for `all'.
