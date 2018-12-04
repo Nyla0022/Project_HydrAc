@@ -315,11 +315,11 @@ int main(int argc, char *argv[]){
 
 
 	volatile uint32_t loop=1;
+	volatile uint32_t left_counter=0,right_counter=0,front_counter=0, clipped_counter=0;
+	volatile uint32_t ;
 
 
-	while(true){
-
-
+	while(loop<26){
 
 		/*
 		 * Fill ADC Buffers
@@ -334,12 +334,12 @@ int main(int argc, char *argv[]){
 
 		//save_chan_data_to_file(Chan1Data,Chan2Data,"in.txt");
 
-		printf("\n\nAcquired data:");
-		double t=0;
-		for (m = 0; m < 20; m++) {
-				printf("%f\t%f\t%f\n", (double) t,Chan1Data[m],Chan2Data[m] );
-				t = (double) (t+ TIME_STEP);
-			}
+//		printf("\n\nAcquired data:");
+//		double t=0;
+//		for (m = 0; m < 20; m++) {
+//				printf("%f\t%f\t%f\n", (double) t,Chan1Data[m],Chan2Data[m] );
+//				t = (double) (t+ TIME_STEP);
+//			}
 
 		/*
 		 * Compute angle and distance
@@ -349,12 +349,18 @@ int main(int argc, char *argv[]){
 
 			if(direction == 2){
 				printf("\n***LEFT!\n");
-			}else if(direction==1)
+				left_counter++;
+			}else if(direction==1){
 				printf("\n***RIGHT!\n");
-			else if(direction==-1)
+				right_counter++;
+			}
+			else if(direction==-1){
 				printf("\n***FRONT OR ERROR!\n");
-			else
+				front_counter++;
+			}else{
 				printf("\n\n***CLIPPED!\n\n");
+				clipped_counter++;
+			}
 
 
 		direction=0;
@@ -364,9 +370,9 @@ int main(int argc, char *argv[]){
 		/*
 		 * compute execution time
 		 */
-		exec_time = 2 * ((double) (clock_stop - clock_start)) / CLOCKS_PER_SEC; //used hrm and schematic to discover that the CLK is 25MHz
-																		//then it is divided by two.
-		printf("Time taken is %e seconds\n", exec_time);
+//		exec_time = 2 * ((double) (clock_stop - clock_start)) / CLOCKS_PER_SEC; //used hrm and schematic to discover that the CLK is 25MHz
+//																		//then it is divided by two.
+//		printf("Time taken is %e seconds\n", exec_time);
 
 
 
@@ -375,42 +381,51 @@ int main(int argc, char *argv[]){
 		 */
 
 		//***NOTE time is in miliseconds****
+//
+//		ftoa(angle, angle_c); 				//convert angle data to string array
+//		ftoa(distance, dist_c); 			//convert distance data to string array
+//		ftoa((float)(exec_time*1e3),exectime_c);	//convert execution time data to string array
+//
+//		for (i = 0; i < sizeof(angle_c); i++)
+//			TxBuffer[i] = angle_c[i];
+//
+//		for (i = 0; i < sizeof(dist_c); i++)
+//			TxBuffer[i + 10] = dist_c[i];
+//
+//		for (i = 0; i < sizeof(exectime_c); i++)
+//			TxBuffer[i + 20] = exectime_c[i];
+//
+//
+//		/*
+//		 * Send data via UART
+//		 */
+//
+//		/* Write the character */
+//		printf("Transmitting Result#%d: %s\n\n",loop, TxBuffer);
+//		/*comment when interfacing to arduino*/
+//		eResult = adi_uart_Write(ghUART, "Transmitting Result", 20);
+//		/*comment when interfacing to arduino*/
+//		eResult = adi_uart_Write(ghUART, "\n",2);
+//		for(i=0;i<(BUFFER_SIZE+20)-2;i++)
+//			eResult = adi_uart_Write(ghUART, "\b",2);
+//
+//		eResult = adi_uart_Write(ghUART, &TxBuffer[0], BUFFER_SIZE);
+//
+//		/*comment when interfacing to arduino*/
+//		eResult = adi_uart_Write(ghUART, "\n",2);
 
-		ftoa(angle, angle_c); 				//convert angle data to string array
-		ftoa(distance, dist_c); 			//convert distance data to string array
-		ftoa((float)(exec_time*1e3),exectime_c);	//convert execution time data to string array
 
-		for (i = 0; i < sizeof(angle_c); i++)
-			TxBuffer[i] = angle_c[i];
-
-		for (i = 0; i < sizeof(dist_c); i++)
-			TxBuffer[i + 10] = dist_c[i];
-
-		for (i = 0; i < sizeof(exectime_c); i++)
-			TxBuffer[i + 20] = exectime_c[i];
-
-
-		/*
-		 * Send data via UART
-		 */
-
-		/* Write the character */
-		printf("Transmitting Result#%d: %s\n\n",loop++, TxBuffer);
-		/*comment when interfacing to arduino*/
-		eResult = adi_uart_Write(ghUART, "Transmitting Result", 20);
-		/*comment when interfacing to arduino*/
-		eResult = adi_uart_Write(ghUART, "\n",2);
-		for(i=0;i<(BUFFER_SIZE+20)-2;i++)
-			eResult = adi_uart_Write(ghUART, "\b",2);
-
-		eResult = adi_uart_Write(ghUART, &TxBuffer[0], BUFFER_SIZE);
-
-		/*comment when interfacing to arduino*/
-		eResult = adi_uart_Write(ghUART, "\n",2);
-
-
+		loop++;
 
 	}
+
+
+	printf("LEFT: %d\n", left_counter);
+	printf("RIGHT: %d\n", right_counter);
+	printf("FRONT: %d\n", front_counter);
+	printf("CLIPPED: %d\n", clipped_counter);
+
+	return 0;
 
 }
 
@@ -986,6 +1001,8 @@ void hydrac_detect_direction(int* direction){
 			max = max_2 * 0.85;
 
 		printf("%f %f %f \n", max, max_1, max_2);
+
+
 
 		for (int i = 0; i < TOTAL_SAMPLES; i++) {
 			if (Chan1Data[i] > max) {
