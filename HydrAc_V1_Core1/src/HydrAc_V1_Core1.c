@@ -360,6 +360,80 @@ int main(int argc, char *argv[]){
 
 
 
+		for (int i=0; i<1024; i++) {
+				out_ch_1[i] = 0;
+				out_ch_2[i] = 0;
+			}
+
+		int MAX_CH =  0.3;
+		int MIN_CN = -0.3;
+
+		int loc_min_ch1 =0;
+		int loc_max_ch1 =0;
+		int loc_min_ch2 =0;
+		int loc_max_ch2 =0;
+
+
+		for(i=0; i<4096; i++){
+			if (out_ch_1[i] > 0.3)
+			{
+				loc_max_ch1 = i;
+				break;
+			}
+		}
+
+		for(i=0; i<4096; i++){
+			if (out_ch_2[i] > 0.3)
+			{
+				loc_max_ch2 = i;
+				break;
+			}
+		}
+
+		for(i=0; i<4096; i++){
+			if (out_ch_1[i] < 0.3)
+			{
+				loc_min_ch1 = i;
+				break;
+			}
+		}
+
+		for(i=0; i<4096; i++){
+			if (out_ch_2[i] < 0.3)
+			{
+				loc_min_ch2 = i;
+				break;
+			}
+		}
+
+		int loc_ch1_final = 0;
+		int loc_ch2_final = 0;
+
+		if (loc_max_ch1 < loc_min_ch1)
+			loc_ch1_final = loc_max_ch1;
+		else
+			loc_ch1_final = loc_min_ch1;
+
+		if (loc_max_ch2 < loc_min_ch2)
+			loc_ch2_final = loc_max_ch2;
+		else
+			loc_ch2_final = loc_min_ch2;
+
+		if (loc_ch1_final < loc_ch2_final)
+		{
+			printf("RIGHT");
+		}
+		else if (loc_ch1_final > loc_ch2_final)
+		{
+			printf("LEFT");
+		}
+		else
+		{
+			printf("IN FRONT OR ERROR");
+		}
+
+
+
 	printf("going into infinite loop...\n");
 
 	while(true){
