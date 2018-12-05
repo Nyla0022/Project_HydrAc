@@ -46,6 +46,8 @@ float distance (float volt, int dir){
     }else{
       distance = 12;
     }
+    buf[4] = 'r';
+    
 }else if(dir==2){
 
   if(volt>=voltage_chan2[8]){
@@ -58,6 +60,14 @@ float distance (float volt, int dir){
   }
 }else{
   distance=-1;
+      buf[4] = 'r';
+
  }
+     buf[4] = '0';
+
 return distance;
 }
+
+
+// char buf[5];
+//itoa(distance, buf, 10)
