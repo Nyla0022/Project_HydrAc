@@ -57,13 +57,14 @@ float distance (float volt, int dir){
  }
   }else{
     distance = 12;
+    buf[4] = 'r';
   }
 }else{
   distance=-1;
-      buf[4] = 'r';
+      buf[4] = '0';
 
  }
-     buf[4] = '0';
+     
 
 return distance;
 }
