@@ -205,11 +205,11 @@ void hydrac_adc_init(void);
 void hydrac_spu_init(void);
 /*Initializes UART peripheral*/
 void hydrac_uart_init(void);
+/*Initializes HPF Filter*/
+void hydrac_fir_init(void);
 
-/*Enable and open ADC*/
-void hydrac_adc_enable(void);
-/*Disable and close ADC*/
-void hydrac_adc_disable(void);
+/*Fill ADC buffers (read data)*/
+void hydrac_adc_read(void );
 
 /*Save data to text file*/
 void save_chan_data_to_file(float[], float[],char*);
@@ -261,16 +261,10 @@ int main(int argc, char *argv[]){
 	static int direction =0;
 
 
-	for (int i = TAPS-1; i >= 0; i--) {
-		coeffs[i] = HIGH_COEF[(TAPS-1)-i];
-	}
+	volatile uint32_t loop=1;
+	volatile uint32_t left_counter=0,right_counter=0,front_counter=0, clipped_counter=0;
 
 
-	//reset both channels
-	for (m = 0; m < NUM_SAMPLES; m++) {
-	Chan1Data[m] = 0;
-	Chan2Data[m] =0;
-	}
 
 
 
@@ -300,6 +294,12 @@ int main(int argc, char *argv[]){
 	hydrac_uart_init();
 
 
+
+	/* Initialzie FIR filter*/
+	hydrac_fir_init();
+
+
+
 	//
 	//---------MAIN PROGRAM--------------//
 	//
@@ -314,32 +314,28 @@ int main(int argc, char *argv[]){
 
 
 
-	volatile uint32_t loop=1;
-	volatile uint32_t left_counter=0,right_counter=0,front_counter=0, clipped_counter=0;
-	volatile uint32_t ;
+
 
 
 	while(loop<26){
 
+		clock_start = clock(); //start counting cycles
+
 		/*
 		 * Fill ADC Buffers
 		 */
+		hydrac_adc_read();
 
-		/*Enable dataflow and Open the ADC*/
-		hydrac_adc_enable();
-
-		/*Disable dataflow and close the ADC*/
-		hydrac_adc_disable();
 
 
 		//save_chan_data_to_file(Chan1Data,Chan2Data,"in.txt");
 
-//		printf("\n\nAcquired data:");
-//		double t=0;
-//		for (m = 0; m < 20; m++) {
-//				printf("%f\t%f\t%f\n", (double) t,Chan1Data[m],Chan2Data[m] );
-//				t = (double) (t+ TIME_STEP);
-//			}
+		printf("\n\nAcquired data:");
+		double t=0;
+		for (m = 0; m < 20; m++) {
+				printf("%f\t%f\t%f\n", (double) t,Chan1Data[m],Chan2Data[m] );
+				t = (double) (t+ TIME_STEP);
+			}
 
 		/*
 		 * Compute angle and distance
@@ -347,20 +343,24 @@ int main(int argc, char *argv[]){
 		printf("\n***DETECTING DIRECTION...\n");
 		hydrac_detect_direction(&direction);
 
-			if(direction == 2){
-				printf("\n***LEFT!\n");
-				left_counter++;
-			}else if(direction==1){
-				printf("\n***RIGHT!\n");
-				right_counter++;
-			}
-			else if(direction==-1){
-				printf("\n***FRONT OR ERROR!\n");
-				front_counter++;
-			}else{
-				printf("\n\n***CLIPPED!\n\n");
-				clipped_counter++;
-			}
+		if (direction == 2) {
+			printf("\n***LEFT!\n");
+			left_counter++;
+
+
+		} else if (direction == 1) {
+			printf("\n***RIGHT!\n");
+			right_counter++;
+
+		} else if (direction == -1) {
+			printf("\n***FRONT OR ERROR!\n");
+			front_counter++;
+
+		} else {
+			printf("\n\n***CLIPPED!\n\n");
+			clipped_counter++;
+
+		}
 
 
 		direction=0;
@@ -370,9 +370,9 @@ int main(int argc, char *argv[]){
 		/*
 		 * compute execution time
 		 */
-//		exec_time = 2 * ((double) (clock_stop - clock_start)) / CLOCKS_PER_SEC; //used hrm and schematic to discover that the CLK is 25MHz
-//																		//then it is divided by two.
-//		printf("Time taken is %e seconds\n", exec_time);
+		exec_time = 2 * ((double) (clock_stop - clock_start)) / CLOCKS_PER_SEC; //used hrm and schematic to discover that the CLK is 25MHz
+																		//then it is divided by two.
+		printf("Time taken is %e seconds\n", exec_time);
 
 
 
@@ -709,7 +709,7 @@ void AdcCallback(void *pCBParam, uint32_t nEvent, void *pArg)
  * Initialize HydrAc ADC Module
  */
 void hydrac_adc_init(void){
-	uint32_t Result = SUCCESS;
+	uint32_t Result = SUCCESS,m=0;
 
 	/* Initialize ADAU1977 */
 	Result = Adau1977Init();
@@ -718,13 +718,21 @@ void hydrac_adc_init(void){
 		bError = true;
 		DBG_MSG("ADAU1977 Init failed\n");
 	}
+
+
+	//reset both channels
+	for (m = 0; m < NUM_SAMPLES; m++) {
+		Chan1Data[m] = 0;
+		Chan2Data[m] =0;
+	}
+
+
 }
 
 /*
- * Enable HydrAc ADC data flow
+ * Read ADC buffers
  */
-void hydrac_adc_enable(void){
-
+void hydrac_adc_read(){
 	/* Submit ADC buffer1 */ //N*4*2 (2B/sample) or N*4*4(4B/sample)
 	// All it does is giving the buffer size in bytes not in samples. That is why it multiplies the size (in samples)
 	//the number of bytes/sample
@@ -750,7 +758,6 @@ void hydrac_adc_enable(void){
 	}
 
 
-    clock_start = clock(); //start counting cycles
 
 	printf("DATA FLOW ENABLED! processing callbacks...\n");
 
@@ -771,15 +778,8 @@ void hydrac_adc_enable(void){
 
 
 	printf("ALL CALLBACKS PROCESSED!...\n");
-}
 
 
-/*
- *  Disable HydrAc ADC module data flow
- */
-void hydrac_adc_disable(void){
-
-	uint32_t m=0;
 
 
 	/* Disable ADC data flow */
@@ -788,9 +788,9 @@ void hydrac_adc_disable(void){
 		bError = true;
 		DBG_MSG("ADC disable failed\n");
 	}
-
-
 }
+
+
 
 /*
  * Initialize DSP GPIO peripherals
@@ -965,188 +965,289 @@ void hydrac_uart_init(){
 }
 
 void hydrac_detect_direction(int* direction){
-	int j = 0, i = 0;
-		int location_ch1 = 0;
-		int location_ch2 = 0;
-		int loc_min_ch1 = 0;
-		int loc_max_ch1 = 0;
-		int loc_min_ch2 = 0;
-		int loc_max_ch2 = 0;
-		int loc_ch1_final = 0;
-		int loc_ch2_final = 0;
-		float max_1 =Chan1Data[0];
-		float max_2 =Chan2Data[0];
-		float max_f_1 = out_ch_1[0];
-		float max_f_2 = out_ch_2[0];
-		float min_f_1 = out_ch_1[0];
-		float min_f_2 = out_ch_2[0];
-		float max = 0;
-		float max_f = 0, min_f = 0;
-		int location = 0;
-		int flag = 1;
+    /**
+* LOCAL VARIABLES:
+* There's a lot of them, but they are
+* mostly used for calculating maximum
+* and minimum values. Max and mins are
+* calculated to guarantee the probability
+* of a correct outcom
+*/
+  int j = 0, i = 0;
+  int location_ch1 = 0;
+  int location_ch2 = 0;
+  int loc_min_ch1 = 0;
+  int loc_max_ch1 = 0;
+  int loc_min_ch2 = 0;
+  int loc_max_ch2 = 0;
+  int loc_ch1_final = 0;
+  int loc_ch2_final = 0;
+  float max_1 =Chan1Data[0];
+  float max_2 =Chan2Data[0];
+  float max_f_1 = out_ch_1[0];
+  float max_f_2 = out_ch_2[0];
+  float min_f_1 = out_ch_1[0];
+  float min_f_2 = out_ch_2[0];
+  float max = 0;
+  float max_f = 0, min_f = 0;
+  int location = 0;
+  int flag = 1;
 
+  /*
+  * Finding maximum values of each input
+  * acquisition. This pointer will guarantee
+  * we're working in the pinger area.
+  */
+  for (int c = 1; c < TOTAL_SAMPLES; c++) {
+      if (Chan1Data[c] > max_1) {
+          max_1 =Chan1Data[c];
+      }
+      if (Chan2Data[c] > max_2) {
+          max_2 =Chan2Data[c];
+      }
+  }
 
-		for (int c = 1; c < TOTAL_SAMPLES; c++) {
-			if (Chan1Data[c] > max_1) {
-				max_1 =Chan1Data[c];
-			}
-			if (Chan2Data[c] > max_2) {
-				max_2 =Chan2Data[c];
-			}
-		}
+  /**
+   * Obtaining the smallest maximum value
+   * from each channel allows for correct
+   * traversal, since one channel can be
+   * attenuated with respect to the other.
+   * Reducing this maximum to 85% will place
+   * us closer to the origin of the ping.
+   *
+   */
+  if (max_1 > max_2)
+      max = max_1 * 0.85;
+  else
+      max = max_2 * 0.85;
 
-		if (max_1 > max_2)
-			max = max_1 * 0.85;
-		else
-			max = max_2 * 0.85;
+      /**
+   * These for loops search for the first
+   * moment in which our values reach 75%
+   * of the ping's maximum value (our
+   * threshold) and saves the index for
+   * each channel.
+   *
+   */
+  for (int i = 0; i < TOTAL_SAMPLES; i++) {
+      if (Chan1Data[i] > max) {
+          location_ch1 = i;
+          break;
+      }
+  }
 
-		printf("%f %f %f \n", max, max_1, max_2);
+  for (int i = 0; i < TOTAL_SAMPLES; i++) {
+      if (Chan2Data[i] > max) {
+          location_ch2 = i;
+          break;
+      }
+  }
 
+   /**
+   * Indexes are compared to store the
+   * smallest one. The smallest index will
+   * allow for better capture of the ping.
+   */
+  if (location_ch1 < location_ch2)
+      location = location_ch1;
+  else
+      location = location_ch2;
 
+//       printf("Chan1Data[0]=%f\n", Chan1Data[0]);
+//       printf("Chan2Data[0]=%f\n", Chan2Data[0]);
+//       printf("location=%d\n", location);
+//       printf("location_ch1=%d\n", location_ch1);
+//       printf("location_ch2=%d\n", location_ch2);
+//       printf("location=%d\n", location);
 
-		for (int i = 0; i < TOTAL_SAMPLES; i++) {
-			if (Chan1Data[i] > max) {
-				location_ch1 = i;
-				break;
-			}
-		}
+  /**
+   * Since we capture only 4096 samples of
+   * the pinger, we need to make sure our
+   * captured signals have the correct indexes
+   * in order to process correctly
+   */
 
-		for (int i = 0; i < TOTAL_SAMPLES; i++) {
-			if (Chan2Data[i] > max) {
-				location_ch2 = i;
-				break;
-			}
-		}
+  /*This means the signal is within acceptable
+   * parameters and can be captured successfully.
+   * Utilizing the pointer (index) above we will
+   * do a 2048 sweep forward and a 2048 sweep
+   * backwards towards the signal, acquiring 4096
+   * samples.
+   */
 
-		if (location_ch1 < location_ch2)
-			location = location_ch1;
-		else
-			location = location_ch2;
+  if ((location > 2047) && (location < 381952)) {
+      j = 2047;
+      for (i = 0; i < 2048; i++) {
+          subset_channel_1[i] =Chan1Data[location - j];
+          subset_channel_2[i] =Chan2Data[location - j];
+          j--;
+      }
 
-		printf("Chan1Data[0]=%f\n", Chan1Data[0]);
-		printf("Chan2Data[0]=%f\n", Chan2Data[0]);
-		printf("location=%d\n", location);
-		printf("loaction_ch1=%d\n", location_ch1);
-		printf("loaction_ch2=%d\n", location_ch2);
-		printf("location=%d\n", location);
+      j = 1;
+      for (i = 2048; i < SAMPLES; i++) {
+          subset_channel_1[i] =Chan1Data[location + j];
+          subset_channel_2[i] =Chan2Data[location + j];
+          j++;
+      }
+      flag = 1;
+  }
+  /**
+   * This means that the signal is not clipped,
+   * but very close to origin. Instead of capturing
+   * 2048 sample sweep backwards and forwards,
+   * we capture 4096 sweeps forward, acquiring
+   * 4096 sample data.
+   */
+  else if ((location > 0) && (location < 1024)) {
+      for (i = 0; i < SAMPLES; i++) {
+          subset_channel_1[i] =Chan1Data[i];
+          subset_channel_2[i] =Chan2Data[i];
+      }
+      flag = 1;
+  }
+  /*
+   * When entering this condition, it means
+   * the acquired data was clipped  or input was
+   * overly attenuated and a flag is activated,
+   * processing cannot continue.
+   */
+  else
+      flag = -1;
 
-		if ((location > 2047) && (location < 381952)) {
-			j = 2047;
-			for (i = 0; i < 2048; i++) {
-				subset_channel_1[i] =Chan1Data[location - j];
-				subset_channel_2[i] =Chan2Data[location - j];
-				j--;
-			}
+  /**
+   * If 4096 samples of the signal was captured
+   * correctly, we proceed o activate our state
+   * array (as instructed by SHARC C Library
+   * manual) and filter our input signals.
+   */
+  if (flag > 0)
+  {
+      /*Initialization of State Array*/
+      for (i = 0; i < TAPS + 1; i++)
+          state[i] = 0;
 
-			j = 1;
-			for (i = 2048; i < SAMPLES; i++) {
-				subset_channel_1[i] =Chan1Data[location + j];
-				subset_channel_2[i] =Chan2Data[location + j];
-				j++;
-			}
-			flag = 1;
-		} else if ((location > 0) && (location < 1024)) {
-			for (i = 0; i < SAMPLES; i++) {
-				subset_channel_1[i] =Chan1Data[i];
-				subset_channel_2[i] =Chan2Data[i];
-			}
-			flag = 1;
-		} else
-			flag = -1;
+      /*Filter first input with fir call function*/
+      fir(subset_channel_1, out_ch_1, coeffs, state, SAMPLES, TAPS);
 
-		if (flag > 0) {
-			for (i = 0; i < TAPS + 1; i++)
-				state[i] = 0; /* initialize state array */
+      /*Re-initialization of State Array*/
+      for (i = 0; i < TAPS + 1; i++)
+          state[i] = 0; /* initialize state array */
 
-			fir(subset_channel_1, out_ch_1, coeffs, state, SAMPLES, TAPS);
+      /* Filter second input with fir call function*/
+      fir(subset_channel_2, out_ch_2, coeffs, state, SAMPLES, TAPS);
 
-			for (i = 0; i < TAPS + 1; i++)
-				state[i] = 0; /* initialize state array */
+      /*Eliminate unwanted DC peak*/
+      for (int i = 0; i < 1024; i++) {
+          out_ch_1[i] = 0;
+          out_ch_2[i] = 0;
+      }
 
-			//filter second signal
-			fir(subset_channel_2, out_ch_2, coeffs, state, SAMPLES, TAPS);
+      /*Finding the maximum and minimum values
+      * of the filtered signal will allow us to
+      * do a similar analisis than the one above.
+      * however in this case, we will evaluate the
+      * time difference between these values to
+      * determine which one came first and which
+      * one came last*/
 
-			for (int i = 0; i < 1024; i++) {
-				out_ch_1[i] = 0;
-				out_ch_2[i] = 0;
-			}
+      for (int c = 1; c < SAMPLES; c++) {
+          if (out_ch_1[c] > max_f_1) {
+              max_f_1 = out_ch_1[c];
+          }
+          if (out_ch_2[c] > max_f_2) {
+              max_f_2 = out_ch_2[c];
+          }
+          if (out_ch_1[c] < min_f_1) {
+              min_f_1 = out_ch_1[c];
+          }
+          if (out_ch_2[c] < min_f_2) {
+              min_f_2 = out_ch_2[c];
+          }
+      }
 
-			for (int c = 1; c < SAMPLES; c++) {
-				if (out_ch_1[c] > max_f_1) {
-					max_f_1 = out_ch_1[c];
-				}
-				if (out_ch_2[c] > max_f_2) {
-					max_f_2 = out_ch_2[c];
-				}
-				if (out_ch_1[c] < min_f_1) {
-					min_f_1 = out_ch_1[c];
-				}
-				if (out_ch_2[c] < min_f_2) {
-					min_f_2 = out_ch_2[c];
-				}
-			}
+      /* The following if-else statements
+      * will provide the smallest index
+      * for the maximum value and the min-
+      * imum value calculated above. These
+      * maximum and minimums are attenuated
+      * for analysis purposes */
 
-			if (max_f_1 < max_f_2)
-				max_f = max_f_1 * 0.75;
-			else
-				max_f = max_f_2 * 0.75;
+      if (max_f_1 < max_f_2)
+          max_f = max_f_1 * 0.75;
+      else
+          max_f = max_f_2 * 0.75;
 
-			if (min_f_1 > min_f_2)
-				min_f = min_f_1 * 0.75;
-			else
-				min_f = min_f_2 * 0.75;
+      if (min_f_1 > min_f_2)
+          min_f = min_f_1 * 0.75;
+      else
+          min_f = min_f_2 * 0.75;
 
-			for (i = 0; i < SAMPLES; i++) {
-				if (out_ch_1[i] > max_f) {
-					loc_max_ch1 = i;
-					break;
-				}
-			}
+      /*Locating Indexes of max value in ch1*/
+      for (i = 0; i < SAMPLES; i++) {
+          if (out_ch_1[i] > max_f) {
+              loc_max_ch1 = i;
+              break;
+          }
+      }
 
-			for (i = 0; i < SAMPLES; i++) {
-				if (out_ch_2[i] > max_f) {
-					loc_max_ch2 = i;
-					break;
-				}
-			}
+      /*Locating Indexes of max value in ch2*/
+      for (i = 0; i < SAMPLES; i++) {
+          if (out_ch_2[i] > max_f) {
+              loc_max_ch2 = i;
+              break;
+          }
+      }
 
-			for (i = 0; i < SAMPLES; i++) {
-				if (out_ch_1[i] < min_f) {
-					loc_min_ch1 = i;
-					break;
-				}
-			}
+      /*Locating Indexes of min value in ch1*/
+      for (i = 0; i < SAMPLES; i++) {
+          if (out_ch_1[i] < min_f) {
+              loc_min_ch1 = i;
+              break;
+          }
+      }
 
-			for (i = 0; i < SAMPLES; i++) {
-				if (out_ch_2[i] < min_f) {
-					loc_min_ch2 = i;
-					break;
-				}
-			}
+      /*Locating Indexes min value in ch2*/
+      for (i = 0; i < SAMPLES; i++) {
+          if (out_ch_2[i] < min_f) {
+              loc_min_ch2 = i;
+              break;
+          }
+      }
 
-			if (loc_max_ch1 < loc_min_ch1)
-				loc_ch1_final = loc_max_ch1;
-			else
-				loc_ch1_final = loc_min_ch1;
+      /*Comparing Indexes*/
+      if (loc_max_ch1 < loc_min_ch1)
+          loc_ch1_final = loc_max_ch1;
+      else
+          loc_ch1_final = loc_min_ch1;
 
-			if (loc_max_ch2 < loc_min_ch2)
-				loc_ch2_final = loc_max_ch2;
-			else
-				loc_ch2_final = loc_min_ch2;
+      if (loc_max_ch2 < loc_min_ch2)
+          loc_ch2_final = loc_max_ch2;
+      else
+          loc_ch2_final = loc_min_ch2;
 
-			if (loc_ch1_final < loc_ch2_final) {
-				(*direction) = 1;
-				printf("SIGNAL IS COMING FROM THE RIGHT. \n");
-			} else if (loc_ch1_final > loc_ch2_final) {
-				(*direction) = 2;
-				printf("SIGNAL IS COMING FROM THE LEFT. \n");
-			} else {
-				(*direction) = -1;
-				printf("IN FRONT OR ERROR. \n");
-			}
-		} else
-			printf("SIGNAL ACQUISITION UNSUCCESSFUL, CLIPPED SIGNAL.");
+      /*Smallest Index indicates which one
+      * came first */
+      if (loc_ch1_final < loc_ch2_final) {
+          (*direction) = 1;
+          printf("SIGNAL IS COMING FROM THE RIGHT. \n");
+      } else if (loc_ch1_final > loc_ch2_final) {
+          (*direction) = 2;
+          printf("SIGNAL IS COMING FROM THE LEFT. \n");
+      } else /*If Indexes are the same, it is in front or error*/
+      {
+          (*direction) = -1;
+          printf("IN FRONT OR ERROR. \n");
+      }
+  } else
+      printf("SIGNAL ACQUISITION UNSUCCESSFUL: CLIPPED SIGNAL OR ATTENUATED.");
+}
 
-		//save_chan_data_to_file(out_ch_1,out_ch_2,"out_data.txt");
+/*
+ * Initialization of HPF filter
+ */
 
+void hydrac_fir_init(){
+	for (int i = TAPS-1; i >= 0; i--) {
+		coeffs[i] = HIGH_COEF[(TAPS-1)-i];
+	}
 }
