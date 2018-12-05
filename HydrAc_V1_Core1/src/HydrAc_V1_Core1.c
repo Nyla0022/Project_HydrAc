@@ -154,6 +154,8 @@ static ADI_UART_RESULT eResult;
 static bool bStopFlag = false;
 
 
+/*buffer to store data*/
+static char buf[4];
 
 /*
  * 				FILTERING DEFINITIONS
@@ -180,6 +182,12 @@ static float HIGH_COEF[TAPS]=
 
 static float out_ch_1[SAMPLES];
 static float out_ch_2[SAMPLES];
+
+/*look-up table for signals arriving first at channel 1 */
+static float voltage_chan1 [9] = {2.43,2.31,2.20,2.14,2.09,2.06,2.04,2.046,2.054};
+/*look-up table for signals arriving first at channel 1 */
+static float voltage_chan2 [9] = {2.57,2.53,2.49,2.41,2.34,2.30,2.27,2.23,2.29};
+
 
 #pragma align 512
 	static float pm coeffs[TAPS]; /* coeffs array must be */
@@ -247,18 +255,21 @@ int main(int argc, char *argv[]){
 	/*Distance and angle variables*/
 	float distance = .070, angle = -90;
 
-	/* distance string for UART*/
-	char dist_c[10] = { '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' };
-	/* angle string for Angle*/
-	char angle_c[10] = { '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' };
-	/* angle string for execution time*/
-	char exectime_c[10] = { '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' };
+//	/* distance string for UART*/
+//	char dist_c[10] = { '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' };
+//	/* angle string for Angle*/
+//	char angle_c[10] = { '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' };
+//	/* angle string for execution time*/
+//	char exectime_c[10] = { '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' };
 
 	/*Tx buffer */
 	char TxBuffer[BUFFER_SIZE];
 
 	/*direction of signal arrival*/
 	static int direction =0;
+	
+	/*max voltage of signal*/
+	static int largest =0;
 
 
 	for (int i = TAPS-1; i >= 0; i--) {
@@ -334,12 +345,12 @@ int main(int argc, char *argv[]){
 
 		//save_chan_data_to_file(Chan1Data,Chan2Data,"in.txt");
 
-//		printf("\n\nAcquired data:");
-//		double t=0;
-//		for (m = 0; m < 20; m++) {
-//				printf("%f\t%f\t%f\n", (double) t,Chan1Data[m],Chan2Data[m] );
-//				t = (double) (t+ TIME_STEP);
-//			}
+		printf("\n\nAcquired data:");
+		double t=0;
+		for (m = 0; m < 20; m++) {
+				printf("%f\t%f\t%f\n", (double) t,Chan1Data[m],Chan2Data[m] );
+				t = (double) (t+ TIME_STEP);
+			}
 
 		/*
 		 * Compute angle and distance
@@ -381,38 +392,72 @@ int main(int argc, char *argv[]){
 		 */
 
 		//***NOTE time is in miliseconds****
-//
-//		ftoa(angle, angle_c); 				//convert angle data to string array
-//		ftoa(distance, dist_c); 			//convert distance data to string array
-//		ftoa((float)(exec_time*1e3),exectime_c);	//convert execution time data to string array
-//
-//		for (i = 0; i < sizeof(angle_c); i++)
-//			TxBuffer[i] = angle_c[i];
-//
+
+		//ftoa(angle, angle_c); 				//convert angle data to string array
+		//ftoa(distance, dist_c); 			//convert distance data to string array
+		//ftoa((float)(exec_time*1e3),exectime_c);	//convert execution time data to string array
+
+		itoa(distance, buf, 10);
+		
+		
+		for (i = 0; i < sizeof(buf); i++)
+			TxBuffer[i] = buf[i];
+
 //		for (i = 0; i < sizeof(dist_c); i++)
 //			TxBuffer[i + 10] = dist_c[i];
-//
+
 //		for (i = 0; i < sizeof(exectime_c); i++)
 //			TxBuffer[i + 20] = exectime_c[i];
-//
-//
-//		/*
-//		 * Send data via UART
-//		 */
-//
-//		/* Write the character */
-//		printf("Transmitting Result#%d: %s\n\n",loop, TxBuffer);
-//		/*comment when interfacing to arduino*/
-//		eResult = adi_uart_Write(ghUART, "Transmitting Result", 20);
-//		/*comment when interfacing to arduino*/
-//		eResult = adi_uart_Write(ghUART, "\n",2);
-//		for(i=0;i<(BUFFER_SIZE+20)-2;i++)
-//			eResult = adi_uart_Write(ghUART, "\b",2);
-//
-//		eResult = adi_uart_Write(ghUART, &TxBuffer[0], BUFFER_SIZE);
-//
-//		/*comment when interfacing to arduino*/
-//		eResult = adi_uart_Write(ghUART, "\n",2);
+
+
+		/*
+		 * Send data via UART
+		 */
+
+		/* Write the character */
+		printf("Transmitting Result#%d: %s\n\n",loop, TxBuffer);
+		/*comment when interfacing to arduino*/
+		eResult = adi_uart_Write(ghUART, "Transmitting Result", 20);
+		/*comment when interfacing to arduino*/
+		eResult = adi_uart_Write(ghUART, "\n",2);
+		for(i=0;i<(BUFFER_SIZE+20)-2;i++)
+			eResult = adi_uart_Write(ghUART, "\b",2);
+
+		eResult = adi_uart_Write(ghUART, &TxBuffer[0], BUFFER_SIZE);
+
+		/*comment when interfacing to arduino*/
+		eResult = adi_uart_Write(ghUART, "\n",2);
+
+if(direction == 1)
+  {
+      int largest = Chan1Data[0];
+      for (int i = 1; i < TOTAL_SAMPLES; i++)
+      {
+      if (largest < Chan1Data[i])
+        largest = Chan1Data[i];
+      } 
+      distance(largest,1);
+
+  }
+else if(direction == 2)
+  {
+      int largest = Chan2Data[0];
+      for (int i = 1; i < TOTAL_SAMPLES; i++)
+      {
+      if (largest < Chan2Data[i])
+        largest = Chan2Data[i];
+      } 
+      distance(largest,2);
+  }
+  else{
+    //int largest = -1; 
+    distance(0,0);
+  }
+
+
+
+
+//dir: 1 arrived first at chan1 , 2 chan2
 
 
 		loop++;
@@ -1150,3 +1195,41 @@ void hydrac_detect_direction(int* direction){
 		//save_chan_data_to_file(out_ch_1,out_ch_2,"out_data.txt");
 
 }
+
+float distance (float volt, int dir){
+  distance = 0; 
+  if(dir==1){
+    
+    if(volt>=voltage_chan1[8]){
+      
+ for(int j=0;j<8;j++){
+  if(volt<voltage_chan1[j] && volt>=voltage_chan1[j+1])
+    distance=(j+1)*1.5;
+ }
+    }else{
+      distance = 12;
+    }
+    buf[4] = 'r';
+    
+}else if(dir==2){
+
+  if(volt>=voltage_chan2[8]){
+  for(int j=0;j<8;j++){
+  if(volt<voltage_chan2[j] && volt>=voltage_chan2[j+1])
+    distance=(j+1)*1.5;
+ }
+  }else{
+    distance = 12;
+    
+  }
+  buf[4] = 'l';
+}else{
+  distance=-1;
+      buf[4] = '0';
+
+ }
+     
+
+return distance;
+}
+
