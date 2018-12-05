@@ -79,3 +79,76 @@ cc21k -proc ADSP-SC584 -si-revision 1.0 -TC:/Users/JASP/Documents/Hydrac_Repo/Pr
 22:31:34 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
 make all 
 make: Nothing to be done for `all'.
+23:52:26 **** Build of configuration Debug for project HydrAc_V1_Core0 ****
+make all 
+'Building target: HydrAc_V1_Core0'
+'Invoking: CrossCore ARM Bare Metal C Linker'
+arm-none-eabi-gcc -mproc=ADSP-SC584 -msi-revision=1.0 -Wl,--gc-sections -mdebug-libs -o  "HydrAc_V1_Core0" @input-file.txt -lm
+'Finished building target: HydrAc_V1_Core0'
+' '
+23:52:29 **** Build of configuration Debug for project HydrAc_V1_Core1 ****
+make all 
+'Building file: ../system/sru/sru_config.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "system/sru/sru_config.d" -o "system/sru/sru_config.doj" "../system/sru/sru_config.c"
+'Finished building: ../system/sru/sru_config.c'
+' '
+'Building file: ../system/pinmux/GeneratedSources/pinmux_config.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "system/pinmux/GeneratedSources/pinmux_config.d" -o "system/pinmux/GeneratedSources/pinmux_config.doj" "../system/pinmux/GeneratedSources/pinmux_config.c"
+'Finished building: ../system/pinmux/GeneratedSources/pinmux_config.c'
+' '
+'Building file: ../src/FIRInit.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/FIRInit.d" -o "src/FIRInit.doj" "../src/FIRInit.c"
+'Finished building: ../src/FIRInit.c'
+' '
+'Building file: ../src/HydrAc_V1_Core1.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core1.d" -o "src/HydrAc_V1_Core1.doj" "../src/HydrAc_V1_Core1.c"
+'Finished building: ../src/HydrAc_V1_Core1.c'
+' '
+'Building target: HydrAc_V1_Core1.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision 1.0 -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o HydrAc_V1_Core1.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: HydrAc_V1_Core1.dxe'
+' '
+23:52:40 **** Build of configuration Debug for project HydrAc_V1_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+23:58:59 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+23:59:01 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
+make all 
+'Building file: ../src/HydrAc_V1_Core1.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core1.d" -o "src/HydrAc_V1_Core1.doj" "../src/HydrAc_V1_Core1.c"
+'Finished building: ../src/HydrAc_V1_Core1.c'
+' '
+'Building target: HydrAc_V1_Core1.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision 1.0 -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o HydrAc_V1_Core1.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: HydrAc_V1_Core1.dxe'
+' '
+23:59:08 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+00:06:04 **** Incremental Build of configuration Debug for project HydrAc_V1_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+00:06:06 **** Incremental Build of configuration Debug for project HydrAc_V1_Core1 ****
+make all 
+'Building file: ../src/HydrAc_V1_Core1.c'
+'Invoking: CrossCore SHARC C/C++ Compiler'
+cc21k -c -file-attr ProjectName="HydrAc_V1_Core1" -proc ADSP-SC584 -flags-compiler --no_wrap_diagnostics -si-revision 1.0 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-8a4ceb3e82eceaa7b805aa0491e061e1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=25000000 -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "src/HydrAc_V1_Core1.d" -o "src/HydrAc_V1_Core1.doj" "../src/HydrAc_V1_Core1.c"
+'Finished building: ../src/HydrAc_V1_Core1.c'
+' '
+'Building target: HydrAc_V1_Core1.dxe'
+'Invoking: CrossCore SHARC Linker'
+cc21k -proc ADSP-SC584 -si-revision 1.0 -TC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/system/startup_ldf/app.ldf -no-mem -LC:/Users/JASP/Documents/Hydrac_Repo/Project_HydrAc/HydrAc_V1_Core1/Debug/system/startup_ldf -flags-link -MDCORE1,-MDOTHERCORE,-MDDEBUG -add-debug-libpaths -o HydrAc_V1_Core1.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: HydrAc_V1_Core1.dxe'
+' '
+00:06:13 **** Incremental Build of configuration Debug for project HydrAc_V1_Core2 ****
+make all 
+make: Nothing to be done for `all'.
