@@ -294,7 +294,6 @@ int main(int argc, char *argv[]){
 	hydrac_uart_init();
 
 
-
 	/* Initialzie FIR filter*/
 	hydrac_fir_init();
 
@@ -303,14 +302,6 @@ int main(int argc, char *argv[]){
 	//
 	//---------MAIN PROGRAM--------------//
 	//
-
-
-		//printf("SIGNALS LOADED\n");
-
-
-
-
-	printf("going into infinite loop...\n");
 
 
 
@@ -381,38 +372,38 @@ int main(int argc, char *argv[]){
 		 */
 
 		//***NOTE time is in miliseconds****
-//
-//		ftoa(angle, angle_c); 				//convert angle data to string array
-//		ftoa(distance, dist_c); 			//convert distance data to string array
-//		ftoa((float)(exec_time*1e3),exectime_c);	//convert execution time data to string array
-//
-//		for (i = 0; i < sizeof(angle_c); i++)
-//			TxBuffer[i] = angle_c[i];
-//
-//		for (i = 0; i < sizeof(dist_c); i++)
-//			TxBuffer[i + 10] = dist_c[i];
-//
-//		for (i = 0; i < sizeof(exectime_c); i++)
-//			TxBuffer[i + 20] = exectime_c[i];
-//
-//
-//		/*
-//		 * Send data via UART
-//		 */
-//
-//		/* Write the character */
-//		printf("Transmitting Result#%d: %s\n\n",loop, TxBuffer);
-//		/*comment when interfacing to arduino*/
-//		eResult = adi_uart_Write(ghUART, "Transmitting Result", 20);
-//		/*comment when interfacing to arduino*/
-//		eResult = adi_uart_Write(ghUART, "\n",2);
-//		for(i=0;i<(BUFFER_SIZE+20)-2;i++)
-//			eResult = adi_uart_Write(ghUART, "\b",2);
-//
-//		eResult = adi_uart_Write(ghUART, &TxBuffer[0], BUFFER_SIZE);
-//
-//		/*comment when interfacing to arduino*/
-//		eResult = adi_uart_Write(ghUART, "\n",2);
+
+		ftoa(angle, angle_c); 				//convert angle data to string array
+		ftoa(distance, dist_c); 			//convert distance data to string array
+		ftoa((float)(exec_time*1e3),exectime_c);	//convert execution time data to string array
+
+		for (i = 0; i < sizeof(angle_c); i++)
+			TxBuffer[i] = angle_c[i];
+
+		for (i = 0; i < sizeof(dist_c); i++)
+			TxBuffer[i + 10] = dist_c[i];
+
+		for (i = 0; i < sizeof(exectime_c); i++)
+			TxBuffer[i + 20] = exectime_c[i];
+
+
+		/*
+		 * Send data via UART
+		 */
+
+		/* Write the character */
+		printf("Transmitting Result#%d: %s\n\n",loop, TxBuffer);
+		/*comment when interfacing to arduino*/
+		eResult = adi_uart_Write(ghUART, "Transmitting Result", 20);
+		/*comment when interfacing to arduino*/
+		eResult = adi_uart_Write(ghUART, "\n",2);
+		for(i=0;i<(BUFFER_SIZE+20)-2;i++)
+			eResult = adi_uart_Write(ghUART, "\b",2);
+
+		eResult = adi_uart_Write(ghUART, &TxBuffer[0], BUFFER_SIZE);
+
+		/*comment when interfacing to arduino*/
+		eResult = adi_uart_Write(ghUART, "\n",2);
 
 
 		loop++;
