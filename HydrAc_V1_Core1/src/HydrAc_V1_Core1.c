@@ -308,7 +308,7 @@ int main(int argc, char *argv[]){
 
 
 
-	while(loop<26){
+	while(true){
 
 		clock_start = clock(); //start counting cycles
 

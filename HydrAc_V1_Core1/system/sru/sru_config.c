@@ -1,6 +1,6 @@
 /*
  **
- ** sru_config.c source file generated on December 4, 2018 at 23:51:30.	
+ ** sru_config.c source file generated on December 5, 2018 at 07:14:30.	
  **
  ** Copyright (C) 2014-2018 Analog Devices Inc., All Rights Reserved.
  **
