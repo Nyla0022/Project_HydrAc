@@ -245,7 +245,7 @@ int main(int argc, char *argv[]){
 	uint32_t m =0;
 
 	/*Distance and angle variables*/
-	float distance = .070, angle = -90;
+	float distance, angle;
 
 	/* distance string for UART*/
 	char dist_c[10] = { '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' };
@@ -259,14 +259,6 @@ int main(int argc, char *argv[]){
 
 	/*direction of signal arrival*/
 	static int direction =0;
-
-
-	volatile uint32_t loop=1;
-	volatile uint32_t left_counter=0,right_counter=0,front_counter=0, clipped_counter=0;
-
-
-
-
 
 	//
 	//---------PERIPHERALS INITALIZATION--------------//
@@ -304,10 +296,6 @@ int main(int argc, char *argv[]){
 	//
 
 
-
-
-
-
 	while(true){
 
 		clock_start = clock(); //start counting cycles
@@ -318,16 +306,6 @@ int main(int argc, char *argv[]){
 		hydrac_adc_read();
 
 
-
-		//save_chan_data_to_file(Chan1Data,Chan2Data,"in.txt");
-
-		printf("\n\nAcquired data:");
-		double t=0;
-		for (m = 0; m < 20; m++) {
-				printf("%f\t%f\t%f\n", (double) t,Chan1Data[m],Chan2Data[m] );
-				t = (double) (t+ TIME_STEP);
-			}
-
 		/*
 		 * Compute angle and distance
 		 */
@@ -336,20 +314,20 @@ int main(int argc, char *argv[]){
 
 		if (direction == 2) {
 			printf("\n***LEFT!\n");
-			left_counter++;
+
 
 
 		} else if (direction == 1) {
 			printf("\n***RIGHT!\n");
-			right_counter++;
+
 
 		} else if (direction == -1) {
 			printf("\n***FRONT OR ERROR!\n");
-			front_counter++;
+
 
 		} else {
 			printf("\n\n***CLIPPED!\n\n");
-			clipped_counter++;
+
 
 		}
 
@@ -402,15 +380,8 @@ int main(int argc, char *argv[]){
 //			printf("UART ERROR\n");
 //		}
 
-		loop++;
 
 	}
-
-
-	printf("LEFT: %d\n", left_counter);
-	printf("RIGHT: %d\n", right_counter);
-	printf("FRONT: %d\n", front_counter);
-	printf("CLIPPED: %d\n", clipped_counter);
 
 	return 0;
 
@@ -752,7 +723,7 @@ void hydrac_adc_read(){
 	/* process samples and then exit */
 	while(AdcCount < CALLBACK_COUNT)
 	{
-		printf("AdcCount==%d\n", AdcCount);
+		printf(" ");
 		/* process samples in the callback */
 		if (bError)
 		{
@@ -764,7 +735,7 @@ void hydrac_adc_read(){
 	AdcCount =0u;
 
 
-	printf("ALL CALLBACKS PROCESSED!...\n");
+	printf("\nALL CALLBACKS PROCESSED!...\n");
 
 
 
@@ -1003,7 +974,7 @@ void hydrac_detect_direction(int* direction){
    * us closer to the origin of the ping.
    *
    */
-  if (max_1 > max_2)
+  if (max_1 < max_2)
       max = max_1 * 0.85;
   else
       max = max_2 * 0.85;
